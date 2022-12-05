@@ -1,0 +1,440 @@
+\begin{thebibliography}{10}
+
+\bibitem{bk_Scha_89}
+R.~J. Schalkoff,
+\newblock {\em ``{D}igital image processing and computer vision''},
+\newblock John Wiley and Sons, Singapore, 1989.
+
+\bibitem{bk_Gras_69}
+A.~Grasselli,
+\newblock {\em ``{A}utomatic interpretation and classification of images''},
+\newblock Academic Press, New York, 1969.
+
+\bibitem{bk_Andr_69}
+H.~C. Andrews,
+\newblock {\em ``{A}utomatic interpretation and classification of images by use
+  of the {F}ourier domain''},
+\newblock Academic Press, New York, 1969.
+
+\bibitem{bk_Nara_69}
+R.~Narasimham,
+\newblock {\em ``{O}n the Description, generation and recognition of classes of
+  pictures''},
+\newblock Academic Press, New York, 1969.
+
+\bibitem{pr_Hofm_85}
+I.~Hofmann, H.~Niemann, and G.~Sagerer,
+\newblock ``{M}odel based interpretation of image sequences from the heart'',
+\newblock in {\em Proceedings of an international workshop held in Amsterdam,
+  Holland}, 1985.
+
+\bibitem{jr_Sage_88}
+C.~Sagerer,
+\newblock ``{A}utomatic interpretation of medical image sequences'',
+\newblock {\em Pattern Recognition Letters}, pp. 87--102, 1988.
+
+\bibitem{phd_Kars_89}
+N.~Karssemeijer,
+\newblock {\em ``{I}nterpretation of medical images by model guided
+  analysis''},
+\newblock PhD thesis, Katholieke Universiteit Leuven, 1989.
+
+\bibitem{jr_Bald_92}
+R.~A. Baldock,
+\newblock ``{T}rainable models for the interpretation of biomedical images'',
+\newblock {\em Image and Vision Computing}, vol. 10, pp. 444--450, 1992.
+
+\bibitem{jr_Coot_94}
+T.~F. Cootes, A.~Hill, C.~J. Taylor, and J.~Haslam,
+\newblock ``{U}se of active shape models for locating structure in medical
+  images'',
+\newblock {\em Image and Vision Computing}, vol. 12, pp. 355--365, 1994.
+
+\bibitem{pr_Desa_92}
+J.~Desachy,
+\newblock ``{A} knowledge-based system for satellite image interpretation'',
+\newblock in {\em Proceedings 11th International Conference on Pattern
+  Recognition}, 1992, pp. 198--200.
+
+\bibitem{bk_Naga_80}
+M.~Nagao and T.~Matsuyama,
+\newblock {\em ``{A} structural analysis of complex aerial photographs''},
+\newblock Plenum, New York, 1980.
+
+\bibitem{pr_Mcke_85}
+J.~D. McKendrick and M.~Lybanon,
+\newblock ``{K}nowledge-based interpretation aids to the navy oceanographic
+  image analyst'',
+\newblock in {\em Proceedings: Image Understanding Workshop}, 1985, pp. 61--63.
+
+\bibitem{pr_Mcke_87}
+D.~M. McKeown and W.~A. Harvey,
+\newblock ``{A}utomating knowledge acquisition for aerial image
+  interpretation'',
+\newblock in {\em Image Understanding Workshop}, 1987.
+
+\bibitem{pr_Silb_88}
+T.~M. Silberberg,
+\newblock ``{M}ultiresolution aerial image interpretation'',
+\newblock in {\em Proceedings Image Understanding Workshop}, 1988, pp.
+  505--511.
+
+\bibitem{pr_Kuan_88}
+D.~Kuan, H.~Shariat, K.~Dutta, and P.~Ransil,
+\newblock ``{A} constraint-based system for interpretation of aerial imagery'',
+\newblock in {\em Second International Conference on Computer Vision}, 1988.
+
+\bibitem{jr_Mcke_89}
+D.~M. McKeown, W.~A. Harvey, and L.~E. Wixson,
+\newblock ``{A}utomating knowledge acquisition for aerial image
+  interpretation'',
+\newblock {\em CVGIP: Image Understanding}, vol. 46, pp. 37--81, 1989.
+
+\bibitem{pr_Garn_90}
+P.~Garnesson, G.~Giraudon, and P.~Montesinos,
+\newblock ``{A}n image analysis system, application for aerial imagery
+  interpretation'',
+\newblock in {\em Tenth International Conference on Pattern Recognition}, 1990.
+
+\bibitem{pr_Venka_90}
+V.~Venkateswar and R.~Chellappa,
+\newblock ``{A} framework for interpretation of aerial images'',
+\newblock in {\em Tenth International Conference on Pattern Recognition}, 1990.
+
+\bibitem{phd_Schu_94}
+Klamer Schutte,
+\newblock {\em ``{K}nowledge {B}ased {R}ecognition of {M}an-{M}ade
+  {O}bjects''},
+\newblock PhD thesis, University of Twente, February 1994.
+
+\bibitem{pr_Drap_87}
+B.~A. Draper, R.~T. Collins, and J.~Brolio et~al.,
+\newblock ``{T}ools and experiments in the knowledge-directed interpretation of
+  road scenes'',
+\newblock in {\em Image Understanding Workshop}, 1987.
+
+\bibitem{pr_Ozak_88}
+Y.~Ozaki, K.~Sato, and S.~Inokuchi,
+\newblock ``{R}ule-driven processing and recognition from range image'',
+\newblock in {\em International Conference on Pattern Recognition}, 1988, pp.
+  804--807.
+
+\bibitem{pr_Chel_90}
+D.~M. Chelberg,
+\newblock ``{U}ncertainty in interpretation of range imagery'',
+\newblock in {\em Third International Conference on Computer Vision}, 1990.
+
+\bibitem{bk_Agga_90}
+J.~K. Aggarwal and N.~Nandhakumar,
+\newblock ``{M}ultisensor fusion for automatic scene interpretation'',
+\newblock in {\em Analysis and Interpretation of Range Images}, R.~C. Jain and
+  A.~K. Jain, Eds., chapter~8, pp. 339--361. Springer-Verlag, New York, 1990.
+
+\bibitem{bk_Rame_90}
+R.~C. Jain and A.~K. Jain,
+\newblock {\em ``{A}nalysis and Interpretation of Range Images''},
+\newblock Springer-Verlag, 1990.
+
+\bibitem{pr_Stra_90}
+T.~M. Strat and M.~A. Fischler,
+\newblock ``{A} context-based recognition system for natural scenes and complex
+  domains'',
+\newblock in {\em Image Understanding Workshop}, 1990, pp. 456--472.
+
+\bibitem{pr_Hild_93}
+M.~Hild and Y.~Shirai,
+\newblock ``{I}nterpretation of natural scenes using multi-parameter default
+  models and qualitative constraints'',
+\newblock in {\em International Conference on Computer Vision}, 1993, pp.
+  497--501.
+
+\bibitem{bk_Ohta_85}
+Y.~Ohta,
+\newblock {\em ``{K}nowledge based interpretation of outdoor natural color
+  scenes''},
+\newblock Pitman, Boston, 1985.
+
+\bibitem{pr_Silb_87}
+T.~M. Silberberg,
+\newblock ``{I}nfrared image interpretation using spatial and temporal
+  knowledge'',
+\newblock in {\em Workshop on Computer Vision}, 1987, pp. 264--267.
+
+\bibitem{jr_Nand_88}
+N.~Nandhakumar and J.~K. Aggarwal,
+\newblock ``{I}ntegrated analysis of thermal and visual images for scene
+  interpretation'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, vol.
+  10, pp. 469--481, 1988.
+
+\bibitem{jr_Tayl_86}
+A.~Taylor, A.~Gross, D.~C. Hogg, and D.~C. Mason,
+\newblock ``{K}nowledge-based interpretation of remotely sensed images'',
+\newblock {\em International J. of Visual Computing}, vol. 4, pp. 67--83, 1986.
+
+\bibitem{pr_Clem_92}
+V.~Clement, G.~Giraudon, and S.~Houzelle,
+\newblock ``{I}nterpretation of remotely sensed images in a context of
+  multisensor fusion'',
+\newblock in {\em Second European Conference on Compute Vision}, 1992.
+
+\bibitem{jr_Zhan_87}
+Z.~Zhang and M.~Simaan,
+\newblock ``{A} rule-based interpretation system for segmentation of seismic
+  images'',
+\newblock {\em Pattern Recognition}, vol. 20, pp. 45--53, 1987.
+
+\bibitem{pr_Hell_92}
+A.~J. Heller, D.~M. LaRocque, and J.~L. Mundy,
+\newblock ``{T}he interpretation of synthetic aperture radar images using
+  projective invariants and deformable templates'',
+\newblock in {\em DARPA Image Understanding Workshop}, 1992, pp. 831--837.
+
+\bibitem{jr_Cchu_91}
+C.~C. Chu and J.~K. Aggarwal,
+\newblock ``{T}he interpretation of laser radar images by a knowledge-based
+  system'',
+\newblock {\em Machine Vision and Applications}, vol. 4, pp. 145--163, 1991.
+
+\bibitem{jr_Kurt_90}
+M.~J. Kurtz, P.~Mussio, and P.~G. Ossorio,
+\newblock ``{A} cognitive system for astronomical image interpretation'',
+\newblock {\em Pattern Recognition Letters}, vol. 11, pp. 507--515, 1990.
+
+\bibitem{pr_Towe_88}
+S.~Towers and R.~Baldock,
+\newblock ``{A}pplication of a knowledge-based system to the interpretation of
+  ultrasound images'',
+\newblock in {\em Ninth International Conference on Pattern Recognition}, 1988.
+
+\bibitem{jr_Robe_89}
+V.~Roberto, A.~Peron, and P.~L. Fumis,
+\newblock ``{L}ow-level processing techniques in geophysical image
+  interpretation'',
+\newblock {\em Pattern Recognition Letters}, vol. 10, pp. 111--122, 1989.
+
+\bibitem{pr_Sugi_88}
+K.~Sugimoto, M.~Takahashi, and F.~Tomita,
+\newblock ``{S}cene interpretation based on boundary representations of stereo
+  images'',
+\newblock in {\em Ninth International Conference on Pattern Recognition}, 1988.
+
+\bibitem{jr_Pid_90}
+T.~P. Pridmore, J.~E.~W. Mayhew, and J.~P. Frisby,
+\newblock ``{E}xploiting image-plane data in the interpretation of edge-based
+  binocular disparity'',
+\newblock {\em Computer Vision, Graphics, and Image Processing}, vol. 52, pp.
+  1--25, 1990.
+
+\bibitem{jr_Guil_85}
+Y.~Le Guilloux,
+\newblock ``{A}utomatic computation of motion in an image sequence, interest
+  for interpretation'',
+\newblock {\em Signal Processing}, vol. 8, pp. 377--, 1985.
+
+\bibitem{jr_Mila_91}
+A.~Milano, F.~Perotti, S.~B. Serpico, and G.~Vernazza,
+\newblock ``{A} system for the interpretation of 3-{D} moving scenes from 2-{D}
+  image sequences'',
+\newblock {\em International Journal of Pattern Recognition and Artificial
+  Intelligence}, pp. 765--796, 1991.
+
+\bibitem{pr_Tsui_88}
+S.~Tsuji,
+\newblock ``{C}ontinuous image interpretation by a moving viewer'',
+\newblock in {\em Ninth International Conference on Pattern Recognition}, 1988,
+  pp. 514--519.
+
+\bibitem{jr_Binf_82}
+T.~Binford,
+\newblock ``{S}urvey of model based image analysis systems '',
+\newblock {\em Int. J. Robotics Res.}, pp. 587--633, 1982.
+
+\bibitem{pr_Smyr_88}
+C.~Smyrniotis and K.~Dutta,
+\newblock ``{A} knowledge-based system for recognizing man-made objects in
+  aerial images'',
+\newblock in {\em International Conference on Computer Vision and Pattern
+  Recognition}, 1988, pp. 111--117.
+
+\bibitem{pr_Ball_xx}
+D.~H. Ballard, C.~M. Brown, and J.~A. Feldman,
+\newblock ``{A}n approach to knowledge-directed scene analysis'',
+\newblock in {\em CVS}, 19.., pp. 271--281.
+
+\bibitem{pr_Miti_88}
+A.~Mitiche, A.~Mansouri, and C.~Meubus,
+\newblock ``{A} knowledge based image interpretation system'',
+\newblock in {\em International Conference on Pattern Recognition}, 1988.
+
+\bibitem{jr_Cchu_92}
+C.~C. Chu and J.~K. Aggarwal,
+\newblock ``{I}mage interpretation using multiple sensing modalities'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, vol.
+  14, pp. 840--847, 1992.
+
+\bibitem{jr_Robe_93}
+V.~Roberto,
+\newblock ``{K}nowledge-based understanding of signals: An introduction'',
+\newblock {\em Signal Processing}, vol. 32, pp. 29--56, 1993.
+
+\bibitem{jr_Puli_93}
+P.~Puliti and G.~Tascini,
+\newblock ``{K}nowledge-based approach to image interpretation'',
+\newblock {\em Image and Vision Computing}, vol. 11, pp. 122--128, 1993.
+
+\bibitem{jr_Smol_94}
+J.~Smolle, R.~Hofmann-Wellenhof, and H.~Kerl,
+\newblock ``{P}attern interpretation by cellular automata ({PICA})- evaluation
+  of tumour cell adhesion in human melanomas'',
+\newblock {\em Analytical Cellular Pathology}, vol. 7, pp. 91--106, 1994.
+
+\bibitem{jr_Evan_93}
+R.~Evangelista and O.~Salvetti,
+\newblock ``{A} morphometric and densitometric approach to image
+  interpretation'',
+\newblock {\em Pattern Recognition and Image Analysis}, vol. 3, pp. 305--310,
+  1993.
+
+\bibitem{jr_Dick_91}
+W.~Dickson,
+\newblock ``{F}eature grouping in a hierarchical probabilistic network'',
+\newblock {\em Image and Vision Computing}, vol. 9, pp. 51--57, 1991.
+
+\bibitem{jr_Jens_92}
+F.~V. Jensen, H.~I. Christensen, and J.~Nielsen,
+\newblock ``{B}ayesian methods for interpretation and control in multi-agent
+  vision systems'',
+\newblock {\em Applications of Artificial Intelligence X: Machine Vision and
+  Robotics, SPIE Proceedings Series}, 1992.
+
+\bibitem{pr_Bish_92}
+W.~B. Mann and T.~O. Binford,
+\newblock ``{A}n example of 3-{D} interpretation of images using {B}ayesian
+  networks'',
+\newblock in {\em Proceedings DARPA Image Understanding Workshop,}, 1992.
+
+\bibitem{jr_Kuma_96}
+V.~P. Kumar and U.~B. Desai,
+\newblock ``{I}mage interpretation using {B}ayesian networks'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  74--77, 1996.
+
+\bibitem{jr_Wilh_92}
+W.~Wilhelmi,
+\newblock ``{I}mage interpretation by algebraic topology'',
+\newblock {\em Pattern Recognition and Image Analysis}, vol. 2, pp. 126--134,
+  1992.
+
+\bibitem{jr_Mode_92}
+J.~A. Modestino and J.~Zhang,
+\newblock ``{A} {M}arkov random field model based approach to image
+  interpretation'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  606--615, 1992.
+
+\bibitem{jr_Kim_93b}
+I.~Y. Kim and H.~S. Yang,
+\newblock `` {E}fficient image labeling based on {M}arkov random field and
+  error backpropagation network'',
+\newblock {\em Pattern Recog.}, vol. 26, pp. 1695--1707, 1993.
+
+\bibitem{jr_Tene_77}
+J.~M. Tenenbaum and H.~G. Barrow,
+\newblock ``{E}xperiments in interpretaion-guided segmentation'',
+\newblock {\em Artificial Intelligence}, pp. 241--274, 1977.
+
+\bibitem{bk_Ruze_90}
+R.~Bajcsy, F.~Solina, and A.~Gupta,
+\newblock {\em ``{S}egmentation versus Object Representation--Are They
+  Separable?''},
+\newblock Springer-Verlag, 1990.
+
+\bibitem{jr_Sonk_93}
+M.~Sonka, S.~K. Tadikonda, and S.~M. Collins,
+\newblock ``{G}enetic algorithms in hypothesize-and-verify image
+  interpretation'',
+\newblock {\em Proc. SPIE - Sensor Fusion VI}, pp. 236--247, 1993.
+
+\bibitem{jr_Mall_89}
+S.~G. Mallat,
+\newblock ``{M}ultifrequency channel decompositions of images and wavelet
+  models'',
+\newblock {\em IEEE Tran. Acoustics, Speech and Signal Processing}, vol. 37,
+  pp. 2091--2110, 1989.
+
+\bibitem{bk_Russ_94}
+John~C. Russ,
+\newblock {\em ``{T}he image processing handbook''},
+\newblock CRC Press, Boca Raton, Florida, 1994.
+
+\bibitem{tr_Suni_96}
+K.~Sunil Kumar and U.~B. Desai,
+\newblock ``{J}oint segmentation and image interpretation'',
+\newblock Tech. {R}ep. SPANN.96.2, Indian Institute of Technology - Bombay, May
+  1996, (http://144.16.100.100/{~}nil/doc/jseginter/tr.html).
+
+\bibitem{jr_Kim_95}
+I.~Y. Kim and H.~S. Yang,
+\newblock ``{A}n integrated approach for scene understanding based on {M}arkov
+  random field'',
+\newblock {\em Pattern Recog.}, pp. 1887--1897, 1995.
+
+\bibitem{jr_Kim_93a}
+M.~G. Kim, I.~Distein, and L.~Shaw,
+\newblock ``{A} prototype filter design approach to pyramid generation'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, vol.
+  15, pp. 1233--1240, 1993.
+
+\bibitem{bk_Pele_87}
+S.~Peleg, O.~Federbusch, and R.~Hummel,
+\newblock ``{C}ustom made pyramids'',
+\newblock in {\em ``{P}arallel Computer vision''}, Leonard Uhr, Ed., pp.
+  125--146. Academic Press, 1987.
+
+\bibitem{jr_Van_92}
+D.~C.~Van Essen, C.~H. Anderson, and D.~J. Felleman,
+\newblock ``{I}nformation processing in the primate visual system: an
+  integrated systems perspective'',
+\newblock {\em Science}, vol. 255, pp. 419--423, 1992.
+
+\bibitem{bk_Laks_93}
+S.~Lakshmanan and H.~Derin,
+\newblock ``{G}aussian {MRF} at multiple resolutions'',
+\newblock in {\em ``{M}arkov Random Fields - theory and applications''},
+  R.~Chellappa and A.~Jain, Eds., chapter~6, pp. 131--158. Academic Press, San
+  Diego, 1993.
+
+\bibitem{pr_Nand_94}
+P.~K. Nanda, U.~B. Desai, and P.~G. Poonacha,
+\newblock ``{A} homotopy continuation method for parameter estimation in {MRF}
+  models and image restoration'',
+\newblock in {\em International Symposium on Circuits and Systems}, 1994.
+
+\bibitem{bk_Clar_90}
+J.~J. Clark and A.~L. Yullie,
+\newblock {\em ``{D}ata fusion for sensory information processing systems''},
+\newblock Kluwer Academics Publishers, 1990.
+
+\bibitem{jr_Gamb_89}
+E.~B. Gamble, D.~Geiger, T.~A. Poggio, and D.~Weinshall,
+\newblock ``{I}ntegration of vision modules and labeling of surface
+  discontinuities'',
+\newblock {\em IEEE Tran. on Systems Man and Cybernetics}, pp. 1576--1581,
+  1989.
+
+\bibitem{jr_Gema_84}
+S.~Geman and D.~Geman,
+\newblock ``{S}tochastic relaxation, {G}ibbs distribution, and {B}ayesian
+  restoration of images'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  721--741, 1984.
+
+\bibitem{pr_Suni_95}
+K.~Sunil Kumar and U.~B. Desai,
+\newblock ``{A} multiresolution approach to integrated optical flow
+  computation'',
+\newblock in {\em International Conference on Image Processing and its
+  Applications}, 1995.
+
+\end{thebibliography}

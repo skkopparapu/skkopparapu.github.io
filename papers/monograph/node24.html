@@ -1,0 +1,653 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Wavelet Pyramid</TITLE>
+<META NAME="description" CONTENT="Wavelet Pyramid">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node22.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html507"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html503"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html499"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html505"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html508"
+  HREF="node25.html">Where to Use Multiresolution?</A>
+<B>Up:</B> <A NAME="tex2html504"
+  HREF="node22.html">Multiresolution</A>
+<B> Previous:</B> <A NAME="tex2html500"
+  HREF="node23.html">Gaussian and Laplacian Pyramid</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00532000000000000000"></A>
+<A NAME="sec:wave_pyramid"></A>
+<BR>
+Wavelet Pyramid
+</H2>
+
+<P>
+Multiresolution approach using wavelets is an efficient and effective way
+of representing datawavelet pyramid.  According to Mallat, a primary
+advantage of the multiresolution approach using wavelets is its spatial
+orientation selectivity [<A
+ HREF="node80.html#jr_Mall_89">94</A>]. 
+A disadvantage of Gaussian pyramid
+[<A
+ HREF="node80.html#jr_Burt_83">95</A>], which is overcome by the wavlets is that the data
+at separate levels are correlated, where as in the wavelet 
+domainwavelet domain the data
+at each resolution is uncorrelated, this reflects in the form of increased
+data size in the Gaussian pyramid compared to the wavelet pyramid. 
+
+<P>
+Fourier transformFourier transform is a tool widely used for many
+scientific purposes, but it is well suited only to the study of stationary
+signals where all frequencies have an infinite coherence time. The Fourier
+analysis brings only global information about the signal which is not
+sufficient, especially when we need to detect compact patterns.
+Gabor[<A
+ HREF="node80.html#jr_Gabo_46">97</A>] introduced a local Fourier analysis,
+taking into account a sliding window, leading to a time-frequency
+analysis. This method is only applicable to situations where the coherence
+time is independent of the frequency. This is the case for instance for
+singing signals which have their coherence time determined by the geometry
+of the oral cavity. Morlet introduced the wavelet transform
+in order to have a coherence time proportional to the period
+[<A
+ HREF="node80.html#bk_Meye_89">98</A>]. 
+
+<P>
+Wavelets are functions, suited for the study of non-stationary
+non-stationary signal
+continuous signals. They form the kernel of the wavelet transform, and
+enable  mapping the signals from the time-domain into the
+time-frequency domain.  
+The advantage of using wavelets is that at different 
+times and at
+different frequencies, a different resolution can be obtained. The wavelet
+transform provides a unified framework in decomposing the signal into a
+set of basis functions by varying the resolution  and 
+in a time frequency plane. The basis functions are called wavelets and are
+obtained from a single prototype wavelet  called the <EM>mother
+waveletmother wavelet</EM>.  For any function to be a mother wavelet, it must
+satisfy the admissibility criterionadmissibility criterion 
+[<A
+ HREF="node80.html#bk_Daub_92">96</A>]. The 
+wavelet transform of a signal <!-- MATH
+ $x(t) \in {\cal L}{^2}(I\!\!R)$
+ -->
+, denoted by 
+, is 
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X_{WT}^a(b) &= &\mid a \mid ^{-\frac {1}{2}} \int_{-\infty}^{\infty} 
+x(t) \psi^\ast \left (\frac {t-b}{a} \right ) dt \\\nonumber
+             &= & \left < x(t), \mid a \mid ^{-\frac {1}{2}} \psi 
+\left ( \frac {t-b}{a} \right ) \right >
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(14)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where, <!-- MATH
+ $\left <\cdot,\cdot \right >$
+ -->
+ is the inner product,
+ is the wavelet and <!-- MATH
+ $a, b \in I\!\!R$
+ -->
+. Here,  is the dilation
+parameter which determines the scale and  is the translation parameter. 
+The signal  can be reconstructed from its wavelet transform
+ by an inverse transformation,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+x(t) = \frac {1}{C_\psi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
+X_{WT}^a(b) \psi 
+\left (\frac {t-b}{a} \right ) \mid a \mid ^{-\frac {1}{2}} \frac {da db} 
+{a^2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(15)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where,  is a constant that satisfies the admissibility 
+criterion:
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C_\psi = \int_{-\infty}^{\infty} \frac{\mid \psi(f) \mid 
+^2}{\mid f \mid} df < \infty
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The discrete wavelet transform (DWT)discrete wavelet 
+transform is defined as,
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+X_{WT}^m(n) & = &
+a_0^{-\frac {m}{2}} \int_{-\infty}^{\infty} \psi(a_0^{-m} t - nb_0) x(t) 
+dt  \nonumber \\
+&=& \left < x(t), \psi_{m,n}(t) \right >\nonumber \\
+& = & d_{m,n}
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where <!-- MATH
+ $m, n \in I\!\! I$
+ -->
+,  and  and  are constants such 
+that  ,  . In the rest of this section we assume 
+ (dyadic wavelet) and .
+ The discretization on dyadic grid initiates the idea for
+multiresolution analysis. 
+The wavelet transform can be viewed as constant
+ filtering with a set of bandpass filters followed by subsample by a
+factor of two. 
+
+<P>
+Assume <!-- MATH
+ $\{ \psi_{m, n} \}$
+ -->
+ to constitute an <EM>orthonormal basis</EM> in
+<!-- MATH
+ ${\cal L}{^2} (I\!\!R)$
+ -->
+. Then,
+ <BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x(t) &=& \sum_m \sum_n \left <x(t), \psi_{m, n}(t) \right > \psi_{m, n}(t) \nonumber \\
+     &=& \sum_m \sum_n d_{m, n} \psi_{m, n}(t)
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The signal  at a fixed resolution , can be obtained by 
+summing  over all translations , 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x^m(t) = \sum_n d_{m, n} \psi_{m,n}(t).
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Hence,  at  resolution is obtained by linear 
+combination of the spanning set <!-- MATH
+ $\{\psi_{m,n}\}_{n=-\infty}^{\infty}$
+ -->
+. 
+Let,  define the space spanned by <!-- MATH
+ $\{ \psi_{m, n}
+\}_{n=-\infty}^{\infty}$
+ -->
+. Hence, <!-- MATH
+ $x^m(t) \in W_m$
+ -->
+. It can be shown that the
+signal  at  resolution is orthogonal to the signal  
+at the  resolution. Therefore, we can write, 
+ <BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+{\cal L}{^2}(I\!\!R) &=& \cdots \oplus W_{-1} \oplus W_{0} \oplus W_{1} 
+ \oplus W_{2} \oplus \cdots \nonumber \\
+ x(t) &=& \cdots +x^{-1}(t) + x^0(t) + x^1(t) + x^2(t) + \cdots
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+where,  represents the direct sum. Now, let , the space 
+spanned by <!-- MATH
+ $\left \{ \phi_{m,k} \right \}_k$
+ -->
+ be defined as <!-- MATH
+ $\cdots \oplus 
+W_{m-2} \oplus 
+W_{m-1}$
+ -->
+, then it can be shown that  have the nested structure 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\cdots \subset V_{-2} \subset V_{-1} \subset
+V_0 \subset V_{1} \subset V_{2} \subset \cdots
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and <!-- MATH
+ $V_{m+1} = V_m \oplus W_m$
+ -->
+. 
+
+<P>
+Since  contains the details (variation of the signal), a given
+resolution can be obtained by adding the details.  This 
+is the basis for the construction of multiresolution signals using the 
+wavelet transform.
+
+<P>
+In practice, wavelet decomposition of the signal at various resolutions is
+implemented using sub-band filtering [<A
+ HREF="node80.html#bk_Vaid_93">99</A>]. The low pass, 
+subsamples approximation
+of the signal  is obtained by passing the signal through a low pass
+filter, , followed by  down-sampling by a factor of <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img147.gif"
+ ALT="$2$">, the detailed
+or the difference image is obtained by passing the signal through a
+high pass filter, , and then down-sampling by a factor of <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img147.gif"
+ ALT="$2$">. 
+In other
+words, if  is an ideal half-band low pass filter, then an ideal
+half-band high pass filter  will lead to a perfect representation of
+the original signal into two subsamples versions. 
+
+<P>
+Suppose  and the above mentioned ladder of spaces exist,
+then we have <!-- MATH
+ $V_0 = V_{-1} \oplus W_{-1}$
+ -->
+, where ,  and
+ are spanned by <!-- MATH
+ $\{ \phi_{0,k}\}_k$
+ -->
+, <!-- MATH
+ $\{ \phi_{-1,k}\}_k$
+ -->
+ and 
+<!-- MATH
+ $\{ \psi_{-1, k}\}_k$
+ -->
+ respectively. 
+Then, we can represent  in terms of  and 
+ which are one level coarse 
+ <BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x(t) &=& x^{V_{-1}}(t) + x^{W_{-1}}(t)   \nonumber \\
+     &=& x^{V_{-J}}(t) + x^{W_{-J}}(t) + x^{W_{-J+1}}(t) + \cdots + 
+ x^{W_{-1}}(t)
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where,
+ <BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x^{V_{-J}}(t) 
+ &=& \sum_k \left < x(t), \phi_{-J,k} \right > \phi_{-J,k}
+ = \sum_k c_{-J, k} \phi_{-J,k}  \nonumber \\
+ x^{W_{-J}}(t)
+ &=& \sum_k \left < x(t), \psi_{-J,k} \right >  \psi_{-J,k}
+ = \sum_k d_{-J, k}  \psi_{-J,k}
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Thus, the problem of multiresolution 
+decompositionmultiresolution decomposition in essence is to
+compute , , , <IMG
+ WIDTH="44" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.gif"
+ ALT="$\cdots$"> ,  
+which are the wavelet coefficientswavelet coefficients. One can
+show that [<A
+ HREF="node80.html#jr_Mall_89">94</A>] 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+c_{-J, k}  =  2^ \frac{1}{2} \sum_m l^\ast_{m-2k} c_{-J+1, m},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:intro_lp"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(21)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+d_{-J, k} =  2^ \frac{1}{2} \sum_m h^\ast_{m-2k} c_{-J+1, m},
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:intro_hp"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(22)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where,  and  are the interscale basis coefficients and
+can be looked upon as a low pass (<IMG
+ WIDTH="25" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img118.gif"
+ ALT="$L$"> in Figure <A HREF="node24.html#fig:wt_construct">2.5</A>)
+and high pass filter (<IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> in Figure <A HREF="node24.html#fig:wt_construct">2.5</A>) respectively.
+Hence, <!-- MATH
+ $\{c_{-J+1, m}\}_{\forall m}$
+ -->
+ represents a signal at resolution
+, namely,  and similarly <!-- MATH
+ $\{c_{-J, k}\}_{\forall k}$
+ -->
+represents . Hence (<A HREF="node24.html#eq:intro_lp">2.26</A>) implies that the coarse
+signal  at resolution  is obtained by low pass filter
+() the fine resolution image or signal (). 
+
+<P>
+The general idea behind wavelets as applied to image processing or computer
+vision is simply
+to look at the wavelet coefficientswavelet coefficient as an
+alternative representation of the image. So, instead of performing
+operations on the pixels we work with the wavelet coefficients.  This
+gives us an opportunity to take advantage of their multiresolution
+structure and their time-frequency localization. In practise, wavelet
+pyramidwavelet pyramid is constructed, using a set of quadrature
+mirror filters <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img118.gif"
+ ALT="$L$"> and <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> corresponding to the low pass and high pass
+filtering respectively. Initially the quadrature mirror filters act along
+the rows of the image and then again on the columns of the resulting image.
+This results in the original image being divided into four quads as shown
+in Figure <A HREF="node24.html#fig:wt_construct">2.5</A>. 
+ 
+<DIV ALIGN="CENTER"><A NAME="fig:wt_construct"></A><A NAME="2985"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.5:</STRONG>
+Procedure for obtaining multiresolution images using the wavelet
+transform; <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img118.gif"
+ ALT="$L$"> is the low pass filter and <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> is the high pass filter, <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img118.gif"
+ ALT="$L$">
+and <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> form a quadrature mirror pair.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+Figure <A HREF="node24.html#fig:wt_transform">2.6</A>(a) shows a <!-- MATH
+ $256 \times 256$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$256 \times 256$"> image and 
+Figure <A HREF="node24.html#fig:wt_transform">2.6</A>(b) is the wavelet transform of 
+<A HREF="node24.html#fig:wt_transform">2.6</A>(a) generated using the procedure depicted in 
+Figure <A HREF="node24.html#fig:wt_construct">2.5</A> with Daubechies 4 tap filter [<A
+ HREF="node80.html#bk_Daub_92">96</A>].
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:wt_transform"></A><A NAME="2997"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.6:</STRONG>
+(a) Image of size <!-- MATH
+ $256 \times 256$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$256 \times 256$"> (Pentagon) and (b) its
+wavelet transform (using the Daubechies 4 tap filter).</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html509"
+  HREF="node25.html">Where to Use Multiresolution?</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<A NAME="tex2html507"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html503"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html499"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html505"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html508"
+  HREF="node25.html">Where to Use Multiresolution?</A>
+<B>Up:</B> <A NAME="tex2html504"
+  HREF="node22.html">Multiresolution</A>
+<B> Previous:</B> <A NAME="tex2html500"
+  HREF="node23.html">Gaussian and Laplacian Pyramid</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

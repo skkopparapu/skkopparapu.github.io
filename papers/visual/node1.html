@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.1 release (March 30, 1999)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="visual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.1 release">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="visual.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="visual.html">
+<LINK REL="up" HREF="visual.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html29"
+ HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html27"
+ HREF="visual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html21"
+ HREF="visual.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html30"
+ HREF="node2.html">Background</A>
+<B>Up:</B> <A NAME="tex2html28"
+ HREF="visual.html">Formant Tracking in Speech</A>
+<B> Previous:</B> <A NAME="tex2html22"
+ HREF="visual.html">Formant Tracking in Speech</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+The formant frequencies in a speech signal and their variation over
+time, is one of the  frequently used 
+feature in many speech recognition systems.  A
+number of methods 
+proposed in literature, 
+attempt formant
+tracking using  different signal processing methods. For example,
+[<A
+ HREF="node8.html#atal">1</A>][<A
+ HREF="node8.html#flanagan">3</A>][<A
+ HREF="node8.html#schafer">6</A>]  first perform spectral analysis  on
+the speech waveform and then use a peak detection technique to extract
+formants. These methods which are based on 
+peak picking are very sensitive to the spectral peaks
+and hence perform poorly in the presence of 
+noise, because in the noisy regions of the speech signal, 
+the formant spectral peaks are masked by 
+the higher noise peaks. Sun[<A
+ HREF="node8.html#sun">7</A>] propose
+a curve fitting approach, based on mixture spline models,
+ to estimate and track speech formants.
+Hidden Markov models (HMMs) and
+vector quantization (VQ) [<A
+ HREF="node8.html#kopec">4</A>] have also been proposed in the
+literature to track formants.  The advantage of using HMMs is the ability of
+the HMM to work robustly in the 
+presence of noise, 
+but these approaches are computationally
+expensive and disadvantageous.  In addition, 
+HMM models need retraining for different speech corpora
+and hence cannot be adapted dynamically to varying speech inputs.
+
+<P>
+In this paper, we propose a novel 
+formant tracking technique based on  simple yet efficient image processing
+techniques.
+We use the  <EM> visual cues</EM> present in the 
+ spectrogram of a speech signal
+to track formants. The motivation for using visual cues  to track formants 
+comes from the
+observation that humans in general are able to <EM> look</EM>
+ at the spectrogram of a speech signal and identify
+the formants, even in the transition regions between two vowels in a speech
+signal where the formants are not very strong. In contrast, almost all the 
+traditional formant tracking methods based on energy calculations tend to
+make tracking errors in such regions. 
+So, by mimicking the way a human would pick out
+formants in a spectrogram, we can hope to do better than other methods.
+
+<P>
+We propose a formant tracking technique based on 
+simple yet effective image processing techniques. Our technique
+does not rely on constraints or rules derived from knowledge about the
+speech signal itself as in, for example, HMM based methods[<A
+ HREF="node8.html#kopec">4</A>].
+
+<P>
+<HR>
+<A NAME="tex2html29"
+ HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html27"
+ HREF="visual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html21"
+ HREF="visual.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html30"
+ HREF="node2.html">Background</A>
+<B>Up:</B> <A NAME="tex2html28"
+ HREF="visual.html">Formant Tracking in Speech</A>
+<B> Previous:</B> <A NAME="tex2html22"
+ HREF="visual.html">Formant Tracking in Speech</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Sunil Kopparapu <BR>
+2002-12-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

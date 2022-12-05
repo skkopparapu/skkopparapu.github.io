@@ -1,0 +1,1002 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>Chapter 2 of the thesis - Modular Integration ... 
+Multiresolution Framework</TITLE> </HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="No Title">
+<meta name="keywords" value="Chap">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+<H1><A NAME=SECTION00100000000000000000>Background</A></H1>
+<P>
+<A NAME=chapbackground>&#160;</A>
+
+<em>Knowledge is of two kinds. We know a subject ourselves or we know
+where we can find information upon it</em> - Samuel Johnson
+<P>
+
+  In this chapter we present some material and concepts that
+are used on and off in the rest of the thesis. In Section
+<A HREF="Chap.html#secintegration">1.1</A> we discuss modular integration, where we give
+details about strong and weak modular integration. In the following
+section (Section <A HREF="Chap.html#secintro_multi">1.2</A>) a discussion on multiresolution is
+initiated and details regarding the construction of the two popular
+pyramids, Gaussian pyramid (Section <A HREF="Chap.html#secgauss_pyramid">1.2.1</A>) and wavelet
+pyramid (Section <A HREF="Chap.html#secwave_pyramid">1.2.2</A>) are given. In Section
+<A HREF="Chap.html#secmrf">1.3</A> we review Markov random fields in brief and finally we talk
+about the Simulated annealing algorithm in Section <A HREF="Chap.html#secintro_sa">1.4</A> and 
+give the pseudo code in Section <A HREF="Chap.html#secintro_pseudo">1.4.1</A>.
+<P>
+<H1><A NAME=SECTION00110000000000000000> Modular Integration</A></H1>
+<A NAME=secintegration>&#160;</A>
+A<A NAME=178>&#160;</A> computer vision task can be broken down into 
+individual modules (Figure
+<A HREF="#figint_mult"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> along the <b>y</b>- axis) which perform one specific task,
+such that the input after traversing through all these modules produces
+the required output.  This process of various modules getting together in
+order to solve a given problem is termed as intra modular integration or
+just modular integration.  This concept is called 
+reductionism<A NAME=180>&#160;</A> in the AI
+literature and has been in use to solve large problems. For example, in
+computer vision, the task of disparity estimation<A NAME=181>&#160;</A> from a stereo pair of
+images can be thought of as being the combined outcome of three smaller
+modules, namely, (i) the feature extraction module, (ii) the matching
+module and (iii) the interpolation module. In case of the high level
+vision, the task of image interpretation can be thought of as the combined or
+the net effect of the segmentation and the interpretation modules. 
+Modular integration can be classified into
+two classes (i) weakly coupled<A NAME=182>&#160;</A> 
+modular integration and (ii) strongly coupled modular<A NAME=183>&#160;</A>
+integration [<A HREF="Chap.html#bk_Clar_90">1</A>]. These two classes are differentiated by the
+manner in which information, in the form of constraints on the solution,
+are combined to obtain the solution of the vision task. In weakly coupled
+modular integration, the data from one module is combined with the
+functioning of the other modules in a way such that it does not affect
+the operation of any other module. In strongly coupled modular
+integration, the output of one module is allowed to interact with other
+modules and affect their progress. Typically this control of a module <b>A</b> by
+other modules is achieved by altering the constraints or the assumptions 
+of the given module <b>A</b> based on the outputs of other modules.
+The weak and strong modular interaction is shown in Figure
+<A HREF="Chap.html#figweak_strong">1.1</A>.
+<P>
+As seen in Figure <A HREF="Chap.html#figweak_strong">1.1</A>, each module can be thought of as
+being made up of three nodes: the input, the constraint and the output
+node. We illustrate the difference between strong and weak integration by
+assuming two modules <IMG  ALIGN=MIDDLE ALT="" SRC="img7.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img8.gif"> as shown in Figure
+<A HREF="Chap.html#figweak_strong">1.1</A> and note that this discussion can be generalized to
+take care of any number of modules. Let <IMG  ALIGN=MIDDLE ALT="" SRC="img9.gif"> be the output, <IMG  ALIGN=MIDDLE ALT="" SRC="img10.gif"> the
+input and <IMG  ALIGN=MIDDLE ALT="" SRC="img11.gif"> the constraint of the <IMG  ALIGN=BOTTOM ALT="" SRC="img12.gif"> module. <IMG  ALIGN=MIDDLE ALT="" SRC="img13.gif"> represents
+the imposed constraint on the module <b>j</b> due to module <b>i</b> and <IMG  ALIGN=MIDDLE ALT="" SRC="img14.gif">
+represents the operation of module <b>i</b>. Then, the weak and the strong
+modular integration can be expressed as:  
+ <OL><LI> Weak modular
+integration (Figure <A HREF="Chap.html#figweak_strong">1.1</A>(a))
+ <UL><LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img15.gif">
+and  <IMG  ALIGN=MIDDLE ALT="" SRC="img16.gif"></UL>
+<P>
+ <LI> Strong modular integration
+(Figure <A HREF="Chap.html#figweak_strong">1.1</A>(b))
+ <UL><LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img17.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img18.gif"></UL></OL>
+<P>
+Modular integration can also be classified as feedforward and
+feedback<A NAME=194>&#160;</A>. In feedforward type of
+modular integration, the data travels from one module to the next without
+the data traversing back to the previous module. For example in case of
+disparity estimation from stereo, modular integration would be
+feedforward, when the data is passed from the feature extraction module to
+the matching module and finally to the interpolation module in a
+sequential manner. Here, there is <em> no</em> transfer of data from any
+module to the previously traversed module. For example, there is no
+transfer of data from either the interpolation module to the feature
+extraction module or from the interpolation module to the matching module
+(see Figure <A HREF="#STEREO_PROBLEM"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>). 
+In case of modular 
+integration
+with feedback the data could move to and fro from one module to another.
+For example, in case of disparity estimation using stereo if we allowed 
+the transfer of data from the matching module to the feature extraction 
+module or from interpolation module to the matching module, we would be 
+using modular integration with feedback. 
+ In the generalized framework that we propose for solving computer vision 
+tasks (Chapter <A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) we
+use strong modular integration<A NAME=198>&#160;</A> with feedback.
+<P>
+<P><A NAME=201>&#160;</A><A NAME=figweak_strong>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img19.gif">
+<BR><STRONG>Figure 1.1:</STRONG> Modular integration (a) weak integration and (b) strong 
+integration.<BR>
+<P>
+<P>
+In brief, in modular integration, the various modules involved with a
+common objective, work synergistically, such that they help themselves by
+helping others perform better, with the final aim of improving the overall
+solution for which all these modules work together.  This means that the
+modules which have the same objective work as a team rather than as an
+individual. The reason which motivates one to go in for modular
+integration is:
+<P>
+<OL><LI> Results obtained from experiments conducted on the visual systems of
+primates and experiments conducted in psychophysics<A NAME=205>&#160;</A>
+and physiology of vision [<A HREF="Chap.html#jr_Mall_89">2</A>] are used as factors to motivate 
+the vision tasks,
+because HVS is undoubtedly the best vision system and an excellent image
+processor and has a built in robustness in the form of the mistakes made
+by one sensory module being corrected by another module. This translates
+into the fact that the modules that are involved, make assumptions that
+are not necessarily true all the time. Also, it is found through
+experimentation that the HVS indeed works on the principle of modular
+integration [<A HREF="Chap.html#jr_Van_92">3</A>], and
+<P>
+<LI> To take care of the fact that almost all the computer vision
+problems are ill-posed in the sense of Hadamard<A NAME=208>&#160;</A>
+[<A HREF="Chap.html#jr_Bert_88">4</A>]. A problem is ill-posed<A NAME=210>&#160;</A> in the sense of
+Hadamard, if any one of the following is true (i) solution is not unique,
+(ii) a small error in the input produces a large error in the output or
+(iii) the output does not continuously depend on the input.  Various
+modules involved in any given vision problem when working all by
+themselves cannot come out with the required solution because of lack of
+sufficient a priori constraints, this makes the problem, 
+ill-posed in the sense of Hadamard. Modular integration<A NAME=211>&#160;</A> impose constraints on the vision task. The constraints
+emanating due to the interaction among the modules [<A HREF="Chap.html#bk_Clar_90">1</A>].
+<P>
+</OL>
+<P>
+  In this thesis, through examples we demonstrate how modular integration
+improves the final solution, specifically we show this for color image
+restoration, disparity estimation from stereo images and image
+interpretation. In the vision task of disparity estimation using stereo
+images, the feature extractor module, the matching module and the
+interpolation module work in an integrated manner to produce better
+disparity estimates. It is also shown that the optical flow estimates are
+better when the modules involved in estimating the optical
+flow<A NAME=214>&#160;</A>, are integrated [<A HREF="Chap.html#pr_Suni_95">5</A>].  Modular
+integration has been used extensively in image processing and computer
+vision literature. Various paradigms have been used to integrate modules,
+for example Bozma and Duncan [<A HREF="Chap.html#jr_Bozm_94">6</A>] use a game-theoretic
+approach to integrate vision modules, Clement and Thonnat
+[<A HREF="Chap.html#jr_Clem_93">7</A>] use a knowledge-based approach for integration, Gamble
+et al [<A HREF="Chap.html#jr_Gamb_89">8</A>] use MRF for labeling of surface discontinuities.
+ Alominonos and Shulman [<A HREF="Chap.html#pr_Aloi_89">9</A>] propose a scheme for extension
+of Marr's paradigm to integrate vision modules and Poggio et al
+[<A HREF="Chap.html#jr_Pogg_88">10</A>] integration of vision modules in parallel. Jepson and
+Richards [<A HREF="Chap.html#jr_Jeps_92">11</A>] develop a lattice framework to integrate vision
+modules.  Clark and Yullie have describe in great detail
+the various aspects of modular integration in  [<A HREF="Chap.html#bk_Clar_90">1</A>].
+<P>
+<H1><A NAME=SECTION00120000000000000000> Multiresolution</A></H1>
+<P>
+<A NAME=secintro_multi>&#160;</A>
+ The<A NAME=225>&#160;</A> idea of looking at signals and analyzing them
+at various scales<A NAME=tex2html15 HREF="#226"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A> has received enormous attention in
+the field of computer vision. Multiresolution is a mode of efficiently and
+effectively representing the data with an objective of reducing the
+computational complexity. Multiresolution can be thought of as a data
+structure<A NAME=227>&#160;</A> which produces a successive condensed
+representation of the information in a given image.  The data at each
+resolution is the output of a bandpass filter<A NAME=228>&#160;</A> with
+some center frequency (usually the center frequency of the filters are
+octave apart). 
+ The most obvious advantage of this type of representation is that they
+provide a possibility for reducing the computational cost of various image
+operations. The reduction in the computational cost is due to the fact
+that when we operate in a multiresolution framework, we operate on a
+data from the coarse to the fine resolution.
+ The result of going through such a procedure is that, at the finest
+resolution we start off with a fairly good guess of the solution, the
+guess having come from the immediate coarse resolution and hence we need
+less time to reach the solution. One does indeed need to start with an
+arbitrary guess at the coarsest resolution, but at that resolution the
+amount of data one is operating on is many orders of magnitude less than
+that at the finest resolution.
+<P>
+In multiresolution representation, the problem of solving the vision task
+<IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif"> is reduced to the task of solving <IMG  ALIGN=BOTTOM ALT="" SRC="img21.gif"> at each resolution. Figure
+<A HREF="#figint_mult"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> along the <b>x</b>-axis shows the multiresolution approach.
+Let, <IMG  ALIGN=BOTTOM ALT="" SRC="img22.gif"> represent the vision task at the finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img23.gif">. 
+In the multiresolution approach the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img24.gif"> is not solved
+directly, but is solved by solving the vision tasks <IMG  ALIGN=BOTTOM ALT="" SRC="img25.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img26.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img27.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img28.gif"> at coarser resolutions and 
+appropriately 
+passing the variables of interest from coarser to finer resolution.  The
+motivation to use multiresolution in vision task comes from:
+<P>
+<OL><LI> Vision tasks are usually computationally intensive and there is a 
+need to reduce its computational complexity,
+<P>
+<LI> Most of the vision tasks are motivated by the functioning of 
+HVS and the HVS uses multiresolution [<A HREF="Chap.html#bk_Scha_89">12</A>]. Experimental 
+results show that a multi-frequency channel decomposition
+seems to be taking place in the human visual cortex<A NAME=235>&#160;</A> [<A HREF="Chap.html#jr_Mall_89">2</A>]. 
+Experiments based on adaptation techniques show that at some stage in the
+HVS, the visual information in different frequency bands is processed   
+separately. Experiments also show that the retina image 
+is decomposed into several frequency bands, each having approximately the same
+bandwidth on an octave scale.
+<P>
+</OL>
+<P>
+There exists two predominant ways of constructing multiscale 
+representations<A NAME=238>&#160;</A> using
+multiscale filtering: (i) Gaussian<A NAME=239>&#160;</A> 
+and Laplacian pyramids<A NAME=240>&#160;</A>
+proposed by Burt<A NAME=241>&#160;</A> and Adelson<A NAME=242>&#160;</A> [<A HREF="Chap.html#jr_Burt_83">13</A>] 
+and (ii) the wavelet
+pyramids [<A HREF="Chap.html#jr_Mall_89">2</A>]. Gaussian pyramids are defined by smoothening 
+brightness 
+values over larger areas producing a set of low pass filtered copy
+of the original image and Laplacian pyramids are obtained by
+differentiating smoothed brightness values producing a set of bandpass
+filtered copy of the original image (see Figure 
+<A HREF="Chap.html#figgaussian_procedure">1.2</A>).
+The wavelet pyramids are constructed by low pass filtering and high pass
+filtering the image along the rows and then along the columns to produce
+four quadrants<A NAME=tex2html24 HREF="#334"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A>
+(see Figure <A HREF="Chap.html#figwt_construct">1.5</A>) such that the first quadrant is low
+pass filtered along both the rows and columns of the image, the second quadrant is low
+pass filtered along the rows and high pass filtered along the columns, the
+third quadrant is high pass filtered along the rows and low pass filtered
+along the columns and finally the fourth quadrant is high pass filtered
+along both rows and columns. The filter coefficients are determined from a
+set of four linear equations obtained as a consequence of the constraints
+placed on the coefficients of the filter [<A HREF="Chap.html#bk_Daub_92">14</A>].
+<P>
+In this thesis we use both the Gaussian pyramid by Burt and Adelson
+[<A HREF="Chap.html#jr_Burt_83">13</A>] and the wavelet pyramid<A NAME=253>&#160;</A>
+[<A HREF="Chap.html#jr_Mall_89">2</A>] for the construction of images at different resolutions. In
+fact, in color image restoration (Chapter <A HREF="#chapcolor"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) and disparity
+estimation from stereo images (Chapter <A HREF="#chapstereo"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) we use the
+Gaussian pyramid and we use the wavelet pyramid for high-level vision task
+of image interpretation (Chapter <A HREF="#chapscene"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>). We could have used 
+either the Gaussian pyramid or the wavelet pyramid throughout the 
+thesis, but the idea was to demonstrate the fact that the developed 
+framework (Chapter <A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) 
+would work irrespective of the scheme used for generating images at 
+different resolutions.
+ Nevertheless the wavelet representation<A NAME=259>&#160;</A> of
+the image is more compact in the sense, the lattice size does not
+increase. The wavelet transform of an image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img30.gif"> is again an image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img31.gif"> whereas the
+Gaussian pyramid when constructed as suggested in [<A HREF="Chap.html#jr_Burt_83">13</A>] would
+end up with a larger number of data points [<A HREF="Chap.html#jr_Mall_89">2</A>].
+<P>
+<H2><A NAME=SECTION00121000000000000000> Gaussian and Laplacian Pyramid</A></H2>
+<P>
+<A NAME=secgauss_pyramid>&#160;</A>
+<P>
+<P><A NAME=323>&#160;</A><A NAME=figgaussian_procedure>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img38.gif">
+<BR><STRONG>Figure 1.2:</STRONG> Procedure for obtaining the Gaussian
+(<IMG  ALIGN=BOTTOM ALT="" SRC="img35.gif">) and Laplacian (<IMG  ALIGN=BOTTOM ALT="" SRC="img36.gif">) pyramid images from
+<IMG  ALIGN=BOTTOM ALT="" SRC="img37.gif">.<BR>
+<P>
+<P>
+The basic approach of Burt and Adelson is depicted in Figure
+<A HREF="Chap.html#figgaussian_procedure">1.2</A>.  Let, <IMG  ALIGN=BOTTOM ALT="" SRC="img39.gif"> be the gray level image at
+resolution <b>k</b> and let <IMG  ALIGN=BOTTOM ALT="" SRC="img40.gif"> represent the image at resolution
+<IMG  ALIGN=MIDDLE ALT="" SRC="img41.gif">, which is obtained using the algorithm proposed in
+[<A HREF="Chap.html#jr_Burt_83">13</A>].  An image <IMG  ALIGN=BOTTOM ALT="" SRC="img42.gif"> at a given resolution is low pass
+filtered so that the high spatial frequencies are removed, as a result we
+can sample it at a lower rate (typically one half) and hence we have an
+image of lower resolution and one half the size of the original image in
+each dimension. This process of low pass filtering and subsampling results
+in images, which are at different resolutions. In addition, the difference
+images, <IMG  ALIGN=BOTTOM ALT="" SRC="img43.gif"> at different resolutions are obtained by upsampling the
+coarser image by a factor of <b>2</b>, interpolating it, and then subtracting
+it from the next finer resolution image.
+<P>
+A <em> suitable kernel</em> for low pass filtering is used to obtain images at
+different resolutions. If we assume a 1-D signal and the size of the
+kernel to be <b>5</b>, then as shown by Burt and Adelson [<A HREF="Chap.html#jr_Burt_83">13</A>] the
+weights of the kernel, denoted by <IMG  ALIGN=MIDDLE ALT="" SRC="img44.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img45.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img46.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img47.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img48.gif">, should satisfy the following constraints, 
+<OL><LI>
+<IMG  ALIGN=MIDDLE ALT="" SRC="img49.gif"> (Normalization<A NAME=280>&#160;</A>), <LI> 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img50.gif"> for 
+<b>i = 0,1,2</b> (Symmetry<A NAME=281>&#160;</A>) and <LI> if <IMG  ALIGN=MIDDLE ALT="" SRC="img51.gif">, then <b>a+2c=2b</b> must be satisfied (Equal 
+Contribution<A NAME=282>&#160;</A>). </OL>
+<P>
+<P><A NAME=336>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img54.gif">
+<BR><STRONG>Figure:</STRONG> <A NAME=figresolution>&#160;</A>Gaussian pyramid (<IMG  ALIGN=BOTTOM ALT="" SRC="img53.gif">) constructed using
+the procedure depicted in  Figure <A HREF="Chap.html#figgaussian_procedure">1.2</A>.<BR>
+<P>
+<P>
+  A <IMG  ALIGN=MIDDLE ALT="" SRC="img55.gif"> kernel from [<A HREF="Chap.html#jr_Burt_83">13</A>] 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img56.gif"><P>
+ with <IMG  ALIGN=BOTTOM ALT="" SRC="img57.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img58.gif"> and <IMG  ALIGN=BOTTOM ALT="" SRC="img59.gif">, can be  used to convolve
+ with the high resolution image <IMG  ALIGN=BOTTOM ALT="" SRC="img60.gif">; the convolved image
+ is then downsampled (for example, selecting every alternate pixel along each
+ row and column) to obtain the image at lower resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img61.gif">. 
+ The process of obtaining the low resolution image and the difference image is
+ depicted in Figure <A HREF="Chap.html#figgaussian_procedure">1.2</A>, where the block 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img62.gif">
+ represents convolution with the kernel <b>K</b>  and 
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img63.gif"> 
+ represents
+ downsampling<A NAME=299>&#160;</A> by 2 (namely, considering only every 
+alternate sample of 
+the signal or in other words discarding every alternate sample of the 
+signal), and 
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img64.gif"> 
+ represents upsampling<A NAME=300>&#160;</A> by <b>2</b> (namely, introducing a
+zero between every sample of the signal). Figure <A HREF="Chap.html#figresolution">1.3</A>
+depicts the Gaussian pyramid (<IMG  ALIGN=BOTTOM ALT="" SRC="img65.gif">) and Figure <A HREF="Chap.html#figdifference">1.4</A>
+depicts that Laplacian pyramid (<IMG  ALIGN=BOTTOM ALT="" SRC="img66.gif">) constructed using the 
+procedure shown in Figure <A HREF="Chap.html#figgaussian_procedure">1.2</A>. The leftmost 
+image in Figure <A HREF="Chap.html#figresolution">1.3</A> is the image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img67.gif"> at the finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img68.gif">.
+<P>
+ <P><A NAME=338>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img71.gif">
+<BR><STRONG>Figure:</STRONG> <A NAME=figdifference>&#160;</A>Laplacian pyramid <IMG  ALIGN=MIDDLE ALT="" SRC="img70.gif"> constructed 
+using procedure depicted in Figure <A HREF="Chap.html#figgaussian_procedure">1.2</A>.<BR>
+<P>
+<P>
+
+<P>
+<H2><A NAME=SECTION00122000000000000000> Wavelet Pyramid</A></H2>
+<P>
+<A NAME=secwave_pyramid>&#160;</A>
+<P>
+Multiresolution approach using wavelets is an efficient and effective way
+of representing data.  According to Mallat, a primary
+advantage of the multiresolution approach using wavelets is its spatial
+orientation selectivity [<A HREF="Chap.html#jr_Mall_89">2</A>]. Another disadvantage of Gaussian pyramid
+[<A HREF="Chap.html#jr_Burt_83">13</A>], as pointed out in [<A HREF="Chap.html#jr_Mall_89">2</A>], is that the data
+at separate levels are correlated, whereas in the wavelet 
+domain<A NAME=318>&#160;</A> the data
+at each resolution is uncorrelated, this reflects in the form of increased
+data size in the gaussian pyramid compared to the wavelet pyramid.
+<P>
+
+<P>
+Fourier transform<A NAME=345>&#160;</A> is a tool widely used for many
+scientific purposes, but it is well suited only to the study of stationary
+signals where all frequencies have an infinite coherence time. The Fourier
+analysis brings only global information about the signal which is not
+sufficient, especially when we need to detect compact patterns.
+Gabor<A NAME=346>&#160;</A> [<A HREF="Chap.html#jr_Gabo_46">15</A>] introduced a local Fourier analysis,
+taking into account a sliding window, leading to a time-frequency
+analysis. This method is only applicable to situations where the coherence
+time is independent of the frequency. This is the case for instance for
+singing signals which have their coherence time determined by the geometry
+of the oral cavity. Morlet<A NAME=348>&#160;</A> introduced the wavelet transform
+in order to have a coherence time proportional to the period
+[<A HREF="Chap.html#bk_Meye_89">16</A>].
+<P>
+Wavelets are functions, suited for the study of non-stationary
+continuous signals. They form the kernel of the wavelet transform, and
+enable  mapping the signals from the time-domain into the
+time-frequency domain.  The advantage of using wavelets is that at different 
+times and at
+different frequencies, a different resolution can be obtained. The wavelet
+transform provides a unified framework in decomposing the signal into a
+set of basis functions by varying the resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img72.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img73.gif">
+in a time frequency plane. The basis functions are called wavelets and are
+obtained from a single prototype wavelet <IMG  ALIGN=MIDDLE ALT="" SRC="img74.gif"> called the <em> mother
+wavelet<A NAME=350>&#160;</A></em>.  For any function to be a mother wavelet, it must
+satisfy the admissibility criterion<A NAME=351>&#160;</A> 
+[<A HREF="Chap.html#bk_Daub_92">14</A>]. The 
+wavelet transform of a signal <IMG  ALIGN=MIDDLE ALT="" SRC="img75.gif">, denoted by 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img76.gif">, is
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img77.gif"><P>
+<P>
+ where, <IMG  ALIGN=MIDDLE ALT="" SRC="img78.gif"> is the inner product,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img79.gif"> is the wavelet and <IMG  ALIGN=MIDDLE ALT="" SRC="img80.gif">. Here, <b>a</b> is the dilation
+parameter which determines the scale and <b>b</b> is the translation parameter. 
+ 
+ 
+The signal <IMG  ALIGN=MIDDLE ALT="" SRC="img81.gif"> can be reconstructed from its wavelet transform
+<IMG  ALIGN=MIDDLE ALT="" SRC="img82.gif"> by an inverse transformation,
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img83.gif"><P>
+<P>
+ where, <IMG  ALIGN=MIDDLE ALT="" SRC="img84.gif"> is a constant that satisfies the admissibility 
+criterion:
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img85.gif"><P>
+<P>
+ The discrete wavelet transform (DWT)<A NAME=389>&#160;</A> is defined as,
+<P>
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img86.gif"><P>
+<P>
+ where <IMG  ALIGN=MIDDLE ALT="" SRC="img87.gif">,  and <IMG  ALIGN=MIDDLE ALT="" SRC="img88.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img89.gif"> are constants such 
+that  <IMG  ALIGN=MIDDLE ALT="" SRC="img90.gif">,  <IMG  ALIGN=MIDDLE ALT="" SRC="img91.gif">. In the rest of this section we assume 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img92.gif"> (dyadic wavelet) and <IMG  ALIGN=MIDDLE ALT="" SRC="img93.gif">.
+ The discretization on dyadic grid initiates the idea for
+multiresolution analysis. The wavelet transform can be viewed as constant
+<b>Q</b> filtering with a set of bandpass filters followed by subsample by a
+factor of two.
+<P>
+Assume <IMG  ALIGN=MIDDLE ALT="" SRC="img94.gif"> to constitute an <em> orthonormal basis</em> in
+<IMG  ALIGN=MIDDLE ALT="" SRC="img95.gif">. Then,
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img96.gif"><P>
+<P>
+  The signal <IMG  ALIGN=MIDDLE ALT="" SRC="img97.gif"> at a fixed resolution <b>m</b>, can be obtained by 
+summing  over all translations <b>n</b>, 
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img98.gif"><P>
+ Hence, <IMG  ALIGN=MIDDLE ALT="" SRC="img99.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img100.gif"> resolution is obtained by linear 
+combination of the spanning set <IMG  ALIGN=MIDDLE ALT="" SRC="img101.gif">. 
+Let, <IMG  ALIGN=MIDDLE ALT="" SRC="img102.gif"> define the space spanned by <IMG  ALIGN=MIDDLE ALT="" SRC="img103.gif">. Hence, <IMG  ALIGN=MIDDLE ALT="" SRC="img104.gif">. It can be shown that the
+signal <IMG  ALIGN=MIDDLE ALT="" SRC="img105.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img106.gif"> resolution is orthogonal to the signal <IMG  ALIGN=MIDDLE ALT="" SRC="img107.gif"> 
+at the <IMG  ALIGN=BOTTOM ALT="" SRC="img108.gif"> resolution. Therefore, we can write, 
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img109.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img110.gif"> represents the direct sum. Now, let <IMG  ALIGN=MIDDLE ALT="" SRC="img111.gif">, the space 
+spanned by <IMG  ALIGN=MIDDLE ALT="" SRC="img112.gif"> be defined as <IMG  ALIGN=MIDDLE ALT="" SRC="img113.gif">, then it can be shown that <IMG  ALIGN=MIDDLE ALT="" SRC="img114.gif"> have the nested structure 
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img115.gif"><P>  
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img116.gif">.
+<P>
+Since <IMG  ALIGN=MIDDLE ALT="" SRC="img117.gif"> contains the details (variation of the signal), a given
+resolution can be obtained by adding the details.  This 
+is the basis for the construction of multiresolution signals using the 
+wavelet transform.
+<P>
+In practice, wavelet decomposition of the signal at various resolutions is
+implemented using subband filtering [<A HREF="Chap.html#bk_Vaid_93">17</A>]. The low pass, 
+subsampled approximation
+of the signal <IMG  ALIGN=MIDDLE ALT="" SRC="img118.gif"> is obtained by passing the signal through a low pass
+filter, <IMG  ALIGN=MIDDLE ALT="" SRC="img119.gif">, followed by  downsampling by a factor of 2, the detailed
+or the difference image is obtained by passing the signal through a
+high pass filter, <IMG  ALIGN=MIDDLE ALT="" SRC="img120.gif">, and then downsampling by a factor of 2. In other
+words, if <IMG  ALIGN=MIDDLE ALT="" SRC="img121.gif"> is an ideal halfband low pass filter, then an ideal
+halfband high pass filter <IMG  ALIGN=MIDDLE ALT="" SRC="img122.gif"> will lead to a perfect representation of
+the original signal into two subsampled versions.
+<P>
+Suppose <IMG  ALIGN=MIDDLE ALT="" SRC="img123.gif"> and the above mentioned ladder of spaces exist,
+then we have <IMG  ALIGN=MIDDLE ALT="" SRC="img124.gif">, where <IMG  ALIGN=MIDDLE ALT="" SRC="img125.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img126.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img127.gif"> are spanned by <IMG  ALIGN=MIDDLE ALT="" SRC="img128.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img129.gif"> and 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img130.gif"> respectively. 
+Then, we can represent <IMG  ALIGN=MIDDLE ALT="" SRC="img131.gif"> in terms of <IMG  ALIGN=MIDDLE ALT="" SRC="img132.gif"> and 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img133.gif"> which are one level coarser 
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img134.gif"><P>
+ where,
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img135.gif"><P>
+ Thus, the problem of multiresolution 
+decomposition<A NAME=468>&#160;</A> in essence is to
+compute <IMG  ALIGN=MIDDLE ALT="" SRC="img136.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img137.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img138.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img139.gif"> , <IMG  ALIGN=MIDDLE ALT="" SRC="img140.gif"> 
+which are the wavelet coefficients<A NAME=473>&#160;</A>. One can
+show that [<A HREF="Chap.html#jr_Mall_89">2</A>] 
+<P><A NAME=eqintro_lp>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img141.gif"><P>
+<P>
+and
+<P><A NAME=eqintro_hp>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img142.gif"><P>
+<P>
+ where, <IMG  ALIGN=BOTTOM ALT="" SRC="img143.gif"> and <IMG  ALIGN=BOTTOM ALT="" SRC="img144.gif"> are the interscale basis coefficients and
+can be looked upon as a low pass (<b>L</b> in Figure <A HREF="Chap.html#figwt_construct">1.5</A>)
+and high pass filter (<b>H</b> in Figure <A HREF="Chap.html#figwt_construct">1.5</A>) respectively.
+Hence, <IMG  ALIGN=MIDDLE ALT="" SRC="img145.gif"> represents a signal at resolution
+<b>-J+1</b>, namely, <IMG  ALIGN=BOTTOM ALT="" SRC="img146.gif"> and similarly <IMG  ALIGN=MIDDLE ALT="" SRC="img147.gif">
+represents <IMG  ALIGN=BOTTOM ALT="" SRC="img148.gif">. Hence (<A HREF="Chap.html#eqintro_lp">1.8</A>) implies that the coarse
+signal <IMG  ALIGN=BOTTOM ALT="" SRC="img149.gif"> at resolution <b>-J</b> is obtained by low pass filter
+(<IMG  ALIGN=BOTTOM ALT="" SRC="img150.gif">) the finer resolution image or signal (<IMG  ALIGN=BOTTOM ALT="" SRC="img151.gif">).
+<P>
+The general idea behind wavelets as applied to image processing is simply
+to look at the wavelet coefficients<A NAME=498>&#160;</A> as an
+alternative representation of the image. So, instead of performing
+operations on the pixels we work with the wavelet coefficients.  This
+gives us an opportunity to take advantage of their multiresolution
+structure and their time-frequency localization. Wavelet
+pyramid<A NAME=499>&#160;</A> is constructed, using a set of quadrature
+mirror filters <b>L</b> and <b>H</b> corresponding to the low pass and high pass
+filtering respectively. Initially the quadrature mirror filters act along
+the rows of the image and then again on the columns of the resulting image.
+This results in the original image being divided into four quads as shown
+in Figure <A HREF="Chap.html#figwt_construct">1.5</A>. 
+ <P><A NAME=503>&#160;</A><A NAME=figwt_construct>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img152.gif">
+<BR><STRONG>Figure 1.5:</STRONG> Procedure for obtaining multiresolution images using the wavelet
+transform; <b>L</b> is the low pass filter and <b>H</b> is the high pass filter, <b>L</b>
+and <b>H</b> form a quadrature mirror pair.<BR>
+<P>
+Figure <A HREF="Chap.html#figwt_transform">1.6</A>(a) shows a <IMG  ALIGN=MIDDLE ALT="" SRC="img153.gif"> image and 
+Figure <A HREF="Chap.html#figwt_transform">1.6</A>(b) is the wavelet transform of 
+<A HREF="Chap.html#figwt_transform">1.6</A>(a) generated using the procedure depicted in 
+Figure <A HREF="Chap.html#figwt_construct">1.5</A> with Daubechies 4 tap filter [<A HREF="Chap.html#bk_Daub_92">14</A>].
+<P>
+ <P><A NAME=515>&#160;</A><A NAME=figwt_transform>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img156.gif">
+<BR><STRONG>Figure 1.6:</STRONG> (a) Image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img155.gif"> (Pentagon) and (b) its
+wavelet transform (using the Daubechies 4 tap filter).<BR>
+<P><H2><A NAME=SECTION00123000000000000000> Where to Use Multiresolution?</A></H2>
+<P>
+ It is important to know where it is beneficial to use multiresolution. It
+can be said that multiresolution can be used in all vision tasks, the
+motivation coming from the fact that HVS seems to use multiresolution
+always [<A HREF="Chap.html#bk_Joli_94">18</A>]. In fact, in the words of
+Tanimoto<A NAME=520>&#160;</A> (foreword of [<A HREF="Chap.html#bk_Joli_94">18</A>]) the human retina
+acquires visual information at different degrees of spatial resolution at
+the same time -- high resolution in the fovea<A NAME=522>&#160;</A> and low
+resolution in the periphery;  not only does the density of the receptors
+vary in the visual field, but the varying ratio of the receptors to the
+bipolar and ganglion cells<A NAME=523>&#160;</A> that carry their
+information forward in the visual pathway further stretches the range of
+resolutions of the data obtained by the eye. Data at different resolutions
+play different roles in vision. Information from periphery typically
+controls the focus of attention while fovea information provides the
+details needed for finer distinction and careful analysis.  It is strongly
+believed that the human eye very much acts in a multiresolution framework,
+initially we tend to infer information by looking at the scene coarsely
+and then trying to pinpoint on the object that is of interest
+[<A HREF="Chap.html#bk_Scha_89">12</A>].
+<P>
+The multiresolution representation can be used with effect if it is known
+a priori that the properties of interest (i) vary smoothly with scale, and
+(ii) coincide spatially across all scales.  This knowledge can improve
+significantly the computational savings by designing coarse to
+fine<A NAME=525>&#160;</A> operations. For example the disparity of a
+stereo pair of images has the properties mentioned above and hence a
+coarse to fine strategy can be used to compute the disparity map. This
+procedure implies that first we apply operations to the coarse image and
+then use the results to focus attention or refine results in finer image,
+a philosophy advocated earlier by Marr and Poggio [<A HREF="Chap.html#pr_Marr_79">19</A>]. The
+problems that use this method do not try to combine the descriptions at
+different scales, except in the sense of constraining the computation at
+the previous finer scale.
+<P>
+In many vision tasks it is required that the image be modeled before we
+develop a scheme to solve the vision task. In this thesis we have assumed
+the image to be modeled by a Markov Random Field (a brief introduction to
+MRF is given in Section <A HREF="Chap.html#secmrf">1.3</A>).  The MRF configuration space for
+image and vision analysis is generally large and the search for an energy
+minimum is computationally intensive. Usually, iterative relaxation
+techniques are applied at the finest resolution to compute the solution. 
+The new pixel value at each iteration depends on the previous value of the
+pixel and its neighbors.  To decrease the number of iterations required to
+obtain global convergence, multigrid relaxation<A NAME=528>&#160;</A> can be used to iterate at multiple scales [<A HREF="Chap.html#jr_Terz_86">20</A>].
+For example, the coarse image is first iterated to derive an approximate
+solution, the obtained solution is quad tree interpolated to obtain an
+initial estimate at the next finer resolution.  Using this estimate the
+fine image is iterated to obtain the final solution. We use this scheme
+(coarse fine strategy) in our color image restoration problem where the
+restored image<A NAME=530>&#160;</A> at the coarse resolution is given as
+an initial estimate of the solution at the next finer resolution and the
+iteration being carried out at each resolution.  A similar scheme is
+developed for disparity estimation from stereo image pair as well as joint
+segmentation and image interpretation.
+<P>
+<H1><A NAME=SECTION00130000000000000000> Markov Random Fields</A></H1>
+<P>
+<A NAME=secmrf>&#160;</A>
+<P>
+Markov Random Field (MRF) theory is a branch of probability 
+theory<A NAME=533>&#160;</A> for
+analyzing the spatial or contextual dependencies of physical phenomena.
+MRF theory provides a convenient and consistent way
+of modeling context dependent entities such as image pixels and other
+spatially correlated features. This is achieved through characterizing
+mutual influences among such entities using MRF probabilities. The
+practical use of MRF models is largely ascribed to the equivalence between
+MRF and Gibbs distributions<A NAME=534>&#160;</A> established by 
+[<A HREF="Chap.html#jr_Besa_74">21</A>]. 
+This
+enables us to model vision problems by a mathematically sound, yet
+tractable means for image analysis in the Bayesian 
+framework<A NAME=536>&#160;</A>
+[<A HREF="Chap.html#jr_Gema_84">22</A>]. From the computational perspective, the local property
+of MRFs leads to algorithms which can be implemented in a local and
+massively parallel manner. Furthermore, MRF theory provides a foundation
+for multiresolution computation [<A HREF="Chap.html#bk_Li_95">23</A>].
+<P>
+For the above reasons, MRFs have been widely employed to solve vision
+problems at all levels. Most of the MRF models are for low-level
+processing (image restoration and segmentation<A NAME=539>&#160;</A>, surface 
+reconstruction<A NAME=540>&#160;</A>,
+edge detection<A NAME=541>&#160;</A>, texture analysis<A NAME=542>&#160;</A>, optical flow<A NAME=543>&#160;</A>, shape from X, active
+contours, deformable templates, data fusion<A NAME=544>&#160;</A>, visual 
+integration<A NAME=545>&#160;</A>, and
+perceptual organization), but recently they are being used for high-level
+vision problems, for example image or scene interpretation<A NAME=546>&#160;</A> [<A HREF="Chap.html#jr_Mode_92">24</A>,<A HREF="Chap.html#jr_Kuma_96">25</A>].
+<P>
+<H2><A NAME=SECTION00131000000000000000> MRF Theory</A></H2>
+<P>
+Let <b>S</b> denote a regular lattice, such that the elements in  <b>S</b> 
+index the image pixels. We can define a neighborhood on <b>S</b> as,
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img157.gif"><P>
+where, <IMG  ALIGN=MIDDLE ALT="" SRC="img158.gif"> is  the set of sites neighboring <b>i</b>. The neighboring 
+relationship has the following properties:
+<OL><LI>  a site is not neighboring to itself, <IMG  ALIGN=MIDDLE ALT="" SRC="img159.gif">
+<LI>  the neighboring relationship is mutual, namely, <IMG  ALIGN=MIDDLE ALT="" SRC="img160.gif"> if and 
+only if <IMG  ALIGN=MIDDLE ALT="" SRC="img161.gif">. 
+</OL>
+<P>
+Let <IMG  ALIGN=MIDDLE ALT="" SRC="img162.gif"> denote the label set
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img163.gif"> be a family of random variables defined on
+the set <b>S</b>, in which each random variable<A NAME=552>&#160;</A> <IMG  ALIGN=MIDDLE ALT="" SRC="img164.gif"> 
+takes a 
+value <IMG  ALIGN=MIDDLE ALT="" SRC="img165.gif">. <b>F</b> is said to be a MRF on <b>S</b> with respect to a
+neighborhood system <b>N</b>
+<P>
+if and only if the following two conditions are
+satisfied: 
+<OL><LI>  <IMG  ALIGN=MIDDLE ALT="" SRC="img166.gif"> (positivity<A NAME=556>&#160;</A>) 
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img167.gif"> 
+(Markovianity<A NAME=559>&#160;</A>) 
+</OL>
+  where <IMG  ALIGN=MIDDLE ALT="" SRC="img168.gif"> is the set difference,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img169.gif"> denotes the set of labels at the sites in <IMG  ALIGN=MIDDLE ALT="" SRC="img170.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img171.gif"> stands for the set of labels at the
+sites neighboring <b>i</b>. If <b>F</b> is a MRF with respect to such a neighborhood
+system <b>N</b>, then from the Hammersely-Clifford<A NAME=564>&#160;</A> theorem [<A HREF="Chap.html#jr_Besa_74">21</A>] (Markov - Gibbs equivalence relation) we 
+can write 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img172.gif"><P>
+where, <b>f</b> is a realization of F, <b>Z</b> is a normalization constant 
+commonly referred to as the partition function<A NAME=569>&#160;</A> 
+and is given by <P><IMG  ALIGN=BOTTOM ALT="" SRC="img173.gif"><P>
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img174.gif"> is referred to as the Gibbs energy function<A NAME=572>&#160;</A>. 
+Now <IMG  ALIGN=MIDDLE ALT="" SRC="img175.gif">, also referred to as simply the energy function is defined by 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img176.gif"><P>
+where, <IMG  ALIGN=MIDDLE ALT="" SRC="img177.gif"> is the potential function defined over cliques <b>C</b>.
+<P>
+A clique<A NAME=574>&#160;</A> is a subset <IMG  ALIGN=MIDDLE ALT="" SRC="img178.gif"> such that every pair of 
+distinct 
+sites in <b>C</b>  are neighbors. This definition is best understood by 
+considering some examples. For a first order neighborhood
+corresponding to the site <IMG  ALIGN=MIDDLE ALT="" SRC="img179.gif">  the clique set is 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img180.gif"><P>
+Similarly, one can define the cliques corresponding to second order 
+neighborhood. It can be noticed that the  number of cliques quickly 
+blows up by increasing the neighborhood order. Thus, in
+most applications one considers a first order or a second order 
+neighborhood systems, because computational complexity is proportional
+to the number of cliques.
+<P>
+MRF theory tells us how to model the a priori probability of contextual
+dependent patterns, such as a class of textures and an arrangement of
+object features [<A HREF="Chap.html#bk_Li_95">23</A>].  For the purpose of illustration, we cite
+the example of the Ising model<A NAME=576>&#160;</A> [<A HREF="Chap.html#tr_Desa_93">26</A>]. Here 
+<b>F</b> is a binary
+image with <IMG  ALIGN=MIDDLE ALT="" SRC="img181.gif">; +1 representing an 
+up-spin and and -1
+representing a down-spin. Moreover the Ising model assumes a first order
+neighborhood, and the energy function in is given by
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img182.gif"><P>
+Such models were studied in the context of ferro-magnetism. <IMG  ALIGN=MIDDLE ALT="" SRC="img183.gif"> 
+depends on the property of the
+material; <IMG  ALIGN=MIDDLE ALT="" SRC="img184.gif"> represents the attractive case while <IMG  ALIGN=MIDDLE ALT="" SRC="img185.gif"> the repulsive case. The parameter <IMG  ALIGN=BOTTOM ALT="" SRC="img186.gif"> represents the
+effect of the external force field. A typical problem would be to find 
+that configuration of up and
+down spins <b>f</b> which maximizes <IMG  ALIGN=MIDDLE ALT="" SRC="img187.gif">. We  see that for <IMG  ALIGN=MIDDLE ALT="" SRC="img188.gif"> this 
+will amount to aligning all
+the spins in the same direction as the external force field. The most 
+general form for the energy function is given by [<A HREF="Chap.html#jr_Besa_74">21</A>]
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img189.gif"><P>
+<P>
+The above
+expansion could be viewed as the Reed-Muller expansion<A NAME=609>&#160;</A> of <IMG  ALIGN=MIDDLE ALT="" SRC="img190.gif">, where
+<b>f</b> is a vector, each element of which can take <b>p</b> values (i.e. a <b>p</b>-ary
+variable, as opposed to a binary variable).
+<P>
+MRF theory is often used in conjunction with statistical decision and
+estimation theories so as to formulate objective functions in terms of
+established optimality principles.  Maximum a posteriori<A NAME=610>&#160;</A> (MAP) 
+probability
+has been the most popular choice in MRF vision modeling<A NAME=611>&#160;</A>. MRFs and the MAP
+criterion together give rise to the MAP-MRF framework. This framework
+enables us to develop algorithms for a variety of vision problems
+systematically using rational principles rather than relying on adhoc
+heuristics. In the MAP-MRF framework, the objective is the construction 
+of a joint posterior
+probability of the MRF labels. Its form and parameters are determined, in
+turn, according to the Bayes formula<A NAME=612>&#160;</A>, by those of the 
+joint prior
+distribution of the labels and the conditional probability of the observed
+data, Appendix <A HREF="#secbayes_reconstruct"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> gives details of such a procedure
+which also goes by the name, Bayesian reconstruction. Two major parts of the MAP-MRF modeling is to derive the form of the
+posterior distribution and to determine the parameters in it, so as to
+completely define the posterior probability (this is equivalent to the
+construction of the energy function associated with the vision task).
+<P>
+In probabilistic methods based on MRF models of the
+image; solution is then cast as a maximum a posteriori (MAP) estimation
+problem [<A HREF="Chap.html#jr_Gema_84">22</A>]. This approach also involves solving an energy
+minimization problem; except that the MRF framework makes it relatively 
+easy to incorporate terms in the energy function to account for image
+discontinuities [<A HREF="Chap.html#jr_Gema_84">22</A>].
+<P>
+In general, the constructed energy function associated with vision problems 
+will be
+nonconvex<A NAME=616>&#160;</A>, and could have several local minima, and in
+addition the global minima need not be unique.  In fact, under the
+digitally quantized condition for images, one could view this as a problem
+in combinatorics. Typically, one uses a global minima seeking algorithm 
+to minimize nonconvex energy functions. In this thesis,  simulated
+annealing<A NAME=617>&#160;</A> (SA) [<A HREF="Chap.html#bk_Aart_89">27</A>] algorithm is 
+used for energy minimization.
+<P>
+
+<P>
+<H1><A NAME=SECTION00140000000000000000> Simulated Annealing</A></H1>
+<P>
+<A NAME=secintro_sa>&#160;</A>
+<P>
+  The steepest decent type of algorithms are of no use when the energy
+function to be minimized is nonconvex<A NAME=tex2html79 HREF="#621"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A> in nature because these minimization schemes end up settling in
+a local minima. To circumvent this trap of falling into the local minima
+we need to minimize the energy function using some global minima seeking
+algorithm, like the genetic algorithm<A NAME=622>&#160;</A> or the
+simulated annealing algorithm. In this thesis, we use the simulated
+annealing algorithm for the purpose of energy minimization<A NAME=623>&#160;</A>.
+<P>
+Suppose, we use a gradient descent algorithm<A NAME=624>&#160;</A>, but occasionally (with
+some probability) we allow it to go uphill. This means that for small dips
+in the function there is some chance that we will climb out of it. Suppose
+that we further allow random jumps from one position to another, not every
+time but with some probability. The probability of these uphill moves and
+random jumps will be controlled with a <em> temperature</em> parameter <b>T</b> 
+that will
+diminish with time.  As an analogy, consider dropping a marble
+into a tray with some smoothly varying bottom. If we use only gradient
+descent, the marble will roll into the closest minimum. Adding some random
+component to the movement is like shaking the tray while the marble is
+rolling. Most of the time the marble will roll downhill but every now and
+then it can bounce up and out of one valley and into another. Gradually,
+over time, we reduce the shaking until the ball settles comfortably into a
+minimum. Because of the shaking it is unlikely that this minimum is a
+shallow one, most likely that it will settle into the deepest (or near
+deepest) minimum possible.
+<P>
+If we use an inverse log cooling schedule<A NAME=626>&#160;</A> and <em>
+shake</em> long enough, it has been proven that this will always find the
+global minimum.  This process is called simulated annealing, because it
+simulates the annealing (gradual cooling) process used for metals.  During
+the process of annealing, the free energy of the solid is minimized. 
+Annealing is the physical process of heating up a solid until it melts,
+followed by cooling it down until it crystallizes into a state with
+perfect lattice.  Practice shows that the cooling must be done carefully
+in order not to get trapped in locally optimal lattice structure with
+crystal imperfections. This is the reason why one used inverse log cooling
+schedule when using the simulated annealing algorithm.
+<P>
+In a physical process, the temperature is related to the molecular
+movement from one time increment to the next. In fact, a particular set of
+molecules are related to those in the previous trial in the sense that
+each molecule has moved somewhere in the neighborhood of movement from
+which new trial molecules are chosen is called temperature.  The relation
+of temperature to this definition of molecular movement from one time
+increment to the next results in a simple physical picture: the degree of
+movement is analogous to the average kinetic energy of the system, which
+is related to the physical temperature. Analogously, in simulated 
+annealing (as seen in the pseudo code in Section <A HREF="Chap.html#secintro_pseudo">1.4.1</A>) 
+the temperature is usually high (able to take long jumps) and gradually 
+decreases (short jumps) as time progresses.
+<P>
+It can be observed that a solution procedure that aims for the global
+minima should have three capabilities, (i) it should be able to span whole
+of the solution space (it should be able to take large jumps in the
+solution space), (ii) it should also be able to take short steps (be able
+to converge to the global solution when it is in the neighborhood of the
+solution in the solution space) and (iii) should be able to jump out of
+local minima (some randomness to be incorporated). Simulated annealing
+algorithm and genetic algorithm<A NAME=629>&#160;</A> are two well
+known global optimal solution seekers which possess these properties.
+<P>
+For the sake of completion, we give below the pseudo code of the simulated
+annealing algorithm.  The algorithm is very familiar to people working in
+the area of computer vision literature and one can refer to Aarts and
+Korst [<A HREF="Chap.html#bk_Aart_89">27</A>] for more details.
+<P>
+<H2><A NAME=SECTION00141000000000000000> Pseudo Code - Simulated Annealing Algorithm</A></H2>
+<P>
+<A NAME=secintro_pseudo>&#160;</A>
+<P>
+<PRE><TT> <b> procedure Simulated Annealing</b>
+<P>
+<b> begin</b>&#175;<b> initialize</b>: <IMG  ALIGN=MIDDLE ALT="" SRC="img191.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img192.gif"> and <b>L</b>
+<P>
+     		 <IMG  ALIGN=MIDDLE ALT="" SRC="img193.gif">
+<P>
+     		 <b> rep</b>&#175;<b> eat</b>
+<P>
+     		    		 for <b>l=1</b> to <b>L</b> do
+<P>
+     		    		 <b> beg</b>&#175;<b> in</b>
+<P>
+     		    		    		<b> Generate</b> <b>j</b>
+<P>
+     		    		    		if <IMG  ALIGN=MIDDLE ALT="" SRC="img194.gif"> then <b>i=j</b>
+<P>
+     		    		    		else
+<P>
+     		    		    		if <IMG  ALIGN=MIDDLE ALT="" SRC="img195.gif"> 
+then <b>i=j</b>
+<P>
+     		    		end
+<P>
+     		    		<b>k=k+1</b>
+<P>
+     		    		<IMG  ALIGN=MIDDLE ALT="" SRC="img196.gif">
+<P>
+     		<b> until</b> stop criteria
+<P>
+<b> end</b>
+<P>
+</TT></PRE>
+<P>
+
+<P>
+
+<P>
+<P><A NAME=SECTIONREF><H2>References</H2></A><P>
+<DL COMPACT>
+<DT><A NAME=bk_Clar_90><STRONG>1</STRONG></A><DD>
+J. J. Clark and A. L. Yullie,
+ <em> ``Data fusion for sensory information processing systems''</em>,
+ Kluwer Academics Publishers, 1990.
+<P>
+<DT><A NAME=jr_Mall_89><STRONG>2</STRONG></A><DD>
+S. G. Mallat,
+ ``Multifrequency channel decompositions of images and wavelet
+  models'',
+ <em> IEEE Tran. Acoustics, Speech and Signal Processing</em>, vol. 37,
+  pp. 2091--2110, 1989.
+<P>
+<DT><A NAME=jr_Van_92><STRONG>3</STRONG></A><DD>
+D. C. Van Essen, C. H. Anderson, and D. J. Felleman,
+ ``Information processing in the primate visual system: an
+  integrated systems perspective'',
+ <em> Science</em>, vol. 255, pp. 419--423, 1992.
+<P>
+<DT><A NAME=jr_Bert_88><STRONG>4</STRONG></A><DD>
+M. Bertero and T. A. Poggio,
+ ``Ill-posed problems in early vision'',
+ <em> Proc. of IEEE</em>, vol. 76, pp. 869 -- 889, 1988.
+<P>
+<DT><A NAME=pr_Suni_95><STRONG>5</STRONG></A><DD>
+K. Sunil Kumar and U. B. Desai,
+ ``A multiresolution approach to integrated optical flow
+  computation'',
+ in <em> International Conference on Image Processing and its
+  Applications</em>, 1995.
+<P>
+<DT><A NAME=jr_Bozm_94><STRONG>6</STRONG></A><DD>
+H. I. Bozma and J. S. Duncan,
+ ``A game-theoretic approach to integration of modules'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  1074--1086, 1994.
+<P>
+<DT><A NAME=jr_Clem_93><STRONG>7</STRONG></A><DD>
+V. Clement and M. Thonnat,
+ ``A knowledge-based approach to integration of image processing
+  procedures'',
+ <em> CVGIP: Image Understanding</em>, pp. 166--184, 1993.
+<P>
+<DT><A NAME=jr_Gamb_89><STRONG>8</STRONG></A><DD>
+E. B. Gamble, D. Geiger, T. A. Poggio, and D. Weinshall,
+ ``Integration of vision modules and labeling of surface
+  discontinuities'',
+ <em> IEEE Tran. on Systems Man and Cybernetics</em>, pp. 1576--1581,
+  1989.
+<P>
+<DT><A NAME=pr_Aloi_89><STRONG>9</STRONG></A><DD>
+Y. Aloimonos and D. Shulman,
+ ``Unification and integration of visual modules: an extension of
+  the Marr paradigm'',
+ in <em> Image Understanding Workshop</em>, 1989, pp. 507--551.
+<P>
+<DT><A NAME=jr_Pogg_88><STRONG>10</STRONG></A><DD>
+T. A. Poggio, E. B. Gamble, and J. J. Little,
+ ``Parallel integration of vision modules'',
+ <em> Science</em>, pp. 436--439, 1988.
+<P>
+<DT><A NAME=jr_Jeps_92><STRONG>11</STRONG></A><DD>
+A. Jepson and W. Richards,
+ ``A lattice framework for integrating vision modules'',
+ <em> IEEE Tran. on Systems Man and Cybernetics</em>, vol. 22, pp.
+  1087--1096, 1992.
+<P>
+<DT><A NAME=bk_Scha_89><STRONG>12</STRONG></A><DD>
+R. J. Schalkoff,
+ <em> ``Digital image processing and computer vision''</em>,
+ John Wiley and Sons, Singapore, 1989.
+<P>
+<DT><A NAME=jr_Burt_83><STRONG>13</STRONG></A><DD>
+P. J. Burt and E. H. Adelson,
+ ``The Laplacian pyramid as a compact image code'',
+ <em> IEEE Tran on Comm.</em>, pp. 532--540, 1983.
+<P>
+<DT><A NAME=bk_Daub_92><STRONG>14</STRONG></A><DD>
+I Daubechies,
+ <em> ``Ten lectures on wavelets''</em>,
+ SIAM, Philadelphia, Pennsylvania, 1992.
+<P>
+<DT><A NAME=jr_Gabo_46><STRONG>15</STRONG></A><DD>
+D. Gabor,
+ ``Theory of communication'',
+ <em> Journal of I.E.E.</em>, vol. 93, pp. 429--441, 1946.
+<P>
+<DT><A NAME=bk_Meye_89><STRONG>16</STRONG></A><DD>
+Y. Meyer,
+ <em> ``Wavelets''</em>,
+ Springer Verlag, Berlin,, 1989.
+<P>
+<DT><A NAME=bk_Vaid_93><STRONG>17</STRONG></A><DD>
+P. P. Vaidyanathan,
+ <em> ``Multirate systems and filter banks''</em>,
+ Prentice Hall, Englewoods Cliff, New Jersey, 1993.
+<P>
+<DT><A NAME=bk_Joli_94><STRONG>18</STRONG></A><DD>
+J. M. Jolion and A. Rosenfeld,
+ <em> A pyramid framework for early vision</em>,
+ Kluwer Academic Publishers, The Netherlands, 1994.
+<P>
+<DT><A NAME=pr_Marr_79><STRONG>19</STRONG></A><DD>
+D. Marr and T. Poggio,
+ ``A computational theory of human stereo vision'',
+ in <em> Procedings Royal Society London</em>, 1979.
+<P>
+<DT><A NAME=jr_Terz_86><STRONG>20</STRONG></A><DD>
+D. Terzopoulos,
+ ``Image analysis using multigrid relaxation methods'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  129--138, 1986.
+<P>
+<DT><A NAME=jr_Besa_74><STRONG>21</STRONG></A><DD>
+J. Besag,
+ ``Spatial interaction and the statistical analysis of lattice
+  systems '',
+ <em> J. Royal Statistical Society</em>, pp. 192--236, 1974.
+<P>
+<DT><A NAME=jr_Gema_84><STRONG>22</STRONG></A><DD>
+S. Geman and D. Geman,
+ ``Stochastic relaxation, Gibbs distribution, and Bayesian
+  restoration of images'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  721--741, 1984.
+<P>
+<DT><A NAME=bk_Li_95><STRONG>23</STRONG></A><DD>
+S. Z. Li,
+ <em> ``MRF Modeling in Computer Vision''</em>,
+ Springer-Verlag, Tokyo, 1995.
+<P>
+<DT><A NAME=jr_Mode_92><STRONG>24</STRONG></A><DD>
+J. A. Modestino and J. Zhang,
+ ``A Markov random field model based approach to image
+  interpretation'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  606--615, 1992.
+<P>
+<DT><A NAME=jr_Kuma_96><STRONG>25</STRONG></A><DD>
+V. P. Kumar and U. B. Desai,
+ ``Image interpretation using Bayesian networks'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  74--77, 1996.
+<P>
+<DT><A NAME=tr_Desa_93><STRONG>26</STRONG></A><DD>
+U. B. Desai,
+ ``Markov random field models for early vision problems'',
+ Tech. Rep. SPANN.93.3, Indian Institute of Technology - Bombay,
+  1993, (http://144.16.100.30/thesis/Tech_Reports/MRF_TUT/mrf.html).
+<P>
+<DT><A NAME=bk_Aart_89><STRONG>27</STRONG></A><DD>
+E. Aarts and J. Korst,
+ <em> ``Simulated annealing and Boltzmann machines ''</em>,
+ John Wiley, 1989.
+</DL>
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1><A NAME=SECTION00300000000000000000>   About this document ... </A></H1>
+<P>
+ <STRONG></STRONG><P>
+This document was generated using the <A HREF="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 95.1 (Fri Jan 20 1995) Copyright &#169; 1993, 1994,  <A HREF="http://cbl.leeds
+.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 /home/malhar/nil/tex/LANIF/Chap.tex</tt>. <P>The translation was initiated by Sunil Kumar K. on Sun Dec 15 22:50:09 IST 1996<DL> <A NAME=226><DT>...scales <DD>resolutions</A>
+<PRE><P>
+</PRE><A NAME=334><DT>...quadrants <DD> 29#29</A>
+<PRE><P>
+</PRE><A NAME=621><DT>...nonconvex <DD>solving most of the vision
+tasks reduce to minimizing an energy function which is nonconvex in
+general</A>
+<PRE><P>
+</PRE> </DL>
+<BR> <HR>
+<P><ADDRESS>
+<I>Sunil Kumar K. <BR>
+Sun Dec 15 22:50:09 IST 1996</I>
+</ADDRESS>
+</BODY>

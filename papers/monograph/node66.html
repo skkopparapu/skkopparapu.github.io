@@ -1,0 +1,597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Conclusions</TITLE>
+<META NAME="description" CONTENT="Conclusions">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node80.html">
+<LINK REL="previous" HREF="node55.html">
+<LINK REL="up" HREF="kmono.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1050"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1046"
+  HREF="kmono.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1040"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1048"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1051"
+  HREF="node67.html">Justification for the General</A>
+<B>Up:</B> <A NAME="tex2html1047"
+  HREF="kmono.html">kmono</A>
+<B> Previous:</B> <A NAME="tex2html1041"
+  HREF="node65.html">Conclusions</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00900000000000000000"></A>
+<A NAME="chap:conclusions"></A>
+<BR>
+Conclusions
+</H1>
+
+<P>
+Image interpretation is a high-level description of the environment
+from which the 2D image was taken. It is essentially an analysis problem
+where one tries  to describe the objects in a 
+3D environment by identifying, analysing and 
+understanding  the 2D image corresponding to the 3D scene. The task of
+image interpretation is a two step process and 
+involves firstly segmenting the image to isolate regions of
+significance and then secondly giving interpretation lables to the segmented
+regions aided by a priori accumulated knowledge base.
+
+<P>
+Image interpretation is an important problem and 
+has several applications. 
+Amongst others, image interpretation finds use in
+fields like medical engineering where it is used for 
+identifying structures within the human body; it can be used for automatic
+target recognition; for navigation; remote sensing and 
+the entire gamut of
+activities involving robots.
+
+<P>
+Image interpretation is 
+a challenging task to high level vision researchers 
+especially because the humans seems 
+to be able to do a good job of it. The objective of an image interpretation
+system is to make the computer interpret the image as well as or better than
+what the human visual system is capable of doing. 
+While there have been good  and 
+healthy progress in this area, one can not claim the problem of 
+image interpretation to be completely <EM>solved</EM>. The problem of image 
+interpretation depends largely on the robustness of the 
+knowledge base to minimize false alarms and increase interpretation
+accuracy. The monograph emphasizes the fact that the use of
+probabilistic framework to 
+represent knowledge base is the right step towards making interpretation
+schemes more robust and less dependent on the knowledge base.
+
+<P>
+The monograph describes ways and methods of making the interpretation
+schemes less depend on the knowledge base. Recently we have been exploring 
+the possibility of further reducing the dependence on domain knowledge, 
+by using a
+  hidden Markov model (HMM)  for the features [<A
+ HREF="node80.html#pr_Nidi_98">117</A>]. 
+The overall framework
+  for image interpretation still remains MRF; the cliques functions now
+  use the HMM model for various features rather than the features
+  themselves. The
+  domain knowledge is, now, represented by the parameters of the HMM.
+The image interpretation problem can be formulated as
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{I}^{*}({R}) = \arg \max_{{I}} P({I} \mid {\cal
+     H}({{\cal{K}}}), {\cal H}({R})  )
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, <!-- MATH
+ ${\cal H}({\cal{K}})$
+ -->
+ represents the HMMs corresponding to the 
+reference set (domain knowledge) of interpretation labels.
+<!-- MATH
+ ${\cal H}(R)= \{ H_j(R_i) \}_{j,i=1,1}^{F,N}$
+ -->
+ represents the set of HMMs for
+the given image, where  represents the
+HMM for region  and feature ;  
+denotes the number of features.
+This set contains HMMs and <EM>joint HMMs</EM>
+for single and multiple node cliques. As seen earlier, assuming <!-- MATH
+ $P(I \mid
+{\cal H}({\cal{K}}), {\cal H}({R}))$
+ -->
+ to be a MRF, we can express <!-- MATH
+ $P({I} | {\cal H}(K),
+{\cal H}(R))$
+ -->
+ as a Gibbs
+distribution (Theorem <A HREF="node14.html#theorem:hc">2.1</A>) we have 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+P(I | {\cal H}(K), {\cal H}(R)) = 
+ Z^{-1}\exp^{ \left (
+   - \sum_{c \in {\cal C}} 
+    V_{c}
+      \left (
+ I;{\cal H}(K),{\cal H}(R)      \right )
+             \right ) 
+ }
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, <IMG
+ WIDTH="422" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="${\cal C}$"> representing the collection of all the cliques
+with respect to some neighborhood system .
+<!-- MATH
+ $V_{c}({I};{\cal H}(K),{\cal H}(R))$
+ -->
+ are the
+clique functions and the  is the partition function.  Appendix
+<A HREF="node79.html#app:hmm_construction">I</A> gives details of how to construct a 
+clique function based on HMM.
+
+<P>
+<P>
+<DIV><B>Note  6.1</B> &nbsp; 
+There is a two level probabilistic structure.  At one level,
+the interpretation is modeled as a MRF and at the other level the clique
+functions for the features are based on HMMs. It is for this reason
+the interpretation process is  less dependent on the domain knowledge. </DIV><P></P>
+
+<P>
+In the image interpretation schemes 
+implemented in earlier chapters, only a few features as described in  
+Appendix <A HREF="node74.html#app:features">G</A> have been used.
+In actual practise several more features and color information can be
+incorporated to make the techniques more robust and  powerful. 
+As a general rule when interpreting complex scenes, it
+is advisable to attempt unsupervised learning in parallel with
+interpretation. This allows the system not only 
+to learn the dependencies but also
+allows one to add new objects to its list of identifiable objects.  
+
+<P>
+One major drawback of the image interpretation 
+scheme as it is reported in 
+literature is the
+inherent assumption that one makes when choosing the features. The
+strongest one being that the details of the scene are <EM>known</EM> even
+before the interpretation scheme is put to test, meaning that it is a priori
+known as to what to expect from the scene. This is in some sense
+constraining the algorithm by telling it what to expect in the scene. It is
+preferable to think 
+of schemes which either integrate these constraints into the
+knowledge base or possibly take care by some other means. Even a small
+breakthrough along this direction will be a significant contribution 
+to the image 
+interpretation literature.
+
+<P>
+
+<P>
+
+<P>
+Bayesian Reconstruction
+<A NAME="sec:bayes_reconstruct"></A>
+<P>
+Let , 
+the general problem of reconstruction Bayesian,Reconstruction involves taking a given image  and,
+from it, attempting to deduce what the original scene  looked like, here
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$w$"> corresponds to noise of known statistics. One
+form of reconstruction involves considering the space of all possible
+original scenes and selecting that scene which is the most probable. 
+
+<P>
+This probability can be written as the conditional probability
+probability,conditional . According to Bayes Theorem, Theorem, Bayes
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\P(f | g) = \frac{\P(g | f) \P(f)} {\P(g)}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:bayes"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(37)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+This conditional probability  is called the posterior
+probabilityprobability,posterior. The first factor in the numerator of (<A HREF="node66.html#eq:bayes">A.1</A>),  , is the probability of obtaining image  as a result of imaging
+the scene . We can model this and is usually dictated by the task in
+hand, for example in case of image restoration this is dependent on the
+choice of the degradation model.  Irrespective of modeling, the
+probability should be high when the image and the scene are similar one
+does not expect to get an image that is too different from the original
+scene. Furthermore, it should model the known properties of the imaging
+system. One such function of modeling this probability is to use an
+inverse exponential function where the probability decreases as the
+difference between  and  increases. If the image has Gaussian
+uncorrelated noise with variance , we have: 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\P(g | f) = \exp^{-H_n(f,g)}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+H_n(f,g)= \frac{\sum_i \left [ f_i - g_i
+\right ]^2}{\sigma^2},
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+also notice, that the scene  that
+maximizes this probability is one identical to the image . In other
+words, the best reconstruction image reconstruction 
+is the original image. Obviously, this
+is not very useful. This is where the other factor,  , in the
+numerator comes in: the probability of any scene  occurring at all,
+ is called the a priori probability 
+probability, priori: the probability of  being
+the scene without ever taking a picture  of it. This is called also
+called a prior. In the prior, we take into account the desired properties
+that we want in the restored image . For example, we may assume that most
+scenes have patches of uniform intensity with sharp discontinuities
+between them. We can again describe the probability using an inverse
+exponential: 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\P(f) = \exp^{- \lambda H_p(f)}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, <!-- MATH
+ $H_p(f) = \sum_{i,j \in {\cal N}(i)}(f_i - f_j)^{\frac{1}{2}}$
+ -->
+measures the total of the differences between a pixels and their
+neighbors. We can design  to be whatever we want (in fact the
+MRF assumption
+on  helps in designing ), so long as it
+embodies what we want in our reconstruction,  lets us control the
+relative priority of the prior. 
+
+<P>
+The denominator  measures the likelihood of any given image being
+produced by the imaging device, regardless of the input. If we assume that
+our device is equally capable of imaging any scene, this probability is
+constant for all . Since our goal is simply to maximize the posterior
+probability, we do not really care what the exact value is, so long as we
+select the largest. For this reason, we can simply ignore the constant
+denominator.  If, however, we wanted to model tendencies for our device to
+produce images with certain properties, we could model it here. 
+
+<P>
+To get the best scene , we find the scene that maximizes the numerator:
+ <BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\max_{\hat{f}} \left [ \exp^{- H_n(f,g)} \exp^{- \lambda H_p(f)} \right ]
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:nam"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(38)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The  that maximizes (<A HREF="node66.html#eq:nam">A.2</A>) is the same one that maximizes the 
+logarithm of the numerator: 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\max_{\hat{f}} \left [ - H_n(f,g) - \lambda H_p(f) \right ]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Or, we could just as well minimize the negative of this quantity: 
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\min_{\hat{f}}  \left [ H_n(f,g) + \lambda H_p(f) \right ]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This is simply the weighted sum of a data-fit term  and a prior
+term  where the weight  controls the relative importance. 
+Proof of Hammersley-Clifford Theorem
+ <A NAME="gibbs_mrf"></A>
+<P>
+For completeness, so that one does not have to go back and forth, we
+repeat the statement of the theorem. Theorem, Hammersley-Clifford
+
+<P>
+<BLOCKQUOTE>
+<EM>Assume that <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> has a finite configuration over  and that <!-- MATH
+ $P \left[
+x = 0 \right] > 0$
+ -->
+, then <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is a MRF with respect to a
+neighborhood   <EM>iff</EM> <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is Gibbs distributedGibbs
+distribution, with <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> as defined below; namely
+</EM></BLOCKQUOTE>
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+P[X = x] = \frac{1}{Z} e^{  -U(x) }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(39)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P><BLOCKQUOTE><EM>
+where <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> is
+a realization of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$">,  is a normalization constant commonly referred to
+as the partition function and is given by 
+</EM></BLOCKQUOTE>
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+Z = \sum_{\mbox{all config.} \;\;  x} e^{ -U(x) }  \\
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:partition_function"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<P>
+<BLOCKQUOTE><EM>and <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> is given by 
+</EM></BLOCKQUOTE>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+U(x) = \sum_{c \in {\cal C}} V_{c} (x)  \\
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<P>
+<BLOCKQUOTE><EM>The general form for <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> is 
+</EM></BLOCKQUOTE>
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{rcl}
+U(x) & = & \displaystyle{\sum_{(i,j)=(1,1)}^{N,N} x_{i,j} G_{i,j}(x_{i,j})}  \\[4ex]
+     & +  & \displaystyle{ \sum_{(i,j)=(1,1)}^{(N,N-1)} 
+              \sum_{(k,l)=(i,j+1)}^{(N,N)}  x_{i,j} x_{k,l} 
+              G_{i,j;k,l} (x_{i,j}, x_{k,l})}  \\[4ex]
+     & + &  \displaystyle{ \sum_{(i,j)=(1,1)}^{(N,N-2)} 
+                    \sum_{(k,l)=(i,j+1)}^{(N,N-1)}
+                    \sum_{(r,s)=(k,l+1)}^{(N,N)} \cdots + } \\[3ex]
+      &  &  \vdots  \\[2ex]
+     & + &  \displaystyle{ x_{1,1}\, \cdots \,  x_{N,1} \,\cdots\, x_{N,N} 
+         G_{1,1;  \cdots \, ; N,1; \cdots \, N,N} 
+           (x_{1,1} \cdots, \, x_{N,1} \cdots  x_{N,N})}
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="general_form"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(40)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<P>
+<BLOCKQUOTE><EM>where the functions 
+<!-- MATH
+ $G_{\cdot, \cdots, \cdot }(\cdot, \cdots, \cdot )$
+ -->
+ are
+arbitrary, except that they are zero if the arguments do not belong to a
+clique.  
+For example <!-- MATH
+ $G_{i,j;m,n} \left( x_{i,j}, x_{m,n} \right) = 0$
+ -->
+ if 
+<IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> and  do not belong to the same clique.
+</EM></BLOCKQUOTE>
+<P>
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1052"
+  HREF="node67.html">Justification for the General form for <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"></A>
+<UL>
+<LI><A NAME="tex2html1053"
+  HREF="node68.html">Proof of the Hammersley-Clifford Theorem</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1054"
+  HREF="node69.html">Experiments</A>
+<UL>
+<LI><A NAME="tex2html1055"
+  HREF="node70.html">Interpreting (D.1)</A>
+<LI><A NAME="tex2html1056"
+  HREF="node71.html">Example</A>
+<LI><A NAME="tex2html1057"
+  HREF="node72.html">Properties</A>
+<LI><A NAME="tex2html1058"
+  HREF="node73.html">The Algorithm</A>
+<LI><A NAME="tex2html1059"
+  HREF="node74.html">Initial assignment of bin values</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1060"
+  HREF="node75.html">Primary Features</A>
+<LI><A NAME="tex2html1061"
+  HREF="node76.html">Secondary Features</A>
+<LI><A NAME="tex2html1062"
+  HREF="node77.html">How to merge regions using the <EM>XV</EM> color editor</A>
+<LI><A NAME="tex2html1063"
+  HREF="node78.html">Acquired Knowledge</A>
+<LI><A NAME="tex2html1064"
+  HREF="node79.html">Knowledge Pyramid</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<A NAME="tex2html1050"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1046"
+  HREF="kmono.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1040"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1048"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1051"
+  HREF="node67.html">Justification for the General</A>
+<B>Up:</B> <A NAME="tex2html1047"
+  HREF="kmono.html">kmono</A>
+<B> Previous:</B> <A NAME="tex2html1041"
+  HREF="node65.html">Conclusions</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

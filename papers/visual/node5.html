@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.1 release (March 30, 1999)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Formant Tracking</TITLE>
+<META NAME="description" CONTENT="Formant Tracking">
+<META NAME="keywords" CONTENT="visual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.1 release">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="visual.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html69"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html67"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html63"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html70"
+ HREF="node6.html">Experimental Results</A>
+<B>Up:</B> <A NAME="tex2html68"
+ HREF="node3.html">Visual Cue based Formant</A>
+<B> Previous:</B> <A NAME="tex2html64"
+ HREF="node4.html">Formant Extraction</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+Formant Tracking</A>
+</H2>
+
+<P>
+It is assumed that the formant information in the spectrogram has been
+extracted by the formant extraction module described in
+Section <A HREF="node4.html#prep">3.1</A>. The centroids of the formant bands,
+correspond to the maxima of the spectral peaks i.e the center frequencies
+of the formant bands. 
+The spectrogram is processed along the time axis (y-axis), 
+to pick the centroids of vertical connected massses of formant pixels. 
+This results in the 
+generation of broken sections of formant tracks in between longer,
+continuous sections, especially in the unvoiced segments of speech. These
+small formant track sections 
+can be connected using 
+first-order interpolation. The interpolation strategy adopted by us 
+takes into account the frequency continuity constraint (as is performed by the
+human when extracting formants from a spectrogram)
+ and hence closely approximates the actual formant trajectories.
+
+<P>
+The formant tracking procedure is detailed in Algorithm <A HREF="node5.html#trackalgo">2</A>. 
+For ease of implementation, the
+formant tracking is done separately for the voiced and unvoiced segments
+and the tracking results for both the segments are combined into a single
+image as shown in Fig. <A HREF="node5.html#bothoverlay">4</A>, where the tracked formants are
+seen as dark gray horizontal lines. For purpose of clarity, we have
+superimposed the tracked formants on the original spectrogram.
+
+<P>
+ 
+<BR>
+<A NAME="trackalgo"></A><IMG
+ WIDTH="729" HEIGHT="371" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="\begin{algorithm}
+% latex2html id marker 92\begin{algorithmic}
+\STATE{Let $I_{...
+...ENDFOR
+\caption {Procedure for Formant Tacking.}\end{algorithmic}\end{algorithm}">
+<BR>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="bothoverlay"></A><A NAME="110"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Tracked Formants (extracted using the visual cue method) overlaid on
+the original spectrogram.</CAPTION>
+<TR><TD>
+<!-- MATH
+ $\includegraphics [width=0.9\textwidth]{figs/bothoverlay.eps}$
+ -->
+<IMG
+ WIDTH="646" HEIGHT="83" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="\includegraphics [width=0.9\textwidth]{figs/bothoverlay.eps}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<A NAME="tex2html69"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html67"
+ HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html63"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html70"
+ HREF="node6.html">Experimental Results</A>
+<B>Up:</B> <A NAME="tex2html68"
+ HREF="node3.html">Visual Cue based Formant</A>
+<B> Previous:</B> <A NAME="tex2html64"
+ HREF="node4.html">Formant Extraction</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Sunil Kopparapu <BR>
+2002-12-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

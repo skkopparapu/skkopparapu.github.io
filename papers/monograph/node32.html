@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Multiple Node Clique Function</TITLE>
+<META NAME="description" CONTENT="Multiple Node Clique Function">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html612"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html608"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html602"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html610"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html613"
+  HREF="node33.html">Minimization Algorithm</A>
+<B>Up:</B> <A NAME="tex2html609"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B> Previous:</B> <A NAME="tex2html603"
+  HREF="node31.html">1-node Clique Functions</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00612200000000000000">
+Multiple Node Clique Function</A>
+</H3> 
+
+<P>
+The construction of multiple node clique function is similar to single
+node clique function except that an additional term is added to take
+care of spatial constraints. 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+V_{c}^{m} = \sum_{i=1}^{q_{m}} w_{c}^{i} B_{c}^{i}(x^{c} | f^{c},
+{\cal K})  + \alpha_{c} S_{c}(x^{c};{\cal K})
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="2-node-cliqe-function"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(26)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Here  represents multiple node cliques, for example <!-- MATH
+ $c =\{R_k,R_l\}$
+ -->
+for 2-node cliques.  is the number of multiple node features,
+for example  could be mutual contrast. The basis function
+ has the same form as the basis function for a 1-node
+cliqueclique,1-node. 
+The second term, , takes care of spatial constraints.
+
+<P>
+Typically, the first term 
+ represents <EM>fuzzy</EM> constraints among nodes,
+ while the second term represents hard spatial constraints
+among the  nodes. As an illustration of this, consider
+the case of the following two 2-node cliques clique,2-node:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Clique</TD>
+<TD ALIGN="CENTER">Domain Knowledge</TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER">{car,road}</TD>
+<TD ALIGN="CENTER">acceptable combination</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="CENTER">{car,sky}</TD>
+<TD ALIGN="CENTER">unacceptable combination</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+Note, a zero value for clique function gives a higher probability and
+therefore for an acceptable combination we have a value of  for .
+Thus we can define the hard spatial constraint as
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+S_{c}(x^{c}; {\cal K}) = \left\{ \begin{array}{ccp{1.5in}}
+                         0  &  & \mbox{if $c$\  is an acceptable combination}\\
+			    &  & \mbox{according to ${\cal K}$} \\
+                         1  &  & \mbox{if $c$\  is an unacceptable combination}\\
+			    &  & \mbox{according ${\cal K}$}
+                          \end{array} \right.
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<HR>
+<A NAME="tex2html612"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html608"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html602"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html610"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html613"
+  HREF="node33.html">Minimization Algorithm</A>
+<B>Up:</B> <A NAME="tex2html609"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B> Previous:</B> <A NAME="tex2html603"
+  HREF="node31.html">1-node Clique Functions</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,1115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Proof of the Hammersley-Clifford Theorem</TITLE>
+<META NAME="description" CONTENT="Proof of the Hammersley-Clifford Theorem">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node67.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1086"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1082"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1078"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1084"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1087"
+  HREF="node69.html">Experiments</A>
+<B>Up:</B> <A NAME="tex2html1083"
+  HREF="node67.html">Justification for the General</A>
+<B> Previous:</B> <A NAME="tex2html1079"
+  HREF="node67.html">Justification for the General</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00911000000000000000">
+Proof of the Hammersley-Clifford Theorem</A>
+</H2> 
+
+<P>
+The proof follows [<A
+ HREF="node80.html#jr_Besa_74">78</A>], with perhaps, 
+some pedagogical elaborations. 
+
+<P>
+<B>Notation:</B>
+
+<P>
+
+<OL>
+<LI> will cover all cliques associated with <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$">.
+   Note, this will cover all sites <!-- MATH
+ $(k,l) \in \eta_{i,j}$
+ -->
+
+<P>
+</LI>
+<LI><!-- MATH
+ $c:(i,j) \notin c$
+ -->
+ will cover all cliques associated with all sites 
+      <!-- MATH
+ $(m,n) \neq (i,j)$
+ -->
+.  
+
+<P>
+</LI>
+<LI><!-- MATH
+ $\displaystyle{\sum_{x_{i,j}} e^{-\sum_{c} V_{c}(x)}}$
+ -->
+ 
+     represents summation of the term 
+       <!-- MATH
+ $e^{-\sum_{c} V_{c}(x)}$
+ -->
+ over all possible values
+       of  <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$">.  Note, there will be cliques which will
+       contain the pixel <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$">, and it is the contribution from
+       this pixel which is <EM>summed out</EM>.
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+<B>if part:</B> 
+<IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is Gibbs distributed Gibbs distribution as defined in
+the theorem then <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is a MRF. 
+<BR>
+Consider,
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{rcl}
+\multicolumn{3}{l}{
+P \left[ X_{i,j}   =  x_{i,j} \mid X_{k,l} = x_{k,l}, \forall \; (k,l) \in S,
+(k,l) \not = (i,j) \right] }  \\
+  &  &  \\
+  &  = & \frac{ \displaystyle{
+    P \left[ X_{i,j} = x_{i,j}, \forall \; (i,j) \in S \right] }}
+{ \displaystyle{P \left[ X_{k,l} = x_{k,l}, \forall \; (k,l) \in S, (k,l) 
+\not = (i,j) \right] }} \\
+ &   & \\
+ & = & \frac{ \frac{1}{Z} \displaystyle{e^{- \sum_{c} V_{c} (x)}}}
+      {\frac{1}{Z} \displaystyle{\sum_{{x}_{i,j}} e^{- \sum_{c} V_{c}(x)}}} \\
+ &   &  \\
+ & = & \frac{ \displaystyle{ e^{ -\sum_{c:(i,j) \notin c} V_{c}(x)}} \;\;
+        \displaystyle{e^{- \sum_{c:(i,j) \in c} V_{c} (x)} } }
+       {\displaystyle{ e^{ -\sum_{c:(i,j) \notin c} V_{c}(x)}} \;\;
+       \displaystyle{\sum_{x_{i,j}} e^{- \sum_{c:(i,j) \in c} V_{c} (x)} }}
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="p_given_everything"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(44)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Next, through similar manipulations, we show that
+<!-- MATH
+ $P[X_{i,j} = x_{i,j} \mid X_{k,l} = x_{k,l}, (k,l) \in \eta_{i,j}]$
+ -->
+equals (<A HREF="node68.html#p_given_everything">B.8</A>).
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+P \left[ X_{i,j} = 
+           x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \in \eta_{i,j} \right]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+=  \frac{ P [ X_{i,j} = x_{i,j}, X_{k,l} = x_{k,l}, \; (k,l) \in 
+                          \eta_{i,j} ] }
+{ P [ X_{k,l} = x_{k,l} , \;(k,l) \in \eta_{i,j} ]}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+=  \frac{\displaystyle{ \sum_{\begin{array}{c}
+                \mbox{ \scriptsize$ {x}_{m,n},  (m,n) \neq (i,j) $}  \\
+              \mbox{\scriptsize$ (m,n) \notin \eta_{i,j}$} \end{array}  } }
+         \left\{ \displaystyle{e^ { - \sum_{c} V_{c} (x) } } \right\}}    
+{ \displaystyle{ \sum_{x_{m,n}, \;  (m,n) \notin \eta_{i,j}}  
+               \left\{ e^{ -\sum_{c} V_{c} (x)} \right\}}}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+=  \frac{\displaystyle{ \sum_{\begin{array}{c}
+               \mbox{ \scriptsize$  {x}_{m,n}, (m,n) \not = (i,j)$} \\
+             \mbox {\scriptsize$(m,n) \notin \eta_{i,j}$\  } \end{array}}} 
+       \left\{ \displaystyle{e^{-{\left\{ \sum_{c:(i,j) \in c} V_{c}(x) 
+               + \sum_{c:(i,j) \notin c} V_{c} (x) \right\}}} } \right\} }  
+    { \displaystyle{ \sum_{x_{m,n}, \; (m,n) \notin \eta_{i,j}}}
+     \left\{ \displaystyle{e^{- \left\{ \sum_{c:(i,j) \in c} V_{c} (x) 
+              + \sum_{c:(i,j) \notin c} V_{c} (x) \right\}}} \right\} }
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+=  \frac{e^{- \sum_{c:(i,j) \in c} V_{c} (x) }
+       \left\{ \displaystyle{ \sum_{\begin{array}{c}
+              \mbox{\scriptsize$ {x}_{m,n}, \; (m,n) \not = (i,j)$} \\
+              \mbox{\scriptsize$ (m,n) \notin \eta_{i,j}$} \end{array}}}
+             \displaystyle{e^{ -\sum_{c:(i,j) \notin c} V_{c}(x) } }\right\} }
+              { \displaystyle{ \sum_{x_{i,j}}} 
+                 e^{- \sum_{c:(i,j) \in c} V_{c} (x)}
+            \left\{ \displaystyle{ \sum_{\begin{array}{c}
+                \mbox{ \scriptsize$ {x}_{m,n}, \; (m,n) \not = (i,j)$} \\
+              \mbox{ \scriptsize$(m,n) \notin \eta_{i,j}$} \end{array}} }
+             \displaystyle{e^{ -\sum_{c:(i,j) \notin c} V_{c}(x) } } \right\} }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="p_given_nbd"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(45)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Canceling  similar terms from the numerator and denominator, and
+comparing with (<A HREF="node68.html#p_given_everything">B.8</A>) we see that
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{rcl}
+\multicolumn{3}{l}{
+P [X_{i,j} = x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \in S, (k,l) \neq (i,j)]}
+   \\
+& = & {P[ X_{i,j} = x_{i,j} \mid X_{k,l} = x_{k,l}, \forall \; (k,l) \in
+  \eta_{i,j}]}  
+\end{array}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Note that <!-- MATH
+ $P[ X = 0] = \frac{1}{Z} e^{-U(0)} \neq 0$
+ -->
+ as long
+as <!-- MATH
+ $U(0) \neq \infty$
+ -->
+; and  will not be  infinity because
+<IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> takes countable finite values.
+
+<P>
+Thus we have shown that  <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is a MRF with . 
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+<B>only if part:</B>  MRF  Gibbs distribution
+    with the  general form for <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> as specified in the theorem.
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+The proof is in two parts: 
+<BR>(a) First we need to show that there exist 
+a <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> 
+such that the  probability distribution of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> can be 
+expressed as <!-- MATH
+ $P[X=x] = \frac{1}{Z} e^{-U(x)}$
+ -->
+. 
+<BR>(b) Next we need to consider the general form for <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$">, and 
+establish that the MRF condition implies that <!-- MATH
+ $G_{ \cdots} (\cdots )$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> 
+will be zero, if its argument do not belong to the same clique.  
+This will 
+then establish that <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> can be expressed as
+<!-- MATH
+ $U(x) = \sum_{c} V_{c} (x)$
+ -->
+.
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+<B>(a)</B>  Since <!-- MATH
+ $P [X =0] \neq 0$
+ -->
+, we define <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> as
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U(x) = -\ln \left\{ \frac{P[X=x]}{P[X=0]} \right\}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+obviously  and
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{P[X=x]}{P[X=0]} = e^{-U(x)}
+\;\; \Longrightarrow 
+P[X = x] = P[X=0]  e^{-U(x)}, \; \mbox{with} \;\;  Z = \frac{1}{P[X=0]}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+<B>(b)</B>  In order to prove that 
+<!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> becomes zero if its argument do not 
+belong the same clique, consider the following:
+
+<P>
+Let  be the state defined by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\bar{X}}^{m,n} = \begin{array}{cl}
+                     \left[ \begin{array}{c} 
+                    X_{1,1} \\
+                     \vdots \\
+                    X_{1,n} \\
+                      \vdots \\
+                      X_{m,n-1} \\
+                      0  \\
+                      X_{m,n+1}  \\
+                       \vdots \\
+                      X_{N,1} \\
+                         \vdots \\
+                        X_{N,N}
+                         \end{array} \right] & 
+                  \begin{array}{c} 
+                       \mbox{} \\
+                         \mbox{}\\
+                         \mbox{} \\
+                      \vdots \\
+                       \mbox{} \\
+                \leftarrow (m,n)^{th} \;\; \mbox{element set to} \; 0 \\
+                         \mbox{}  \\
+                       \vdots \\
+                        \mbox{} \\
+                         \vdots \\
+                        \mbox{}
+                         \end{array}                         
+\end{array}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+
+<P>
+Let  be a realization of 
+. Now consider
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U(x) - U ( \bar{x}^{m,n} )  =  - \ln \frac{P[X=x]}{P[X=0]} 
+                    - \ln \frac{P[X= \bar{x}^{m,n}]}{P[X=0]}
+            =  - \ln \frac{P[X = x]}{P[X = \bar{x}^{m,n}]}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+consequently
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{l}
+ e^{ \displaystyle{- \left( U(x) -U( \bar{x}^{m,n}) \right) } }
+                     = \displaystyle{ \frac{P[X = x]}{P[X =
+                         \bar{x}^{m,n}]}} \\[4ex]
+= \displaystyle{
+      \frac{P\left[ X_{m,n} = x_{m,n} \mid X_{k,l}=x_{k,l}, \forall \; (k,l) \in S, 
+(k,l) \neq (m,n) \right]}{P\left[ X_{m,n} = 0 \mid X_{k,l}=x_{k,l}, \forall \;
+(k,l) \in  S, (k,l) \neq (m,n) \right]} }
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(46)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+In the above, the common term <!-- MATH
+ $P[X_{k,l} =x_{k,l}, \; \forall\; (k,l) \in
+S, (k,l) \neq (m,n)]$
+ -->
+ has been canceled.
+
+<P>
+Now, by the Markovian assumption, the right hand side depends upon 
+ and the neighborhood of , namely,
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+e^{\displaystyle{- (U(x)-U(\bar{x}^{m,n}))}} = 
+\frac{P \left[ X_{m,n} = x_{m,n} \mid X_{k,l}=x_{k,l} , 
+(k,l) \in \eta_{m,n} \right] }{P \left[ X_{m,n} = 0 \mid 
+       X_{k,l}=x_{k,l},    (k,l) \in \eta_{m,n} \right] }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="exp_U_x__U_x_mn_"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(47)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Using the general form for <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> and <!-- MATH
+ $U(\bar{x}^{m,n})$
+ -->
+ 
+(Reed-Muller 
+expansion) we need to show that <!-- MATH
+ $G_{\cdots}( \cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> will be
+zero if it does not have all its arguments 
+as neighbors of one another. Rewriting (<A HREF="node66.html#general_form">B.4</A>), 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{rcl}
+U(x) & = & \displaystyle{\sum_{(i,j)=(1,1)}^{N,N} x_{i,j} G_{i,j}(x_{i,j})}  \\[4ex]
+     & +  & \displaystyle{ \sum_{(i,j)=(1,1)}^{(N,N-1)} 
+              \sum_{(k,l)=(i,j+1)}^{(N,N)}  x_{i,j} x_{k,l} 
+              G_{i,j;k,l} (x_{i,j}, x_{k,l})}  \\[4ex]
+     & + &  \displaystyle{ \sum_{(i,j)=(1,1)}^{(N,N-2)} 
+                    \sum_{(k,l)=(i,j+1)}^{(N,N-1)}
+                    \sum_{(r,s)=(k,l+1)}^{(N,N)} \cdots + } \\[3ex]
+     &   &  \vdots \\[2ex]
+     & + &  \displaystyle{ x_{1,1}\, \cdots \,  x_{N,1} \,\cdots\, x_{N,N} 
+         G_{1,1;  \cdots \, ; N,1; \cdots \, N,N} 
+           (x_{1,1} \cdots, \, x_{N,1} \cdots  x_{N,N})}
+\end{array}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Without loss of generality we can consider .
+Then in <!-- MATH
+ $U(x) - U( \bar{x}^{1,1})$
+ -->
+: 
+
+<P>
+
+<OL>
+<LI>Since , in <!-- MATH
+ $U( \bar{x}^{1,1})$
+ -->
+, all terms 
+corresponding to  will give a zero contribution.
+
+<P>
+</LI>
+<LI>All terms not involving  in <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> will cancel with all 
+terms not involving  in <!-- MATH
+ $U( \bar{x}^{1,1})$
+ -->
+.
+
+<P>
+</LI>
+<LI>Finally we will be left with terms involving only , 
+and these terms come from <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$">.
+</LI>
+</OL>
+
+<P>
+Based on the above observations we have
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{rcl}
+U(x) - U( \bar{x}^{1,1} )  & = &
+  \displaystyle{x_{1,1} G_{1,1} (x_{1,1}) + \sum_{(k,l) = (1,2)}^{(N,N)} x_{1,1} x_{k,l} 
+                         G_{i,j;k,l} (x_{1,1}, x_{k,l})}  \\[4ex]
+  & + &  \displaystyle{ x_{1,1} \sum_{(k,l)=(1,2)}^{(1,N-1)} 
+                  \sum_{(r,s)=(k,l+1)}^{N,N} x_{k,l} x_{r,s} 
+              G_{1,1;k,l;r,s}(x_{1,1},x_{k,l},x_{r,s})} \\[4ex]
+  & +  &   \vdots  \\[2ex]
+  & +  & \displaystyle{  x_{1,1} \,\cdots \, x_{N,1} \cdots x_{N,N}
+             G_{1,1; \cdots ; 1,N; \cdots; NN} (x_{1,1} , 
+\cdots , x_{N,1} \cdots x_{N,N})}
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="U_x__U_x_11_"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(48)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Now suppose site  is not a neighbor of .  Then by
+(<A HREF="node68.html#exp_U_x__U_x_mn_">B.11</A>), the right hand side of
+(<A HREF="node68.html#U_x__U_x_11_">B.12</A>)
+ must be  independent of . This can be used to show that all
+ <!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> which involve  and  will be zero.
+This, in turn,  can be achieved by proper selection of <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$">.
+
+<P>
+Choose <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> such that <!-- MATH
+ $x_{k,l} = 0, \; \forall \; (k,l) \neq (1,1) 
+ \;\mbox{and}\; (k,l) \neq (p,q)$
+ -->
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x = \left[ x_{1,1} \; 0 \;\cdots \;0 \;x_{p,q} \; 0\;\cdots\; 0
+\right]^{T}_{N^{2} \times 1}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+then 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+U(x) - U(x^{1,1}) =
+ x_{1,1} G_{1,1} (x_{1,1}) + x_{1,1} x_{p,q} G_{1,1;p,q} 
+(x_{1,1}, x_{p,q})
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="simplified_U_x_-U_x11_"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(49)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+In order for this to be independent of  we have to have
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+G_{1,1;p,q}( x_{1,1}, x_{p,q}) = 0
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+
+<P>
+By considering all sites  which are not neighbors 
+of  we will then obtain 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+G_{1,1;p,q} (x_{1,1} , x_{p,q}) = 0, \; \forall \;\; (p,q) \notin \eta_{1,1}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="G11_pq"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(50)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Next, for three node case,  choose <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> such that
+<!-- MATH
+ $\{ x_{k,l} = 0, \; \forall\;  (k,l) \neq (1,1), (k,l)  \neq (p,q), 
+\; \mbox{and} \;
+(k,l)  \neq (t,u) \}$
+ -->
+. Also <!-- MATH
+ $\{ (1,1) \neq (p,q) \neq (t,u)\}$
+ -->
+. 
+Here,  is some arbitrary site. Then,
+following an approach analogous to deriving
+(<A HREF="node68.html#simplified_U_x_-U_x11_">B.13</A>) we obtain
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{rcl}
+ U(x) -U(\bar{x}^{1,1}) & = & 
+       x_{1,1} G_{1,1} (x_{1,1}) + x_{1,1} x_{p,q}
+                      G_{1,1;p,q}(x_{1,1},x_{p.q})   \\[1.5ex]
+    &  & + x_{1,1} x_{t,u} G_{1,1;t,u} (x_{1,1} , x_{t,u})  \\[1.5ex]
+    &  & + x_{1,1} x_{p,q} x_{t,u} G_{1,1;p,q;t,u} 
+                   (x_{1,1} , x_{p,q} , x_{t,u}) 
+\end{array}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+From (<A HREF="node68.html#G11_pq">B.14</A>), we have <!-- MATH
+ $G_{1,1;p,q}(x_{1,1},x_{p,q})=0$
+ -->
+. Next, 
+whether  is a neighbor of  or not, in order for 
+the right hand side  to be independent of  , we need that
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+G_{1,1;p,q;t,u} (x_{1,1} , x_{p,q} , x_{t,u}) = 0
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Doing this for all sites  which are not neighbors of  we get
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+G_{1,1;p,q;t,u} (x_{1,1} , x_{p,q} , x_{t,u}) = 0 , \forall \;
+ (p,q) \notin \eta_{1,1}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Continuing in this fashion we can show that all 
+<!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> whose arguments 
+are not neighbors, or equivalently whose arguments do not belong to a 
+clique, have to be zero.  Consequently, we can express <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> as 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U(x) = \sum_{c} V_{c} (x)
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+where  will be determined by  non-zero 
+<!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> (or 
+<!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> whose arguments form a clique).  
+
+<P>
+This completes the proof of the Hammersley-Clifford Theorem.
+
+<P>
+Simulated Annealing Algorithm -- Selecting <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> in practise
+<A NAME="chap:saa_T_selection"></A>
+<P>
+SAA algorithm, simulated annealing is effective if the 
+temperature is chosen <EM>correctly</EM>. 
+It is well known that the temperature should be <EM>high</EM> initially and should
+reduce <EM>slowly</EM> with time (iterations) using some cooling schedule. 
+The
+reason being that a large value of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> returns a value close to  for
+<!-- MATH
+ $\exp{(-(\Delta E)/T_0)}$
+ -->
+which in turn means that it is more likely that a new configuration will be
+accepted even though the energy contributed by this new configuration is high
+(remember we are looking for a smaller energy configuration). 
+But with iterations 
+ <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> decreases and the value of <!-- MATH
+ $\exp(-(\Delta E)/T_0)$
+ -->
+ tends to ,
+making
+it conceptually a gradient decent situation - accepting only configuration which
+have lesser energy. Suppose we have a known cooling schedule and what we are
+required to do is choose a starting <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> so that the algorithm is capable of
+reaching every solution - now what does this depend on? A look at the 
+literature gives no information on the choice instead the choice are ad hoc or
+based on trial and error and
+it is not uncommon to find -- <EM>we chose the starting
+temperature as xyz</EM>. 
+
+<P>
+It can be seen that the
+temperature choice 
+depends on <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> which is dependent on the difference in the
+(<IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$">) energy between the <EM>old</EM> configuration and <EM>new</EM>
+ configuration. 
+Clearly <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> is application dependent and hence the choice of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$">.
+
+<DIV ALIGN="CENTER"><A NAME="fig:dEvsT"></A><A NAME="15013"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure C.1:</STRONG>
+<IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> versus <!-- MATH
+ $\exp{(-(\Delta E)/T_0)}$
+ -->
+.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+Figure <A HREF="node68.html#fig:dEvsT">C.1</A>
+plots the value of  <!-- MATH
+ $\exp(-(\Delta E)/T_0)$
+ -->
+ for <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> varying between 
+ and
+ for different values of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$">. Suppose for a particular application the
+range of  <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> is  ; we are now required to choose a suitable <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$">.
+For example if  
+we choose a starting  <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> to be , then clearly as seen from the plot in 
+Figure <A HREF="node68.html#fig:dEvsT">C.1</A>  <!-- MATH
+ $\exp(-(\Delta
+E)/T_0)$
+ -->
+ would have a value between  and , implying that there is more
+probability that a high energy will <EM>not</EM> be accepted as a possible 
+configuration
+from the beginning, which is contrary to what we require -- more probability
+ of a
+high energy state being accepted and hence the algorithm being able to span the
+whole solution space. But if <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> is chosen as , there  <!-- MATH
+ $\exp(-(\Delta
+E)/T_0)$
+ -->
+ is greater than  and hence there is a good probability 
+of the
+algorithm being able to span the solution space.
+ This clearly leads to the belief that <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> should
+be chosen such that it has some bearing on <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$">. In fact,
+ in practise it is
+best to choose <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> such that <!-- MATH
+ $\Delta E/T_0 \approx 0.1$
+ -->
+ 
+so that there is a good
+probability of choosing a higher energy state and hence being able to span whole
+of the solution space.
+
+<P>
+Now, let us look at a case where <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> is say of the
+order , then we know from the above discussion 
+that we should choose <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> to start at say .
+But now the <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> should be reduced from  (using some cooling
+schedule)
+such that the <!-- MATH
+ $\exp(-(\Delta E)/T_0)$
+ -->
+ value becomes small; meaning less
+probability of a high energy state being accepted. 
+Suppose we agree that <!-- MATH
+ $\exp(-(\Delta
+E)/T_0) = 0.1$
+ -->
+ 
+is good enough probability of the high energy states not being accepted
+then it is easy to see that we  would have to reduce
+ <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> to  -- this implies that a log cooling
+schedule would need  iterations (to reduce the <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> from  to )
+where  is given by
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+1000/\log_e(n)  =  50 \;\;\;\; \Rightarrow n  =  4.8 \times 10^8
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(51)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+If an application has  <IMG
+ WIDTH="33" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Delta E$"> 
+in the range  then we would have to choose  and log reduce it to 
+taking the same number of iterations. This shows that a higher <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> does not
+affect the number of iterations. In practise, one can use a different cooling
+schedule and reduce the number of iterations.
+To the best of our knowledge we have not come across similar discussion about
+choice of <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> in literature.
+We believe this discussion could prove to be of use especially when using 
+SAA in practise.
+
+<P>
+<HR>
+<A NAME="tex2html1086"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1082"
+  HREF="node67.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1078"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1084"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1087"
+  HREF="node69.html">Experiments</A>
+<B>Up:</B> <A NAME="tex2html1083"
+  HREF="node67.html">Justification for the General</A>
+<B> Previous:</B> <A NAME="tex2html1079"
+  HREF="node67.html">Justification for the General</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> Obtaining images at different resolutions</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" Obtaining images at different resolutions">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html138 HREF="node11.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html136 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html130 HREF="node9.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html139 HREF="node11.html"> The Integrated Stereo </A>
+<B>Up:</B> <A NAME=tex2html137 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html131 HREF="node9.html"> The interpolation block</A>
+<BR> <HR> <P>
+<H1><A NAME=SECTION00050000000000000000> Obtaining images at different resolutions</A></H1>
+<P>
+The energy functions constructed in Section <A HREF="node5.html#secenergy">4</A> are valid at all
+resolutions. In this Section we sketch the method of Burt and Adelson [<A HREF="node24.html#burt">23</A>] to
+obtain images at different resolutions.
+<P>
+<IMG  ALIGN=MIDDLE ALT="" SRC="img128.gif"> is the intensity value of the <IMG  ALIGN=MIDDLE ALT="" SRC="img129.gif"> pixel 
+in the right image at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img130.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img131.gif"> 
+is the intensity value of the <IMG  ALIGN=MIDDLE ALT="" SRC="img132.gif"> pixel at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img133.gif">, 
+which
+is obtained using the algorithm proposed in [<A HREF="node24.html#burt">23</A>]. Note that for
+<IMG  ALIGN=MIDDLE ALT="" SRC="img134.gif">, <b>i,j</b> can take values in the range <IMG  ALIGN=MIDDLE ALT="" SRC="img135.gif">.
+Similarly,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img136.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img137.gif"> represents the intensity
+of the left image at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img138.gif"> and  <IMG  ALIGN=MIDDLE ALT="" SRC="img139.gif"> respectively.
+<P>
+The basic idea in the approach of [<A HREF="node24.html#burt">23</A>] is :
+An image at a given resolution is lowpass filtered so that 
+high spatial frequencies are removed, as a result we can sample
+it at a lower rate (typically one half) and hence we have an image
+of lower resolution and one half the size of the original image.
+This process of lowpass filtering and subsampling results in images
+which are at different resolutions. In addition, the difference images at different
+resolutions are  
+obtained by upsampling the coarser image by a factor of 2, interpolating  it,
+and then subtracting it from the next finer resolution image. The difference images
+so obtained are used by our algorithm to obtain the precomputed line fields  
+at each resolution.
+<P>
+A suitable kernel for low pass filtering is used to obtain images
+at different resolutions. If we assume a 1-D signal and the size of the 
+kernel to be 5, then as shown by Burt and Adelson [<A HREF="node24.html#burt">23</A>] the weights 
+of the kernel, denoted by <IMG  ALIGN=MIDDLE ALT="" SRC="img140.gif">, 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img141.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img142.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img143.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img144.gif">, should satisfy the following constraints
+<P>
+<DL ><DT>Normalization
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img145.gif">
+<DT>Symmetry
+<DD>  <IMG  ALIGN=MIDDLE ALT="" SRC="img146.gif"> for <b>i = 0,1,2</b>
+<DT>Equal Contribution
+<DD> If <IMG  ALIGN=MIDDLE ALT="" SRC="img147.gif">, then
+<b>a+2c=2b</b> must be satisfied.
+<P>
+ </DL>
+<P>
+
+<P>
+ A <IMG  ALIGN=MIDDLE ALT="" SRC="img148.gif"> kernel from [<A HREF="node24.html#burt">23</A>]
+<P>
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img149.gif"><P>
+<P>
+  with <IMG  ALIGN=BOTTOM ALT="" SRC="img150.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img151.gif"> and <IMG  ALIGN=BOTTOM ALT="" SRC="img152.gif">, was used to convolve
+ with the high resolution image (<IMG  ALIGN=BOTTOM ALT="" SRC="img153.gif">) image; the convolved image
+ is then downsampled (for example, selecting every alternate pixel along each
+ row and column) to obtain the image at lower resolution (<IMG  ALIGN=MIDDLE ALT="" SRC="img154.gif">). 
+ The process of obtaining the low resolution image and the difference image is
+ depicted in Figure <A HREF="node10.html#figconstruct">4</A>, where the block <IMG  ALIGN=BOTTOM ALT="" SRC="img155.gif">
+ represents convolution with the kernel  K above and 
+
+<H1>O</H1><IMG  ALIGN=BOTTOM ALT="" SRC="img156.gif">
+ represents
+ downsampling by 2, and 
+
+<H1>O</H1><IMG  ALIGN=BOTTOM ALT="" SRC="img157.gif">
+ represents upsampling  by 2 (namely, introducing
+a  zero between alternate pixels).
+ Figure <A HREF="node10.html#figresolution">5</A> gives one such sequence of 
+ multiresolution images, while  Figure <A HREF="node10.html#figdifference">6</A>
+depicts the corresponding difference image <IMG  ALIGN=MIDDLE ALT="" SRC="img158.gif">
+<P>
+ <P><A NAME=1115>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img159.gif">
+<BR><STRONG>Figure 4:</STRONG> <A NAME=figconstruct>&#160;</A> Procedure for obtaining multiresolution images<BR>
+<P>
+<P>
+ <P><A NAME=1117>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img160.gif">
+<BR><STRONG>Figure 5:</STRONG> <A NAME=figresolution>&#160;</A> Image at resolution 256, 128, 64, 32, 16<BR>
+<P>
+<P>
+ <P><A NAME=1119>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img161.gif">
+<BR><STRONG>Figure 6:</STRONG> <A NAME=figdifference>&#160;</A> Difference image at resolution 256, 128, 64, 32, 16<BR>
+<P><BR> <HR><A NAME=tex2html138 HREF="node11.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html136 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html130 HREF="node9.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html139 HREF="node11.html"> The Integrated Stereo </A>
+<B>Up:</B> <A NAME=tex2html137 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html131 HREF="node9.html"> The interpolation block</A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,224 @@
+<html> 
+<body>
+<LINK REL="STYLESHEET" HREF="../../style.css">
+</body>
+
+<H2>Projects Done and in Progress (<a 
+href="../CV_doc/c_doc_v.html">CV</a>)</H2>
+ <ul>
+ <li><a href="#mi"> Modular Integration </a>for
+Low-level and High-level Vision Problems in a Multiresolution Framework 
+<ol>
+ <li> <a href="#isv">Disparity Estimation from Stereo Images </a>
+ <li> <a href="#ofe">Optical Flow Estimation </a>
+ <li> <a href="#cir">Color Image Restoration </a>
+ <li> <a href="#ii">Image Interpretation </a>
+</ul>
+ <li> <a href="#cw">Current </a>Work
+ <li> <a href="#dpaa">Adaptive Algorithm for Discontinuity Preserving Image 
+Restoration</a>
+ <li> <a href="#tc">Target Classification in Passive Sonar Using Artificial 
+Neural Networks</a>
+ <li> <a href="#ce">Computer Evaluation of Objective Answer Scripts </a>
+ <li> <a href="#gen">General Information</a> 
+</ol>
+
+<hr>
+ 
+<center>
+<h3> <a name=mi>Modular Integration for
+Low-level and High-level Vision Problems in a Multiresolution Framework
+</h3>
+</center>
+Vision is a hard task to automate, especially because it come to
+humans so easily that it is often taken for granted. In this thesis, we
+develop a framework based on modular integration and multiresolution for
+solving computer vision tasks. The developed framework is based on the
+following considerations:  (i) it should represent the functioning of the
+human visual system, (ii) the framework should be sufficiently general so
+as to be applicable to any vision task, (iii) should be efficient in terms
+of the correctness of the solution and the speed of computation. 
+
+In this thesis, we develop a general framework to solve computer vision
+tasks. The development of the generalized framework is based on modular
+integration and multiresolution, these concepts are motivated by the
+following observations:  (i) the belief that the human visual system very
+much works in a multiresolution framework, (ii)almost all the computer
+vision problems are ill-posed in the sense of Hadamard, and hence modules
+working individually without interaction cannot come out with the required
+solution because of lack of sufficient constraints, (iii) the human visual
+system which rarely gets fooled by illusions, uses module
+integration to overcome visual illusions which can occur when the
+assumptions used by the visual system are wrong. The modular interaction
+in fact builds robustness in the form of the mistakes made by one sensory
+module being corrected by another module, (iv) we get an efficient
+representation of data which can be used with effect to reduce the
+computational complexity.
+
+The developed generalized framework for solving vision task is validated
+by applying it to both low-level and high-level vision tasks.
+Specifically, we develop schemes based on modular integration and
+multiresolution framework to solve (i) the color image restoration
+problem, (ii) the problem of disparity estimation from stereo pair, both
+being classified as low-level vision tasks and (iii) the vision task of
+image interpretation, which comes under the category high-level vision}.
+In the process we obtain new algorithms for the three problems.
+
+The main contribution of the thesis is development of a generalized
+framework for solving vision task and demonstrating its applicability for
+solving vision tasks. The other contributions which arise when the
+proposed framework is applied to the specific problems are (i) integration
+of the parameter estimation module and the restoration module for color
+image restoration, (ii) the behavior of the degradation or image formation
+model over multiresolution, (iii) a new algorithm for disparity
+computation from a given pair of stereo images exploiting intra-module
+integration and multiresolution analysis. and (iv) new algorithm for the
+problem of joint segmentation and image interpretation.
+
+<center>
+<h3> <a name=isv>Disparity Estimation from Stereo Images</h3>
+</center>
+
+
+Developed an approach which integrates different modules, namely, the
+feature extractor module, the matching module and the interpolation module
+to extract depth from stereo images. We study the integration process at
+the finest resolution when, (i) precomputed edge map is the only line
+field driving the model, (ii) the line fields are computed interactively
+by the feature extracting module of the model and (iii) when both the
+interactive line field computation module and the precomputed line field
+modules are present. This integration process being computationally
+intensive, we develop a multiresolution stereo integration approach.
+Energy function for each of the module at different resolutions is
+constructed and minimized in an integrated manner yielding a dense
+disparity map. A new energy function for the matching module is proposed.
+Experimental results are presented to illustrate our approach. 
+
+
+<center>
+<h3> <a name=pfe>Optical Flow Estimation</h3>
+</center>
+
+Computing optical flow from two consecutive frames coming from a sequence
+of frames of a scene is an interesting and an ill-posed problem. In this
+paper, we propose an integrated approach to compute optical flow field
+from two consecutive frames. The approach is to construct energy functions
+for each of the modules involved in determination of optical flow and then
+to minimize them in an integrated manner. Simulation results are presented
+to validate the proposed method. The proposed approach can be modified to
+fit into a multiresolution framework thereby enhancing the computational
+speed of the algorithm significantly. 
+
+
+
+<center> <h3> <a name=cir>Color Image Restoration</h3> </center> 
+
+The image is modeled as a Markov Random Field (MRF) and a restoration
+algorithm is proposed in a multiresolution framework. The incorporation of
+multiresolution technique significantly reduces the computational
+complexity of the restoration algorithm. The energy function at each
+resolution being non-convex, is minimized using the simulated annealing
+algorithm. The parameters, which describe the MRF model at each
+resolution, are computed in the supervised and unsupervised mode using the
+homotopy continuation method. Simulation results are presented to validate
+the proposed scheme. 
+
+
+<center>
+<h3> <a name=ii>Image Interpretation</h3>
+</center>
+
+Interpreting images is a difficult task to automate. Image interpretation
+consists of both low level and high level vision tasks. In this technical
+report, we develop a scheme for joint segmentation and image
+interpretation in a multiresolution framework, where segmentation (low
+level) and interpretation (high level) interleave. The idea being that the
+interpretation block should be able to guide the segmentation block which
+in turn helps the interpretation block in better interpretation. We assume
+that the conditional probability of the interpretation labels, given the
+knowledge vector and the measurement vector is a MRF and formulate the
+problem as a MAP estimation problem at each resolution. We find the
+optimal interpretation labels by using the simulated annealing algorithm.
+The proposed scheme is validated on some real scene images. We also
+describe in detail the procedure adopted to gather knowledge, which though
+not connected with the title of this report is an important aspect
+considering the fact that generation of the knowledge base is a
+prerequisite for doing image interpretation. 
+
+
+<center>
+<h3> <a name=cw>Current Work</h3>
+</center>
+
+Presently working of the face identification problem along with a team of
+other resrearchers. We are looking at the problem in two different
+directions. (i) The use of Hidden Markov Models for face identification
+and (ii) Neural Network based face identification. We are essentially
+looking at the face identification problem which is different from the
+face recognition problem. Here, the emphasis is on being able to identify
+faces in a given image (for example all faces in a family photograph!) and
+this is a prerequisite for the face recognition problem. We are in the
+preliminary stage and the work is in progress.
+
+
+<center> <h3><a name=dpaa>
+  Adaptive Algorithm for Discontinuity
+Preserving Image Restoration</h3> </center>
+
+Conventional adaptive algorithms for image restoration tend to blur the
+ image by smoothing over discontinuities. To overcome this, 
+a discontinuity
+preserving adaptive algorithm (DPAA) for image restoration is developed.
+The basic idea is to combine the continuous line field model with the
+usual linear FIR model used for image restoration. We minimize the
+constructed cost function using the gradient descent algorithm in an
+adaptive setup.  Computational cost and simulation results are given to
+aid comparison of DPAA and the conventional 2D-LMS algorithm.
+
+<center> <h3>  <a name=tc>
+ Target Classification in Passive Sonar Using Artificial Neural Networks
+</h3> </center>
+
+Developed a scheme for target classifiaction while working as a Junior
+Scientific Officer in the Naval Physical Oceanographic Laboratory -
+Cochin, sponsored project titled Sonar System Simulation at Regional
+Engineering College, Tiruchy, India. This was a team work and in my
+capacity was involved in developing software for classification of targets
+using Artificial Neural Networks which was incorporated in the final
+module. The results were very encouraging in the sense the performance was
+far better than the knowledge based target classification which was done
+as a part of the project earlier. This work involved extraction of
+knowledge to be fed to the neural network, from the spectral information
+emitted by different vessels sailing in the ocean. The scheme used was
+the simple back propagation algorithm. The scheme worked well and was
+presented as my Masters thesis
+
+<center>
+<h3> <a name=ce>
+Computer Evaluation of Objective Answer Scripts
+</h3>
+</center>
+
+As a mini project while doing my Masters, developed a program for
+evaluation of objective type answer scripts. The programming was done
+using the benchmark image processing work station and the processing was
+online. The answer script (customized) was digitized and the digitized
+information was fed to the code which did the evaluation. The code was
+based on the simple corelation technique and performed well. It earmed
+the best grade possible!
+
+<center>
+<h3>
+General information <a name=gen>
+</h3>
+</center>
+
+Most of the work as cited above involved (i) studying the problem, (ii)
+formulating a procedure to solve it using tools and techniques that seem
+most appropriate for that problem and finally (iii) validating the
+formulated procedure by experiments, namely, writing a computer code
+(mostly in C). In general, the codes were written more to test the
+procedure suggested or formulated and not with an intention of coming up
+with professional or optimal codes. 
+     
+</html>

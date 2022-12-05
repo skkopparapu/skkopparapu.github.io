@@ -1,0 +1,3427 @@
+\batchmode
+
+\documentstyle[psfig,a4]{article}
+\makeatletter
+%
+\evensidemargin 0in
+\oddsidemargin 0in
+%
+\textwidth 6.25in
+%
+
+
+
+
+
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+
+\newcommand {\ba}{\begin{abstract}}
+
+\newcommand {\ea}{\end{abstract}}
+
+\newcommand {\bdouble}{\addtolength{\baselineskip}{+1.0\baselineskip}}
+
+\newcommand {\edouble}{\addtolength{\baselineskip}{-0.5\baselineskip}}
+
+\newcommand {\bonehalf}{\addtolength{\baselineskip}{+0.7\baselineskip}}
+
+\newcommand {\eonehalf}{\addtolength{\baselineskip}{-0.5\baselineskip}}
+
+\newcommand {\foot}{\footnotetext{This work is supported by an MHRD (India) 
+project on `` Computer Vision ''. }}
+
+\newcommand {\bs}{\begin{small}}
+
+\newcommand {\es}{\end{small}}
+
+\newcommand {\bh}{\begin{huge}}
+
+\newcommand {\eh}{\end{huge}}
+
+\newcommand {\bl}{\begin{Large}}
+
+\newcommand {\el}{\end{Large}}
+
+\newcommand {\bc}{\begin{center}}
+
+\newcommand {\ec}{\end{center}}
+
+\newcommand {\bt}{\begin{tabular}}
+
+\newcommand {\et}{\end{tabular}}
+
+\newcommand {\vs}{\vspace{2ex}}
+
+\newcommand {\noi}{\noindent}
+
+\newcommand {\beqa}{\begin{eqnarray}}
+
+\newcommand {\eeqa}{\end{eqnarray}}
+
+\newcommand {\nn}{\nonumber}
+
+\newcommand {\pbrk}{\pagebreak}
+
+\newcommand {\ul}{\underline}
+
+\newcommand {\bb}{\begin{thebibliography}{99}}
+
+\newcommand {\eb}{\end{thebibliography}}
+
+\newcommand {\bd}{\begin{document}}
+
+\newcommand {\ed}{\end{document}}
+
+\newcommand {\beq}{\begin{equation}}
+
+\newcommand {\eeq}{\end{equation}}
+
+\newcommand {\bi}{\begin{itemize}}
+
+\newcommand {\ei}{\end{itemize}}
+
+\newcommand {\be}{\begin{enumerate}}
+
+\newcommand {\ee}{\end{enumerate}}
+
+\newcommand {\iitbseal}{\newfont{\iitblogofont}{iitblogo}{\iitblogofont a}}
+
+\newcommand {\DEF}{\stackrel{def}{=}}
+
+\newcommand {\mytitle}{Joint Segmentation and Image Interpretation}
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4398: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x,a,b,c,d)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4400: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4402: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4404: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4406: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4408: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4410: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4412: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4414: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4416: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4418: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4420: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4422: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4424: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4426: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4428: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4430: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4432: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4434: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4436: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4438: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/int_block.ps,width=5in}}
+
+\label{fig:scheme}
+\end{figure}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4442: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^\Omega \times 2^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4444: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4446: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4448: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4450: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4452: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \time 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4454: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \time 128$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4456: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4458: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4458: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=wt.ps}}
+
+\label{fig:wt}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4460: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4462: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,LL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4464: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4466: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega
+-1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4468: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4470: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^{(\Omega-1)} \times 2^{(\Omega-1)}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4472: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4474: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4476: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4478: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4480: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^{\Omega -1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4482: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4484: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega-1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4486: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega  -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4488: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=IMAGES/graph.ps,height=3.0in}}
+
+\label{fig:graph}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(R^\Omega_1, R^\Omega_2,
+\cdots R^\Omega_n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4490: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L^\Omega_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4494: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L^\Omega_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4496: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L^\Omega_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4498: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$ \cdots$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4500: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L^\Omega_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4502: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L^\Omega_0 \rightarrow $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4504: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$ \{ L_i^\Omega \}_{i=1}^{m}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4506: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_j^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4510: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_j^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4512: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$j=1, \cdots, n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4514: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_j^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4516: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$ \{ L^\Omega_0, L^\Omega_1, L^\Omega_2, \cdots, L^\Omega_m \} $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4518: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\bf I^\Omega} = [ I^\Omega_1, I^\Omega_2, \cdots,
+I^\Omega_n]^T$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4520: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4522: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4524: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4526: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\bf I^\Omega}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4528: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4530: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4532: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}P[{\bf I^\Omega}|K^\Omega, X^\Omega] = \frac{1}{Z^\Omega} \exp{[-U({\bf I^\Omega};K^\Omega, X^\Omega)}] \label{eq:max} \;\;\;\;\;\; \mbox{is a MRF} \end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4534: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4536: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4538: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\bf I^\Omega}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4540: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\bf I}^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4542: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4544: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4546: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray}I^\Omega_{*}&= &arg \max_{{\bf I^\Omega} \in \{L^\Omega\}^n} P[{\bf I^\Omega}|K^\Omega, X^\Omega]  \nonumber \\  
+&=& arg \max_{{\bf I^\Omega} \in \{L^\Omega\}^n} \frac{1}{Z^\Omega} exp[-U({\bf I^\Omega};K^\Omega, X^\Omega)]  \nonumber  \\ 
+&=& arg \min_{{\bf I^\Omega} \in \{L^\Omega\}^n} U({\bf I^\Omega};K^\Omega, X^\Omega)
+\end{eqnarray}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U({\bf I^\Omega};K^\Omega, X^\Omega)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4548: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4550: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4552: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4554: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{equation}P[{\bf I}^\Omega|K^\Omega, X^\Omega] = \frac{1}{Z} exp[-U({\bf I}^\Omega;K^\Omega, X^\Omega)]
+\label{eq:app_energy} 
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U({\bf I}^\Omega;K^\Omega, X^\Omega)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4562: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}U({\bf I}^\Omega;K^\Omega, X^\Omega)  = \sum_{c \in {\cal C(G}^\Omega,{\cal N}^\Omega)}V_c({\bf I}^\Omega;K^\Omega, X^\Omega)
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_c(\cdot; \cdot, \cdot)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4564: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4566: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4568: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4570: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(\cdot; \cdot, \cdot)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4572: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_c(\cdot; \cdot, \cdot)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4574: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_c(\cdot; \cdot, \cdot)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4576: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4578: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4580: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\eta$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4588: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_{\eta}^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4590: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_c(I^\Omega\eta;K^\Omega, X^\Omega{\eta})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4592: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\delta$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4594: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X^\Omega\eta = [^1x_{\eta}^\Omega, ^2x_{\eta}^\Omega, \cdots,
+^mx_{\delta}^\Omega]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4596: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}V_c(I^\Omega{\eta};K^\Omega, X_{\eta}^\Omega) = \sum_{i=1}^{\delta}W_c^i B_c^i(I_{\eta}^\Omega; K^\Omega, ^ix_{\eta}^\Omega)
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_c^i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4598: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sum_{i=1}^{\delta}W_c^i = 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4600: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$B^i_c(\cdot; \cdot, \cdot)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4602: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P[I^\Omega(R^\Omega) | K^\Omega, X^\Omega(R^\Omega)]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4606: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P[{\bf I}^\Omega | K^\Omega, X^\Omega]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4608: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega, C^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4612: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{% latex2html id marker 4614
+$- \alpha_c \log P[I^\Omega(R^\Omega) | K^\Omega, X^\Omega(R^\Omega)]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4614: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x,a,b,c,d)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4616: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4622: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x,a,b,c,d)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4624: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x,a,b,c,d)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4624: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=IMAGES/basis.ps}}
+
+\label{fig:basis_function}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray}g(x) =& \;\;  1      &\;\; x < a    \nonumber
+  \\ 
+     & \;\;  \frac{x-b}{b-a}& \;\; a \le x < b \nonumber
+   \\ 
+     & \;\;  0      &  \;\; b \le x \le c \nonumber
+   \\ 
+     & \;\;  \frac{x-c}{d-c}&  \;\; c \le x \le d \nonumber
+  \\ 
+     & \; \;  1      &  \;\; x >d  \nonumber
+  \\ 
+     \label{eq:basis}
+\end{eqnarray}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4626: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\left ( \frac{2}{1+e^{-\beta x^2}}-1 \right ) \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\setlength{\unitlength}{0.240900pt}
+\ifx\plotpoint\undefined\newsavebox{\plotpoint}\fi
+\sbox{\plotpoint}{\rule[-0.175pt]{0.350pt}{0.350pt}}%
+\begin{picture}(1500,900)(0,0)
+\tenrm
+\put(264,158){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(850,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(264,158){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,158){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,158){\makebox(0,0)[r]{}}
+\put(1416,158){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,284){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,284){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,284){\makebox(0,0)[r]{}}
+\put(1416,284){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,410){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,410){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,410){\makebox(0,0)[r]{}}
+\put(1416,410){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,535){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,535){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,535){\makebox(0,0)[r]{}}
+\put(1416,535){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,661){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,661){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,661){\makebox(0,0)[r]{}}
+\put(1416,661){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,787){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(264,787){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(242,787){\makebox(0,0)[r]{}}
+\put(1416,787){\rule[-0.175pt]{4.818pt}{0.350pt}}
+\put(264,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(264,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(264,113){\makebox(0,0){}}
+\put(264,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(381,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(381,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(381,113){\makebox(0,0){}}
+\put(381,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(498,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(498,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(498,113){\makebox(0,0){}}
+\put(498,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(616,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(616,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(616,113){\makebox(0,0){}}
+\put(616,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(733,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(733,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(733,113){\makebox(0,0){}}
+\put(733,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(850,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(850,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(850,113){\makebox(0,0){}}
+\put(850,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(967,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(967,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(967,113){\makebox(0,0){}}
+\put(967,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1084,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(1084,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1084,113){\makebox(0,0){}}
+\put(1084,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1202,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(1202,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1202,113){\makebox(0,0){}}
+\put(1202,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1319,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(1319,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1319,113){\makebox(0,0){}}
+\put(1319,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1436,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(1436,158){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(1436,113){\makebox(0,0){}}
+\put(1436,767){\rule[-0.175pt]{0.350pt}{4.818pt}}
+\put(264,158){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(1436,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(264,787){\rule[-0.175pt]{282.335pt}{0.350pt}}
+\put(45,472){\makebox(0,0)[l]{\shortstack{$g(x)$}}}
+\put(850,68){\makebox(0,0){}}
+\put(850,832){\makebox(0,0){Sigmoidal variation for  beta=1, beta=0.01}}
+\put(264,158){\rule[-0.175pt]{0.350pt}{151.526pt}}
+\put(1306,722){\makebox(0,0)[r]{beta=1}}
+\put(1328,722){\rule[-0.175pt]{15.899pt}{0.350pt}}
+\put(264,787){\usebox{\plotpoint}}
+\put(264,787){\rule[-0.175pt]{124.545pt}{0.350pt}}
+\put(781,786){\usebox{\plotpoint}}
+\put(782,785){\usebox{\plotpoint}}
+\put(783,784){\usebox{\plotpoint}}
+\put(784,783){\usebox{\plotpoint}}
+\put(785,782){\usebox{\plotpoint}}
+\put(786,781){\usebox{\plotpoint}}
+\put(787,780){\usebox{\plotpoint}}
+\put(788,779){\usebox{\plotpoint}}
+\put(789,778){\usebox{\plotpoint}}
+\put(790,777){\usebox{\plotpoint}}
+\put(791,776){\usebox{\plotpoint}}
+\put(792,775){\usebox{\plotpoint}}
+\put(793,774){\usebox{\plotpoint}}
+\put(794,773){\usebox{\plotpoint}}
+\put(795,772){\usebox{\plotpoint}}
+\put(796,771){\usebox{\plotpoint}}
+\put(797,770){\usebox{\plotpoint}}
+\put(798,769){\usebox{\plotpoint}}
+\put(799,768){\usebox{\plotpoint}}
+\put(800,767){\usebox{\plotpoint}}
+\put(801,766){\usebox{\plotpoint}}
+\put(802,765){\usebox{\plotpoint}}
+\put(803,750){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(804,737){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(805,724){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(806,711){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(807,698){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(808,685){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(809,672){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(810,659){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(811,645){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(812,632){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(813,619){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(814,606){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(815,593){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(816,580){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(817,567){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(818,554){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(819,540){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(820,527){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(821,514){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(822,501){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(823,488){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(824,475){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(825,462){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(826,449){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(827,436){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(828,423){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(829,411){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(830,398){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(831,385){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(832,373){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(833,360){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(834,347){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(835,335){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(836,322){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(837,309){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(838,297){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(839,284){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(840,271){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(841,259){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(842,246){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(843,233){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(844,221){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(845,208){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(846,195){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(847,183){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(848,170){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(849,158){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(850,158){\usebox{\plotpoint}}
+\put(850,158){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(851,170){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(852,183){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(853,195){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(854,208){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(855,221){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(856,233){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(857,246){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(858,259){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(859,271){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(860,284){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(861,297){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(862,309){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(863,322){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(864,335){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(865,347){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(866,360){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(867,373){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(868,385){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(869,398){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(870,411){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(871,423){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(872,436){\rule[-0.175pt]{0.350pt}{3.048pt}}
+\put(873,448){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(874,462){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(875,475){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(876,488){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(877,501){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(878,514){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(879,527){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(880,540){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(881,554){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(882,567){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(883,580){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(884,593){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(885,606){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(886,619){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(887,632){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(888,645){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(889,659){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(890,672){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(891,685){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(892,698){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(893,711){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(894,724){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(895,737){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(896,750){\rule[-0.175pt]{0.350pt}{3.162pt}}
+\put(897,764){\usebox{\plotpoint}}
+\put(898,765){\usebox{\plotpoint}}
+\put(899,766){\usebox{\plotpoint}}
+\put(900,767){\usebox{\plotpoint}}
+\put(901,768){\usebox{\plotpoint}}
+\put(902,769){\usebox{\plotpoint}}
+\put(903,770){\usebox{\plotpoint}}
+\put(904,771){\usebox{\plotpoint}}
+\put(905,772){\usebox{\plotpoint}}
+\put(906,773){\usebox{\plotpoint}}
+\put(907,774){\usebox{\plotpoint}}
+\put(908,775){\usebox{\plotpoint}}
+\put(909,776){\usebox{\plotpoint}}
+\put(910,777){\usebox{\plotpoint}}
+\put(911,778){\usebox{\plotpoint}}
+\put(912,779){\usebox{\plotpoint}}
+\put(913,780){\usebox{\plotpoint}}
+\put(914,781){\usebox{\plotpoint}}
+\put(915,782){\usebox{\plotpoint}}
+\put(916,783){\usebox{\plotpoint}}
+\put(917,784){\usebox{\plotpoint}}
+\put(918,785){\usebox{\plotpoint}}
+\put(919,786){\usebox{\plotpoint}}
+\put(920,787){\rule[-0.175pt]{124.304pt}{0.350pt}}
+\sbox{\plotpoint}{\rule[-0.350pt]{0.700pt}{0.700pt}}%
+\put(1306,677){\makebox(0,0)[r]{beta=.01}}
+\put(1328,677){\rule[-0.350pt]{15.899pt}{0.700pt}}
+\put(264,785){\usebox{\plotpoint}}
+\put(264,785){\rule[-0.350pt]{2.770pt}{0.700pt}}
+\put(275,784){\rule[-0.350pt]{2.770pt}{0.700pt}}
+\put(287,783){\rule[-0.350pt]{2.891pt}{0.700pt}}
+\put(299,782){\rule[-0.350pt]{2.891pt}{0.700pt}}
+\put(311,781){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(316,780){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(322,779){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(328,778){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(334,777){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(338,776){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(343,775){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(348,774){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(353,773){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(357,772){\usebox{\plotpoint}}
+\put(360,771){\usebox{\plotpoint}}
+\put(363,770){\usebox{\plotpoint}}
+\put(366,769){\usebox{\plotpoint}}
+\put(369,768){\usebox{\plotpoint}}
+\put(372,767){\usebox{\plotpoint}}
+\put(375,766){\usebox{\plotpoint}}
+\put(378,765){\usebox{\plotpoint}}
+\put(381,764){\usebox{\plotpoint}}
+\put(383,763){\usebox{\plotpoint}}
+\put(385,762){\usebox{\plotpoint}}
+\put(388,761){\usebox{\plotpoint}}
+\put(390,760){\usebox{\plotpoint}}
+\put(392,759){\usebox{\plotpoint}}
+\put(395,758){\usebox{\plotpoint}}
+\put(397,757){\usebox{\plotpoint}}
+\put(400,756){\usebox{\plotpoint}}
+\put(402,755){\usebox{\plotpoint}}
+\put(404,754){\usebox{\plotpoint}}
+\put(406,753){\usebox{\plotpoint}}
+\put(408,752){\usebox{\plotpoint}}
+\put(409,751){\usebox{\plotpoint}}
+\put(411,750){\usebox{\plotpoint}}
+\put(413,749){\usebox{\plotpoint}}
+\put(414,748){\usebox{\plotpoint}}
+\put(416,747){\usebox{\plotpoint}}
+\put(418,746){\usebox{\plotpoint}}
+\put(419,745){\usebox{\plotpoint}}
+\put(421,744){\usebox{\plotpoint}}
+\put(423,743){\usebox{\plotpoint}}
+\put(424,742){\usebox{\plotpoint}}
+\put(426,741){\usebox{\plotpoint}}
+\put(427,740){\usebox{\plotpoint}}
+\put(429,739){\usebox{\plotpoint}}
+\put(430,738){\usebox{\plotpoint}}
+\put(431,737){\usebox{\plotpoint}}
+\put(433,736){\usebox{\plotpoint}}
+\put(434,735){\usebox{\plotpoint}}
+\put(435,734){\usebox{\plotpoint}}
+\put(436,733){\usebox{\plotpoint}}
+\put(438,732){\usebox{\plotpoint}}
+\put(439,731){\usebox{\plotpoint}}
+\put(440,730){\usebox{\plotpoint}}
+\put(441,729){\usebox{\plotpoint}}
+\put(443,728){\usebox{\plotpoint}}
+\put(444,727){\usebox{\plotpoint}}
+\put(445,726){\usebox{\plotpoint}}
+\put(446,725){\usebox{\plotpoint}}
+\put(448,724){\usebox{\plotpoint}}
+\put(449,723){\usebox{\plotpoint}}
+\put(450,722){\usebox{\plotpoint}}
+\put(451,721){\usebox{\plotpoint}}
+\put(452,719){\usebox{\plotpoint}}
+\put(453,718){\usebox{\plotpoint}}
+\put(454,717){\usebox{\plotpoint}}
+\put(455,716){\usebox{\plotpoint}}
+\put(456,715){\usebox{\plotpoint}}
+\put(457,714){\usebox{\plotpoint}}
+\put(458,713){\usebox{\plotpoint}}
+\put(459,712){\usebox{\plotpoint}}
+\put(460,711){\usebox{\plotpoint}}
+\put(461,710){\usebox{\plotpoint}}
+\put(462,709){\usebox{\plotpoint}}
+\put(463,708){\usebox{\plotpoint}}
+\put(464,707){\usebox{\plotpoint}}
+\put(465,706){\usebox{\plotpoint}}
+\put(466,705){\usebox{\plotpoint}}
+\put(467,704){\usebox{\plotpoint}}
+\put(468,703){\usebox{\plotpoint}}
+\put(469,702){\usebox{\plotpoint}}
+\put(470,701){\usebox{\plotpoint}}
+\put(471,700){\usebox{\plotpoint}}
+\put(472,699){\usebox{\plotpoint}}
+\put(473,698){\usebox{\plotpoint}}
+\put(474,697){\usebox{\plotpoint}}
+\put(475,695){\usebox{\plotpoint}}
+\put(476,694){\usebox{\plotpoint}}
+\put(477,693){\usebox{\plotpoint}}
+\put(478,691){\usebox{\plotpoint}}
+\put(479,690){\usebox{\plotpoint}}
+\put(480,689){\usebox{\plotpoint}}
+\put(481,687){\usebox{\plotpoint}}
+\put(482,686){\usebox{\plotpoint}}
+\put(483,685){\usebox{\plotpoint}}
+\put(484,683){\usebox{\plotpoint}}
+\put(485,682){\usebox{\plotpoint}}
+\put(486,681){\usebox{\plotpoint}}
+\put(487,680){\usebox{\plotpoint}}
+\put(488,678){\usebox{\plotpoint}}
+\put(489,677){\usebox{\plotpoint}}
+\put(490,676){\usebox{\plotpoint}}
+\put(491,674){\usebox{\plotpoint}}
+\put(492,673){\usebox{\plotpoint}}
+\put(493,672){\usebox{\plotpoint}}
+\put(494,670){\usebox{\plotpoint}}
+\put(495,669){\usebox{\plotpoint}}
+\put(496,668){\usebox{\plotpoint}}
+\put(497,667){\usebox{\plotpoint}}
+\put(498,665){\usebox{\plotpoint}}
+\put(499,664){\usebox{\plotpoint}}
+\put(500,662){\usebox{\plotpoint}}
+\put(501,661){\usebox{\plotpoint}}
+\put(502,659){\usebox{\plotpoint}}
+\put(503,658){\usebox{\plotpoint}}
+\put(504,656){\usebox{\plotpoint}}
+\put(505,655){\usebox{\plotpoint}}
+\put(506,653){\usebox{\plotpoint}}
+\put(507,652){\usebox{\plotpoint}}
+\put(508,650){\usebox{\plotpoint}}
+\put(509,649){\usebox{\plotpoint}}
+\put(510,648){\usebox{\plotpoint}}
+\put(511,646){\usebox{\plotpoint}}
+\put(512,645){\usebox{\plotpoint}}
+\put(513,643){\usebox{\plotpoint}}
+\put(514,642){\usebox{\plotpoint}}
+\put(515,640){\usebox{\plotpoint}}
+\put(516,639){\usebox{\plotpoint}}
+\put(517,637){\usebox{\plotpoint}}
+\put(518,636){\usebox{\plotpoint}}
+\put(519,634){\usebox{\plotpoint}}
+\put(520,633){\usebox{\plotpoint}}
+\put(521,632){\usebox{\plotpoint}}
+\put(522,630){\usebox{\plotpoint}}
+\put(523,628){\usebox{\plotpoint}}
+\put(524,626){\usebox{\plotpoint}}
+\put(525,624){\usebox{\plotpoint}}
+\put(526,623){\usebox{\plotpoint}}
+\put(527,621){\usebox{\plotpoint}}
+\put(528,619){\usebox{\plotpoint}}
+\put(529,617){\usebox{\plotpoint}}
+\put(530,615){\usebox{\plotpoint}}
+\put(531,614){\usebox{\plotpoint}}
+\put(532,612){\usebox{\plotpoint}}
+\put(533,610){\usebox{\plotpoint}}
+\put(534,608){\usebox{\plotpoint}}
+\put(535,607){\usebox{\plotpoint}}
+\put(536,605){\usebox{\plotpoint}}
+\put(537,603){\usebox{\plotpoint}}
+\put(538,601){\usebox{\plotpoint}}
+\put(539,599){\usebox{\plotpoint}}
+\put(540,598){\usebox{\plotpoint}}
+\put(541,596){\usebox{\plotpoint}}
+\put(542,594){\usebox{\plotpoint}}
+\put(543,592){\usebox{\plotpoint}}
+\put(544,591){\usebox{\plotpoint}}
+\put(545,589){\usebox{\plotpoint}}
+\put(546,587){\usebox{\plotpoint}}
+\put(547,585){\usebox{\plotpoint}}
+\put(548,583){\usebox{\plotpoint}}
+\put(549,581){\usebox{\plotpoint}}
+\put(550,579){\usebox{\plotpoint}}
+\put(551,577){\usebox{\plotpoint}}
+\put(552,576){\usebox{\plotpoint}}
+\put(553,574){\usebox{\plotpoint}}
+\put(554,572){\usebox{\plotpoint}}
+\put(555,570){\usebox{\plotpoint}}
+\put(556,568){\usebox{\plotpoint}}
+\put(557,566){\usebox{\plotpoint}}
+\put(558,564){\usebox{\plotpoint}}
+\put(559,562){\usebox{\plotpoint}}
+\put(560,561){\usebox{\plotpoint}}
+\put(561,559){\usebox{\plotpoint}}
+\put(562,557){\usebox{\plotpoint}}
+\put(563,555){\usebox{\plotpoint}}
+\put(564,553){\usebox{\plotpoint}}
+\put(565,551){\usebox{\plotpoint}}
+\put(566,549){\usebox{\plotpoint}}
+\put(567,547){\usebox{\plotpoint}}
+\put(568,546){\usebox{\plotpoint}}
+\put(569,543){\usebox{\plotpoint}}
+\put(570,541){\usebox{\plotpoint}}
+\put(571,539){\usebox{\plotpoint}}
+\put(572,537){\usebox{\plotpoint}}
+\put(573,535){\usebox{\plotpoint}}
+\put(574,533){\usebox{\plotpoint}}
+\put(575,531){\usebox{\plotpoint}}
+\put(576,529){\usebox{\plotpoint}}
+\put(577,527){\usebox{\plotpoint}}
+\put(578,525){\usebox{\plotpoint}}
+\put(579,523){\usebox{\plotpoint}}
+\put(580,520){\usebox{\plotpoint}}
+\put(581,518){\usebox{\plotpoint}}
+\put(582,516){\usebox{\plotpoint}}
+\put(583,514){\usebox{\plotpoint}}
+\put(584,512){\usebox{\plotpoint}}
+\put(585,510){\usebox{\plotpoint}}
+\put(586,508){\usebox{\plotpoint}}
+\put(587,506){\usebox{\plotpoint}}
+\put(588,504){\usebox{\plotpoint}}
+\put(589,502){\usebox{\plotpoint}}
+\put(590,500){\usebox{\plotpoint}}
+\put(591,498){\usebox{\plotpoint}}
+\put(592,495){\usebox{\plotpoint}}
+\put(593,493){\usebox{\plotpoint}}
+\put(594,491){\usebox{\plotpoint}}
+\put(595,489){\usebox{\plotpoint}}
+\put(596,487){\usebox{\plotpoint}}
+\put(597,485){\usebox{\plotpoint}}
+\put(598,483){\usebox{\plotpoint}}
+\put(599,481){\usebox{\plotpoint}}
+\put(600,479){\usebox{\plotpoint}}
+\put(601,477){\usebox{\plotpoint}}
+\put(602,475){\usebox{\plotpoint}}
+\put(603,473){\usebox{\plotpoint}}
+\put(604,471){\usebox{\plotpoint}}
+\put(605,469){\usebox{\plotpoint}}
+\put(606,467){\usebox{\plotpoint}}
+\put(607,465){\usebox{\plotpoint}}
+\put(608,463){\usebox{\plotpoint}}
+\put(609,461){\usebox{\plotpoint}}
+\put(610,459){\usebox{\plotpoint}}
+\put(611,457){\usebox{\plotpoint}}
+\put(612,455){\usebox{\plotpoint}}
+\put(613,453){\usebox{\plotpoint}}
+\put(614,451){\usebox{\plotpoint}}
+\put(615,449){\usebox{\plotpoint}}
+\put(616,446){\usebox{\plotpoint}}
+\put(617,444){\usebox{\plotpoint}}
+\put(618,442){\usebox{\plotpoint}}
+\put(619,440){\usebox{\plotpoint}}
+\put(620,438){\usebox{\plotpoint}}
+\put(621,436){\usebox{\plotpoint}}
+\put(622,434){\usebox{\plotpoint}}
+\put(623,431){\usebox{\plotpoint}}
+\put(624,429){\usebox{\plotpoint}}
+\put(625,427){\usebox{\plotpoint}}
+\put(626,425){\usebox{\plotpoint}}
+\put(627,423){\usebox{\plotpoint}}
+\put(628,421){\usebox{\plotpoint}}
+\put(629,419){\usebox{\plotpoint}}
+\put(630,417){\usebox{\plotpoint}}
+\put(631,414){\usebox{\plotpoint}}
+\put(632,412){\usebox{\plotpoint}}
+\put(633,410){\usebox{\plotpoint}}
+\put(634,408){\usebox{\plotpoint}}
+\put(635,406){\usebox{\plotpoint}}
+\put(636,404){\usebox{\plotpoint}}
+\put(637,402){\usebox{\plotpoint}}
+\put(638,400){\usebox{\plotpoint}}
+\put(639,397){\usebox{\plotpoint}}
+\put(640,395){\usebox{\plotpoint}}
+\put(641,393){\usebox{\plotpoint}}
+\put(642,391){\usebox{\plotpoint}}
+\put(643,389){\usebox{\plotpoint}}
+\put(644,387){\usebox{\plotpoint}}
+\put(645,385){\usebox{\plotpoint}}
+\put(646,383){\usebox{\plotpoint}}
+\put(647,381){\usebox{\plotpoint}}
+\put(648,379){\usebox{\plotpoint}}
+\put(649,377){\usebox{\plotpoint}}
+\put(650,375){\usebox{\plotpoint}}
+\put(651,373){\usebox{\plotpoint}}
+\put(652,371){\usebox{\plotpoint}}
+\put(653,369){\usebox{\plotpoint}}
+\put(654,367){\usebox{\plotpoint}}
+\put(655,365){\usebox{\plotpoint}}
+\put(656,363){\usebox{\plotpoint}}
+\put(657,361){\usebox{\plotpoint}}
+\put(658,359){\usebox{\plotpoint}}
+\put(659,357){\usebox{\plotpoint}}
+\put(660,355){\usebox{\plotpoint}}
+\put(661,353){\usebox{\plotpoint}}
+\put(662,351){\usebox{\plotpoint}}
+\put(663,349){\usebox{\plotpoint}}
+\put(664,347){\usebox{\plotpoint}}
+\put(665,345){\usebox{\plotpoint}}
+\put(666,343){\usebox{\plotpoint}}
+\put(667,341){\usebox{\plotpoint}}
+\put(668,340){\usebox{\plotpoint}}
+\put(669,338){\usebox{\plotpoint}}
+\put(670,336){\usebox{\plotpoint}}
+\put(671,334){\usebox{\plotpoint}}
+\put(672,332){\usebox{\plotpoint}}
+\put(673,330){\usebox{\plotpoint}}
+\put(674,329){\usebox{\plotpoint}}
+\put(675,327){\usebox{\plotpoint}}
+\put(676,325){\usebox{\plotpoint}}
+\put(677,323){\usebox{\plotpoint}}
+\put(678,321){\usebox{\plotpoint}}
+\put(679,319){\usebox{\plotpoint}}
+\put(680,318){\usebox{\plotpoint}}
+\put(681,316){\usebox{\plotpoint}}
+\put(682,314){\usebox{\plotpoint}}
+\put(683,312){\usebox{\plotpoint}}
+\put(684,310){\usebox{\plotpoint}}
+\put(685,309){\usebox{\plotpoint}}
+\put(686,307){\usebox{\plotpoint}}
+\put(687,305){\usebox{\plotpoint}}
+\put(688,303){\usebox{\plotpoint}}
+\put(689,302){\usebox{\plotpoint}}
+\put(690,300){\usebox{\plotpoint}}
+\put(691,298){\usebox{\plotpoint}}
+\put(692,297){\usebox{\plotpoint}}
+\put(693,295){\usebox{\plotpoint}}
+\put(694,293){\usebox{\plotpoint}}
+\put(695,292){\usebox{\plotpoint}}
+\put(696,290){\usebox{\plotpoint}}
+\put(697,288){\usebox{\plotpoint}}
+\put(698,286){\usebox{\plotpoint}}
+\put(699,285){\usebox{\plotpoint}}
+\put(700,283){\usebox{\plotpoint}}
+\put(701,281){\usebox{\plotpoint}}
+\put(702,280){\usebox{\plotpoint}}
+\put(703,278){\usebox{\plotpoint}}
+\put(704,276){\usebox{\plotpoint}}
+\put(705,275){\usebox{\plotpoint}}
+\put(706,273){\usebox{\plotpoint}}
+\put(707,271){\usebox{\plotpoint}}
+\put(708,270){\usebox{\plotpoint}}
+\put(709,268){\usebox{\plotpoint}}
+\put(710,267){\usebox{\plotpoint}}
+\put(711,265){\usebox{\plotpoint}}
+\put(712,264){\usebox{\plotpoint}}
+\put(713,262){\usebox{\plotpoint}}
+\put(714,261){\usebox{\plotpoint}}
+\put(715,260){\usebox{\plotpoint}}
+\put(716,258){\usebox{\plotpoint}}
+\put(717,257){\usebox{\plotpoint}}
+\put(718,255){\usebox{\plotpoint}}
+\put(719,254){\usebox{\plotpoint}}
+\put(720,253){\usebox{\plotpoint}}
+\put(721,251){\usebox{\plotpoint}}
+\put(722,250){\usebox{\plotpoint}}
+\put(723,248){\usebox{\plotpoint}}
+\put(724,247){\usebox{\plotpoint}}
+\put(725,245){\usebox{\plotpoint}}
+\put(726,244){\usebox{\plotpoint}}
+\put(727,243){\usebox{\plotpoint}}
+\put(728,241){\usebox{\plotpoint}}
+\put(729,240){\usebox{\plotpoint}}
+\put(730,238){\usebox{\plotpoint}}
+\put(731,237){\usebox{\plotpoint}}
+\put(732,236){\usebox{\plotpoint}}
+\put(733,234){\usebox{\plotpoint}}
+\put(734,233){\usebox{\plotpoint}}
+\put(735,232){\usebox{\plotpoint}}
+\put(736,231){\usebox{\plotpoint}}
+\put(737,229){\usebox{\plotpoint}}
+\put(738,228){\usebox{\plotpoint}}
+\put(739,227){\usebox{\plotpoint}}
+\put(740,226){\usebox{\plotpoint}}
+\put(741,225){\usebox{\plotpoint}}
+\put(742,223){\usebox{\plotpoint}}
+\put(743,222){\usebox{\plotpoint}}
+\put(744,221){\usebox{\plotpoint}}
+\put(745,220){\usebox{\plotpoint}}
+\put(746,218){\usebox{\plotpoint}}
+\put(747,217){\usebox{\plotpoint}}
+\put(748,216){\usebox{\plotpoint}}
+\put(749,215){\usebox{\plotpoint}}
+\put(750,214){\usebox{\plotpoint}}
+\put(751,212){\usebox{\plotpoint}}
+\put(752,211){\usebox{\plotpoint}}
+\put(753,210){\usebox{\plotpoint}}
+\put(754,209){\usebox{\plotpoint}}
+\put(755,208){\usebox{\plotpoint}}
+\put(756,208){\usebox{\plotpoint}}
+\put(757,207){\usebox{\plotpoint}}
+\put(758,206){\usebox{\plotpoint}}
+\put(759,205){\usebox{\plotpoint}}
+\put(760,204){\usebox{\plotpoint}}
+\put(761,203){\usebox{\plotpoint}}
+\put(762,202){\usebox{\plotpoint}}
+\put(763,201){\usebox{\plotpoint}}
+\put(764,200){\usebox{\plotpoint}}
+\put(765,199){\usebox{\plotpoint}}
+\put(766,198){\usebox{\plotpoint}}
+\put(767,197){\usebox{\plotpoint}}
+\put(769,196){\usebox{\plotpoint}}
+\put(770,195){\usebox{\plotpoint}}
+\put(771,194){\usebox{\plotpoint}}
+\put(772,193){\usebox{\plotpoint}}
+\put(773,192){\usebox{\plotpoint}}
+\put(774,191){\usebox{\plotpoint}}
+\put(775,190){\usebox{\plotpoint}}
+\put(776,189){\usebox{\plotpoint}}
+\put(777,188){\usebox{\plotpoint}}
+\put(778,187){\usebox{\plotpoint}}
+\put(779,186){\usebox{\plotpoint}}
+\put(781,185){\usebox{\plotpoint}}
+\put(783,184){\usebox{\plotpoint}}
+\put(784,183){\usebox{\plotpoint}}
+\put(786,182){\usebox{\plotpoint}}
+\put(787,181){\usebox{\plotpoint}}
+\put(789,180){\usebox{\plotpoint}}
+\put(790,179){\usebox{\plotpoint}}
+\put(792,178){\usebox{\plotpoint}}
+\put(793,177){\usebox{\plotpoint}}
+\put(795,176){\usebox{\plotpoint}}
+\put(796,175){\usebox{\plotpoint}}
+\put(798,174){\usebox{\plotpoint}}
+\put(799,173){\usebox{\plotpoint}}
+\put(801,172){\usebox{\plotpoint}}
+\put(802,171){\usebox{\plotpoint}}
+\put(805,170){\usebox{\plotpoint}}
+\put(807,169){\usebox{\plotpoint}}
+\put(810,168){\usebox{\plotpoint}}
+\put(812,167){\usebox{\plotpoint}}
+\put(815,166){\usebox{\plotpoint}}
+\put(817,165){\usebox{\plotpoint}}
+\put(819,164){\usebox{\plotpoint}}
+\put(822,163){\usebox{\plotpoint}}
+\put(824,162){\usebox{\plotpoint}}
+\put(827,161){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(834,160){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(842,159){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(850,158){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(857,159){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(865,160){\rule[-0.350pt]{1.847pt}{0.700pt}}
+\put(873,161){\usebox{\plotpoint}}
+\put(875,162){\usebox{\plotpoint}}
+\put(877,163){\usebox{\plotpoint}}
+\put(880,164){\usebox{\plotpoint}}
+\put(882,165){\usebox{\plotpoint}}
+\put(885,166){\usebox{\plotpoint}}
+\put(887,167){\usebox{\plotpoint}}
+\put(889,168){\usebox{\plotpoint}}
+\put(892,169){\usebox{\plotpoint}}
+\put(894,170){\usebox{\plotpoint}}
+\put(897,171){\usebox{\plotpoint}}
+\put(898,172){\usebox{\plotpoint}}
+\put(900,173){\usebox{\plotpoint}}
+\put(901,174){\usebox{\plotpoint}}
+\put(903,175){\usebox{\plotpoint}}
+\put(904,176){\usebox{\plotpoint}}
+\put(906,177){\usebox{\plotpoint}}
+\put(907,178){\usebox{\plotpoint}}
+\put(909,179){\usebox{\plotpoint}}
+\put(910,180){\usebox{\plotpoint}}
+\put(912,181){\usebox{\plotpoint}}
+\put(913,182){\usebox{\plotpoint}}
+\put(915,183){\usebox{\plotpoint}}
+\put(916,184){\usebox{\plotpoint}}
+\put(918,185){\usebox{\plotpoint}}
+\put(919,186){\usebox{\plotpoint}}
+\put(921,187){\usebox{\plotpoint}}
+\put(922,188){\usebox{\plotpoint}}
+\put(923,189){\usebox{\plotpoint}}
+\put(924,190){\usebox{\plotpoint}}
+\put(925,191){\usebox{\plotpoint}}
+\put(926,192){\usebox{\plotpoint}}
+\put(927,193){\usebox{\plotpoint}}
+\put(928,194){\usebox{\plotpoint}}
+\put(929,195){\usebox{\plotpoint}}
+\put(930,196){\usebox{\plotpoint}}
+\put(931,197){\usebox{\plotpoint}}
+\put(933,198){\usebox{\plotpoint}}
+\put(934,199){\usebox{\plotpoint}}
+\put(935,200){\usebox{\plotpoint}}
+\put(936,201){\usebox{\plotpoint}}
+\put(937,202){\usebox{\plotpoint}}
+\put(938,203){\usebox{\plotpoint}}
+\put(939,204){\usebox{\plotpoint}}
+\put(940,205){\usebox{\plotpoint}}
+\put(941,206){\usebox{\plotpoint}}
+\put(942,207){\usebox{\plotpoint}}
+\put(943,208){\usebox{\plotpoint}}
+\put(944,208){\usebox{\plotpoint}}
+\put(945,209){\usebox{\plotpoint}}
+\put(946,210){\usebox{\plotpoint}}
+\put(947,211){\usebox{\plotpoint}}
+\put(948,212){\usebox{\plotpoint}}
+\put(949,214){\usebox{\plotpoint}}
+\put(950,215){\usebox{\plotpoint}}
+\put(951,216){\usebox{\plotpoint}}
+\put(952,217){\usebox{\plotpoint}}
+\put(953,218){\usebox{\plotpoint}}
+\put(954,220){\usebox{\plotpoint}}
+\put(955,221){\usebox{\plotpoint}}
+\put(956,222){\usebox{\plotpoint}}
+\put(957,223){\usebox{\plotpoint}}
+\put(958,225){\usebox{\plotpoint}}
+\put(959,226){\usebox{\plotpoint}}
+\put(960,227){\usebox{\plotpoint}}
+\put(961,228){\usebox{\plotpoint}}
+\put(962,229){\usebox{\plotpoint}}
+\put(963,231){\usebox{\plotpoint}}
+\put(964,232){\usebox{\plotpoint}}
+\put(965,233){\usebox{\plotpoint}}
+\put(966,234){\usebox{\plotpoint}}
+\put(967,236){\usebox{\plotpoint}}
+\put(968,237){\usebox{\plotpoint}}
+\put(969,238){\usebox{\plotpoint}}
+\put(970,240){\usebox{\plotpoint}}
+\put(971,241){\usebox{\plotpoint}}
+\put(972,243){\usebox{\plotpoint}}
+\put(973,244){\usebox{\plotpoint}}
+\put(974,245){\usebox{\plotpoint}}
+\put(975,247){\usebox{\plotpoint}}
+\put(976,248){\usebox{\plotpoint}}
+\put(977,250){\usebox{\plotpoint}}
+\put(978,251){\usebox{\plotpoint}}
+\put(979,253){\usebox{\plotpoint}}
+\put(980,254){\usebox{\plotpoint}}
+\put(981,255){\usebox{\plotpoint}}
+\put(982,257){\usebox{\plotpoint}}
+\put(983,258){\usebox{\plotpoint}}
+\put(984,260){\usebox{\plotpoint}}
+\put(985,261){\usebox{\plotpoint}}
+\put(986,262){\usebox{\plotpoint}}
+\put(987,264){\usebox{\plotpoint}}
+\put(988,265){\usebox{\plotpoint}}
+\put(989,267){\usebox{\plotpoint}}
+\put(990,268){\usebox{\plotpoint}}
+\put(991,269){\usebox{\plotpoint}}
+\put(992,271){\usebox{\plotpoint}}
+\put(993,273){\usebox{\plotpoint}}
+\put(994,275){\usebox{\plotpoint}}
+\put(995,276){\usebox{\plotpoint}}
+\put(996,278){\usebox{\plotpoint}}
+\put(997,280){\usebox{\plotpoint}}
+\put(998,281){\usebox{\plotpoint}}
+\put(999,283){\usebox{\plotpoint}}
+\put(1000,285){\usebox{\plotpoint}}
+\put(1001,286){\usebox{\plotpoint}}
+\put(1002,288){\usebox{\plotpoint}}
+\put(1003,290){\usebox{\plotpoint}}
+\put(1004,292){\usebox{\plotpoint}}
+\put(1005,293){\usebox{\plotpoint}}
+\put(1006,295){\usebox{\plotpoint}}
+\put(1007,297){\usebox{\plotpoint}}
+\put(1008,298){\usebox{\plotpoint}}
+\put(1009,300){\usebox{\plotpoint}}
+\put(1010,302){\usebox{\plotpoint}}
+\put(1011,303){\usebox{\plotpoint}}
+\put(1012,305){\usebox{\plotpoint}}
+\put(1013,307){\usebox{\plotpoint}}
+\put(1014,308){\usebox{\plotpoint}}
+\put(1015,310){\usebox{\plotpoint}}
+\put(1016,312){\usebox{\plotpoint}}
+\put(1017,314){\usebox{\plotpoint}}
+\put(1018,316){\usebox{\plotpoint}}
+\put(1019,318){\usebox{\plotpoint}}
+\put(1020,320){\usebox{\plotpoint}}
+\put(1021,321){\usebox{\plotpoint}}
+\put(1022,323){\usebox{\plotpoint}}
+\put(1023,325){\usebox{\plotpoint}}
+\put(1024,327){\usebox{\plotpoint}}
+\put(1025,329){\usebox{\plotpoint}}
+\put(1026,331){\usebox{\plotpoint}}
+\put(1027,332){\usebox{\plotpoint}}
+\put(1028,334){\usebox{\plotpoint}}
+\put(1029,336){\usebox{\plotpoint}}
+\put(1030,338){\usebox{\plotpoint}}
+\put(1031,340){\usebox{\plotpoint}}
+\put(1032,342){\usebox{\plotpoint}}
+\put(1033,343){\usebox{\plotpoint}}
+\put(1034,345){\usebox{\plotpoint}}
+\put(1035,347){\usebox{\plotpoint}}
+\put(1036,349){\usebox{\plotpoint}}
+\put(1037,351){\usebox{\plotpoint}}
+\put(1038,353){\usebox{\plotpoint}}
+\put(1039,355){\usebox{\plotpoint}}
+\put(1040,357){\usebox{\plotpoint}}
+\put(1041,359){\usebox{\plotpoint}}
+\put(1042,361){\usebox{\plotpoint}}
+\put(1043,363){\usebox{\plotpoint}}
+\put(1044,365){\usebox{\plotpoint}}
+\put(1045,367){\usebox{\plotpoint}}
+\put(1046,369){\usebox{\plotpoint}}
+\put(1047,371){\usebox{\plotpoint}}
+\put(1048,373){\usebox{\plotpoint}}
+\put(1049,375){\usebox{\plotpoint}}
+\put(1050,377){\usebox{\plotpoint}}
+\put(1051,379){\usebox{\plotpoint}}
+\put(1052,381){\usebox{\plotpoint}}
+\put(1053,383){\usebox{\plotpoint}}
+\put(1054,385){\usebox{\plotpoint}}
+\put(1055,387){\usebox{\plotpoint}}
+\put(1056,389){\usebox{\plotpoint}}
+\put(1057,391){\usebox{\plotpoint}}
+\put(1058,393){\usebox{\plotpoint}}
+\put(1059,395){\usebox{\plotpoint}}
+\put(1060,397){\usebox{\plotpoint}}
+\put(1061,400){\usebox{\plotpoint}}
+\put(1062,402){\usebox{\plotpoint}}
+\put(1063,404){\usebox{\plotpoint}}
+\put(1064,406){\usebox{\plotpoint}}
+\put(1065,408){\usebox{\plotpoint}}
+\put(1066,410){\usebox{\plotpoint}}
+\put(1067,412){\usebox{\plotpoint}}
+\put(1068,414){\usebox{\plotpoint}}
+\put(1069,417){\usebox{\plotpoint}}
+\put(1070,419){\usebox{\plotpoint}}
+\put(1071,421){\usebox{\plotpoint}}
+\put(1072,423){\usebox{\plotpoint}}
+\put(1073,425){\usebox{\plotpoint}}
+\put(1074,427){\usebox{\plotpoint}}
+\put(1075,429){\usebox{\plotpoint}}
+\put(1076,431){\usebox{\plotpoint}}
+\put(1077,434){\usebox{\plotpoint}}
+\put(1078,436){\usebox{\plotpoint}}
+\put(1079,438){\usebox{\plotpoint}}
+\put(1080,440){\usebox{\plotpoint}}
+\put(1081,442){\usebox{\plotpoint}}
+\put(1082,444){\usebox{\plotpoint}}
+\put(1083,446){\usebox{\plotpoint}}
+\put(1084,448){\usebox{\plotpoint}}
+\put(1085,451){\usebox{\plotpoint}}
+\put(1086,453){\usebox{\plotpoint}}
+\put(1087,455){\usebox{\plotpoint}}
+\put(1088,457){\usebox{\plotpoint}}
+\put(1089,459){\usebox{\plotpoint}}
+\put(1090,461){\usebox{\plotpoint}}
+\put(1091,463){\usebox{\plotpoint}}
+\put(1092,465){\usebox{\plotpoint}}
+\put(1093,467){\usebox{\plotpoint}}
+\put(1094,469){\usebox{\plotpoint}}
+\put(1095,471){\usebox{\plotpoint}}
+\put(1096,473){\usebox{\plotpoint}}
+\put(1097,475){\usebox{\plotpoint}}
+\put(1098,477){\usebox{\plotpoint}}
+\put(1099,479){\usebox{\plotpoint}}
+\put(1100,481){\usebox{\plotpoint}}
+\put(1101,483){\usebox{\plotpoint}}
+\put(1102,485){\usebox{\plotpoint}}
+\put(1103,487){\usebox{\plotpoint}}
+\put(1104,489){\usebox{\plotpoint}}
+\put(1105,491){\usebox{\plotpoint}}
+\put(1106,493){\usebox{\plotpoint}}
+\put(1107,495){\usebox{\plotpoint}}
+\put(1108,497){\usebox{\plotpoint}}
+\put(1109,500){\usebox{\plotpoint}}
+\put(1110,502){\usebox{\plotpoint}}
+\put(1111,504){\usebox{\plotpoint}}
+\put(1112,506){\usebox{\plotpoint}}
+\put(1113,508){\usebox{\plotpoint}}
+\put(1114,510){\usebox{\plotpoint}}
+\put(1115,512){\usebox{\plotpoint}}
+\put(1116,514){\usebox{\plotpoint}}
+\put(1117,516){\usebox{\plotpoint}}
+\put(1118,518){\usebox{\plotpoint}}
+\put(1119,520){\usebox{\plotpoint}}
+\put(1120,523){\usebox{\plotpoint}}
+\put(1121,525){\usebox{\plotpoint}}
+\put(1122,527){\usebox{\plotpoint}}
+\put(1123,529){\usebox{\plotpoint}}
+\put(1124,531){\usebox{\plotpoint}}
+\put(1125,533){\usebox{\plotpoint}}
+\put(1126,535){\usebox{\plotpoint}}
+\put(1127,537){\usebox{\plotpoint}}
+\put(1128,539){\usebox{\plotpoint}}
+\put(1129,541){\usebox{\plotpoint}}
+\put(1130,543){\usebox{\plotpoint}}
+\put(1131,546){\usebox{\plotpoint}}
+\put(1132,547){\usebox{\plotpoint}}
+\put(1133,549){\usebox{\plotpoint}}
+\put(1134,551){\usebox{\plotpoint}}
+\put(1135,553){\usebox{\plotpoint}}
+\put(1136,555){\usebox{\plotpoint}}
+\put(1137,557){\usebox{\plotpoint}}
+\put(1138,559){\usebox{\plotpoint}}
+\put(1139,561){\usebox{\plotpoint}}
+\put(1140,562){\usebox{\plotpoint}}
+\put(1141,564){\usebox{\plotpoint}}
+\put(1142,566){\usebox{\plotpoint}}
+\put(1143,568){\usebox{\plotpoint}}
+\put(1144,570){\usebox{\plotpoint}}
+\put(1145,572){\usebox{\plotpoint}}
+\put(1146,574){\usebox{\plotpoint}}
+\put(1147,576){\usebox{\plotpoint}}
+\put(1148,577){\usebox{\plotpoint}}
+\put(1149,579){\usebox{\plotpoint}}
+\put(1150,581){\usebox{\plotpoint}}
+\put(1151,583){\usebox{\plotpoint}}
+\put(1152,585){\usebox{\plotpoint}}
+\put(1153,587){\usebox{\plotpoint}}
+\put(1154,589){\usebox{\plotpoint}}
+\put(1155,591){\usebox{\plotpoint}}
+\put(1156,592){\usebox{\plotpoint}}
+\put(1157,594){\usebox{\plotpoint}}
+\put(1158,596){\usebox{\plotpoint}}
+\put(1159,598){\usebox{\plotpoint}}
+\put(1160,599){\usebox{\plotpoint}}
+\put(1161,601){\usebox{\plotpoint}}
+\put(1162,603){\usebox{\plotpoint}}
+\put(1163,605){\usebox{\plotpoint}}
+\put(1164,607){\usebox{\plotpoint}}
+\put(1165,608){\usebox{\plotpoint}}
+\put(1166,610){\usebox{\plotpoint}}
+\put(1167,612){\usebox{\plotpoint}}
+\put(1168,614){\usebox{\plotpoint}}
+\put(1169,615){\usebox{\plotpoint}}
+\put(1170,617){\usebox{\plotpoint}}
+\put(1171,619){\usebox{\plotpoint}}
+\put(1172,621){\usebox{\plotpoint}}
+\put(1173,623){\usebox{\plotpoint}}
+\put(1174,624){\usebox{\plotpoint}}
+\put(1175,626){\usebox{\plotpoint}}
+\put(1176,628){\usebox{\plotpoint}}
+\put(1177,630){\usebox{\plotpoint}}
+\put(1178,631){\usebox{\plotpoint}}
+\put(1179,633){\usebox{\plotpoint}}
+\put(1180,634){\usebox{\plotpoint}}
+\put(1181,636){\usebox{\plotpoint}}
+\put(1182,637){\usebox{\plotpoint}}
+\put(1183,639){\usebox{\plotpoint}}
+\put(1184,640){\usebox{\plotpoint}}
+\put(1185,642){\usebox{\plotpoint}}
+\put(1186,643){\usebox{\plotpoint}}
+\put(1187,645){\usebox{\plotpoint}}
+\put(1188,646){\usebox{\plotpoint}}
+\put(1189,648){\usebox{\plotpoint}}
+\put(1190,649){\usebox{\plotpoint}}
+\put(1191,650){\usebox{\plotpoint}}
+\put(1192,652){\usebox{\plotpoint}}
+\put(1193,653){\usebox{\plotpoint}}
+\put(1194,655){\usebox{\plotpoint}}
+\put(1195,656){\usebox{\plotpoint}}
+\put(1196,658){\usebox{\plotpoint}}
+\put(1197,659){\usebox{\plotpoint}}
+\put(1198,661){\usebox{\plotpoint}}
+\put(1199,662){\usebox{\plotpoint}}
+\put(1200,664){\usebox{\plotpoint}}
+\put(1201,665){\usebox{\plotpoint}}
+\put(1202,666){\usebox{\plotpoint}}
+\put(1203,668){\usebox{\plotpoint}}
+\put(1204,669){\usebox{\plotpoint}}
+\put(1205,670){\usebox{\plotpoint}}
+\put(1206,672){\usebox{\plotpoint}}
+\put(1207,673){\usebox{\plotpoint}}
+\put(1208,674){\usebox{\plotpoint}}
+\put(1209,676){\usebox{\plotpoint}}
+\put(1210,677){\usebox{\plotpoint}}
+\put(1211,678){\usebox{\plotpoint}}
+\put(1212,680){\usebox{\plotpoint}}
+\put(1213,681){\usebox{\plotpoint}}
+\put(1214,682){\usebox{\plotpoint}}
+\put(1215,683){\usebox{\plotpoint}}
+\put(1216,685){\usebox{\plotpoint}}
+\put(1217,686){\usebox{\plotpoint}}
+\put(1218,687){\usebox{\plotpoint}}
+\put(1219,689){\usebox{\plotpoint}}
+\put(1220,690){\usebox{\plotpoint}}
+\put(1221,691){\usebox{\plotpoint}}
+\put(1222,693){\usebox{\plotpoint}}
+\put(1223,694){\usebox{\plotpoint}}
+\put(1224,695){\usebox{\plotpoint}}
+\put(1225,696){\usebox{\plotpoint}}
+\put(1226,698){\usebox{\plotpoint}}
+\put(1227,699){\usebox{\plotpoint}}
+\put(1228,700){\usebox{\plotpoint}}
+\put(1229,701){\usebox{\plotpoint}}
+\put(1230,702){\usebox{\plotpoint}}
+\put(1231,703){\usebox{\plotpoint}}
+\put(1232,704){\usebox{\plotpoint}}
+\put(1233,705){\usebox{\plotpoint}}
+\put(1234,706){\usebox{\plotpoint}}
+\put(1235,707){\usebox{\plotpoint}}
+\put(1236,708){\usebox{\plotpoint}}
+\put(1237,709){\usebox{\plotpoint}}
+\put(1238,710){\usebox{\plotpoint}}
+\put(1239,711){\usebox{\plotpoint}}
+\put(1240,712){\usebox{\plotpoint}}
+\put(1241,713){\usebox{\plotpoint}}
+\put(1242,714){\usebox{\plotpoint}}
+\put(1243,715){\usebox{\plotpoint}}
+\put(1244,716){\usebox{\plotpoint}}
+\put(1245,717){\usebox{\plotpoint}}
+\put(1246,718){\usebox{\plotpoint}}
+\put(1247,719){\usebox{\plotpoint}}
+\put(1248,720){\usebox{\plotpoint}}
+\put(1248,721){\usebox{\plotpoint}}
+\put(1249,722){\usebox{\plotpoint}}
+\put(1250,723){\usebox{\plotpoint}}
+\put(1251,724){\usebox{\plotpoint}}
+\put(1253,725){\usebox{\plotpoint}}
+\put(1254,726){\usebox{\plotpoint}}
+\put(1255,727){\usebox{\plotpoint}}
+\put(1256,728){\usebox{\plotpoint}}
+\put(1258,729){\usebox{\plotpoint}}
+\put(1259,730){\usebox{\plotpoint}}
+\put(1260,731){\usebox{\plotpoint}}
+\put(1261,732){\usebox{\plotpoint}}
+\put(1263,733){\usebox{\plotpoint}}
+\put(1264,734){\usebox{\plotpoint}}
+\put(1265,735){\usebox{\plotpoint}}
+\put(1266,736){\usebox{\plotpoint}}
+\put(1268,737){\usebox{\plotpoint}}
+\put(1269,738){\usebox{\plotpoint}}
+\put(1270,739){\usebox{\plotpoint}}
+\put(1272,740){\usebox{\plotpoint}}
+\put(1273,741){\usebox{\plotpoint}}
+\put(1275,742){\usebox{\plotpoint}}
+\put(1276,743){\usebox{\plotpoint}}
+\put(1278,744){\usebox{\plotpoint}}
+\put(1280,745){\usebox{\plotpoint}}
+\put(1281,746){\usebox{\plotpoint}}
+\put(1283,747){\usebox{\plotpoint}}
+\put(1285,748){\usebox{\plotpoint}}
+\put(1286,749){\usebox{\plotpoint}}
+\put(1288,750){\usebox{\plotpoint}}
+\put(1290,751){\usebox{\plotpoint}}
+\put(1291,752){\usebox{\plotpoint}}
+\put(1293,753){\usebox{\plotpoint}}
+\put(1294,754){\usebox{\plotpoint}}
+\put(1297,755){\usebox{\plotpoint}}
+\put(1299,756){\usebox{\plotpoint}}
+\put(1302,757){\usebox{\plotpoint}}
+\put(1304,758){\usebox{\plotpoint}}
+\put(1307,759){\usebox{\plotpoint}}
+\put(1309,760){\usebox{\plotpoint}}
+\put(1311,761){\usebox{\plotpoint}}
+\put(1314,762){\usebox{\plotpoint}}
+\put(1316,763){\usebox{\plotpoint}}
+\put(1319,764){\usebox{\plotpoint}}
+\put(1321,765){\usebox{\plotpoint}}
+\put(1324,766){\usebox{\plotpoint}}
+\put(1327,767){\usebox{\plotpoint}}
+\put(1330,768){\usebox{\plotpoint}}
+\put(1333,769){\usebox{\plotpoint}}
+\put(1336,770){\usebox{\plotpoint}}
+\put(1339,771){\usebox{\plotpoint}}
+\put(1342,772){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(1346,773){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(1351,774){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(1356,775){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(1361,776){\rule[-0.350pt]{1.156pt}{0.700pt}}
+\put(1366,777){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(1371,778){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(1377,779){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(1383,780){\rule[-0.350pt]{1.385pt}{0.700pt}}
+\put(1389,781){\rule[-0.350pt]{2.891pt}{0.700pt}}
+\put(1401,782){\rule[-0.350pt]{2.891pt}{0.700pt}}
+\put(1413,783){\rule[-0.350pt]{2.770pt}{0.700pt}}
+\put(1424,784){\rule[-0.350pt]{2.770pt}{0.700pt}}
+\end{picture}
+
+\vspace{-9ex}
+
+\label{fig:appen_cost}
+\end{figure}
+}
+
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_c^\Omega=\{R_1^\Omega, R_2^\Omega\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4634: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_c^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4636: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_c^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4638: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$X_c^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4640: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_c^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4642: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}V_c(I_c^\Omega; K^\Omega, X^\Omega ) = \sum_{i=1}^{\delta_c}W_c^i B_c^i(I_c^\Omega; K^\Omega, ^ix_c^{k}) + S_c(I_c^\Omega, X_c^\Omega)
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{% latex2html id marker 4646
+$ S_c(I_c^\Omega, X_c^\Omega)) \stackrel{def}{=}
+  \alpha_c(1 - P[I_c^\Omega | K^\Omega])$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4646: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray}P[I_c^\Omega(R_c^\Omega) | K^\Omega] = & 1 & \mbox{if $I_c^\Omega$ is a valid combination according to the domain knowledge} \nonumber \\ 
+ & 0 & \mbox{if $I_c^\Omega$ is not  a valid combination according to the domain knowledge} \nonumber \\ 
+\end{eqnarray}
+}
+
+\stepcounter{section}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D_{max} $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4668: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D_{min} $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4670: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}G = \frac{1}{A} \sum_{i,j \in R} x(i,j) \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4672: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4674: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}V =  \left \{ \frac{1}{A} \sum_{i,j \in R} \left ( x(i,j) - G \right )^2 \right \}^{1/2} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}M = \left \{ M_x , M_y \right \}= \left \{ \frac{1}{A} \sum_{i,j \in R} i  ,
+ \frac{1}{A} \sum_{i,j \in R} j  \right \}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}S = \frac{1}{A} \sum_{i,j \in R} \left [ \begin{array}{c} i-M_x \\  j-M_y \end{array} \right ] \left [ i-M_x,  j-M_y \right ]
+\end{displaymath}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{displaymath}C = \frac{P^2}{4 \pi A} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}% latex2html id marker 4679
+\theta = tan^{-1} \left \{ \frac{O_x-O_y + \sqrt{(O_x-O_y)^2+4O_{xy}}} {2 O_{xy}} \right \}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$O_x =o_{xx} - o_x^2/A$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4700: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$O_y =o_{yy} - o_y^2/A$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4702: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$O_{xy} =o_{xy} - o_xo_y/A$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4704: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$o_x = \sum i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4706: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$o_y = \sum j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4708: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$o_{xx} = \sum i^2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4710: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$o_{yy} = \sum j^2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4712: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$o_{xy} = \sum i j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4714: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}B_{IJ} = \frac{P_I - P_J}{2P_{IJ}} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P_I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4716: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P_J$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4720: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P_{IJ}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4724: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}C_{IJ} = | G_I - G_J | \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$G_I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4730: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$G_J$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4734: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{4 A}{\pi D_{max}^2} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{D_{max}}{D_{min}} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=IMAGES/area.ps}}
+ 
+\label{fig:area}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{\mbox{Convex Perimeter}}{P} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{A}{\mbox{Convex Area}}              \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{A}{\mbox{Area of the minimum Bounding Rectangle}}        \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{\mbox{Length}}{\mbox{Fiber Length}} \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\frac{\mbox{Fiber Length}}{\mbox{Fiber Width}} \end{displaymath}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\approx 7 \frac{1}{2}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4740: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${1/4}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4742: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4744: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4746: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^\Omega \times 2^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4748: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4750: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4752: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4754: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -2}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4756: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -2}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4758: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -2}_{Y,LH}, \cdots$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4760: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega
+-n}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4762: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -n}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4764: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -n}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4766: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega
+-n}_{Y,LL} $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4768: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4770: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4772: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4774: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4776: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4778: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4780: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4782: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4788: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4790: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4792: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=IMAGES/table.ps}}
+
+\label{fig:table}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega -1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4794: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4796: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4798: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i-1,j-1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4800: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4802: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i-1,j-1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4804: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4806: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i-1,j-1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4808: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4810: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i-1,j-1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4812: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i-1,j-1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4814: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega(i,j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4816: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\Omega - k)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4818: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\Omega - k+1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4820: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\Omega - k)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4822: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\Omega - k+1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4824: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L_l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4834: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P[I^\Omega_{k}=L_l^\Omega  \mid X^\Omega, K^\Omega]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4836: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P[I^\Omega_{k}=L_m^\Omega \mid
+X^\Omega, K^\Omega]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4840: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}I^\Omega_k = \left \{ 
+             \begin{array}{ccl}
+             L_l^\Omega& \mbox{if} &P[I^\Omega_k = L_l^\Omega \mid X^\Omega, K^\Omega] > P[I^\Omega_k = L_m^\Omega \mid X^\Omega, K^\Omega] \\ 
+             L_m^\Omega & \mbox{if} & P[I^\Omega_k = L_m^\Omega \mid X^\Omega, K^\Omega] > P[I^\Omega_k = L_l^\Omega \mid X^\Omega, K^\Omega] \\  
+             \end{array}
+             \right .
+\label{eq:criteria}
+\end{equation}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4844: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m_X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4846: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m_Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4848: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega
+- 1}_{Y,LL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4850: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega - 1}_{Y,HL}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4852: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega - 1}_{Y,LH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4854: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D^{\Omega - 1}_{Y,HH}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4856: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+\begin{tabular}{||l||r|r|r|r|r|c||} \hline \hline
+Label    & A  & G  &  P & $m_x$ & $m_y$ &  V \\  \hline
+Road     &6193& 70 & 411& 66    & 101   & 7.3232887  \\ 
+Sky    &1052& 180& 204& 63    & 12    & 56.631790 \\ 
+Sidewalk&1858& 99 & 496& 54    & 66    & 18.838804 \\ 
+Tree    &3087& 64 & 312& 18    & 38    & 22.751346 \\  \hline
+\end{tabular}
+\end{center}  
+
+\label{tab:road}
+\end{table}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4862: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4864: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4866: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4862: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4864: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4866: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/ROAD_SHOW/orig_1.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=IMAGES/ROAD_SHOW/wt_1.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+
+\centerline{\hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/ini_1.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/seg_1.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/fin_1.ps,width=0.75in}} \hfill}
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+
+\vspace{1ex}
+
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/sky_1.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/tree_1.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/sidewalk_1.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/road_1.ps,width=0.25in}} \hfill }
+\centerline{\hfill  sky  \hfill tree   \hfill sidewalk  \hfill road \hfill}
+%
+
+\label{fig:scene_1}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4868: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4870: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4872: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4868: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4870: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4872: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/ROAD_SHOW/orig_6.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=./IMAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+
+\centerline{ \hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/ini_6.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/seg_6.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/fin_6.ps,width=0.75in}} \hfill }
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+\vspace{1ex}
+
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/sky_6.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/tree_6.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/sidewalk_6.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/road_6.ps,width=0.25in}} \hfill }
+\centerline{\hfill  sky  \hfill tree   \hfill sidewalk  \hfill road \hfill}
+%
+
+
+%
+
+\label{fig:scene_6}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4874: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4876: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4878: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4874: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4876: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4878: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/ROAD_SHOW/orig_5.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=./IMAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+\centerline{ \hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/ini_5.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/seg_5.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/ROAD_SHOW/fin_5.ps,width=0.75in}} \hfill }
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+\vspace{1ex}
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/sky_5.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/tree_5.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/sidewalk_5.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/road_5.ps,width=0.25in}} \hfill }
+\centerline{\hfill  sky  \hfill tree   \hfill sidewalk  \hfill road \hfill}
+
+\label{fig:scene_5}
+\end{figure}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4934: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4934: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\hfill \fbox{\psfig{figure=IMAGES/HIRA/rd1_p.256.ps,width=1.5in}} 
+ \hfill \fbox{\psfig{figure=IMAGES/HIRA/rd1_p_256.ps,width=1.5in}}  
+ \hfill \fbox{\psfig{figure=IMAGES/HIRA/RESULTS/rd1_manual.ps,width=1.5in}} \hfill }
+\centerline{  \hfill (a) \hfill (b)  \hfill (c)\hfill}
+
+\label{fig:build_1}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+ 
+\begin{tabular}{||l||r|r|r|r|r|c||} \hline
+Lable & A & G & P & $m_x$ &$m_y$  & V \\  \hline
+Sky &7730 &208  &443  & 64&30 & 20.975156 \\ 
+Build   &879  & 137 & 204 & 24 & 63& 19.207092 \\    
+Build  & 685 &  145&  127& 108&  65 &15.920010 \\   
+Tree   & 1535&   85 & 285&  37 & 80 &17.957333 \\   
+Tree    &550  &  78&  113& 117 & 84& 14.810193 \\   
+Road   & 4999&  106&  395&  64 &107& 18.334378 \\   \hline
+\end{tabular}
+\end{center}
+ 
+
+\label{tab:hira_know}
+\end{table}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4940: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4942: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4944: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4940: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4942: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4944: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/HIRA/rd2_p.256.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=IMAGES/HIRA/rd2_p_256.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+
+\centerline{\hfill
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_ini.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_seg.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_fin.ps,width=0.75in}} \hfill}
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+
+\vspace{1ex}
+
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_sky.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_tree.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_build.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/HIRA/RESULTS/tr2_road.ps,width=0.25in}} \hfill }
+\centerline{\hfill  sky  \hfill tree   \hfill building  \hfill road \hfill}
+%
+
+\label{fig:build_2}
+\end{figure}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+\begin{tabular}{||l||r|r|r|r|r|c||} \hline \hline
+Label & A & G & P & $m_x$ & $m_y$ & V \\  \hline
+Background &10338   &46  &1209 &65  & 51 & 16.584215 \\  
+Screen     &1372   &39  & 150 &82  &75&  5.274464 \\ 
+Cover      &1391   &84   &397 &85 & 75& 22.112743 \\ 
+Keyboard   &782  &132   &251 &87 &111& 18.677948 \\ 
+Shoebox    &2398  & 86 &  271 &25  &83& 22.321239  \\ 
+Background &5067  &46 & 1209 &65  &51& 16.584215 \\  \hline \hline
+\end{tabular}
+\end{center}
+
+\label{tab:compi}
+\end{table}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4974: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4976: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4978: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4974: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4976: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4978: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/COMPI/compi_0.256.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=IMAGES/COMPI/compi_0_256.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+
+\centerline{\hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.initial.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.segmented.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.interpreted.ps,width=0.75in}} \hfill}
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+
+\vspace{1ex}
+
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/COMPI/compi_0.bg.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.screen.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.shoebox.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.keyboard.ps,width=0.25in}} \hfill 
+\fbox{\psfig{figure=IMAGES/COMPI/compi_0.cover.ps,width=0.25in}} \hfill }
+\centerline{\hfill background  \hfill screen   \hfill shoebox  \hfill keyboard \hfill cover \hfill}
+
+\label{fig:compi_0}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4980: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4982: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4984: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$256 \times 256$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4980: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4982: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$128 \times 128 $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline4984: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{ \fbox{\psfig{figure=IMAGES/COMPI/compi_1.256.ps,width=1.5in}}  \hspace{1ex} \fbox{\psfig{figure=IMAGES/COMPI/compi_1_256.ps,width=1.5in}}  }
+\centerline{  \hfill (a) \hfill (b)  \hfill }
+
+\vspace{1ex}
+
+\centerline{\hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.initial.ps,width=0.75in}}  \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.segmented.ps,width=0.75in}}\hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.interpreted.ps,width=0.75in}} \hfill}
+\centerline{  \hfill (c) \hfill (d)  \hfill (e) \hfill}
+
+\vspace{1ex}
+
+\centerline{
+\hfill {\fbox{\psfig{figure=IMAGES/COMPI/compi_1.bg.ps,width=0.25in}}}  \hfill 
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.screen.ps,width=0.25in}}  \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.shoebox.ps,width=0.25in}} \hfill
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.keyboard.ps,width=0.25in}} \hfill 
+\fbox{\psfig{figure=IMAGES/COMPI/compi_1.cover.ps,width=0.25in}} \hfill }
+\centerline{\hfill background  \hfill screen   \hfill shoebox  \hfill keyboard \hfill cover \hfill}
+
+\label{fig:compi_1}
+\end{figure}
+}
+
+\stepcounter{section}
+\stepcounter{section}
+\appendix
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp.256.ps,width=2in}}
+
+\label{fig:initial}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp.WT.ps,width=2in}}
+ 
+\label{fig:dimp_wt}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp.kmean_out.ps,width=1in}}
+ 
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp.index.0.ps,width=6in}}
+ 
+\label{fig:index_0}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp.lab.0.ps,width=1in}
+\hspace{1ex} \psfig{figure=./IMAGES/dimp.index.1.ps}}
+\centerline{\hfill a \hfill b \hfill }
+
+\label{fig:label_0}
+\end{figure}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \fbox{Random}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp_lab.2.ps,width=1in}
+\hspace{2ex} \psfig{figure=./IMAGES/dimp_index.2.ps}}
+\centerline{\hfill a \hfill b \hfill }
+
+\label{fig:label_2}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=./IMAGES/dimp_lab.fin.ps,width=1in}
+\hspace{1ex} \psfig{figure=./IMAGES/dimp_index.fin.ps}}
+\centerline{\hfill a \hfill b \hfill }
+
+\label{fig:label_final}
+\end{figure}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+ 
+\begin{tabular}{|l||c|} \hline
+Image used & \\ 
+for knowledge& \\ 
+ acquisition & \\ 
+ & \psfig{figure=./IMAGES/dimp_know.ps,width=1in} \\  \hline
+Size of the Image & $128 \times 128$ \\  \hline
+Number of segments & 9 \\  \hline
+\end{tabular}
+\end{center}
+ 
+
+\label{tab:detail}
+\end{table}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+ 
+\begin{tabular}{|l|r|r|r|c|c|} \hline
+Segment & Area & Avg Grey & Perimeter & (X Pos,  Y Pos) & Variance \\  \hline
+ 1 (Face) &  5646&  156&  634& (67, 65)& 36.593968 \\ 
+ 2 (Hair) &  7774&  32 & 899 &(69, 52) &18.806145 \\ 
+ 3 (-)   &  440&  125 & 114 &(119, 11) &23.286994 \\ 
+ 4 (Eye)       &  85 & 79&  42 &(83, 50) &42.275149 \\ 
+ 5 (Brow)       &  58 & 82&  48 &(35, 54) &22.789138 \\ 
+ 6 (Eye)       &  133&  65&  65 &(43, 59) &29.439884 \\ 
+ 7 (Hand)       &  1837&  169&  254& (24, 104)& 35.033595 \\ 
+ 8 (Lips)       &  56 & 78  &56&( 73, 96) &15.466554 \\ 
+ 9 (-)       &  346&  49  &187& (26, 121) &47.435231 \\  \hline
+\end{tabular}
+\end{center}
+ 
+
+\label{tab:know}
+\end{table}
+}
+
+\stepcounter{section}
+\stepcounter{subsection}
+\stepcounter{subsection}
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal S}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5058: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$= \{ S_0, \cdots S_{N-1} \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5060: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$A =
+\{x_i, i=0, \cdots, n-1 \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5062: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5064: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5066: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n \longrightarrow \infty$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5068: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal S }$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5070: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5072: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_i \in S_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5076: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=0, \cdots N-1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5078: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5080: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5082: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5084: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${x(\hat{S_i})} $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5086: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5088: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5090: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\epsilon \ge 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5094: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5098: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$ \{ x_j; j=0, 1, \cdots n-1 \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5100: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D_1=\infty$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5104: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_m = \{ y_i, i=0, \cdots, N \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5106: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal P}(\hat{A}_m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5108: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ S_i, i=0,
+\cdots, N \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5110: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_j \in S_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5112: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$d(x_j, y_i) \le
+d(x_j, y_l)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5114: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$D_m=D( \{
+\hat{A}_m, {\cal P}(\hat{A}_m) \})= n^{-1} \sum_{j=0}^{n-1} \min_{y \in
+\hat{A}_m} d(x_j,y)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5118: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(D_{m-1} -D_m)/D_m \le \epsilon$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5120: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5122: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{x}({\cal P}\hat({A}_m))=\{ \hat{x}(S_i); i=1, \cdots, N \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5124: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal P}(\hat{A}_m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5126: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_{m+1} = \hat{x}({\cal P}\hat{A}_m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5128: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m \leftarrow m+1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5130: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_0(1)=\hat{x}(A)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5138: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_0(M)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5140: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ y_i, i=1, 2, \cdots, M \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5144: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$y_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5146: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$y\pm \epsilon$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5148: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\epsilon$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5150: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{A}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5152: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ y_i \pm \epsilon; i=1, \cdots, M\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5156: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M \leftarrow 2M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5158: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}_0 = \tilde{A}(M)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5162: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{A}_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5164: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{A}(M)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5170: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{A}(M)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5172: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+\stepcounter{section}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_{start}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5174: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$T_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5176: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$k=0, i=I_{start}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5180: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(j) \le f(i)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5188: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\exp{\frac{f(i)-f(j)}{T_k}} > \mbox{random} [0,1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5192: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$T_k=\frac{T_0}{\log{l}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5198: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^N \times 2^N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5200: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^N \times 2^N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5202: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(V_0, V_1, \cdots, V_{N-1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5204: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(W_0, W_1, \cdots, W_{M-1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5208: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M \ge N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5212: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \begin{equation}W_i = \sum_{j=\lfloor \frac{i}{\rho} \rfloor}^{\lceil \frac{(i+1)}{\rho}\rceil} r_{ij}V_j
+\label{eq:app_custom_1}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}%
+r_{ij}= \left \{ \begin{array}{lll}
+               \min \{1, \rho, (\rho(j+1)-i) \} &\mbox{if }&\lfloor \frac{i}{\rho} \rfloor \leq  j \leq \frac{i}{\rho} \\ 
+               \min \{1, \rho, ((i+1)-\rho j) \}& \mbox{if} & \frac{i}{\rho} \leq j \leq \lceil \frac{(i+1)}{\rho} \rceil 
+                 \end{array} 
+        \right .         
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\rho = M/N         
+\end{displaymath}
+}
+
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5222: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r_{ij}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5224: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5228: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r_{ij}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5230: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[0,n]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5232: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[i, i+1]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5236: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=0, 1, 2,
+\cdots, M-1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5238: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[
+\rho j, \rho(j+1)]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5242: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$j=0, 1, 2, \cdots, N-1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5244: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r_{ij}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5246: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[\rho j, \rho(j+1)]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5248: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[i, i+1]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5250: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \psfig{figure=IMAGES/uniform_sampling.ps,width=8cm}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\begin{array}{ccc}
+W_0 &=& \frac{3}{4}V_0 + \frac{1}{4} V_1 \\ 
+W_1 &=& \frac{1}{2}V_1 + \frac{1}{2} V_2 \\ 
+W_2 &=& \frac{1}{4}V_2 + \frac{3}{4} V_3 
+\end{array}
+\end{displaymath}
+}
+
+\stepcounter{subsubsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5260: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5264: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W=\sum_{i=0}^{N-1}r_{ij}=\rho$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5266: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5268: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_i=\sum_{i=0}^{M-1}r_{ij}=1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5272: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5278: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5282: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mu_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5284: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sum_{i=0}^{N-1}\mu_j=M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5288: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_i = \sum_j^{N-1} \tilde{r}_{ij}V_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5294: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{r}_{ij}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5296: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[ \sum_{k=0}^{j-1} \mu_k \sum_{k=0}^j \mu_k]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5298: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[i, i+1]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5300: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mu_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5304: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$[0, M]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5306: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(V_0, V_1, \cdots, V_{N-1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5308: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\mu_0, \mu_1, \cdots, \mu_{N-1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5310: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)=\sum_{i=0}^{N-1}V_i \phi_i(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5312: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\phi_{i}= \left \{ \begin{array}{lll}
+               1 &\mbox{if} &\sum_{k=0}^{i-1} \mu_k \leq x < \sum_{k=0}^{i} \mu_k \\ 
+               0 &\mbox{else}&  
+                 \end{array} 
+        \right .         
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(W_0, W_1, \cdots, W_{M-1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5314: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_i= \int f(x) \xi_i(x) dx$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5316: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\xi_{i}= \left \{ \begin{array}{lll}
+               1 &\mbox{if}& i \leq x < i+1 \\ 
+               0 &\mbox{else}&  
+                 \end{array} 
+        \right .         
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{r}_{ij}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5318: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$V_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5320: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mu_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5324: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sum_{i=0}^{N-1} \tilde{r}_{ij}= \mu_k$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5326: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$W_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5328: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sum_{i=0}^{M-1} \tilde{r}_{ij}= 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline5332: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+
+\end{document}

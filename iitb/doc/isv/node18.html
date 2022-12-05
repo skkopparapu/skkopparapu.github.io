@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> Multiresolution (From coarse to fine)</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" Multiresolution (From coarse to fine)">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html230 HREF="node19.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html228 HREF="node12.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html222 HREF="node17.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html231 HREF="node19.html"> Only precomputed edges</A>
+<B>Up:</B> <A NAME=tex2html229 HREF="node12.html"> Experiments</A>
+<B> Previous:</B> <A NAME=tex2html223 HREF="node17.html"> Precomputed edges and </A>
+<BR> <HR> <P>
+<H2><A NAME=SECTION00072000000000000000> Multiresolution (From coarse to fine)</A></H2>
+<P>
+The integration process is similar to that carried out in the monoresolution
+case, except that we start at the coarsest resolution, and pass the disparity
+map to the next finer resolution as:
+<P>
+ for <IMG  ALIGN=MIDDLE ALT="" SRC="img218.gif">,
+<P>
+<P><A NAME=equpdate>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img219.gif"><P>
+The multiplicative factor 2 corresponds to upsampling by 2. There are two
+main advantages of the multiresolution approach. One is that we have a better initial
+disparity estimate at the finest resolution, and second significantly faster 
+computation:
+Let <b>I</b> be the number of iterations required in the absence of multiresolution
+then <IMG  ALIGN=MIDDLE ALT="" SRC="img220.gif"> is the computational complexity  of the integration algorithm.
+If <b>i</b> is the number of iterations required at each resolution then the computational
+complexity of the algorithm which involves multiresolution is
+<IMG  ALIGN=MIDDLE ALT="" SRC="img221.gif">
+where <IMG  ALIGN=BOTTOM ALT="" SRC="img222.gif">  is the coarsest resolution. Using the geometric series sum
+we have the order of complexity as <IMG  ALIGN=MIDDLE ALT="" SRC="img223.gif">.
+Putting typical values of <b>I=100</b>, <b>i=10</b>, <IMG  ALIGN=BOTTOM ALT="" SRC="img224.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img225.gif">, we have 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img226.gif">.
+<P>
+We experiment with two cases in the multiresolution framework.
+<P>
+<BR> <HR>
+<UL> 
+<LI> <A NAME=tex2html232 HREF="node19.html#SECTION00072100000000000000"> Only precomputed edges</A>
+<LI> <A NAME=tex2html233 HREF="node20.html#SECTION00072200000000000000"> Interactive edge computation</A>
+</UL>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

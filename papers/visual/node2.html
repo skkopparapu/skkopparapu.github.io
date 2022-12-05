@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.1 release (March 30, 1999)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Background</TITLE>
+<META NAME="description" CONTENT="Background">
+<META NAME="keywords" CONTENT="visual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.1 release">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="visual.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="visual.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html39"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html37"
+ HREF="visual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html31"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html40"
+ HREF="node3.html">Visual Cue based Formant</A>
+<B>Up:</B> <A NAME="tex2html38"
+ HREF="visual.html">Formant Tracking in Speech</A>
+<B> Previous:</B> <A NAME="tex2html32"
+ HREF="node1.html">Introduction</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Background</A>
+</H1>
+
+<P>
+A speech signal (Figure <A HREF="node2.html#speech">1(a)</A>) is a  pressure wave that travels from a
+speaker to the listener[<A
+ HREF="node8.html#rabiner">5</A>].  
+This signal essentially consists of variation in
+pressure as a function of time. The amplitude variations of such a signal
+correspond to deviations from atmospheric pressure caused by the 
+traveling waves.
+The main organs of the human body responsible for producing speech are the
+lungs, larynx, pharynx, nose and various parts of the mouth. Muscular force to
+expel air from the lungs provides the source of energy. The air flow is
+modulated in various ways to produce components of acoustic power in the audio
+frequency range. The properties of the resultant sound are modified by the rest
+of the vocal organs to produce speech. 
+
+<P>
+The process of acoustic resonance is of prime importance in determining the
+properties of speech sounds. The vocal tract, that starts at the larynx and
+extends up through the pharynx and mouth to the lips, is the principal resonant
+structure. For some sounds the nose is also coupled in to make a more
+complicated resonant system.
+The frequencies of the resonance and
+the way they change with time are crucial in determining what is being said.
+The main resonance modes of the vocal tract are known as formants, and by
+convention they are numbered from the low-frequency end. They are usually
+referred to as F1, F2, F3, etc. In general F1 and F2 (normally in the range 250
+Hz to 3 KHz) are the most significant in determining the phonetic properties of
+speech sounds.
+frequencies are often considered as the elements of the feature vector, which
+characterizes the speech signal.
+
+<P>
+A short-time Fourier
+transform (STFT) of a speech signal gives the spectral representation of a
+speech signal. The spectrum gives a picture of the distribution of frequency
+and amplitude at a moment in time. 
+The formants are best visualized in the spectral domain as spectral peaks.
+Fourier analysis done over successive overlapping blocks of the speech signal
+generates a three-dimensional plot called the spectrogram (see Figure
+<A HREF="node2.html#orig">1(b)</A>). The x-axis 
+of the spectrogram represents time, the
+y-axis represents the spectral content (frequency),
+ and the z-axis representing the spectral energy forming the three dimensions.
+
+<P>
+A <EM> spectrogram</EM> of the speech signal (Fig. <A HREF="node2.html#speech">1(a)</A>) is shown in
+Fig. <A HREF="node2.html#orig">1(b)</A>. In essence, it is a projection of the 
+three-dimensional Fourier plot
+onto the image plane. The spectrogram shows intensity variations, ranging
+from dark to shades of gray colour, which reflect the energies of
+the different frequencies occurring in the speech signal. The dark areas
+correspond to higher spectral energies 
+are the formants, while the lighter areas denote lower spectral energy. 
+The
+formants show a regular connected band like structure, because the human
+speech articulatory system is limited by certain physical constraints,
+which restrict the way the formants change, both over time and in
+frequency [<A
+ HREF="node8.html#zue">8</A>].  
+For this reason, we believe that the spectrogram has visual cues which 
+can be used effectively to
+extract and track formants. 
+
+<P>
+In this paper, we take the 
+spectrogram of the speech signal, represented as a 8-bit gray scale image, 
+as the input to our formant extraction and tracking technique.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="speech"></A><A NAME="orig"></A><A NAME="speech_spec"></A><A NAME="39"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+Speech Signal and it's Spectrogram</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+[Sample Speech Signal]
+
+[width=0.9]figs/speech.eps
+</DIV>
+<DIV ALIGN="CENTER">
+[Spectrogram of Sample Speech Signal]
+
+[width=0.9]figs/original.eps
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+<HR>
+<A NAME="tex2html39"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html37"
+ HREF="visual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html31"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME="tex2html40"
+ HREF="node3.html">Visual Cue based Formant</A>
+<B>Up:</B> <A NAME="tex2html38"
+ HREF="visual.html">Formant Tracking in Speech</A>
+<B> Previous:</B> <A NAME="tex2html32"
+ HREF="node1.html">Introduction</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Sunil Kopparapu <BR>
+2002-12-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

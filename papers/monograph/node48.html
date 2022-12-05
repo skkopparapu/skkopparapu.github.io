@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Construction of a Suitable Network</TITLE>
+<META NAME="description" CONTENT="Construction of a Suitable Network">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node47.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html829"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html825"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html819"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html827"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html830"
+  HREF="node49.html">Dependencies in the Interpretation</A>
+<B>Up:</B> <A NAME="tex2html826"
+  HREF="node47.html">Bayesian Networks for Gibbsian</A>
+<B> Previous:</B> <A NAME="tex2html820"
+  HREF="node47.html">Bayesian Networks for Gibbsian</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00751000000000000000"></A> 
+<A NAME="bayes_net_construction"></A>
+<BR>
+Construction of a Suitable Network
+</H2>
+
+<P>
+In Figure <A HREF="node48.html#fig51">4.2</A> we have 
+represented the interpretations as the roots and the features of the
+segments as the 
+children of the interpretations. Clearly the nodes with only one parent
+are feature 
+measurements over singleton cliques 
+and those with two parents are feature 
+measurements over cliques with  two nodes and so on. For the sake 
+of clarity we have 
+not shown those features over cliques containing more than two nodes.
+
+<DIV ALIGN="CENTER"><A NAME="fig51"></A><A NAME="9894"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.2:</STRONG>
+Network used for image interpretation.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+If <!-- MATH
+ ${I} = \{I_{1}, I_{2}, \cdots I_{N}\}$
+ -->
+ 
+represents the set of interpretations 
+of an MRF over the graph 
+and
+<!-- MATH
+ ${F} = \{F^c|c \in {\cal C}(G, \eta)\}$
+ -->
+, the set of feature
+measurements over the set of cliques 
+<IMG
+ WIDTH="422" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="${\cal C}$"> with the neighborhood system  
+where each 
+<!-- MATH
+ ${F}^{c} = \{F^{c}_{1}, F^{c}_{2}, \cdots F^{c}_{q}\}$
+ -->
+ is the set of
+individual feature measurements over the clique . 
+Then, from Theorem&nbsp;<A HREF="node40.html#th31">4.1</A> the 
+joint probability distribution 
+of the interpretations and the feature measurements is 
+given by
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq51"></A>
+<!-- MATH
+ \begin{eqnarray}
+P[{I} = {i}, {F} = {f}] = \prod_{k}P[I_{k} = i_{k}] 
+\prod_{c \,\in \,{\cal C}({ G}, {\eta})} (\prod_{j} P[F^{c}_{j} = f^{c}_{j}\mid {I}(F^{c}_{j}) = {i}^{c}_{j}) \nonumber \\
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ ${I}(F^{c}_{j})$
+ -->
+ is the set of parents of .
+Since the <EM>a priori</EM> probabilities of the interpretations can be considered as constants, 
+then it is clear that Equation&nbsp;<A HREF="node48.html#eq51">4.8</A> 
+is essentially the same as (<A HREF="node36.html#eqimp">4.7</A>).
+Hence, we have constructed a Bayesian network  with the same pdf 
+as the MRF considered by 
+Modestino and Zhang&nbsp;[<A
+ HREF="node80.html#jr_Mode_92">58</A>]. 
+We shall call this network as the <EM>interpretation network</EM>.
+
+<P>
+<HR>
+<A NAME="tex2html829"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html825"
+  HREF="node47.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html819"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html827"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html830"
+  HREF="node49.html">Dependencies in the Interpretation</A>
+<B>Up:</B> <A NAME="tex2html826"
+  HREF="node47.html">Bayesian Networks for Gibbsian</A>
+<B> Previous:</B> <A NAME="tex2html820"
+  HREF="node47.html">Bayesian Networks for Gibbsian</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

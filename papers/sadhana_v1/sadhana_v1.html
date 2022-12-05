@@ -1,0 +1,2220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.1 release (March 30, 1999)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Enhancing Spoken Connected Digit Recognition Accuracy by Error
+Correction Codes - A Novel Scheme</TITLE>
+<META NAME="description" CONTENT="Enhancing Spoken Connected Digit Recognition Accuracy by Error
+Correction Codes - A Novel Scheme">
+<META NAME="keywords" CONTENT="sadhana_v1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.1 release">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sadhana_v1.css">
+
+</HEAD>
+
+<BODY >
+
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_group" SRC="next_group_motif_gr.gif"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif_gr.gif">   <BR>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<P>
+ 
+<H1 ALIGN="CENTER"><B> Enhancing Spoken Connected Digit  Recognition Accuracy by Error
+Correction Codes - A Novel Scheme</B></H1>
+<P ALIGN="CENTER"><STRONG>Sunil K. Kopparapu and P. V. S. Rao<A NAME="tex2html1"
+ HREF="#foot126"><SUP>1</SUP></A><BR>
+<BR>
+<BR> Cognitive Systems Research Laboratory
+<BR> Plot No 14, Sector 24, Vashi-Turbe,
+<BR> Navi Mumbai 400 705<BR>
+<BR>
+<BR> Email: {SunilKumar.Kopparapu, pvs.rao}@TataInfotech.Com</STRONG></P>
+<P ALIGN="CENTER"><STRONG>
+Enhancing the Accuracy of a Connected Spoken Digit Recognizer
+</STRONG></P>
+
+<P>
+
+<P>
+ 
+<DIV ALIGN="CENTER">
+<B> Enhancing Spoken Connected Digit  Recognition Accuracy by Error
+Correction Codes - A Novel Scheme
+
+</B></DIV>
+
+<P>
+
+<P>
+
+<H3>Abstract:</H3>
+<DIV>
+Recognizing spoken connected digit numbers accurately is an important
+problem and has very many applications.  Though the state of the art
+word recognition systems have gained acceptable accuracy levels
+the accuracy of recognition of current connected
+spoken digits (and other short words) is very poor.  In this paper,
+we develop a novel scheme to enhance the accuracy of recognizing a
+connected number. The basic idea proposed in this paper is to increase the
+number of digits in a number and use these appended digits to increase the
+overall accuracy of recognizing the number, as is done in the error correcting
+code literature. We further show that the developed scheme is able to uniquely
+and exactly correct single digit errors.
+
+<P>
+</DIV>
+<P>
+
+<P>
+ 
+<B> Keywords:</B> Connected Digit Recognition, 
+Spoken Number recognition, Error correcting codes
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+Error correcting codes are a well researched area and are often used
+to take care of errors introduced when data streams are transmitted
+from one place to another through some communication channel. Useful
+and efficient error correcting codes have several objectives
+
+<P>
+
+<OL>
+<LI>Detection and correction of errors introduced in the channel.
+This is the most important objective of an error correcting code;
+ideally one would like a code that is capable of correcting all errors
+due to noise.</LI>
+<LI>Efficient transmission of data, so as to not waste time
+sending extra data.</LI>
+<LI>Easy encoding and decoding schemes; this is also desirable for computational efficiency
+ </LI>
+</OL>
+In general, the more errors that a code needs to
+correct per message digit, the less efficient the transmission and also
+probably the more
+complicated the encoding and decoding schemes. A good code balances these
+objectives [<A
+ HREF="sadhana_v1.html#web_01">Rosenquist, 2003</A>].
+
+<P>
+Much of the study in the area of error correcting codes has been in
+the area of binary block codes, meaning that the transmitted message
+is encoded as a string of 1's and 0's and the code under consideration
+is itself of constant length.  Binary error correcting codes are
+defined on a field <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\{0,1\}$"> with addition, multiplication and
+division operations. Non-binary linear codes have also been addressed
+in literature, but are restricted to a field 
+<!-- MATH
+ $\{0,1, \cdots, p\}$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\{0,1, \cdots, p\}$">,
+where <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$p$"> is a prime. Without going into specifics of different error
+correcting codes, we might state that, broadly speaking, these have
+the same components: the generator matrices; parity check matrices and
+syndrome decoding.
+
+<P>
+Non-binary, non-prime information is often used to code information
+such as postal code, bar code and ISBN<A NAME="tex2html2"
+ HREF="#foot84"><SUP>2</SUP></A> library code to name a few.  
+For example, in character recognition systems decimal numbers are
+popularly used (as in postal codes) and are processed directly, not
+transformed to binary (<IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$0$">'s and <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$1$">'s) data.  There are no good codes reported in
+literature[<A
+ HREF="sadhana_v1.html#web_02">Fujiwara, 2004</A>] for cases where the number of
+characters/symbols is not prime or a power of prime, for example, the
+<IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$10$"> characters in decimal numbers
+
+<P>
+In this paper, we present a novel scheme to detect and correct single
+digit (decimal number, hence non-binary and non-prime) errors. The
+idea is to enhance the accuracy of recognition of connected spoken
+digit recognition, which is otherwise very poor as reported in
+literature and discussed elsewhere in this paper.
+
+<P>
+Speech as a medium is being increasingly used in human computer interface
+applications. There has been a fair amount of success in terms of
+accuracy of word based speech recognition systems and this has
+led to speech recognition and speaker verification systems being deployed
+in practical applications such as auto-attendant and personal
+authentication
+biometric systems. 
+Connected digit recognition is important and has use in several
+application areas. Several applications (for example banks, courier or
+postal agencies to track parcels, railway or travel agencies to confirm
+reservations, b2c portals to give credit card numbers etc) have need
+for a reliable connected digit recognizer. In addition, as speech 
+gains popularity as the medium for interaction between human and
+computer, 
+ and confidence of the users, most of the applications which earlier
+used the telephone key pad to <EM> obtain</EM> numbers are being speech
+enabled.
+While word based (and even phoneme based) recognition systems have
+reached acceptable accuracy levels, this can not be said of
+recognition of connected digit numbers. For this reason, one does as
+yet not find in the market systems which are able to reliably
+recognize spoken connected digit numbers.
+
+<P>
+Current connected digit recognition systems for example,
+[<A
+ HREF="sadhana_v1.html#pr_buhr_94">Buhrke, 1994</A>] 
+and 
+[<A
+ HREF="sadhana_v1.html#jr_bush_87">Kopec and Bush, 1985</A>] 
+use sophisticated algorithms to recognize
+spoken digit strings using whole word models. These algorithms are
+generally based on maximum likelihood recognisers such as hidden
+Markov modeling and neural networks. A good and a reliable connected
+digit recognizer is therefore the need of the day.
+
+<P>
+In this paper, we describe a simple, yet novel scheme to increase the
+recognition accuracy of a connected digit recognizer without
+increasing the digit recognizing accuracy <EM> per se</EM>. The main idea
+is to append extra digits and use the resulting longer number to
+increase the accuracy of recognizing a connected digit number.
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+Connected Digit Recognition</A>
+</H1>
+
+<P>
+The accuracy of recognition of spoken connected digit 
+is low, even
+though the accuracy of recognizing longer  words has reached
+acceptable levels.
+This is due to several reasons; for example:
+
+<OL>
+<LI>spoken digits are of short acoustic duration, typically a few
+seconds of speech,</LI>
+<LI>some digits are acoustically very similar to each other (for
+example, <EM> 
+one</EM> and 
+<EM> nine</EM>) and </LI>
+<LI>detecting a connected number involves
+identifying several individual digits that form the number; hence,
+overall accuracy falls to a much lower level.</LI>
+</OL>
+For
+example, if the probability of recognizing a single digit(<IMG
+ WIDTH="24" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$d1$">) 
+ correctly is <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$">,
+then the probability of recognizing a connected number made up of <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$n$">
+digits (represented by <IMG
+ WIDTH="26" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="$dn$">) is 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+p^c_{dn} = (p^c_{d1})^n
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="100" HEIGHT="33" BORDER="0"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+p^c_{dn} = (p^c_{d1})^n
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:prob_vs_pn"></A><A NAME="729"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+Number recognition accuracy versus digit
+recognition accuracy.</CAPTION>
+<TR><TD><IMG
+ WIDTH="565" HEIGHT="344" BORDER="0"
+ SRC="img18.gif"
+ ALT="\begin{figure}
+\begin{center}
+%\setlength {\unitlength}{0.240900pt}\ifx\plot...
+....000,-3.000){2}{\rule{15.418pt}{1.200pt}}
+\end{picture}\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Clearly,  connected word recognition accuracy is much <EM> poorer</EM>
+compared to the individual digit recognition accuracy. Even a respectable
+single digit accuracy of <IMG
+ WIDTH="38" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$0.95$"> gives a  <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$6$"> 
+digit number recognition accuracy of
+<IMG
+ WIDTH="60" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$(0.95)^6$"> or only <IMG
+ WIDTH="47" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$0.735$">! This paper discusses methods for
+increasing this accuracy of
+connected numbers, without actually increasing digit accuracy.
+Figure <A HREF="sadhana_v1.html#fig:prob_vs_pn">1</A> shows the probability of correctly recognizing
+connected <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$n$">-digit numbers (for <IMG
+ WIDTH="104" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$n=1, 2, 6, 8$">) with increasing 
+single  digit recognition
+accuracy. 
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+Increasing Connected Digit Recognition Accuracy</A>
+</H1>
+
+<P>
+Consider a 
+spoken number made up of <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digits,  that has to be recognized. Let
+<IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$"> denote the probability of correct recognition of a single digit;
+then 
+<!-- MATH
+ $p^e_{d1} = 1 - p^c_{d1}$
+ -->
+<IMG
+ WIDTH="111" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$p^e_{d1} = 1 - p^c_{d1}$"> denotes the probability of error in
+recognition of a single digit. Note that 
+<!-- MATH
+ $0 \le p^c_{d1}, p^e_{d1} \le 1$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$0 \le p^c_{d1}, p^e_{d1} \le 1$">. The
+accuracy of recognition of a <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digit number (probability of correct
+recognition of all the <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digits) is
+ <BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+p_{d\alpha }^c = \left ( p^c_{d1} \right )^\alpha
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:baseline_rec"></A><IMG
+ WIDTH="100" HEIGHT="33" BORDER="0"
+ SRC="img27.gif"
+ ALT="\begin{displaymath}
+p_{d\alpha }^c = \left ( p^c_{d1} \right )^\alpha
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Suppose we append <IMG
+ WIDTH="16" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\beta $"> extra digits
+<A NAME="tex2html4"
+ HREF="#foot746"><SUP>3</SUP></A> 
+to the <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $">-digit number; then
+the accuracy of recognition (probability of correctly recognizing all
+the 
+<!-- MATH
+ $\gamma \stackrel{def}{=}(\alpha + \beta )$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\gamma \stackrel{def}{=}(\alpha + \beta )$"> digits) of the number  is
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+p_{d\gamma }^c = \left ( p^c_{d1} \right )^\gamma
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="98" HEIGHT="36" BORDER="0"
+ SRC="img30.gif"
+ ALT="\begin{displaymath}
+p_{d\gamma }^c = \left ( p^c_{d1} \right )^\gamma
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+Clearly, 
+<!-- MATH
+ $p_{d\gamma }^c \le p_{d\alpha }^c$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$p_{d\gamma }^c \le p_{d\alpha }^c$">. Adding extra digits reduces the
+accuracy of number recognition (compare the curves corresponding to
+ 
+<!-- MATH
+ $p^c_{d\alpha =6}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$p^c_{d\alpha =6}$"> and 
+<!-- MATH
+ $p^c_{d\gamma =8}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$p^c_{d\gamma =8}$"> in 
+Figure
+<A HREF="sadhana_v1.html#fig:prob_vs_pn">1</A>). Note that the advantage of adding extra digits is 
+ 
+<!-- MATH
+ $p_{d\gamma }^c  - p_{d\alpha }^c$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$ p_{d\gamma }^c - p_{d\alpha }^c$"> which is <IMG
+ WIDTH="34" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$ &lt; 0$">.
+Now, suppose the <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $">-digit number is constructed such
+that it is possible to identify and correct <B> exactly</B> and <B> only</B> 
+ <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digits in
+error in the <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $">-digit
+number, then, the advantage of appending the extra <IMG
+ WIDTH="16" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\beta $"> digits to
+the <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digit number, using the theory of binomial expansion, is
+
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow \gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> 
+<!-- MATH
+ $= \left \{ p_{d\gamma }^c 
+- p_{d\alpha }^c
+\right \}$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$= \left \{ p_{d\gamma }^c
+- p_{d\alpha }^c
+\right \} $">
+<IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$+$">
+ 
+<!-- MATH
+ ${}^\gamma C_k (p_{d1}^c)^{\gamma - k} (p_{d1}^e)^k$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="${}^\gamma C_k (p_{d1}^c)^{\gamma - k} (p_{d1}^e)^k
+$">. 
+Assuming that the ability to identify and correct <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digits in error
+implies the ability to identify and correct <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> or less digits in error, we
+have
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+p_{ad}^{\alpha \rightarrow \gamma } = \left \{ p_{d\gamma }^c 
+- p_{d\alpha }^c
+\right \} 
++ 
+\sum_{j=1}^{k} {}^\gamma C_j (p_{d1}^c)^{\gamma - j} (p_{d1}^e)^j
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="349" HEIGHT="61" BORDER="0"
+ SRC="img41.gif"
+ ALT="\begin{displaymath}
+p_{ad}^{\alpha \rightarrow \gamma } = \left \{ p_{d\gamma }...
+...m_{j=1}^{k} {}^\gamma C_j (p_{d1}^c)^{\gamma - j} (p_{d1}^e)^j
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:prob_ad_6_8_gen"></A><A NAME="3534"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+
+Recognition advantage of using <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$"> digits instead of <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$"> for
+
+<!-- MATH
+ $k=1,2,3,4,5,6,7, 8$
+ -->
+<IMG
+ WIDTH="174" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$k=1,2,3,4,5,6,7, 8$"> digits in error correction capability versus probability of single digit recognition</CAPTION>
+<TR><TD><IMG
+ WIDTH="559" HEIGHT="337" BORDER="0"
+ SRC="img42.gif"
+ ALT="\begin{figure}
+\begin{center}
+%\setlength {\unitlength}{0.240900pt}\ifx\plot...
+...nt}}
+\put(1426,234){\usebox {\plotpoint}}
+\end{picture}\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+Figure <A HREF="sadhana_v1.html#fig:prob_ad_6_8_gen">2</A> shows the recognition advantage derived due to
+<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> (
+<!-- MATH
+ $= 1, 2, 3, 4, 5, 6, 7, 8$
+ -->
+<IMG
+ WIDTH="158" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ = 1, 2, 3, 4, 5, 6, 7, 8$">) digits in error 
+correction capability for <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$"> and <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$">.  Notice in Figure
+<A HREF="sadhana_v1.html#fig:prob_ad_6_8_gen">2</A> that
+ 
+<OL>
+<LI>for a given <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$">, 
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> peaks at
+a certain value of <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$">.
+
+<P>
+This is because, for a given <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$">, the advantage due to error correction
+capability is less for smaller values of <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$"> as  also for larger values
+of <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$">, though for different reasons. For larger 
+<IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$"> there is more
+probability of the <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $"> digit number being recognized correctly even without 
+the error correction capability coming into picture, meaning less
+advantage due to the error correcting capability. For smaller <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$">
+there is a higher probability of  
+larger than <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> (number of digits that can be corrected
+by the error correction capability) digits being in error which renders the
+error correcting capability useless. Somewhere in between, given by
+ (<A HREF="sadhana_v1.html#eq:peak_gen">3</A>),
+the advantage of
+using the  error correcting capability peaks.
+
+<P>
+ </LI>
+<LI>the advantage derived by using the error correction capability 
+increases with increase in <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> 
+(maximum value of 
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> for
+<IMG
+ WIDTH="50" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.gif"
+ ALT="$k=7$"> is greater than maximum value of 
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> for
+<IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$">) and </LI>
+<LI>the peak value of 
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> 
+for a given <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> shifts to a lower <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$p_{d1}^c$"> with increasing <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$">. 
+
+<P>
+This behavior is to be expected because with increasing
+<IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$p_{d1}^c$"> there is less chance of making an error and hence no advantage of
+using the error detection and correction capability; but as <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$p_{d1}^c$">
+decreases there is more likelihood of more digits in the number being in error and hence the error
+correction capability is advantageous. </LI>
+</OL>
+
+<P>
+Specifically 
+for  single error digit correction (<IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$">), the advantage of using <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $">
+digits instead of <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digits is (Figure <A HREF="sadhana_v1.html#fig:prob_ad_6_8">3</A>, for <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$">, <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$"> and <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$">)
+ <BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+p_{ad}^{\alpha \rightarrow \gamma } = \left \{ p_{d\gamma }^c 
+ - p_{d\alpha }^c
+\right \}
++ 
+^\gamma C_1 (p_{d1}^c)^{\gamma - 1} (p_{d1}^e)^1
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:advantage"></A><IMG
+ WIDTH="327" HEIGHT="38" BORDER="0"
+ SRC="img47.gif"
+ ALT="\begin{displaymath}
+p_{ad}^{\alpha \rightarrow \gamma } = \left \{ p_{d\gamma }...
+...\right \}
++
+^\gamma C_1 (p_{d1}^c)^{\gamma - 1} (p_{d1}^e)^1
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+ 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:prob_ad_6_8"></A><A NAME="6038"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+
+Advantage of using <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$"> digits instead of <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$"> for single error digit
+correction <IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$(k = 1)$"> number recognition
+versus probability of single digit recognition</CAPTION>
+<TR><TD><IMG
+ WIDTH="559" HEIGHT="337" BORDER="0"
+ SRC="img48.gif"
+ ALT="\begin{figure}
+\begin{center}
+%\setlength {\unitlength}{0.240900pt}\ifx\plot...
+...829.0){\rule[-0.200pt]{2.891pt}{0.400pt}}
+\end{picture}\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+Clearly, there is a distinct advantage in using <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $"> digits instead of
+<IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $">
+digits, provided the extra <IMG
+ WIDTH="16" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\beta $"> digits can be used to identify and correct
+errors of  <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digits or less. 
+<P><DIV><B>Note  _note </B> &nbsp; 
+Figure <A HREF="sadhana_v1.html#fig:prob_ad_6_8">3</A> shows the plot of  advantage of using <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$">
+digits (with the capability of identifying and correcting <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$"> error digit) 
+ instead of <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$">, namely, 
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow
+\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> versus <IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p^c_{d1}$">, the correct recognition of a single digit. Notice
+from the plot that there is always an advantage (
+<!-- MATH
+ $p_{ad}^{\alpha \rightarrow
+\gamma }$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$
+p_{ad}^{\alpha \rightarrow \gamma }$"> is positive) of using <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $"> digits instead
+of <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digits provided we are able to identify and correct <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$"> digits in
+error.</DIV><P></P>
+In Section <A HREF="sadhana_v1.html#sec:scheme">4</A> we propose a
+simple 
+yet novel scheme which is able to identify and correct  such 
+errors by appending <IMG
+ WIDTH="16" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\beta $"> extra digits to the original <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\alpha $"> digits.
+It can be shown  that,
+the maximum increase in accuracy of recognition
+(because of being able to detect and
+identify <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> error digits in an <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$\gamma $"> digit number) occurs at 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+p_{d1}^c = \left ( \frac{\gamma -j}{\gamma } \right )
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:peak_gen"></A><IMG
+ WIDTH="416" HEIGHT="61" BORDER="0"
+ SRC="img49.gif"
+ ALT="\begin{displaymath}
+p_{d1}^c = \left ( \frac{\gamma -j}{\gamma } \right )
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and the maximum increase in probability of correct recognition is 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\sum_{j=1}^{k} {}^{\gamma }C_j \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j} \left (\frac{j}{\gamma } \right)^j
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="463" HEIGHT="65" BORDER="0"
+ SRC="img50.gif"
+ ALT="\begin{displaymath}
+\sum_{j=1}^{k} {}^{\gamma }C_j \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j} \left (\frac{j}{\gamma } \right)^j
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+We show this in Appendix <A HREF="sadhana_v1.html#sec:peak_gen">A</A>, namely, the
+resulting advantage in recognition due to <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digits in error correction.
+
+<P>
+
+<H1><A NAME="SECTION00040000000000000000"></A>
+<A NAME="sec:scheme"></A><BR>
+Proposed Scheme
+</H1>
+
+<P>
+Consider the case where <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$">, namely a decimal number 
+<!-- MATH
+ $N_\alpha = d_1 d_2 d_3 d_4 d_5 d_6$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ N_\alpha = d_1 d_2 d_3 d_4 d_5 d_6$">,
+where 
+<!-- MATH
+ $0 \le d_i \le 9$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.gif"
+ ALT="$0 \le d_i \le 9$">. We append  <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$\beta = 2$"> extra digits to generate an <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$">-digit
+number 
+<!-- MATH
+ $N_\gamma = d_1 d_2 d_3 d_4 d_5 d_6 d_7 d_8$
+ -->
+<IMG
+ WIDTH="196" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$N_\gamma = d_1 d_2 d_3 d_4 d_5 d_6 d_7 d_8$">.
+The construction of <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.gif"
+ ALT="$d_{\alpha +1}$"> and <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$d_{\alpha +2}$"> is  as follows,
+ <BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+d_{\alpha +1} = 10- \mbox{modulo}(d'_{\alpha +1}, 10)
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:cal_d7"></A><IMG
+ WIDTH="242" HEIGHT="34" BORDER="0"
+ SRC="img57.gif"
+ ALT="\begin{displaymath}
+d_{\alpha +1} = 10- \mbox{modulo}(d'_{\alpha +1}, 10)
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where,
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+d'_{\alpha +1} =
+ \sum_{i=1}^\alpha d_i
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="103" HEIGHT="55" BORDER="0"
+ SRC="img58.gif"
+ ALT="\begin{displaymath}d'_{\alpha +1} =
+\sum_{i=1}^\alpha d_i
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+Also,
+ <BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+d_{\alpha +2} = \mbox{modulo}(d'_{\alpha +2}, 11)
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:cal_d8"></A><IMG
+ WIDTH="200" HEIGHT="34" BORDER="0"
+ SRC="img59.gif"
+ ALT="\begin{displaymath}
+d_{\alpha +2} = \mbox{modulo}(d'_{\alpha +2}, 11)
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+d'_{\alpha +2} =
+ \sum_{i=1}^{\alpha +1} w_i d_i
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="124" HEIGHT="58" BORDER="0"
+ SRC="img60.gif"
+ ALT="\begin{displaymath}d'_{\alpha +2} =
+\sum_{i=1}^{\alpha +1} w_i d_i
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+and 
+<!-- MATH
+ $\{ {w_i}\}_{i=1}^{\alpha +1}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.gif"
+ ALT="$\{ {w_i}\}_{i=1}^{\alpha +1}$"> are chosen such that
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{ccc}
+w_i \ne w_j & \mbox{if}  & i \ne j 
+\end{array}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:weights"></A><IMG
+ WIDTH="142" HEIGHT="35" BORDER="0"
+ SRC="img62.gif"
+ ALT="\begin{displaymath}
+\begin{array}{ccc}
+w_i \ne w_j &amp; \mbox{if} &amp; i \ne j
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+As will be shown in this
+paper, <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.gif"
+ ALT="$d_{\alpha +1}$"> is used to identify a single error and <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$d_{\alpha +2}$"> to
+locate the position of the error. The <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$\beta = 2$"> digits can be used to not
+only detect a single error but also to identify the error; hence 
+all single digit errors can be corrected.  We know from  (<A HREF="sadhana_v1.html#eq:cal_d7">4</A>) that
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\mbox{modulo}\left (\sum_{i=1}^\alpha d_i, 10\right )  + d_{\alpha +1} = 10
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="494" HEIGHT="63" BORDER="0"
+ SRC="img63.gif"
+ ALT="\begin{displaymath}
+\mbox{modulo}\left (\sum_{i=1}^\alpha d_i, 10\right ) + d_{\alpha +1} = 10
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Suppose, there is a single digit error
+ in recognizing <IMG
+ WIDTH="28" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$N_{\gamma }$"> and the transmitted number is 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\hat{N}_{\gamma } = d_1 \cdots d_{\eta -1} D_{\eta } d_{\eta +1} \cdots  d_{\gamma -1} d_{\gamma }
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="273" HEIGHT="34" BORDER="0"
+ SRC="img65.gif"
+ ALT="\begin{displaymath}
+\hat{N}_{\gamma } = d_1 \cdots d_{\eta -1} D_{\eta } d_{\eta +1} \cdots d_{\gamma -1} d_{\gamma }
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+where, 
+<!-- MATH
+ $1 \le \eta \le \gamma$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.gif"
+ ALT="$1 \le \eta \le \gamma $">. Now, find
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq:mod_err"></A>
+
+<!-- MATH
+ \begin{eqnarray}
+E &=& \mbox{modulo}\left ( \left \{ 
+\sum_{i=1}^{\eta -1} d_i + D_\eta + \sum_{i=\eta +1}^{\alpha +1} d_i \right \}, 10\right ) \\\nonumber
+& = & \mbox{modulo}\left (\left \{ \sum_{i=1}^{\alpha +1} d_i + (D_\eta - d_\eta ) \right \}, 10\right)\\\nonumber
+& = & \mbox{modulo}\left (\left \{ 10 +  (D_\eta - d_\eta ) \right \},10\right)\\\nonumber
+& = & \mbox{modulo}\left ( (D_\eta - d_\eta ), 10\right)\\\nonumber
+& = & \mbox{modulo}\left ( e, 10\right )\\\nonumber
+\end{eqnarray}
+ -->
+
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\displaystyle E$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="327" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$\displaystyle \mbox{modulo}\left ( \left \{
+\sum_{i=1}^{\eta -1} d_i + D_\eta + \sum_{i=\eta +1}^{\alpha +1} d_i \right \}, 10\right )$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(8)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="298" HEIGHT="77" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.gif"
+ ALT="$\displaystyle \mbox{modulo}\left (\left \{ \sum_{i=1}^{\alpha +1} d_i + (D_\eta - d_\eta ) \right \}, 10\right)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="254" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$\displaystyle \mbox{modulo}\left (\left \{ 10 + (D_\eta - d_\eta ) \right \},10\right)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="190" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.gif"
+ ALT="$\displaystyle \mbox{modulo}\left ( (D_\eta - d_\eta ), 10\right)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="119" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.gif"
+ ALT="$\displaystyle \mbox{modulo}\left ( e, 10\right )$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV><BR CLEAR="ALL"><P></P>
+where  
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+e = (D_\eta - d_\eta )
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:e"></A><IMG
+ WIDTH="112" HEIGHT="34" BORDER="0"
+ SRC="img74.gif"
+ ALT="\begin{displaymath}
+e = (D_\eta - d_\eta )
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(9)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+If we knew <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\eta $">, the position of the error, we can reconstruct <IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$N_{\alpha }$"> as
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+N_\alpha = d_1 \cdots d_{\eta -1} d'_\eta d_{\eta +1} \cdots d_\alpha
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="235" HEIGHT="36" BORDER="0"
+ SRC="img77.gif"
+ ALT="\begin{displaymath}
+N_\alpha = d_1 \cdots d_{\eta -1} d'_\eta d_{\eta +1} \cdots d_\alpha
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+where
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{lcll}
+d'_\eta & = & D_\eta - E & \mbox{if}\;\;\;\;(D_\eta - E) \ge 0 \\
+		 & = & 10+ (D_\eta - E) & \mbox{if}\;\;\; (D_\eta - E) < 0 \\
+\end{array}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:det_err"></A><IMG
+ WIDTH="339" HEIGHT="53" BORDER="0"
+ SRC="img78.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lcll}
+d'_\eta &amp; = &amp; D_\eta - E &amp; \mbox{if}\;\;...
+...(D_\eta - E) &amp; \mbox{if}\;\;\; (D_\eta - E) &lt; 0 \\
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(10)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Since we do not know the exact location of the error, namely <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\eta $">, we
+construct <IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.gif"
+ ALT="$(\alpha +1)$"> different numbers <IMG
+ WIDTH="26" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.gif"
+ ALT="$C_\zeta $">
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+C_\zeta =   d_1 \cdots d_{\zeta -1} (d_\zeta - E) d_{\zeta +1} \cdots d_{\eta -1}
+D_\eta d_{\eta +1} \cdots d_{\alpha +1}
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="421" HEIGHT="34" BORDER="0"
+ SRC="img81.gif"
+ ALT="\begin{displaymath}
+C_\zeta = d_1 \cdots d_{\zeta -1} (d_\zeta - E) d_{\zeta +1} \cdots d_{\eta -1}
+D_\eta d_{\eta +1} \cdots d_{\alpha +1}
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+where 
+<!-- MATH
+ $1 \le \zeta \le \alpha +1$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$1 \le \zeta \le \alpha +1$">
+and 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{lcll}
+d_\zeta - E& = & d_\zeta - E & \mbox{if}\;\;\;\;(d_\zeta - E) \ge 0 \\
+		 & = & 10+ (d_\zeta - E) & \mbox{if}\;\;\; (d_\zeta - E) < 0 \\
+\end{array}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="367" HEIGHT="53" BORDER="0"
+ SRC="img83.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lcll}
+d_\zeta - E&amp; = &amp; d_\zeta - E &amp; \mbox{if}...
+..._\zeta - E) &amp; \mbox{if}\;\;\; (d_\zeta - E) &lt; 0 \\
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(11)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Now, one of these is the correct number and 
+we are left with the task of selecting this; 
+namely choose one of 
+<!-- MATH
+ $\{C_\zeta \}_{\zeta =1}^{\alpha +1}$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$\{C_\zeta \}_{\zeta =1}^{\alpha +1}$">. We make use of the
+construction of <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$d_{\alpha +2}$"> for this purpose. We first find,
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+S_{C_\zeta }  & =  & w_1 d_1 + \cdots w_{\zeta -1}d_{\zeta -1} + w_\zeta (d_\zeta - E)
++ w_{\zeta +1}d_{\zeta +1} \\\nonumber
+&   & 
++\cdots w_{\eta -1}d_{\eta -1} + w_\eta D_\eta + w_{\eta +1}d_{\eta +1}+ \cdots w_{\alpha +1}d_{\alpha +1}
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="484" HEIGHT="62" BORDER="0"
+ SRC="img85.gif"
+ ALT="\begin{eqnarray*}
+S_{C_\zeta } &amp; = &amp; w_1 d_1 + \cdots w_{\zeta -1}d_{\zeta -1} +...
+...eta + w_{\eta +1}d_{\eta +1}+ \cdots w_{\alpha +1}d_{\alpha +1}
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+for 
+<!-- MATH
+ $1 \le \zeta \le \alpha +1$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$1 \le \zeta \le \alpha +1$">
+and find
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+P_{C_\zeta } = \mbox{modulo}\left ( S_{C_\zeta }, 11\right )
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:loc"></A><IMG
+ WIDTH="187" HEIGHT="38" BORDER="0"
+ SRC="img86.gif"
+ ALT="\begin{displaymath}
+P_{C_\zeta } = \mbox{modulo}\left ( S_{C_\zeta }, 11\right )
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(12)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The correct value of <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\eta $"> is <IMG
+ WIDTH="16" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img87.gif"
+ ALT="$\delta $">, when 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+P_{C_\delta } = d_{\alpha +2}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:det_loc"></A><IMG
+ WIDTH="92" HEIGHT="33" BORDER="0"
+ SRC="img88.gif"
+ ALT="\begin{displaymath}
+P_{C_\delta } = d_{\alpha +2}
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(13)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The scheme for generating and correcting single errors is shown in Algorithm <A HREF="sadhana_v1.html#algo:label">1</A>.
+
+<P>
+ 
+<BR>
+<A NAME="algo:label"></A><IMG
+ WIDTH="729" HEIGHT="215" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.gif"
+ ALT="\begin{algorithm}
+% latex2html id marker 6173\begin{algorithmic}[1]
+\STATE {\b...
+...\caption {Scheme for generation and correction of single errors.}\end{algorithm}">
+<BR>
+
+<P>
+
+<H2><A NAME="SECTION00041000000000000000">
+Uniqueness of <IMG
+ WIDTH="29" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$C_\delta $"></A>
+</H2>
+We need to show that <IMG
+ WIDTH="29" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$C_\delta $"> that satisfies (<A HREF="sadhana_v1.html#eq:det_loc">13</A>) is unique.
+This can be shown in two steps, namely, showing that the error (<IMG
+ WIDTH="13" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img90.gif"
+ ALT="$e$">) 
+and the location of the error are both 
+uniquely determinable.
+
+<P>
+ 
+<U>Uniqueness of error identification:</U> 
+We know that the error (<A HREF="sadhana_v1.html#eq:e">9</A>)
+
+<!-- MATH
+ $e = (D_\eta - d_\eta ) \in \{ -9, 9\}$
+ -->
+<IMG
+ WIDTH="202" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.gif"
+ ALT="$e = (D_\eta - d_\eta ) \in \{ -9, 9\}$">. It follows that
+
+<!-- MATH
+ $E = \mbox{modulo}(e,10) \in \{0,9\}$
+ -->
+<IMG
+ WIDTH="225" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.gif"
+ ALT="$ E = \mbox{modulo}(e,10) \in \{0,9\}$">. 
+Now, one needs to show that,
+given the erroneously recognized digit sequence, 
+<!-- MATH
+ $d_1 \cdots D_\eta \cdots
+d_\gamma$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.gif"
+ ALT="$d_1 \cdots D_\eta \cdots
+d_\gamma $"> and <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.gif"
+ ALT="$E$">, one can 
+uniquely determine <IMG
+ WIDTH="22" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$d_\eta $"> using (<A HREF="sadhana_v1.html#eq:det_err">10</A>).
+
+<P>
+We know that 
+<!-- MATH
+ $d \in \{0, 9 \}$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$d \in \{0, 9 \}$"> (actual digit) and 
+
+<!-- MATH
+ $D \in \{0, 9 \}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$D \in \{0, 9 \}$"> (misrecognized digit). 
+Consider 
+the condition that the digit 
+<!-- MATH
+ $d=i \in \{0, 9 \}$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.gif"
+ ALT="$d=i \in \{0, 9 \}$"> is
+misrecognized as  
+<!-- MATH
+ $D=j \in \{ 0, 9 \}$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.gif"
+ ALT="$D=j \in \{ 0, 9 \}$"> by the speech recognition engine. 
+We can <EM> compute</EM> the actual transmitted digit <IMG
+ WIDTH="16" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img100.gif"
+ ALT="$i'$"> 
+from (<A HREF="sadhana_v1.html#eq:det_err">10</A>) as
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{lcll}
+i' & = & j - E & \mbox{if}\;\;\;\;j \ge E \\
+		 & = & 10+ (j - E) & \mbox{if}\;\;\; j < E \\
+\end{array}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:res"></A><IMG
+ WIDTH="252" HEIGHT="53" BORDER="0"
+ SRC="img101.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lcll}
+i' &amp; = &amp; j - E &amp; \mbox{if}\;\;\;\;j \ge E \\
+&amp; = &amp; 10+ (j - E) &amp; \mbox{if}\;\;\; j &lt; E \\
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(14)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where, 
+<!-- MATH
+ $E = \mbox{modulo}(j - i,10)$
+ -->
+<IMG
+ WIDTH="186" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$E = \mbox{modulo}(j - i,10)$">. 
+ We need to show that 
+<IMG
+ WIDTH="16" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img100.gif"
+ ALT="$i'$"> is indeed the actual <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.gif"
+ ALT="$i$">. There are two possible cases, namely, 
+<IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$j - i \ge 0$"> and  <IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$j - i &lt;0$">. We look at them  separately,
+<DL>
+<DT><STRONG>Case <IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$j - i \ge 0$">:</STRONG></DT>
+<DD>We have <IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.gif"
+ ALT="$E = j - i$"> and hence  we can estimate  
+
+<!-- MATH
+ $i' = j - (j-i) = i$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.gif"
+ ALT="$i' = j - (j-i) = i$">,
+using (<A HREF="sadhana_v1.html#eq:res">14</A>).
+<P>
+ </DD>
+<DT><STRONG>Case <IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$j - i &lt;0$">:</STRONG></DT>
+<DD>We have 
+<!-- MATH
+ $E = 10 + j - i$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$E = 10 + j - i$"> and hence  we can estimate 
+ 
+<!-- MATH
+ $i' = 10 + j - (10+ j - i) = i$
+ -->
+<IMG
+ WIDTH="241" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$i' = 10 + j - (10+ j - i) = i$">,
+using (<A HREF="sadhana_v1.html#eq:res">14</A>).</DD>
+</DL>
+
+<P>
+Clearly, we  can obtain <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.gif"
+ ALT="$i$"> the correct digit (<IMG
+ WIDTH="14" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.gif"
+ ALT="$d$">)  by estimating <IMG
+ WIDTH="16" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img100.gif"
+ ALT="$i'$"> as
+above. This establishes the uniqueness of identification of error.
+
+<P>
+ 
+<U>Uniqueness of error location:</U> Once the error is uniquely
+determined, it remains to show that the location of the error is also uniquely
+determinable to establish that the scheme suggested is a valid scheme to
+correct single digit errors.
+Given the error  <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.gif"
+ ALT="$E$"> (<A HREF="sadhana_v1.html#eq:mod_err">9</A>), it is clear from  (<A HREF="sadhana_v1.html#eq:loc">12</A>) that
+ <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.gif"
+ ALT="$P_{C_\eta }$"> 
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+&= & \mbox{modulo}(S_{C_\eta }, 11) \\\nonumber
+&=& \mbox{modulo}\left ( \sum_{i=1}^{\alpha +1} w_id_i  + w_\eta (D_\eta - E) - w_\eta 
+d_\eta , 11\right ) \\\nonumber
+&=& \mbox{modulo}\left ( \sum_{i=1}^{\alpha +1} w_id_i  + w_\eta (D_\eta -(D_\eta -
+d_\eta ) ) - w_\eta d_\eta , 11\right ) \\\nonumber
+& = & \mbox{modulo}\left (\sum_{i=1}^{\alpha +1} w_id_i, 11\right ) \\\nonumber
+& = & d_{\alpha +2}
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="449" HEIGHT="231" BORDER="0"
+ SRC="img112.gif"
+ ALT="\begin{eqnarray*}
+&amp;= &amp; \mbox{modulo}(S_{C_\eta }, 11) \\ \nonumber
+&amp;=&amp; \mbox{mod...
+...{\alpha +1} w_id_i, 11\right ) \\ \nonumber
+&amp; = &amp; d_{\alpha +2}
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+Hence, one is assured of being able to correct the occurrence of a single
+ error. Now, it remains to be shown that
+none of the other <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.gif"
+ ALT="$P_{C_j}$"> for <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.gif"
+ ALT="$j \ne \eta $">
+is  <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$d_{\alpha +2}$">. To demonstrate this, consider <IMG
+ WIDTH="38" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.gif"
+ ALT="$P_{C_\sigma }$"> (
+<!-- MATH
+ $\sigma \ne
+\eta$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$\sigma \ne
+\eta $">)
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+&= & \mbox{modulo}( w_1d_1 + \cdots  w_\eta D_\eta + \cdots  w_\sigma (d_\sigma -E)+
+\cdots  w_{\alpha +1} d_{\alpha +1}, 11) \\\nonumber 
+&=& \mbox{modulo}\left ( \sum_{i=1}^{\alpha +1} w_id_i - w_\sigma (D_\eta - d_\eta )
++w_\eta D_\eta - w_\eta d_\eta , 11\right ) \\\nonumber
+& = & \mbox{modulo}\left ( \sum_{i=1}^{\alpha +1} w_id_i + (w_\eta - w_\sigma ) (D_\eta -
+d_\eta ), 11\right ) \\\nonumber
+& = & d_{\alpha +2} \;\;\; \mbox{if} \left \{ 
+\begin{array}{cccc}
+\mbox{(i)} & D_\eta = d_\eta \;\;&\mbox{or}& \\
+\mbox{(ii)} & w_\eta = w_\sigma \;\; &\mbox{or}&\\
+\mbox{(iii)} & \mbox{modulo}\left ( \left ((w_\eta - w_\sigma ) (D_\eta - d_\eta )\right
+), 11\right) &=& 0  \\
+\end{array}
+\right .
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="532" HEIGHT="224" BORDER="0"
+ SRC="img117.gif"
+ ALT="\begin{eqnarray*}
+&amp;= &amp; \mbox{modulo}( w_1d_1 + \cdots w_\eta D_\eta + \cdots w_\...
+...\eta - d_\eta )\right
+), 11\right) &amp;=&amp; 0 \\
+\end{array}\right .
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+None of the above three conditions are true
+
+<UL>
+<LI>We know that, 
+<!-- MATH
+ $D_\eta \ne d_\eta$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.gif"
+ ALT="$D_\eta \ne d_\eta $">, because there exists an
+error<A NAME="tex2html7"
+ HREF="#foot6251"><SUP>4</SUP></A> at location
+<IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\eta $">
+(Condition (i))</LI>
+<LI>
+<!-- MATH
+ $w_\eta \ne w_\sigma$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.gif"
+ ALT="$w_\eta \ne w_\sigma $"> because of the choice of  weights (<A HREF="sadhana_v1.html#eq:weights">6</A>)
+(Condition (ii))</LI>
+<LI>We know that 
+<!-- MATH
+ $(D_\eta -d_\eta )$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$(D_\eta -d_\eta )$"> is an integer in the range <IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$\{-9, 9\}$"> and if we
+choose weights 
+<!-- MATH
+ $\{ w_i\}_{i=1}^{\alpha +1}$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.gif"
+ ALT="$\{ w_i\}_{i=1}^{\alpha +1}$"> such that 
+<!-- MATH
+ $w_i - w_j \ne ( \mbox{any
+multiple of\ } 11) \;\;
+\forall \;\; i, j \in \{ 1, \alpha +1\}$
+ -->
+<IMG
+ WIDTH="415" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.gif"
+ ALT="$w_i - w_j \ne ( \mbox{any
+multiple of\ } 11) \;\;
+\forall \;\; i, j \in \{ 1, \alpha +1\}$"> then 
+Condition (iii) is not true.</LI>
+</UL>
+
+<P>
+This shows that a single error can be uniquely identified and corrected using
+the suggested scheme (Algorithm <A HREF="sadhana_v1.html#algo:label">1</A>).
+
+<P>
+
+<H2><A NAME="SECTION00042000000000000000">
+Advantage of using the proposed scheme</A>
+</H2>
+
+<P>
+We can show that the proposed scheme enhances the connected digit recognition
+accuracy considerably. Consider an <IMG
+ WIDTH="51" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\alpha = 6$"> digit number and assume that the
+digit recognition accuracy is 
+<!-- MATH
+ $p_{d1}^c = 0.9$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.gif"
+ ALT="$p_{d1}^c = 0.9$">.
+The baseline connected digit recognition (CDR)
+system would have a recognition accuracy of 
+
+<!-- MATH
+ $53.14\%\ (= (0.9)^6 = 0.53144$
+ -->
+<IMG
+ WIDTH="229" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.gif"
+ ALT="$53.14\%\ (= (0.9)^6 = 0.53144$">,
+using (<A HREF="sadhana_v1.html#eq:baseline_rec">1</A>)).
+Suppose we append <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$\beta = 2$"> digits to give the proposed scheme the ability to
+detect and correct <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="$k=1$"> digits in error. Then the 
+<IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\gamma = 8$"> digit number would be recognised by the scheme proposed in the
+paper with an accuracy of 
+<!-- MATH
+ $81.3\%\ ( = (0.9)^8 + {}^8 C_1 (0.9)^{7} (0.1)^1$
+ -->
+<IMG
+ WIDTH="276" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$81.3\%\ ( = (0.9)^8 + {}^8 C_1 (0.9)^{7} (0.1)^1$">
+using (<A HREF="sadhana_v1.html#eq:advantage">2</A>)).
+
+<P>
+
+<H1><A NAME="SECTION00050000000000000000">
+Conclusions</A>
+</H1>
+In this paper, we have proposed a simple yet novel scheme to increase the
+recognition accuracy of a connected digit without actually increasing the
+recognition accuracy of the digit. We presented the scheme, which can be
+essentially classified as a non-prime, non-binary error correcting code.
+The basic idea is to append extra digits and
+use them to detect and correct a single digit error. 
+We have shown that
+the error correction can be done <EM> always</EM> and that the correction 
+is <EM> unique</EM>. This scheme can be used to enhance, connected spoken 
+ digit recognition accuracy.
+
+<P>
+
+<H2><A NAME="SECTION00060000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD><P></P><DT><A NAME="pr_buhr_94">Buhrke, 1994</A>
+<DD>
+Buhrke Eric R, Cardin Regis, Normandin Yves, Rahim Mazin G., and Wilpon Jay G.
+<BR>Application Of Vector Quantized Hidden Markov Modeling To Telephone
+  Network Based Connected Digit Recognition.
+<BR>In <EM> Proc. IEEE International Conf. Acoustic, Speech, Signal
+  Proc.</EM>, pages 105-108, April 1994.
+
+<P></P><DT><A NAME="web_02">Fujiwara, 2004</A>
+<DD>
+Fujiwara Lab.
+<BR>M-Ary Symmetric / Asymmetric Error Control Codes.
+<BR>In <EM> http://fujiwara-www.cs.titech.ac.jp/res/tagen-e.html</EM>,
+  February 2004.
+
+<P></P><DT><A NAME="jr_bush_87">Kopec and Bush, 1985</A>
+<DD>
+Kopec G. and Bush M.
+<BR>Network-based connected digit recognition.
+<BR><EM> IEEE Transactions on Acoustics, Speech, and Signal Processing</EM>,
+  33(4):1401-1413, 1985.
+
+<P></P><DT><A NAME="web_01">Rosenquist, 2003</A>
+<DD>
+Rosenquist Todd.
+<BR>An Introduction to Error Correcting Codes.
+<BR>In <EM> http://web.syr.edu/~ rrosenqu/ecc/main.htm</EM>, 2003.
+</DL>
+
+<P>
+
+<P>
+
+<H1><A NAME="SECTION00070000000000000000"></A>
+<A NAME="sec:peak_gen"></A><BR>
+Recognition accuracy advantage due to <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digit error correction
+capability
+</H1>
+
+<P>
+Let <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$p_c$"> be the probability of correct recognition of a single digit.
+Then
+ <BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+f(p_c) =\sum_{j=1}^{k} {}^{\gamma }C_j p_c^{\gamma -j} (1-p_c)^j
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:ad_err_gen"></A><IMG
+ WIDTH="225" HEIGHT="61" BORDER="0"
+ SRC="img129.gif"
+ ALT="\begin{displaymath}
+f(p_c) =\sum_{j=1}^{k} {}^{\gamma }C_j p_c^{\gamma -j} (1-p_c)^j
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(15)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+is the advantage of a scheme being
+able to detect and correct <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k$"> digits in error. We can find the extrema of
+<IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.gif"
+ ALT="$f(p_c)$"> by differentiating (<A HREF="sadhana_v1.html#eq:ad_err_gen">15</A>) with respect to <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$p_c$"> 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\frac{\partial f(p_c)}{\partial p_c}  = 
+\sum_{j=1}^{k} {}^{\gamma }C_j \left ((\gamma -j) p_c^{\gamma -j-1} (1-p_c)^j -
+               j p_c^{\gamma -j} p_c^{j-1} \right )
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="435" HEIGHT="61" BORDER="0"
+ SRC="img131.gif"
+ ALT="\begin{displaymath}
+\frac{\partial f(p_c)}{\partial p_c} =
+\sum_{j=1}^{k} {}^{\...
+...gamma -j-1} (1-p_c)^j -
+j p_c^{\gamma -j} p_c^{j-1} \right )
+\end{displaymath}">
+</DIV><BR CLEAR="ALL">
+<P></P>
+and
+equating it to <IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$0$">,  
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+0  & = & \sum_{j=1}^{k} {}^{\gamma }C_j \left ((\gamma -j) p_c^{\gamma -j-1} (1-p_c)^j - j p_c^{\gamma -j} p_c^{j-1} \right )  \\\nonumber
+ 0 & = & \sum_{j=1}^{k} {}^{\gamma }C_j \left ( p_c^{\gamma -j-1} (1-p_c)^{j-1} \right )
+ \left ( \gamma (1-p_c) -j \right )  
+ \\\nonumber
+p_c &=& \left ( \frac{\gamma -j}{\gamma } \right ) \;\;\; \forall\;\; j = 1, 2, \cdots k
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="417" HEIGHT="176" BORDER="0"
+ SRC="img132.gif"
+ ALT="\begin{eqnarray*}
+0 &amp; = &amp; \sum_{j=1}^{k} {}^{\gamma }C_j \left ((\gamma -j) p_c^...
+...amma -j}{\gamma } \right ) \;\;\; \forall\;\; j = 1, 2, \cdots k
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+We can show that the extrema is a maximum by taking the second differential of
+(<A HREF="sadhana_v1.html#eq:ad_err_gen">15</A>) and showing that it is negative for the extrema 
+<!-- MATH
+ $p_c =  \left ( \frac{\gamma -j}{\gamma } \right )$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$p_c = \left ( \frac{\gamma -j}{\gamma } \right )$">. 
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\partial^2 f(p_c)}{\partial p_c^2} 
+& =& \frac{\partial}{\partial p_c} \sum_{j=1}^{k} {}^{\gamma }C_j \left ( p_c^{\gamma -j-1} (1-p_c)^{j-1} \right ) \left ( \gamma (1-p_c) -j \right ) \\\nonumber
+&=& \sum_{j=1}^{k} {}^{\gamma }C_j \left (
+\left ( \gamma (1-p_c)-j \right ) \frac{\partial}{\partial p_c} \{ p_c^{\gamma -j-1} (1-p_c)^{j-1} \}
++ p_c^{\gamma -j -1} (1-p_c)^{j-1} (-\gamma ) \right ) \\\nonumber
+&=& \sum_{j=1}^{k} {}^{\gamma }C_j \left ( \gamma (1-p_c)-j \right ) \left \{ (\gamma -j-1)(1-p_c)^{j-1} p_c^{\gamma -j-2}  \right . \\\nonumber
+&&  \left . - p_c^{\gamma -j-1} (1-p_c)^{j-2} (j-1) \right \} -\gamma p_c^{\gamma -j-1} (1-p_c)^{j-1} \\\nonumber
+& = & \sum_{j=1}^{k} {}^{\gamma }C_j \left \{ (1-p_c)^{j-2} p_c^{\gamma -j-2} \left  \{ (\gamma (1-p_c)-j) \right . \right .\nonumber \\
+& & \left .  \left \{ (\gamma -j-1)(1-p_c)  + (j-1)p_c \} - \gamma p_c (1-p_c)  \right \} \right \}
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="705" HEIGHT="303" BORDER="0"
+ SRC="img134.gif"
+ ALT="\begin{eqnarray*}
+\frac{\partial^2 f(p_c)}{\partial p_c^2}
+&amp; =&amp; \frac{\partial}...
+...1)(1-p_c) + (j-1)p_c \} - \gamma p_c (1-p_c) \right \} \right \}
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+substituting 
+<!-- MATH
+ $p_c =  \left ( \frac{\gamma -j}{\gamma } \right )$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$p_c = \left ( \frac{\gamma -j}{\gamma } \right )$">, and observing that 
+
+<!-- MATH
+ $(1- p_c) =  \left ( \frac{j}{\gamma } \right )$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.gif"
+ ALT="$ (1- p_c) = \left ( \frac{j}{\gamma } \right )$">, we have
+<P></P><DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray*}
+\frac{\partial^2 f(p_c)}{\partial p_c^2} &=&
+\sum_{j=1}^{k} {}^{\gamma }C_j \left \{ 
+  \left (\frac{j}{\gamma } \right )^{j-2} 
+  \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j-2} 
+  \left \{ 
+  \stackrel{0}{\overbrace{\left ( \gamma \left ( \frac{j}{\gamma } \right )-j  \right
+)}}
+  \right .
+   \right .\nonumber \\
+& &   \left . \left . \left \{ (\gamma -j-1) 
+      \left (\frac{j}{\gamma } \right )  + (j-1) 
+      \left ( \frac{\gamma -j}{\gamma } \right )  
+      \right \} - \gamma 
+       \left ( \frac{\gamma -j}{\gamma } \right )
+       \left (\frac{j}{\gamma } \right )  
+       \right \}
+       \right \} \nonumber \\
+&=& - \sum_{j=1}^{k} {}^{\gamma }C_j \left \{ 
+  \left (\frac{j}{\gamma } \right )^{j-2}
+  \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j-2}
+   \gamma 
+       \left ( \frac{\gamma -j}{\gamma } \right ) 
+       \left (\frac{j}{\gamma } \right )  
+       \right \} \\\nonumber
+&=& - \sum_{j=1}^{k} {}^{\gamma }C_j \left \{
+  \left (\frac{j}{\gamma } \right )^{j-1}
+  \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j-1}
+   \gamma 
+       \right \} \\\nonumber
+& < & 0
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="656" HEIGHT="311" BORDER="0"
+ SRC="img136.gif"
+ ALT="\begin{eqnarray*}
+\frac{\partial^2 f(p_c)}{\partial p_c^2} &amp;=&amp;
+\sum_{j=1}^{k} {}...
+...\right )^{\gamma -j-1}
+\gamma
+\right \} \\ \nonumber
+&amp; &lt; &amp; 0
+\end{eqnarray*}"><BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P><BR CLEAR="ALL"><P></P>
+Hence, the extrema  
+<!-- MATH
+ $p_c =  \left ( \frac{\gamma -j}{\gamma } \right )$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$p_c = \left ( \frac{\gamma -j}{\gamma } \right )$"> is a maxima. The
+maximum of (<A HREF="sadhana_v1.html#eq:ad_err_gen">15</A>) is
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+f_{max}(p_c) =\sum_{j=1}^{k} {}^{\gamma }C_j \left ( \frac{\gamma -j}{\gamma } \right )^{\gamma -j} \left (\frac{j}{\gamma } \right)^j
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="507" HEIGHT="65" BORDER="0"
+ SRC="img137.gif"
+ ALT="\begin{displaymath}
+f_{max}(p_c) =\sum_{j=1}^{k} {}^{\gamma }C_j \left ( \frac{...
+...amma } \right )^{\gamma -j} \left (\frac{j}{\gamma } \right)^j
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(16)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot126">... Rao</A><A NAME="foot126"
+ HREF="sadhana_v1.html#tex2html1"><SUP>1</SUP></A>
+<DD>Fellow
+Indian Academy of Sciences
+
+<DT><A NAME="foot84">... ISBN</A><A NAME="foot84"
+ HREF="sadhana_v1.html#tex2html2"><SUP>2</SUP></A>
+<DD>International Standard Book
+Number is a unique
+machine-readable book  identification number
+
+<DT><A NAME="foot746">... digits</A><A NAME="foot746"
+ HREF="sadhana_v1.html#tex2html4"><SUP>3</SUP></A>
+<DD>use of the extra <IMG
+ WIDTH="16" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$\beta $"> digits is explained in the later part of the paper
+
+<DT><A NAME="foot6251">...
+error</A><A NAME="foot6251"
+ HREF="sadhana_v1.html#tex2html7"><SUP>4</SUP></A>
+<DD>
+<!-- MATH
+ $D_\eta =d_\eta$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.gif"
+ ALT="$D_\eta =d_\eta $"> implies there
+is no error in the recognition of digits by the speech engine.
+
+</DL><HR>
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_group" SRC="next_group_motif_gr.gif"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif_gr.gif">   <BR>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Sunil Kopparapu <BR>
+2004-03-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

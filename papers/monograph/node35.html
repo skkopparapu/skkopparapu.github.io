@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html666"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html662"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html656"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html664"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html667"
+  HREF="node36.html">MRF model leading to</A>
+<B>Up:</B> <A NAME="tex2html663"
+  HREF="node34.html">Bayesian Net approach to</A>
+<B> Previous:</B> <A NAME="tex2html657"
+  HREF="node34.html">Bayesian Net approach to</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00710000000000000000">
+Introduction</A>
+</H1>
+ Early work in 
+image interpretation was an attempt at mere 
+classification using features [<A
+ HREF="node80.html#bk_Ohta_85">2</A>,<A
+ HREF="node80.html#2p">105</A>,<A
+ HREF="node80.html#3m">106</A>].
+But recent image interpretation systems are knowledge-based 
+knowledge-based 
+(expert) systems
+which make use of domain knowledge and spatial constraints
+ for inference. 
+A probabilistic approach to image
+interpretation
+that  is domain knowledge independent was attempted by 
+Modestino and Zhang [<A
+ HREF="node80.html#jr_Mode_92">58</A>].
+Their approach was to model the segments of an image as the nodes of an 
+adjacency
+graph and the labels associated with the nodes 
+as a MRF over the graph (Section <A HREF="node27.html#sec:mrf_on_graph">1</A>, Chapter
+<A HREF="node26.html#chap:mrf_framework">3.2.1</A>). They used
+simulated annealing [<A
+ HREF="node80.html#bk_Aart_89">82</A>]
+to find the MAP estimate of the MRF which 
+corresponds to the best interpretation given 
+the features and the spatial constraints. 
+
+<P>
+Modestino and Zhang's model suggests that we can formulate the image 
+interpretation
+problem as one of probabilistic reasoning. Researchers in 
+the area of artificial intelligence (AI)
+have used Bayesian networks for  building expert systems 
+in fields like  medical
+diagnosis    
+where one is  required to reason about  the probable diseases given 
+the symptoms.
+In this chapter we present the use  of
+Bayesian networks for image interpretation.
+We show how a simple Bayesian network can be used to 
+model the interpretations and 
+feature measurements. Gibbs sampling followed by 
+simulated annealing is used
+to   relax the network  to  an optimum set of interpretations.
+
+<P>
+This chapter  is organized as  follows. 
+In Section  <A HREF="node36.html#sec:bayes_net_description">2</A>
+ a  detailed description
+of Bayesian networks is given. In Section  <A HREF="node43.html#sec:bayes_net_semantics">4.1</A>
+ we describe  the  dependence  semantics
+of a Bayesian network and also  discuss schemes for the  updating 
+of probabilities
+given some evidence. In Section <A HREF="node48.html#bayes_net_construction">5.1</A>     we   
+discuss  the construction of a 
+Bayesian network for the purpose of image interpretation. 
+In Section <A HREF="node51.html#sec:bayes_net_results">6</A>
+we   describe  some experimental 
+results  on a real image.
+
+<P>
+<HR>
+<A NAME="tex2html666"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html662"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html656"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html664"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html667"
+  HREF="node36.html">MRF model leading to</A>
+<B>Up:</B> <A NAME="tex2html663"
+  HREF="node34.html">Bayesian Net approach to</A>
+<B> Previous:</B> <A NAME="tex2html657"
+  HREF="node34.html">Bayesian Net approach to</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

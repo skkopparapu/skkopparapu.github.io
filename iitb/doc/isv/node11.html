@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> The Integrated Stereo Algorithm</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" The Integrated Stereo Algorithm">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html148 HREF="node12.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html146 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html140 HREF="node10.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html149 HREF="node12.html"> Experiments</A>
+<B>Up:</B> <A NAME=tex2html147 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html141 HREF="node10.html"> Obtaining images at </A>
+<BR> <HR> <P>
+<H1><A NAME=SECTION00060000000000000000> The Integrated Stereo Algorithm</A></H1>
+<P>
+All the four energy functions <IMG  ALIGN=MIDDLE ALT="" SRC="img162.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img163.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img164.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img165.gif"> need to be minimized.
+Minimization can be carried out
+using any known global minimization technique, in this paper we use the simulated
+annealing algorithm [<A HREF="node24.html#aart">19</A>]. 
+The general structure  of the integrated stereo algorithm is as follows:
+<DL COMPACT><DT>Step 1
+<DD> Use any of the standard edge detecting algorithm for obtaining the
+preprocessed line fields. We have used the difference image <IMG  ALIGN=MIDDLE ALT="" SRC="img166.gif">
+for this task since it provides a multiresolution framework, which will be
+used later on. Given the image <IMG  ALIGN=MIDDLE ALT="" SRC="img167.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img168.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img169.gif"> are obtained by
+<P><A NAME=eqdiff_2_lf>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img170.gif"><P>  
+A superscript L or R to the line fields will indicate the precomputed line
+fields for the left or the right image. This becomes a fixed input for Step 3
+to Step 6.
+<DT>Step 2
+<DD> Initialize all the other line fields  <IMG  ALIGN=BOTTOM ALT="" SRC="img171.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img172.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img173.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img174.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img175.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img176.gif"> and the disparity <IMG  ALIGN=BOTTOM ALT="" SRC="img177.gif">
+to zero.
+<DT>Step 3
+<DD> Using the values for <IMG  ALIGN=BOTTOM ALT="" SRC="img178.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img179.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img180.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img181.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img182.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img183.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img184.gif">
+from the previous iteration and <IMG  ALIGN=BOTTOM ALT="" SRC="img185.gif">; <IMG  ALIGN=MIDDLE ALT="" SRC="img186.gif"> is minimized.
+This outputs <IMG  ALIGN=MIDDLE ALT="" SRC="img187.gif">.
+<P>
+<DT>Step 4
+<DD> Using the results of Step 3, and the values for
+ <IMG  ALIGN=BOTTOM ALT="" SRC="img188.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img189.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img190.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img191.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img192.gif">
+from the previous iterations and <IMG  ALIGN=BOTTOM ALT="" SRC="img193.gif">; <IMG  ALIGN=MIDDLE ALT="" SRC="img194.gif"> is minimimized.
+This outputs <IMG  ALIGN=MIDDLE ALT="" SRC="img195.gif">.
+<P>
+<DT>Step 5
+<DD> Using the results of Step 3 and 4, the values of <IMG  ALIGN=BOTTOM ALT="" SRC="img196.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img197.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img198.gif">
+from the previous iterations and <IMG  ALIGN=BOTTOM ALT="" SRC="img199.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img200.gif">; <IMG  ALIGN=MIDDLE ALT="" SRC="img201.gif"> is
+minimized. This outputs <IMG  ALIGN=BOTTOM ALT="" SRC="img202.gif">.
+<P>
+<DT>Step 6
+<DD> Using the results of Step 3, 4 and 5, and the values for
+<IMG  ALIGN=BOTTOM ALT="" SRC="img203.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img204.gif"> , from the previous iterations;
+<IMG  ALIGN=MIDDLE ALT="" SRC="img205.gif"> is minimized. This outputs  <IMG  ALIGN=BOTTOM ALT="" SRC="img206.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img207.gif">.
+<P>
+<DT>Step 7
+<DD> Go to Step 3 if the stopping criterion is not satisfied. In all our
+simulations a fixed number of iterations determined the stopping criterion.
+<P>
+ </DL>
+<P>
+We refer to Step 3 to Step 6 as one integrated iteration.
+<P>
+It is to be noted that the
+precomputed line fields <IMG  ALIGN=MIDDLE ALT="" SRC="img208.gif"> are not
+updated though used in the integration model, the idea being that they are <em> adequate</em>
+enough and can be used by the model as a guiding line field map.
+<P>
+<BR> <HR><A NAME=tex2html148 HREF="node12.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html146 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html140 HREF="node10.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html149 HREF="node12.html"> Experiments</A>
+<B>Up:</B> <A NAME=tex2html147 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html141 HREF="node10.html"> Obtaining images at </A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

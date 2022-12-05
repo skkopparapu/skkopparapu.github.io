@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Image Interpretation Algorithm</TITLE>
+<META NAME="description" CONTENT="Image Interpretation Algorithm">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html966"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html962"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html958"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html964"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html967"
+  HREF="node60.html">Experimental Results</A>
+<B>Up:</B> <A NAME="tex2html963"
+  HREF="node58.html">The Joint Segmentation and</A>
+<B> Previous:</B> <A NAME="tex2html959"
+  HREF="node58.html">The Joint Segmentation and</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00831000000000000000">
+Image Interpretation Algorithm</A>
+</H2>
+algorithm, joint segmentation and image interpretation
+
+<UL>
+<LI>Step 0: <B>Initialization</B>
+
+<OL>
+<LI>Given:
+<!-- MATH
+ ${\cal{K}}^\Omega$
+ -->
+ the a priori knowledge and
+<IMG
+ WIDTH="29" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$Y^\Omega $"> (Figure <A HREF="node58.html#fig:explain">5.3</A> component a), the scene to be 
+interpreted,  defined on a lattice of size  <!-- MATH
+ $2^\Omega \times 2^\Omega$
+ -->
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.gif"
+ ALT="$2^\Omega \times
+2^\Omega$">
+
+<P>
+</LI>
+<LI>Construct
+ <!-- MATH
+ $D^{\Omega -1}_{Y,HH}$
+ -->
+,
+<!-- MATH
+ $D^{\Omega -1}_{Y,HL}$
+ -->
+, <!-- MATH
+ $D^{\Omega -1}_{Y,LH}$
+ -->
+, <!-- MATH
+ $D^{\Omega -2}_{Y,HH}$
+ -->
+,
+<!-- MATH
+ $D^{\Omega -2}_{Y,HL}$
+ -->
+, <!-- MATH
+ $D^{\Omega -2}_{Y,LH}$
+ -->
+, <IMG
+ WIDTH="44" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.gif"
+ ALT="$\cdots$">, <!-- MATH
+ $D^{\Omega      
+-N}_{Y,HH}$
+ -->
+, <!-- MATH
+ $D^{\Omega -N}_{Y,HL}$
+ -->
+, <!-- MATH
+ $D^{\Omega -N}_{Y,LH}$
+ -->
+, <!-- MATH
+ $D^{\Omega
+-N}_{Y,LL}$
+ -->
+ using a wavelet filter (Figure <A HREF="node58.html#fig:explain">5.3</A> component b).
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>Step I: <B>Segmentation and refining:</B> 
+Obtain <!-- MATH
+ $^s\tilde{Y}^{\Omega -k}$
+ -->
+ the segmented image of  <!-- MATH
+ $\stackrel{\rm def}{=}$
+ -->
+ <!-- MATH
+ $D^{\Omega -k}_{Y,LL}$
+ -->
+ using k-means clustering
+algorithm (Figure <A HREF="node58.html#fig:explain">5.3</A> component c) and refine 
+<!-- MATH
+ $^s\tilde{Y}^{\Omega -k}$
+ -->
+,
+using <!-- MATH
+ $D^{\Omega -k}_{Y,HH}$
+ -->
+, <!-- MATH
+ $D^{\Omega -k}_{Y,HL}$
+ -->
+ and <!-- MATH
+ $D^{\Omega
+-k}_{Y,LH}$
+ -->
+ and using a predefined threshold to merge all segments whose
+area is less than the prespecified <EM>minimum area</EM>, to get
+<!-- MATH
+ $^s{Y}^{\Omega -k}$
+ -->
+ (Figure <A HREF="node58.html#fig:explain">5.3</A> component d). 
+
+<P>
+
+<OL>
+<LI>At the coarsest resolution .
+
+<OL>
+<LI>Construct histogram of , choose dominant peaks - let
+there be  such peaks. These are the chosen values of the bins in the
+k-means clustering algorithm.
+
+<P>
+</LI>
+<LI>k-means clustering algorithm will produce, say, some  segments
+using the optimality criterion, namely, that the pixels which are within a 
+region are as close as possible to the centroid of the region. 
+
+<P>
+</LI>
+<LI>Refine the regions or segments obtained from Step (I.1.b) using the
+difference images <!-- MATH
+ $D^{\Omega -N}_{Y,HH}$
+ -->
+, <!-- MATH
+ $D^{\Omega -N}_{Y,HL}$
+ -->
+ and
+<!-- MATH
+ $D^{\Omega -N}_{Y,LH}$
+ -->
+ and the <EM>minimum area</EM> criteria. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:table"></A><A NAME="12078"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.4:</STRONG>
+To describe the process of refining segmentation.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<EM>Refinement using the difference image :</EM> The refinement procedure
+is best described by looking at Figure <A HREF="node59.html#fig:table">5.4</A>.  For example if
+<!-- MATH
+ $D^{\Omega -N}_{Y,HH}$
+ -->
+ is not zero at the pixel location <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> it means
+that there is a <EM>diagonal edge</EM> present at the pixel location <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$">.
+The presence of an edge means that pixels  and <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$">
+should not belong to the same segment.  If the pixels  and
+<IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> belong to different clusters they are not touched, else pixel
+ is assigned a new segment which is not the same as that
+occupied by pixel <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$">. The assignment of the segment label 
+is based on
+the nearest neighborhood scheme: pixel  is assigned to that
+segment whose centroid is closest to the gray level value of the pixel
+ and excluding the centroid of the segment to which pixel 
+ belongs. In a similar manner refinement is done using the 
+difference
+images <!-- MATH
+ $D^{\Omega -N}_{Y,LH}$
+ -->
+ and <!-- MATH
+ $D^{\Omega -N}_{Y,HL}$
+ -->
+ corresponding to
+the vertical and horizontal edge fields respectively. 
+
+<P>
+<EM>Refinement using the minimum area criterion:</EM> Let <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> be a
+region with an area less than the <EM>minimum area</EM> and let  be
+regions adjacent to region <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> and having areas greater than the <EM>minimum area</EM>. Then the refinement criterion is:
+<BLOCKQUOTE>
+region <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> is merged with region  if the difference between the gray
+level of the centroids of regions <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> and  is less than the difference
+between the gray level of the centroids of regions <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> and . 
+
+</BLOCKQUOTE>
+In other words, if  represents region  and  
+represents the average gray level value of region , then the above 
+criterion translates as: 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lcl}
+R_l \longleftarrow R_k \uplus R_l &\mbox{if}& \left | G(R_k) - G(R_l) 
+\right | \le \left | G(R_k) - G(R_m) \right | \\
+R_m \longleftarrow R_k \uplus R_m &\mbox{if}& \left | G(R_k) - G(R_l)
+\right |  \ge \left | G(R_k) - G(R_m) \right | \\
+\end{array}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, the notation <!-- MATH
+ $R_l \longleftarrow R_i \uplus R_k$
+ -->
+ means that region 
+ and  are merged to form a new region  .
+
+<P>
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>At any resolution <!-- MATH
+ $\Omega -k \;\; (k \ne N)$
+ -->
+
+<P>
+
+<OL>
+<LI>Quadtree interpolate the segmented image at  to
+ resolution. If <!-- MATH
+ $^s{Y_{ij}^{\Omega-k-1}}$
+ -->
+ is the 
+<IMG
+ WIDTH="286" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$(i,j)^{th}$"> pixel of the  segmented image at resolution , 
+then <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+^s{Y_{i+p,j+q}^{\Omega-k}} = ^s\!\!{Y_{i,j}^{\Omega-k-1}} \;\; 
+\mbox{for} \;\; 0 \le p,q \le 1
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Use this information as the initial segmented image. In addition the 
+centroids of each of the regions is also transfered to the next
+finer resolution. These centroids are then used to initialize the bins to
+be used in the k-means clustering algorithm at resolution . 
+
+<P>
+</LI>
+<LI>use the interpretation labels obtained from the previous resolution
+, to initialize the interpretation labels at this resolution. 
+</LI>
+<LI>Repeat (I.1.b) and (I.1.c) for resolution . 
+</LI>
+</OL>
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI> Step II: <B>Interpretation - Segmentation loop</B>
+
+<OL>
+<LI><B>Interpretation:</B> The segments are
+interpreted using the knowledge base <!-- MATH
+ ${\cal{K}}^{\Omega -k}$
+ -->
+, the core variables 
+ derived from 
+the segmented image <!-- MATH
+ $^sY^{\Omega -k}$
+ -->
+ and using the assumption that the 
+conditional probability  is a MRF (<A HREF="node57.html#eq:max">5.1</A>). This 
+conditional probability can be minimized using a relaxation 
+algorithm (in our simulations we used the simulated
+annealing algorithm). The energy to be minimized is 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+arg \min_{{I^{\Omega -k}} \in \{\L ^{\Omega -k}\}} U \left ({I^{\Omega -k}};F^{\Omega -k}, 
+{\cal{K}}^{\Omega -k} \right )
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where, 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U \left ({I}^{\Omega-k};F^{\Omega-k}, {\cal{K}}^{\Omega-k} \right ) = \sum_{c 
+\in {\cal C}}V_c \left ({I}^{\Omega-k};F^{\Omega-k}, {\cal{K}}^{\Omega-k} \right 
+)
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and <!-- MATH
+ $V_c \left ({I}^{\Omega-k};F^{\Omega-k}, {\cal{K}}^{\Omega-k} \right )$
+ -->
+ 
+are the clique potentials.
+
+<P>
+</LI>
+<LI>Recall that <!-- MATH
+ $\{\L ^{\Omega -k}\}$
+ -->
+ contains the <EM>no-interpretation</EM> 
+label label, no-interpretation. Thus our criterion for moving from coarse to fine resolution is:
+<BLOCKQUOTE>
+if none of the labels have the label <EM>no-interpretation</EM> then move 
+from the present <EM>coarse</EM> resolution resolution, fine 
+resolution,coarse to the next <EM>fine</EM> 
+resolution (Step III).
+
+</BLOCKQUOTE>
+
+<P>
+</LI>
+<LI><B>Segmentation:</B> In case any segment has the label <EM>no-interpretation</EM>, we merge it  
+with one of the
+interpreted segments which is adjacent to it,
+depending on a probability criterion. For example:
+If region  has label <EM>no-interpretation</EM>, that is, <!-- MATH
+ $I_j^{\Omega -k}$
+ -->
+ 
+takes the label  and if  are the
+regions adjacent to region , then region  is assigned the
+interpretation label  corresponding to the region  if 
+<!-- MATH
+ $\P[I_{j}^{\Omega -k}=\L _l 
+\mid F^{\Omega -k}; {\cal{K}}^{\Omega -k}]$
+ -->
+  <!-- MATH
+ $\P[I_{j}^{\Omega -k}=\L _m \mid F^{\Omega -k}; 
+{\cal{K}}^{\Omega -k}]$
+ -->
+. In other words,
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\hspace*{-1.5cm} I_j^{\Omega -k} = \left \{
+             \begin{array}{ccl}
+             \L _l& \mbox{if} &\P\left [I_j^{\Omega -k}
+= \L _l \mid {\cal{K}}^{\Omega -k}; F^{\Omega -k} \right ] \\
+&>&\P\left [I_j^{\Omega -k} = \L _m \mid {\cal{K}}^{\Omega -k}; F^{\Omega -k}\right ] \\[1ex]
+             \L _m& \mbox{if} &
+\P\left [I_j^{\Omega -k} = \L _m \mid {\cal{K}}^{\Omega -k}; F^{\Omega -k} \right ] \\
+&>&
+\P\left [I_j^{\Omega -k} = \L _l \mid {\cal{K}}^{\Omega -k}; F^{\Omega -k} \right ] \\
+             \end{array}
+             \right .
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This step will output a better segmented image.
+
+<P>
+</LI>
+<LI>Go back to Step II (Interpretation-Segmentation loop)
+
+<P>
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>Step III: <B>Coarse to fine resolution</B>
+
+<OL>
+<LI>If not working at  resolution 
+
+<OL>
+<LI>Interpretation
+labels at this resolution are transfered to the next finer resolution
+(<!-- MATH
+ $I^{\Omega - k} \longrightarrow I^{\Omega - k+1}$
+ -->
+)
+</LI>
+<LI><!-- MATH
+ $k \longrightarrow k-1$
+ -->
+; go back to Step I (segmentation and refining)
+</LI>
+</OL>
+</LI>
+<LI>At resolution :
+
+<OL>
+<LI>Output the interpretation labels, 
+</LI>
+<LI>Output the segmented image
+</LI>
+<LI>Quadtree interpolate the segmented and interpreted images to obtain 
+the final segmented and interpreted images at the finest resolution 
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img142.gif"
+ ALT="$\Omega $"> (in all our experiments, we have found that it was 
+sufficient to stop the algorithm at resolution  instead of 
+segmenting and interpreting the image at resolution <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img142.gif"
+ ALT="$\Omega $">). 
+
+<P>
+</LI>
+</OL>
+</LI>
+</OL>
+</LI>
+</UL>
+
+<P>
+<P>
+<DIV><B>Note  5.6</B> &nbsp; 
+We have assumed the availability of knowledge base  at all resolution
+<!-- MATH
+ $k=0, 1, \cdots \Omega$
+ -->
+.</DIV><P></P>
+
+<P>
+<DIV><B>Note  5.7</B> &nbsp; 
+In principle it may be possible to generate the
+knowledge base separately at each resolution. But, knowledge base
+generation is a user interactive process, which tends to get difficult at
+coarser resolutions. Thus, we prefer to use the rules described in Table
+<A HREF="node79.html#tab:rules_know">H.3</A>, Appendix <A HREF="node76.html#sec:know_acq">H</A> for 
+constructing the knowledge pyramid. </DIV><P></P>
+
+<P>
+
+<P>
+<HR>
+<A NAME="tex2html966"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html962"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html958"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html964"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html967"
+  HREF="node60.html">Experimental Results</A>
+<B>Up:</B> <A NAME="tex2html963"
+  HREF="node58.html">The Joint Segmentation and</A>
+<B> Previous:</B> <A NAME="tex2html959"
+  HREF="node58.html">The Joint Segmentation and</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

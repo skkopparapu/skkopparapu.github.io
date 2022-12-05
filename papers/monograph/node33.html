@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Minimization Algorithm</TITLE>
+<META NAME="description" CONTENT="Minimization Algorithm">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html622"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html618"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html614"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html620"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html623"
+  HREF="node34.html">Bayesian Net approach to</A>
+<B>Up:</B> <A NAME="tex2html619"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B> Previous:</B> <A NAME="tex2html615"
+  HREF="node32.html">Multiple Node Clique Function</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00612300000000000000">
+Minimization Algorithm</A>
+</H3>
+
+<P>
+Having constructed the clique functions, the  MAP (<A HREF="node29.html#map">3.4</A>)
+formulation of the 
+interpretation problem can now be written as 
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="map-clique"></A>
+<!-- MATH
+ \begin{eqnarray}
+x_{*} & = & \arg \min_{x} 
+                \left[ {\displaystyle \sum_{\forall c = \mbox{single node cliques}}}
+                    V_{c}^{1}(x^{c}|f^{c},{\cal K}) \right.  \nonumber \\
+      &   &  + \left. \sum_{\forall c = \mbox{multiple node cliques} }
+               V_{c}^{m}(x^{c} | f^{c}, {\cal K}) \right]
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In general the expression inside the square brackets will not be convex
+and therefore will have local minima and possibly multiple minima. 
+Thus, a need for an algorithm which
+assures a global minimum. Now in a typical interpretation problem the
+sample space of the interpretation random variables is finite, and
+therefore the above problem reduces to a <EM>combinatorial</EM>
+minimization problem. Consequently, the most commonly uses algorithm is
+the simulated annealing
+(SA) algorithm ([<A
+ HREF="node80.html#jr_Kirk_83">80</A>], [<A
+ HREF="node80.html#jr_Gema_84">79</A>])  
+because it guarantees convergence in probability to the
+set of globally minimal solutions. Nevertheless, one could use some other
+algorithm, for example the genetic algorithm [<A
+ HREF="node80.html#bk_lawr_87">104</A>]. 
+
+<P>
+<BR> <HR>
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

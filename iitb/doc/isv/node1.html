@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>  Introduction</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="  Introduction">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html47 HREF="node2.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html45 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html39 HREF="run.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html48 HREF="node2.html"> The Integration Model </A>
+<B>Up:</B> <A NAME=tex2html46 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html40 HREF="run.html">  New Algorithms for </A>
+<BR> <HR> <P>
+<H1><A NAME=SECTION00010000000000000000>  Introduction</A></H1>
+<P>
+Vision comes to human so naturally that one does not realize its complexity 
+until one tries to automate it. The basic aim of stereo vision is to
+extract disparity map or equivalently the depth map (provided
+the camera geometry is known) of the scene from its two dimensional
+ representation [<A HREF="node24.html#ban1">1</A>].
+Obtaining depth information from the 2D stereo images is an inverse optics problem
+and  hence ill-posed in the 
+sense of Hadamard [<A HREF="node24.html#bert">2</A>]. 
+Regularization in the sense of Tikhonov is a commonly
+used technique in computer vision problems to make an ill-posed   
+problem well-posed. The basic philosophy of this  technique  is to restrict the
+solution space by imposing some constraints. 
+Uniqueness, smoothness, epipolar geometry, disparity gradient, are some of the
+physical constraints that are imposed on the stereo problem to restrict the solution
+space and hence make the problem well-posed.
+<P>
+Numerous techniques  have been developed to infer depth ([<A HREF="node24.html#nasa">6</A>]
+-[<A HREF="node24.html#marr2">14</A>] to cite a few).
+Various shape
+from X techniques get the depth information by using only a single 2D 
+image, but they make use of a number of assumptions like distant light
+sources, spherical patches, knowledge of the reflectance map, etc. In addition,
+ the depth information obtained 
+is relative and not absolute. Binocular stereo techniques 
+use two 
+2D images (of the same scene) to extract depth which is absolute.
+<P>
+Though there exists a large number of stereo vision algorithms, 
+most of
+them can be categorized as having three main modules built into their structure.
+ They are 
+ <OL><LI>  Feature Extraction module
+<LI>  Matching module
+<LI>  Interpolation module
+</OL>
+<P>
+A number of physical constraints are imposed in the development of most 
+algorithms. Also, in most of the algorithms the
+three blocks are traversed in a top to bottom fashion without
+any interaction between the modules.
+Initially 
+a feature extracting algorithm is used to obtain salient features in both
+the left and the right image of the stereo pair. In the second stage, a matching
+algorithm is used to match the feature points in the left and the right image. Once the 
+feature points are matched, the difference between the position of the feature
+point in
+the left image and the corresponding matched point in the right image gives the
+disparity map. Knowing the geometry of the camera, the depth information
+can be calculated from the disparity map in a simple way.
+Next an interpolation  algorithm is 
+used to interpolate on the sparse depth data, to obtain a  dense depth map
+(in our simulations we interpolate on the disparity data rather than the depth
+data since the camera geometry is usually not known).
+<P>
+
+<P>
+<P><A NAME=163>&#160;</A><A NAME=STEREO_PROBLEM>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img1.gif">
+<BR><STRONG>Figure 1:</STRONG>  Procedure involved in a  typical  Stereo  Vision Algorithm<BR>
+<P>
+<P>
+
+<P>
+The problem emanating
+from large and small number of feature points is pictorially depicted in 
+Figure <A HREF="node1.html#STEREO_PROBLEM">1</A>.        
+One would like to have a large number of correct matches, leading to a
+dense disparity map and consequently to a good reconstruction. But, the dense
+depth map and correct matches are conflicting (notice that they appear
+on different sides of the matching block in Figure <A HREF="node1.html#STEREO_PROBLEM">1</A>); one alternative
+is to use an             integration approach.
+Integration is a process
+where information obtained from one module drives another 
+module with an aim to improve the final solution. A number of algorithms
+appear in the vision literature which use integration in one form or another
+(for example [<A HREF="node24.html#gamble">3</A>], [<A HREF="node24.html#hwang">4</A>], [<A HREF="node24.html#hoff">5</A>], [<A HREF="node24.html#kana">15</A>], 
+[<A HREF="node24.html#ban2">16</A>], [<A HREF="node24.html#bozm">17</A>], [<A HREF="node24.html#clar">24</A>]).
+<P>
+Perhaps one could view the early work of Moravec [<A HREF="node24.html#mora">18</A>], as an
+approach to integrating information from several images of the same 
+scene from different views.
+More recently Markov Random Field (MRF) framework has been exploited to
+integrate information from multiple cues like motion, color, texture
+[<A HREF="node24.html#gamble">3</A>]. 
+Another approach integrates the stereo pair of images at different
+scales, the information available at the coarser pairs is used to aid
+the images at finer scales [<A HREF="node24.html#ban2">16</A>]. Integration of stereo
+images at various baselines has been worked out in [<A HREF="node24.html#kana">15</A>].
+<P>
+In this paper, motivated by the work of Gamble et al [<A HREF="node24.html#gamble">3</A>],
+Clark and Yullie [<A HREF="node24.html#clar">24</A>], 
+Toborg and Hwang [<A HREF="node24.html#hwang">4</A>] and Banard [<A HREF="node24.html#ban2">16</A>] we present a novel approach to    integrate 
+various modules associated with stereo. In our approach there is integration among the following
+blocks: right and left edge extracting modules, the matching module, and the
+interpolator module (see Figure <A HREF="node2.html#INTEGRATION_MODEL">2</A>). We also incorporate line fields to preserve 
+discontinuities in the reconstructed surface. Moreover, the interaction between modules is
+through these line fields. Our integration approach
+results in a disparity map which is dense. 
+The computation of dense disparity map from two 2D stereo images is computationally
+expensive. 
+
+<P>
+To overcome the problem of high computational time we have exploited the 
+multiresolution approach of Burt and Adelson [<A HREF="node24.html#burt">23</A>] in our integration
+model. We would like to remark that the multiresolution approach of [<A HREF="node24.html#burt">23</A>]
+is used very extensively in the computer vision literature
+(for example [<A HREF="node24.html#hoff">5</A>], [<A HREF="node24.html#ban2">16</A>], [<A HREF="node24.html#perez">21</A>], [<A HREF="node24.html#dde">22</A>],[<A HREF="node24.html#cochr">25</A>]).
+As shown in Section <A HREF="node11.html#secISV">6</A> the multiresolution approach to integrated stereo
+is at least seven and a half times faster than the one without multiresolution.
+Besides faster computation, our simulation studies illustrate that a more accurate
+disparity map is obtained by exploiting multiresolution (see Section <A HREF="node12.html#secexpt">7</A>).
+As explained in Section <A HREF="node11.html#secISV">6</A> and <A HREF="node12.html#secexpt">7</A>, this is because, in the
+multiresolution approach, we have a better disparity initialization for the
+disparity computation at the highest resolution as compared to zero initialization
+when one works on the single finest resolution.
+<P>
+<BR> <HR><A NAME=tex2html47 HREF="node2.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html45 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html39 HREF="run.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html48 HREF="node2.html"> The Integration Model </A>
+<B>Up:</B> <A NAME=tex2html46 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html40 HREF="run.html">  New Algorithms for </A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

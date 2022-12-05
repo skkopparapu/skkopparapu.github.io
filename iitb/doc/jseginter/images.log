@@ -1,0 +1,2604 @@
+This is TeX, Version 3.1415N (C version 6.1) (format=latex 94.9.13)  12 JUN 1996 20:04
+**images.tex
+(images.tex
+LaTeX2e <1994/06/01> patch level 3
+Hyphenation patterns for english, usa, german, swedish, loaded.
+
+(/usr/lib/texmf/tex/latex/latex/latex209.def
+File: latex209.def 1994/06/01 Standard LaTeX file
+Entering LaTeX 2.09 compatibility mode.
+\footheight=\dimen102
+\@maxsep=\dimen103
+\@dblmaxsep=\dimen104
+(/usr/lib/texmf/tex/latex/latex/tracefnt.sty
+Package: tracefnt 1994/05/29 v2.3k Standard LaTeX package (font tracing)
+\tracingfonts=\count82
+LaTeX Info: Redefining \selectfont on input line 113.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 179.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 180.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 181.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 187.
+LaTeX Info: Redefining \em on input line 197.
+(/usr/lib/texmf/tex/latex/latex/latexsym.sty
+Package: latexsym 1994/05/27 v2.1e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 262.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 264.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 266.
+) (/usr/lib/texmf/tex/latex/latex/article.cls
+Document Class: article 1994/07/13 v1.2u Standard LaTeX document class
+(/usr/lib/texmf/tex/latex/latex/size10.clo
+File: size10.clo 1994/07/13 v1.2u Standard LaTeX file (size option)
+)
+\c@part=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@subparagraph=\count88
+\c@figure=\count89
+\c@table=\count90
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+Compatibility mode: definition of \rm ignored.
+Compatibility mode: definition of \sf ignored.
+Compatibility mode: definition of \tt ignored.
+Compatibility mode: definition of \bf ignored.
+Compatibility mode: definition of \it ignored.
+Compatibility mode: definition of \sl ignored.
+Compatibility mode: definition of \sc ignored.
+\bibindent=\dimen105
+) (/usr/lib/texmf/tex/dvips/psfig.sty
+\@unused=\write4
+\ps@stream=\read1
+\p@intvaluex=\dimen106
+\p@intvaluey=\dimen107
+psfig/tex 1.10-dvips
+) (/usr/lib/texmf/tex/latex/sty/a4.sty
+Package: a4 1994/03/15 1.2c A4 based page layout
+)
+\lthtmlwrite=\write5
+\sizebox=\box25
+No file images.aux.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Info: Redefining \" on input line 138.
+LaTeX Info: Redefining \" on input line 138.
+LaTeX Font Info:    No math setup on input line 142.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 142.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 142.
+latex2htmlSize :tex2html_wrap_inline4398: 8.41226pt::0.0pt.
+[1
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4400: 7.5pt::2.5pt.
+[2
+
+]
+latex2htmlSize :tex2html_wrap_inline4402: 6.44444pt::0.83333pt.
+[3
+
+]
+latex2htmlSize :tex2html_wrap_inline4404: 6.44444pt::0.83333pt.
+[4
+
+]
+latex2htmlSize :tex2html_wrap_inline4406: 6.44444pt::0.83333pt.
+[5
+
+]
+latex2htmlSize :tex2html_wrap_inline4408: 6.44444pt::0.83333pt.
+[6
+
+]
+latex2htmlSize :tex2html_wrap_inline4410: 6.44444pt::0.83333pt.
+[7
+
+]
+latex2htmlSize :tex2html_wrap_inline4412: 6.44444pt::0.83333pt.
+[8
+
+]
+latex2htmlSize :tex2html_wrap_inline4414: 6.44444pt::0.83333pt.
+[9
+
+]
+latex2htmlSize :tex2html_wrap_inline4416: 6.44444pt::0.83333pt.
+[10
+
+]
+latex2htmlSize :tex2html_wrap_inline4418: 6.44444pt::0.83333pt.
+[11
+
+]
+latex2htmlSize :tex2html_wrap_inline4420: 6.44444pt::0.83333pt.
+[12
+
+]
+latex2htmlSize :tex2html_wrap_inline4422: 6.44444pt::0.83333pt.
+[13
+
+]
+latex2htmlSize :tex2html_wrap_inline4424: 6.44444pt::0.83333pt.
+[14
+
+]
+latex2htmlSize :tex2html_wrap_inline4426: 6.44444pt::0.83333pt.
+[15
+
+]
+latex2htmlSize :tex2html_wrap_inline4428: 6.44444pt::0.83333pt.
+[16
+
+]
+latex2htmlSize :tex2html_wrap_inline4430: 6.44444pt::0.83333pt.
+[17
+
+]
+latex2htmlSize :tex2html_wrap_inline4432: 6.44444pt::0.83333pt.
+[18
+
+]
+latex2htmlSize :tex2html_wrap_inline4434: 6.44444pt::0.83333pt.
+[19
+
+]
+latex2htmlSize :tex2html_wrap_inline4436: 6.44444pt::0.83333pt.
+[20
+
+]
+latex2htmlSize :tex2html_wrap_inline4438: 6.44444pt::0.83333pt.
+[21
+
+]
+Can't find ./IMAGES/int_block.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.251 ...{figure=./IMAGES/int_block.ps,width=5in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
+[]\OT1/cmr/m/n/10 -bb-error =  =            []    [] []
+ []
+
+[22]
+latex2htmlSize :tex2html_wrap_inline4442: 8.41226pt::0.0pt.
+[23
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4444: 8.41226pt::0.83333pt.
+[24
+
+]
+latex2htmlSize :tex2html_wrap_inline4446: 8.41226pt::0.0pt.
+[25
+
+]
+latex2htmlSize :tex2html_wrap_inline4448: 8.41226pt::0.0pt.
+[26
+
+]
+latex2htmlSize :tex2html_wrap_inline4450: 8.41226pt::0.0pt.
+[27
+
+]
+latex2htmlSize :tex2html_wrap_inline4452: 8.41226pt::0.0pt.
+[28
+
+]
+latex2htmlSize :tex2html_wrap_inline4454: 6.44444pt::0.0pt.
+[29
+
+]
+latex2htmlSize :tex2html_wrap_inline4456: 6.44444pt::0.0pt.
+[30
+
+]
+latex2htmlSize :tex2html_wrap_inline4458: 8.41226pt::0.0pt.
+[31
+
+]
+latex2htmlSize :tex2html_wrap_inline4458: 8.41226pt::0.0pt.
+[32
+
+]
+psfig: searching wt.ps for bounding box
+psfig: including wt.ps 
+[33]
+latex2htmlSize :tex2html_wrap_inline4460: 8.41226pt::0.0pt.
+[34
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4462: 8.41226pt::0.0pt.
+[35
+
+]
+latex2htmlSize :tex2html_wrap_inline4464: 9.06111pt::4.29993pt.
+[36
+
+]
+latex2htmlSize :tex2html_wrap_inline4466: 9.06111pt::4.29993pt.
+[37
+
+]
+latex2htmlSize :tex2html_wrap_inline4468: 9.06111pt::4.29993pt.
+[38
+
+]
+latex2htmlSize :tex2html_wrap_inline4470: 9.06111pt::4.29993pt.
+[39
+
+]
+latex2htmlSize :tex2html_wrap_inline4472: 8.87892pt::0.83333pt.
+[40
+
+]
+latex2htmlSize :tex2html_wrap_inline4474: 8.41226pt::0.0pt.
+[41
+
+]
+latex2htmlSize :tex2html_wrap_inline4476: 9.06111pt::4.29993pt.
+[42
+
+]
+latex2htmlSize :tex2html_wrap_inline4478: 9.06111pt::4.29993pt.
+[43
+
+]
+latex2htmlSize :tex2html_wrap_inline4480: 8.41226pt::0.0pt.
+[44
+
+]
+latex2htmlSize :tex2html_wrap_inline4482: 8.41226pt::0.0pt.
+[45
+
+]
+latex2htmlSize :tex2html_wrap_inline4484: 9.06111pt::4.29993pt.
+[46
+
+]
+latex2htmlSize :tex2html_wrap_inline4486: 9.06111pt::4.29993pt.
+[47
+
+]
+latex2htmlSize :tex2html_wrap_inline4488: 9.06111pt::4.29993pt.
+[48
+
+]
+psfig: searching IMAGES/graph.ps for bounding box
+psfig: including IMAGES/graph.ps 
+[49]
+latex2htmlSize :tex2html_wrap_inline4490: 8.41226pt::2.5pt.
+[50
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4494: 8.41226pt::2.4821pt.
+[51
+
+]
+latex2htmlSize :tex2html_wrap_inline4496: 8.41226pt::2.4821pt.
+[52
+
+]
+latex2htmlSize :tex2html_wrap_inline4498: 8.41226pt::2.4821pt.
+[53
+
+]
+latex2htmlSize :tex2html_wrap_inline4500: 4.44444pt::0.0pt.
+[54
+
+]
+latex2htmlSize :tex2html_wrap_inline4502: 8.41226pt::2.47217pt.
+[55
+
+]
+latex2htmlSize :tex2html_wrap_inline4504: 8.41226pt::2.4821pt.
+[56
+
+]
+latex2htmlSize :tex2html_wrap_inline4506: 8.41226pt::2.60292pt.
+[57
+
+]
+latex2htmlSize :tex2html_wrap_inline4510: 8.41226pt::3.96402pt.
+[58
+
+]
+latex2htmlSize :tex2html_wrap_inline4512: 8.41226pt::3.96402pt.
+[59
+
+]
+latex2htmlSize :tex2html_wrap_inline4514: 6.59525pt::1.94444pt.
+[60
+
+]
+latex2htmlSize :tex2html_wrap_inline4516: 8.41226pt::3.96402pt.
+[61
+
+]
+latex2htmlSize :tex2html_wrap_inline4518: 8.41226pt::2.5pt.
+[62
+
+]
+latex2htmlSize :tex2html_wrap_inline4520: 8.4317pt::2.5pt.
+[63
+
+]
+latex2htmlSize :tex2html_wrap_inline4522: 8.41226pt::0.0pt.
+[64
+
+]
+latex2htmlSize :tex2html_wrap_inline4524: 6.83331pt::0.0pt.
+[65
+
+]
+latex2htmlSize :tex2html_wrap_inline4526: 8.41226pt::0.0pt.
+[66
+
+]
+latex2htmlSize :tex2html_wrap_inline4528: 8.4317pt::0.0pt.
+[67
+
+]
+latex2htmlSize :tex2html_wrap_inline4530: 8.41226pt::0.0pt.
+[68
+
+]
+latex2htmlSize :tex2html_wrap_inline4532: 8.41226pt::0.0pt.
+[69
+
+] [70
+
+]
+latex2htmlSize :tex2html_wrap_inline4534: 8.41226pt::0.0pt.
+[71
+
+]
+latex2htmlSize :tex2html_wrap_inline4536: 8.41226pt::0.0pt.
+[72
+
+]
+latex2htmlSize :tex2html_wrap_inline4538: 8.41226pt::0.0pt.
+[73
+
+]
+latex2htmlSize :tex2html_wrap_inline4540: 8.4317pt::0.0pt.
+[74
+
+]
+latex2htmlSize :tex2html_wrap_inline4542: 8.41226pt::0.0pt.
+[75
+
+]
+latex2htmlSize :tex2html_wrap_inline4544: 8.41226pt::0.0pt.
+[76
+
+]
+latex2htmlSize :tex2html_wrap_inline4546: 8.41226pt::0.0pt.
+[77
+
+] [78
+
+]
+latex2htmlSize :tex2html_wrap_inline4548: 8.4317pt::2.5pt.
+[79
+
+]
+latex2htmlSize :tex2html_wrap_inline4550: 8.41226pt::0.0pt.
+[80
+
+]
+latex2htmlSize :tex2html_wrap_inline4552: 8.41226pt::0.0pt.
+[81
+
+]
+latex2htmlSize :tex2html_wrap_inline4554: 8.41226pt::0.0pt.
+[82
+
+] [83
+
+]
+latex2htmlSize :tex2html_wrap_inline4562: 8.41226pt::2.5pt.
+[84
+
+] [85
+
+]
+latex2htmlSize :tex2html_wrap_inline4564: 7.5pt::2.5pt.
+[86
+
+]
+latex2htmlSize :tex2html_wrap_inline4566: 8.41226pt::0.0pt.
+[87
+
+]
+latex2htmlSize :tex2html_wrap_inline4568: 8.41226pt::0.0pt.
+[88
+
+]
+latex2htmlSize :tex2html_wrap_inline4570: 8.41226pt::0.0pt.
+[89
+
+]
+latex2htmlSize :tex2html_wrap_inline4572: 7.5pt::2.5pt.
+[90
+
+]
+latex2htmlSize :tex2html_wrap_inline4574: 7.5pt::2.5pt.
+[91
+
+]
+latex2htmlSize :tex2html_wrap_inline4576: 7.5pt::2.5pt.
+[92
+
+]
+latex2htmlSize :tex2html_wrap_inline4578: 8.41226pt::0.0pt.
+[93
+
+]
+latex2htmlSize :tex2html_wrap_inline4580: 8.41226pt::0.0pt.
+[94
+
+]
+latex2htmlSize :tex2html_wrap_inline4588: 4.30554pt::1.94444pt.
+[95
+
+]
+latex2htmlSize :tex2html_wrap_inline4590: 8.41226pt::3.83327pt.
+[96
+
+]
+latex2htmlSize :tex2html_wrap_inline4592: 8.41226pt::2.5pt.
+[97
+
+]
+latex2htmlSize :tex2html_wrap_inline4594: 6.94444pt::0.0pt.
+[98
+
+]
+latex2htmlSize :tex2html_wrap_inline4596: 8.41226pt::3.83327pt.
+[99
+
+] [100
+
+]
+latex2htmlSize :tex2html_wrap_inline4598: 8.26085pt::2.47217pt.
+[101
+
+]
+latex2htmlSize :tex2html_wrap_inline4600: 9.88896pt::3.00005pt.
+[102
+
+]
+latex2htmlSize :tex2html_wrap_inline4602: 8.26085pt::2.5pt.
+[103
+
+]
+latex2htmlSize :tex2html_wrap_inline4606: 8.41226pt::2.5pt.
+[104
+
+]
+latex2htmlSize :tex2html_wrap_inline4608: 8.41226pt::2.5pt.
+[105
+
+]
+latex2htmlSize :tex2html_wrap_inline4612: 8.41226pt::1.94444pt.
+[106
+
+]
+latex2htmlSize :tex2html_wrap_inline4614: 8.41226pt::2.5pt.
+[107
+
+]
+latex2htmlSize :tex2html_wrap_inline4616: 7.5pt::2.5pt.
+[108
+
+]
+latex2htmlSize :tex2html_wrap_inline4622: 7.5pt::2.5pt.
+[109
+
+]
+latex2htmlSize :tex2html_wrap_inline4624: 7.5pt::2.5pt.
+[110
+
+]
+latex2htmlSize :tex2html_wrap_inline4624: 7.5pt::2.5pt.
+[111
+
+]
+psfig: searching IMAGES/basis.ps for bounding box
+psfig: including IMAGES/basis.ps 
+[112] [113
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4626: 7.5pt::2.5pt.
+[114
+
+] [115
+
+]
+\plotpoint=\box26
+! Undefined control sequence.
+l.764 \tenrm
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[116]
+latex2htmlSize :tex2html_wrap_inline4634: 8.41226pt::2.5pt.
+[117
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4636: 8.41226pt::2.47217pt.
+[118
+
+]
+latex2htmlSize :tex2html_wrap_inline4638: 8.41226pt::2.47217pt.
+[119
+
+]
+latex2htmlSize :tex2html_wrap_inline4640: 8.41226pt::2.47217pt.
+[120
+
+]
+latex2htmlSize :tex2html_wrap_inline4642: 8.41226pt::2.47217pt.
+[121
+
+] [122
+
+]
+latex2htmlSize :tex2html_wrap_inline4646: 12.00206pt::2.5pt.
+[123
+
+] [124
+
+]
+latex2htmlSize :tex2html_wrap_inline4668: 6.83331pt::1.49998pt.
+[125
+
+]
+latex2htmlSize :tex2html_wrap_inline4670: 6.83331pt::1.49998pt.
+[126
+
+] [127
+
+]
+latex2htmlSize :tex2html_wrap_inline4672: 7.5pt::2.5pt.
+[128
+
+]
+latex2htmlSize :tex2html_wrap_inline4674: 7.5pt::2.5pt.
+[129
+
+] [130
+
+] [131
+
+] [132
+
+] [133
+
+] [134
+
+]
+latex2htmlSize :tex2html_wrap_inline4700: 8.14003pt::2.5pt.
+[135
+
+]
+latex2htmlSize :tex2html_wrap_inline4702: 8.14003pt::3.83327pt.
+[136
+
+]
+latex2htmlSize :tex2html_wrap_inline4704: 7.5pt::2.86108pt.
+[137
+
+]
+latex2htmlSize :tex2html_wrap_inline4706: 7.50006pt::2.50006pt.
+[138
+
+]
+latex2htmlSize :tex2html_wrap_inline4708: 7.50006pt::2.86108pt.
+[139
+
+]
+latex2htmlSize :tex2html_wrap_inline4710: 8.14003pt::2.50006pt.
+[140
+
+]
+latex2htmlSize :tex2html_wrap_inline4712: 8.14003pt::2.86108pt.
+[141
+
+]
+latex2htmlSize :tex2html_wrap_inline4714: 7.50006pt::2.86108pt.
+[142
+
+] [143
+
+]
+latex2htmlSize :tex2html_wrap_inline4716: 6.83331pt::1.49998pt.
+[144
+
+]
+latex2htmlSize :tex2html_wrap_inline4720: 6.83331pt::1.49998pt.
+[145
+
+]
+latex2htmlSize :tex2html_wrap_inline4724: 6.83331pt::1.49998pt.
+[146
+
+] [147
+
+]
+latex2htmlSize :tex2html_wrap_inline4730: 6.83331pt::1.49998pt.
+[148
+
+]
+latex2htmlSize :tex2html_wrap_inline4734: 6.83331pt::1.49998pt.
+[149
+
+] [150
+
+] [151
+
+]
+psfig: searching IMAGES/area.ps for bounding box
+psfig: including IMAGES/area.ps 
+[152] [153
+
+
+] [154
+
+] [155
+
+] [156
+
+] [157
+
+]
+latex2htmlSize :tex2html_wrap_inline4740: 8.44843pt::3.44841pt.
+[158
+
+]
+latex2htmlSize :tex2html_wrap_inline4742: 7.5pt::2.5pt.
+[159
+
+]
+latex2htmlSize :tex2html_wrap_inline4744: 8.41226pt::0.0pt.
+[160
+
+]
+latex2htmlSize :tex2html_wrap_inline4746: 8.41226pt::0.0pt.
+[161
+
+]
+latex2htmlSize :tex2html_wrap_inline4748: 8.41226pt::0.83333pt.
+[162
+
+]
+latex2htmlSize :tex2html_wrap_inline4750: 9.06111pt::4.29993pt.
+[163
+
+]
+latex2htmlSize :tex2html_wrap_inline4752: 9.06111pt::4.29993pt.
+[164
+
+]
+latex2htmlSize :tex2html_wrap_inline4754: 9.06111pt::4.29993pt.
+[165
+
+]
+latex2htmlSize :tex2html_wrap_inline4756: 9.06111pt::4.29993pt.
+[166
+
+]
+latex2htmlSize :tex2html_wrap_inline4758: 9.06111pt::4.29993pt.
+[167
+
+]
+latex2htmlSize :tex2html_wrap_inline4760: 9.06111pt::4.29993pt.
+[168
+
+]
+latex2htmlSize :tex2html_wrap_inline4762: 9.06111pt::4.29993pt.
+[169
+
+]
+latex2htmlSize :tex2html_wrap_inline4764: 9.06111pt::4.29993pt.
+[170
+
+]
+latex2htmlSize :tex2html_wrap_inline4766: 9.06111pt::4.29993pt.
+[171
+
+]
+latex2htmlSize :tex2html_wrap_inline4768: 9.06111pt::4.29993pt.
+[172
+
+]
+latex2htmlSize :tex2html_wrap_inline4770: 8.41226pt::0.0pt.
+[173
+
+]
+latex2htmlSize :tex2html_wrap_inline4772: 8.41226pt::0.0pt.
+[174
+
+]
+latex2htmlSize :tex2html_wrap_inline4774: 9.06111pt::4.29993pt.
+[175
+
+]
+latex2htmlSize :tex2html_wrap_inline4776: 9.06111pt::4.29993pt.
+[176
+
+]
+latex2htmlSize :tex2html_wrap_inline4778: 9.06111pt::4.29993pt.
+[177
+
+]
+latex2htmlSize :tex2html_wrap_inline4780: 6.83331pt::0.0pt.
+[178
+
+]
+latex2htmlSize :tex2html_wrap_inline4782: 8.41226pt::0.0pt.
+[179
+
+]
+latex2htmlSize :tex2html_wrap_inline4788: 9.06111pt::4.29993pt.
+[180
+
+]
+latex2htmlSize :tex2html_wrap_inline4790: 9.06111pt::4.29993pt.
+[181
+
+]
+latex2htmlSize :tex2html_wrap_inline4792: 9.06111pt::4.29993pt.
+[182
+
+]
+psfig: searching IMAGES/table.ps for bounding box
+psfig: including IMAGES/table.ps 
+[183]
+latex2htmlSize :tex2html_wrap_inline4794: 9.06111pt::4.29993pt.
+[184
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4796: 7.5pt::2.5pt.
+[185
+
+]
+latex2htmlSize :tex2html_wrap_inline4798: 7.5pt::2.5pt.
+[186
+
+]
+latex2htmlSize :tex2html_wrap_inline4800: 7.5pt::2.5pt.
+[187
+
+]
+latex2htmlSize :tex2html_wrap_inline4802: 7.5pt::2.5pt.
+[188
+
+]
+latex2htmlSize :tex2html_wrap_inline4804: 7.5pt::2.5pt.
+[189
+
+]
+latex2htmlSize :tex2html_wrap_inline4806: 7.5pt::2.5pt.
+[190
+
+]
+latex2htmlSize :tex2html_wrap_inline4808: 7.5pt::2.5pt.
+[191
+
+]
+latex2htmlSize :tex2html_wrap_inline4810: 7.5pt::2.5pt.
+[192
+
+]
+latex2htmlSize :tex2html_wrap_inline4812: 7.5pt::2.5pt.
+[193
+
+]
+latex2htmlSize :tex2html_wrap_inline4814: 7.5pt::2.5pt.
+[194
+
+]
+latex2htmlSize :tex2html_wrap_inline4816: 8.41226pt::2.5pt.
+[195
+
+]
+latex2htmlSize :tex2html_wrap_inline4818: 7.5pt::2.5pt.
+[196
+
+]
+latex2htmlSize :tex2html_wrap_inline4820: 7.5pt::2.5pt.
+[197
+
+]
+latex2htmlSize :tex2html_wrap_inline4822: 7.5pt::2.5pt.
+[198
+
+]
+latex2htmlSize :tex2html_wrap_inline4824: 7.5pt::2.5pt.
+[199
+
+]
+latex2htmlSize :tex2html_wrap_inline4834: 6.83331pt::1.49998pt.
+[200
+
+]
+latex2htmlSize :tex2html_wrap_inline4836: 8.41226pt::2.83209pt.
+[201
+
+]
+latex2htmlSize :tex2html_wrap_inline4840: 8.41226pt::2.83209pt.
+[202
+
+] [203
+
+]
+latex2htmlSize :tex2html_wrap_inline4844: 6.44444pt::0.83333pt.
+[204
+
+]
+latex2htmlSize :tex2html_wrap_inline4846: 4.30554pt::1.49998pt.
+[205
+
+]
+latex2htmlSize :tex2html_wrap_inline4848: 4.30554pt::1.49998pt.
+[206
+
+]
+latex2htmlSize :tex2html_wrap_inline4850: 9.06111pt::4.29993pt.
+[207
+
+]
+latex2htmlSize :tex2html_wrap_inline4852: 9.06111pt::4.29993pt.
+[208
+
+]
+latex2htmlSize :tex2html_wrap_inline4854: 9.06111pt::4.29993pt.
+[209
+
+]
+latex2htmlSize :tex2html_wrap_inline4856: 9.06111pt::4.29993pt.
+[210
+
+] [211]
+latex2htmlSize :tex2html_wrap_inline4862: 6.44444pt::0.83333pt.
+[212
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4864: 6.44444pt::0.83333pt.
+[213
+
+]
+latex2htmlSize :tex2html_wrap_inline4866: 6.44444pt::0.83333pt.
+[214
+
+]
+latex2htmlSize :tex2html_wrap_inline4862: 6.44444pt::0.83333pt.
+[215
+
+]
+latex2htmlSize :tex2html_wrap_inline4864: 6.44444pt::0.83333pt.
+[216
+
+]
+latex2htmlSize :tex2html_wrap_inline4866: 6.44444pt::0.83333pt.
+[217
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/wt_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/wt_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/ini_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_1.ps 
+psfig: searching IMAGES/sky_1.ps for bounding box
+psfig: including IMAGES/sky_1.ps 
+psfig: searching IMAGES/tree_1.ps for bounding box
+psfig: including IMAGES/tree_1.ps 
+psfig: searching IMAGES/sidewalk_1.ps for bounding box
+psfig: including IMAGES/sidewalk_1.ps 
+psfig: searching IMAGES/road_1.ps for bounding box
+psfig: including IMAGES/road_1.ps 
+[218]
+latex2htmlSize :tex2html_wrap_inline4868: 6.44444pt::0.83333pt.
+[219
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4870: 6.44444pt::0.83333pt.
+[220
+
+]
+latex2htmlSize :tex2html_wrap_inline4872: 6.44444pt::0.83333pt.
+[221
+
+]
+latex2htmlSize :tex2html_wrap_inline4868: 6.44444pt::0.83333pt.
+[222
+
+]
+latex2htmlSize :tex2html_wrap_inline4870: 6.44444pt::0.83333pt.
+[223
+
+]
+latex2htmlSize :tex2html_wrap_inline4872: 6.44444pt::0.83333pt.
+[224
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_6.ps 
+Can't find ./IMAGES/ROAD_SHOW/wt_6.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2448 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+psfig: searching IMAGES/ROAD_SHOW/ini_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_6.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_6.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_6.ps 
+psfig: searching IMAGES/sky_6.ps for bounding box
+psfig: including IMAGES/sky_6.ps 
+psfig: searching IMAGES/tree_6.ps for bounding box
+psfig: including IMAGES/tree_6.ps 
+psfig: searching IMAGES/sidewalk_6.ps for bounding box
+psfig: including IMAGES/sidewalk_6.ps 
+psfig: searching IMAGES/road_6.ps for bounding box
+psfig: including IMAGES/road_6.ps 
+[225]
+latex2htmlSize :tex2html_wrap_inline4874: 6.44444pt::0.83333pt.
+[226
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4876: 6.44444pt::0.83333pt.
+[227
+
+]
+latex2htmlSize :tex2html_wrap_inline4878: 6.44444pt::0.83333pt.
+[228
+
+]
+latex2htmlSize :tex2html_wrap_inline4874: 6.44444pt::0.83333pt.
+[229
+
+]
+latex2htmlSize :tex2html_wrap_inline4876: 6.44444pt::0.83333pt.
+[230
+
+]
+latex2htmlSize :tex2html_wrap_inline4878: 6.44444pt::0.83333pt.
+[231
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_5.ps 
+Can't find ./IMAGES/ROAD_SHOW/wt_5.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2507 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+psfig: searching IMAGES/ROAD_SHOW/ini_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_5.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_5.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_5.ps 
+psfig: searching IMAGES/sky_5.ps for bounding box
+psfig: including IMAGES/sky_5.ps 
+psfig: searching IMAGES/tree_5.ps for bounding box
+psfig: including IMAGES/tree_5.ps 
+psfig: searching IMAGES/sidewalk_5.ps for bounding box
+psfig: including IMAGES/sidewalk_5.ps 
+psfig: searching IMAGES/road_5.ps for bounding box
+psfig: including IMAGES/road_5.ps 
+[232]
+latex2htmlSize :tex2html_wrap_inline4934: 6.44444pt::0.83333pt.
+[233
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4934: 6.44444pt::0.83333pt.
+[234
+
+]
+psfig: searching IMAGES/HIRA/rd1_p.256.ps for bounding box
+psfig: including IMAGES/HIRA/rd1_p.256.ps 
+psfig: searching IMAGES/HIRA/rd1_p_256.ps for bounding box
+psfig: including IMAGES/HIRA/rd1_p_256.ps 
+psfig: searching IMAGES/HIRA/RESULTS/rd1_manual.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/rd1_manual.ps 
+[235] [236]
+latex2htmlSize :tex2html_wrap_inline4940: 6.44444pt::0.83333pt.
+[237
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4942: 6.44444pt::0.83333pt.
+[238
+
+]
+latex2htmlSize :tex2html_wrap_inline4944: 6.44444pt::0.83333pt.
+[239
+
+]
+latex2htmlSize :tex2html_wrap_inline4940: 6.44444pt::0.83333pt.
+[240
+
+]
+latex2htmlSize :tex2html_wrap_inline4942: 6.44444pt::0.83333pt.
+[241
+
+]
+latex2htmlSize :tex2html_wrap_inline4944: 6.44444pt::0.83333pt.
+[242
+
+]
+psfig: searching IMAGES/HIRA/rd2_p.256.ps for bounding box
+psfig: including IMAGES/HIRA/rd2_p.256.ps 
+psfig: searching IMAGES/HIRA/rd2_p_256.ps for bounding box
+psfig: including IMAGES/HIRA/rd2_p_256.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_ini.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_ini.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_seg.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_seg.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_fin.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_fin.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_sky.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_sky.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_tree.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_tree.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_build.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_build.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_road.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_road.ps 
+[243] [244]
+latex2htmlSize :tex2html_wrap_inline4974: 6.44444pt::0.83333pt.
+[245
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4976: 6.44444pt::0.83333pt.
+[246
+
+]
+latex2htmlSize :tex2html_wrap_inline4978: 6.44444pt::0.83333pt.
+[247
+
+]
+latex2htmlSize :tex2html_wrap_inline4974: 6.44444pt::0.83333pt.
+[248
+
+]
+latex2htmlSize :tex2html_wrap_inline4976: 6.44444pt::0.83333pt.
+[249
+
+]
+latex2htmlSize :tex2html_wrap_inline4978: 6.44444pt::0.83333pt.
+[250
+
+]
+psfig: searching IMAGES/COMPI/compi_0.256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.256.ps 
+psfig: searching IMAGES/COMPI/compi_0_256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_256.ps 
+psfig: searching IMAGES/COMPI/compi_0.initial.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.initial.ps 
+psfig: searching IMAGES/COMPI/compi_0.segmented.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.segmented.ps 
+psfig: searching IMAGES/COMPI/compi_0.interpreted.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.interpreted.ps 
+psfig: searching IMAGES/COMPI/compi_0.bg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.bg.ps 
+psfig: searching IMAGES/COMPI/compi_0.screen.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.screen.ps 
+psfig: searching IMAGES/COMPI/compi_0.shoebox.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.shoebox.ps 
+psfig: searching IMAGES/COMPI/compi_0.keyboard.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.keyboard.ps 
+psfig: searching IMAGES/COMPI/compi_0.cover.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.cover.ps 
+[251]
+latex2htmlSize :tex2html_wrap_inline4980: 6.44444pt::0.83333pt.
+[252
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4982: 6.44444pt::0.83333pt.
+[253
+
+]
+latex2htmlSize :tex2html_wrap_inline4984: 6.44444pt::0.83333pt.
+[254
+
+]
+latex2htmlSize :tex2html_wrap_inline4980: 6.44444pt::0.83333pt.
+[255
+
+]
+latex2htmlSize :tex2html_wrap_inline4982: 6.44444pt::0.83333pt.
+[256
+
+]
+latex2htmlSize :tex2html_wrap_inline4984: 6.44444pt::0.83333pt.
+[257
+
+]
+psfig: searching IMAGES/COMPI/compi_1.256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.256.ps 
+psfig: searching IMAGES/COMPI/compi_1_256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_256.ps 
+psfig: searching IMAGES/COMPI/compi_1.initial.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.initial.ps 
+psfig: searching IMAGES/COMPI/compi_1.segmented.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.segmented.ps 
+psfig: searching IMAGES/COMPI/compi_1.interpreted.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.interpreted.ps 
+psfig: searching IMAGES/COMPI/compi_1.bg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.bg.ps 
+psfig: searching IMAGES/COMPI/compi_1.screen.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.screen.ps 
+psfig: searching IMAGES/COMPI/compi_1.shoebox.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.shoebox.ps 
+psfig: searching IMAGES/COMPI/compi_1.keyboard.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.keyboard.ps 
+psfig: searching IMAGES/COMPI/compi_1.cover.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.cover.ps 
+[258]
+Can't find ./IMAGES/dimp.256.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2766 ...{figure=./IMAGES/dimp.256.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+[259]
+Can't find ./IMAGES/dimp.WT.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2774 ...g{figure=./IMAGES/dimp.WT.ps,width=2in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+[260]
+Can't find ./IMAGES/dimp.kmean_out.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2782 ...e=./IMAGES/dimp.kmean_out.ps,width=1in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+[261]
+Can't find ./IMAGES/dimp.index.0.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2789 ...ure=./IMAGES/dimp.index.0.ps,width=6in}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+
+Underfull \hbox (badness 10000) in paragraph at lines 2789--2789
+[]\OT1/cmr/m/n/10 -bb-error =  =            []    [] []
+ []
+
+[262]
+Can't find ./IMAGES/dimp.lab.0.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+Can't find ./IMAGES/dimp.index.1.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2798 ...\psfig{figure=./IMAGES/dimp.index.1.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+psfig: including null 
+[263] [264
+
+
+
+
+
+
+
+]
+Can't find ./IMAGES/dimp_lab.2.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+Can't find ./IMAGES/dimp_index.2.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2814 ...\psfig{figure=./IMAGES/dimp_index.2.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+psfig: including null 
+[265]
+Can't find ./IMAGES/dimp_lab.fin.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+Can't find ./IMAGES/dimp_index.fin.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2824 ...sfig{figure=./IMAGES/dimp_index.fin.ps}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+psfig: including null 
+[266]
+Can't find ./IMAGES/dimp_know.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2840 ...{figure=./IMAGES/dimp_know.ps,width=1in}
+                                                   \\  \hline
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+
+Overfull \hbox (114.59735pt too wide) in paragraph at lines 2836--2844
+ [] 
+ []
+
+[267] [268]
+latex2htmlSize :tex2html_wrap_inline5058: 6.83331pt::0.0pt.
+[269
+
+
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5060: 7.5pt::2.5pt.
+[270
+
+]
+latex2htmlSize :tex2html_wrap_inline5062: 7.5pt::2.5pt.
+[271
+
+]
+latex2htmlSize :tex2html_wrap_inline5064: 9.47221pt::0.0pt.
+[272
+
+]
+latex2htmlSize :tex2html_wrap_inline5066: 6.83331pt::1.49998pt.
+[273
+
+]
+latex2htmlSize :tex2html_wrap_inline5068: 4.30554pt::0.0pt.
+[274
+
+]
+latex2htmlSize :tex2html_wrap_inline5070: 6.83331pt::0.0pt.
+[275
+
+]
+latex2htmlSize :tex2html_wrap_inline5072: 6.83331pt::1.49998pt.
+[276
+
+]
+latex2htmlSize :tex2html_wrap_inline5076: 6.83331pt::1.49998pt.
+[277
+
+]
+latex2htmlSize :tex2html_wrap_inline5078: 6.83331pt::1.94444pt.
+[278
+
+]
+latex2htmlSize :tex2html_wrap_inline5080: 4.30554pt::1.49998pt.
+[279
+
+]
+latex2htmlSize :tex2html_wrap_inline5082: 6.83331pt::1.49998pt.
+[280
+
+]
+latex2htmlSize :tex2html_wrap_inline5084: 4.30554pt::1.49998pt.
+[281
+
+]
+latex2htmlSize :tex2html_wrap_inline5086: 9.47221pt::2.5pt.
+[282
+
+]
+latex2htmlSize :tex2html_wrap_inline5088: 4.30554pt::1.49998pt.
+[283
+
+]
+latex2htmlSize :tex2html_wrap_inline5090: 6.83331pt::1.49998pt.
+[284
+
+]
+latex2htmlSize :tex2html_wrap_inline5094: 6.44444pt::1.35971pt.
+[285
+
+]
+latex2htmlSize :tex2html_wrap_inline5098: 9.47221pt::1.49998pt.
+[286
+
+]
+latex2htmlSize :tex2html_wrap_inline5100: 7.5pt::2.86108pt.
+[287
+
+]
+latex2htmlSize :tex2html_wrap_inline5104: 6.83331pt::1.49998pt.
+[288
+
+]
+latex2htmlSize :tex2html_wrap_inline5106: 9.47221pt::2.5pt.
+[289
+
+]
+latex2htmlSize :tex2html_wrap_inline5108: 9.47221pt::2.5pt.
+[290
+
+]
+latex2htmlSize :tex2html_wrap_inline5110: 7.5pt::2.5pt.
+[291
+
+]
+latex2htmlSize :tex2html_wrap_inline5112: 6.83331pt::2.86108pt.
+[292
+
+]
+latex2htmlSize :tex2html_wrap_inline5114: 7.5pt::2.86108pt.
+[293
+
+]
+latex2htmlSize :tex2html_wrap_inline5118: 9.53897pt::4.54723pt.
+[294
+
+]
+latex2htmlSize :tex2html_wrap_inline5120: 7.5pt::2.5pt.
+[295
+
+]
+latex2htmlSize :tex2html_wrap_inline5122: 9.47221pt::1.49998pt.
+[296
+
+]
+latex2htmlSize :tex2html_wrap_inline5124: 10.1389pt::2.5pt.
+[297
+
+]
+latex2htmlSize :tex2html_wrap_inline5126: 9.47221pt::2.5pt.
+[298
+
+]
+latex2htmlSize :tex2html_wrap_inline5128: 9.47221pt::2.5pt.
+[299
+
+]
+latex2htmlSize :tex2html_wrap_inline5130: 6.44444pt::0.83333pt.
+[300
+
+]
+latex2htmlSize :tex2html_wrap_inline5138: 9.47221pt::2.5pt.
+[301
+
+]
+latex2htmlSize :tex2html_wrap_inline5140: 9.47221pt::2.5pt.
+[302
+
+]
+latex2htmlSize :tex2html_wrap_inline5144: 7.5pt::2.5pt.
+[303
+
+]
+latex2htmlSize :tex2html_wrap_inline5146: 4.30554pt::1.94444pt.
+[304
+
+]
+latex2htmlSize :tex2html_wrap_inline5148: 5.83333pt::1.94444pt.
+[305
+
+]
+latex2htmlSize :tex2html_wrap_inline5150: 4.30554pt::0.0pt.
+[306
+
+]
+latex2htmlSize :tex2html_wrap_inline5152: 9.20636pt::0.0pt.
+[307
+
+]
+latex2htmlSize :tex2html_wrap_inline5156: 7.5pt::2.5pt.
+[308
+
+]
+latex2htmlSize :tex2html_wrap_inline5158: 6.83331pt::0.0pt.
+[309
+
+]
+latex2htmlSize :tex2html_wrap_inline5162: 9.47221pt::2.5pt.
+[310
+
+]
+latex2htmlSize :tex2html_wrap_inline5164: 9.20636pt::1.49998pt.
+[311
+
+]
+latex2htmlSize :tex2html_wrap_inline5170: 9.20636pt::2.5pt.
+[312
+
+]
+latex2htmlSize :tex2html_wrap_inline5172: 9.47221pt::2.5pt.
+[313
+
+]
+latex2htmlSize :tex2html_wrap_inline5174: 6.83331pt::1.49998pt.
+[314
+
+]
+latex2htmlSize :tex2html_wrap_inline5176: 6.83331pt::1.49998pt.
+[315
+
+]
+latex2htmlSize :tex2html_wrap_inline5180: 6.94444pt::1.94444pt.
+[316
+
+]
+latex2htmlSize :tex2html_wrap_inline5188: 7.5pt::2.5pt.
+[317
+
+]
+latex2htmlSize :tex2html_wrap_inline5192: 10.09998pt::4.50952pt.
+[318
+
+]
+latex2htmlSize :tex2html_wrap_inline5198: 8.88332pt::4.80951pt.
+[319
+
+]
+latex2htmlSize :tex2html_wrap_inline5200: 8.41226pt::0.83333pt.
+[320
+
+]
+latex2htmlSize :tex2html_wrap_inline5202: 8.41226pt::0.83333pt.
+[321
+
+]
+latex2htmlSize :tex2html_wrap_inline5204: 7.5pt::2.5pt.
+[322
+
+]
+latex2htmlSize :tex2html_wrap_inline5208: 7.5pt::2.5pt.
+[323
+
+]
+latex2htmlSize :tex2html_wrap_inline5212: 6.83331pt::1.35971pt.
+[324
+
+] [325
+
+] [326
+
+] [327
+
+]
+latex2htmlSize :tex2html_wrap_inline5222: 4.30554pt::1.94444pt.
+[328
+
+]
+latex2htmlSize :tex2html_wrap_inline5224: 4.30554pt::2.86108pt.
+[329
+
+]
+latex2htmlSize :tex2html_wrap_inline5228: 4.30554pt::1.94444pt.
+[330
+
+]
+latex2htmlSize :tex2html_wrap_inline5230: 4.30554pt::2.86108pt.
+[331
+
+]
+latex2htmlSize :tex2html_wrap_inline5232: 7.5pt::2.5pt.
+[332
+
+]
+latex2htmlSize :tex2html_wrap_inline5236: 7.5pt::2.5pt.
+[333
+
+]
+latex2htmlSize :tex2html_wrap_inline5238: 6.83331pt::1.94444pt.
+[334
+
+]
+latex2htmlSize :tex2html_wrap_inline5242: 7.5pt::2.5pt.
+[335
+
+]
+latex2htmlSize :tex2html_wrap_inline5244: 6.83331pt::1.94444pt.
+[336
+
+]
+latex2htmlSize :tex2html_wrap_inline5246: 4.30554pt::2.86108pt.
+[337
+
+]
+latex2htmlSize :tex2html_wrap_inline5248: 7.5pt::2.5pt.
+[338
+
+]
+latex2htmlSize :tex2html_wrap_inline5250: 7.5pt::2.5pt.
+[339
+
+]
+psfig: searching IMAGES/uniform_sampling.ps for bounding box
+psfig: including IMAGES/uniform_sampling.ps 
+[340
+
+] [341
+
+]
+latex2htmlSize :tex2html_wrap_inline5260: 6.83331pt::2.86108pt.
+[342
+
+]
+latex2htmlSize :tex2html_wrap_inline5264: 4.30554pt::1.94444pt.
+[343
+
+]
+latex2htmlSize :tex2html_wrap_inline5266: 9.8112pt::3.00005pt.
+[344
+
+]
+latex2htmlSize :tex2html_wrap_inline5268: 6.83331pt::1.49998pt.
+[345
+
+]
+latex2htmlSize :tex2html_wrap_inline5272: 9.8112pt::3.00005pt.
+[346
+
+]
+latex2htmlSize :tex2html_wrap_inline5278: 4.30554pt::1.94444pt.
+[347
+
+]
+latex2htmlSize :tex2html_wrap_inline5282: 6.83331pt::2.86108pt.
+[348
+
+]
+latex2htmlSize :tex2html_wrap_inline5284: 4.30554pt::2.86108pt.
+[349
+
+]
+latex2htmlSize :tex2html_wrap_inline5288: 9.8112pt::3.00005pt.
+[350
+
+]
+latex2htmlSize :tex2html_wrap_inline5294: 9.8112pt::4.36115pt.
+[351
+
+]
+latex2htmlSize :tex2html_wrap_inline5296: 6.67859pt::2.86108pt.
+[352
+
+]
+latex2htmlSize :tex2html_wrap_inline5298: 9.65979pt::3.00005pt.
+[353
+
+]
+latex2htmlSize :tex2html_wrap_inline5300: 7.5pt::2.5pt.
+[354
+
+]
+latex2htmlSize :tex2html_wrap_inline5304: 4.30554pt::2.86108pt.
+[355
+
+]
+latex2htmlSize :tex2html_wrap_inline5306: 7.5pt::2.5pt.
+[356
+
+]
+latex2htmlSize :tex2html_wrap_inline5308: 7.5pt::2.5pt.
+[357
+
+]
+latex2htmlSize :tex2html_wrap_inline5310: 7.5pt::2.5pt.
+[358
+
+]
+latex2htmlSize :tex2html_wrap_inline5312: 9.8112pt::3.00005pt.
+[359
+
+] [360
+
+]
+latex2htmlSize :tex2html_wrap_inline5314: 7.5pt::2.5pt.
+[361
+
+]
+latex2htmlSize :tex2html_wrap_inline5316: 8.0556pt::3.05562pt.
+[362
+
+] [363
+
+]
+latex2htmlSize :tex2html_wrap_inline5318: 6.67859pt::2.86108pt.
+[364
+
+]
+latex2htmlSize :tex2html_wrap_inline5320: 6.83331pt::2.86108pt.
+[365
+
+]
+latex2htmlSize :tex2html_wrap_inline5324: 4.30554pt::2.86108pt.
+[366
+
+]
+latex2htmlSize :tex2html_wrap_inline5326: 9.8112pt::3.00005pt.
+[367
+
+]
+latex2htmlSize :tex2html_wrap_inline5328: 6.83331pt::1.49998pt.
+[368
+
+]
+latex2htmlSize :tex2html_wrap_inline5332: 9.8112pt::3.00005pt.
+[369
+
+] (images.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1210 strings out of 10935
+ 10876 string characters out of 67003
+ 80456 words of memory out of 262141
+ 3563 multiletter control sequences out of 9500
+ 10479 words of font info for 35 fonts, out of 200000 for 512
+ 14 hyphenation exceptions out of 607
+ 19i,11n,19p,292b,338s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on images.dvi (369 pages, 94196 bytes).

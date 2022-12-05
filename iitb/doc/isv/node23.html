@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> Conclusions</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" Conclusions">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html277 HREF="node24.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html275 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html269 HREF="node22.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html278 HREF="node24.html">References</A>
+<B>Up:</B> <A NAME=tex2html276 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html270 HREF="node22.html"> Observations</A>
+<BR> <HR> <P>
+<H1><A NAME=SECTION00080000000000000000> Conclusions</A></H1>
+ <A NAME=CONCLUSION>&#160;</A>
+A new integrated stereo vision algorithm for estimating a 
+dense disparity map has been formulated and implemented, using the intensity
+as the only cue.
+The stereo integration scheme is investigated in a monoresolution and
+multiresolution framework.
+<P>
+ We would like to remark that the way the algorithm has been 
+formulated, it lends itself to be implemented in parallel, using a Hopfield like
+neural network. Note that in all the energy modules, except the
+matching module, it is required that two binary fields (corresponding to the
+horizontal and vertical line fields) be updated, and this can be 
+accomplished by using a Hopfield neural network. The matching block can also
+be put into the Hopfield neural network framework because the disparity
+is usually confined to a small range. For this purpose one could use a
+multilevel threshold function analogous to the multilevel sigmoidal function
+of [<A HREF="node24.html#shiv">20</A>].
+<P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

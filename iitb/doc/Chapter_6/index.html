@@ -1,0 +1,2318 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>No Title</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="No Title">
+<meta name="keywords" value="Chap">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+  
+<P>
+
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1><A NAME=SECTION00100000000000000000> Joint Segmentation and Image Interpretation</A></H1>
+<P>
+<A NAME=chapscene>&#160;</A>
+<P>
+<em> Everybody is ignorant only on different subjects</em>
+     -Will Rogers
+<H1><A NAME=SECTION00110000000000000000> Overview</A></H1>
+<P>
+Image interpretation is a high level vision task which is hard to
+automate, considering the fact that the human visual system, undoubtedly,
+the best visual system, is <em> fooled </em> quite often, especially when
+other sources of information which help in disambiguating illusion are
+hidden.  Interpretation is a high-level description of the environment
+from which the image was taken. It is essentially an analysis problem
+where we try to understand the image by identifying some important
+features or objects and analyze them depending on their spatial
+relationship. Figure <A HREF="Chap.html#figii_overview">1.1</A> shows the task of scene
+interpretation.
+<P>
+<P><A NAME=177>&#160;</A><A NAME=figii_overview>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img14.gif">
+<BR><STRONG>Figure 1.1:</STRONG> Overview of image interpretation task.<BR>
+<P>
+Interpretation must be in the form that is suitable for planning such
+diverse activities as robot arm and hand motion, obstacle avoidance by
+vehicle, aircraft navigation,  remote sensing or in biomedical
+applications. Image interpretation is knowledge based processing, which
+requires the  use of both low-level processing (image processing
+techniques of contrast enhancement, computer vision techniques of
+segmentation, feature extraction, region labeling) and high-level vision
+tasks involving processing a great amount of non-image related
+knowledge underlying the scene representation, for example, knowledge
+about the world physical constraints influencing entities [<A HREF="Chap.html#bk_Scha_89">1</A>].  At low-level the basic processing unit
+being pixel,  there is no simple computational transformation that will
+map arrays of pixels onto stored symbolic concepts represented in the
+high-level knowledge base. It is generally accepted that many stages of
+processing must take place for reliable interpretation of a scene.
+<P>
+The layout of this chapter is as follows: The problem of image
+interpretation is introduced in Section <A HREF="Chap.html#secscene_intro">1.2</A>. In Section
+<A HREF="Chap.html#secscene_litsurvey">1.3</A> we review briefly the available literature. The
+problem of image interpretation in the perspective of the generalized
+framework of modular integration and multiresolution, developed in Chapter
+<A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>, is formulated in Section <A HREF="Chap.html#secii_prob_form">1.4</A>. The
+detailed scheme of the proposed joint image segmentation and image
+interpretation is sketched in Section <A HREF="Chap.html#secii_scheme">1.5</A>. Feature
+selection is an important aspect of image interpretation, the various
+features used for image interpretation are described in Section
+<A HREF="Chap.html#secfeatures">1.6</A>. The proposed framework of modular integration and
+multiresolution is validated by experimental results in Section
+<A HREF="Chap.html#secscene_simulations">1.7</A>. In Section <A HREF="Chap.html#secscene_conclusions">1.8</A> we
+conclude and give directions for future work.
+<P>
+<H1><A NAME=SECTION00120000000000000000> Introduction</A></H1>
+<P>
+<A NAME=secscene_intro>&#160;</A>
+<P>
+Though considerable amount of work has been done in the area of image
+interpretation one is still on the lookout for a fully automated image
+interpretation scheme. Automatic scene interpretation requires the
+construction of at least a partial description of the original
+environment, rather than a description of the image itself. It involves,
+not only labeling certain regions in an image, or locating a single
+object in the viewed scene, but often requires a 3D model of the
+surroundings, with associated identification in the 2D image.
+<P>
+For high-level interpretation, the principle unit of information is a
+symbolic description of an object, or a set of image events, sometimes
+referred to as symbolic tokens, extracted from the image. The description
+includes relationships to other 2D symbolic tokens extracted from
+the sensory data, such as lines, segments and other objects in the 3D
+scene being viewed. It also includes pointers to elements of general
+knowledge that has been used to support the interpretation process.
+<P>
+As seen in Figure <A HREF="Chap.html#figii_overview">1.1</A>, the task of image interpretation
+would essentially involve the task of segmenting (not shown in Figure 
+<A HREF="Chap.html#figii_overview">1.1</A>) the image to produce
+regions which have some <em> relation</em> to the objects in the scene and
+then using some a priori knowledge to interpret, regions in the segmented
+image. The image interpretation task is very much dependent on the a
+priori knowledge, in the sense, knowledge acquired from a scene should
+bear <em> resemblance</em> to the scene that is being interpreted. In other
+words, the knowledge must have been acquired from a scene which belongs to
+the <em> same class</em> as the scene that is being interpreted. In
+literature, this aspect of image interpretation has either been taken for
+granted or not addressed at all; in this sense the task of image
+interpretation is nowhere close to being called fully automated.
+<P>
+The need for image interpretation can be found in many diverse fields of 
+science and engineering. For example, a major application of image 
+interpretation is in remote sensing which is widely used in geographical 
+surveys and military applications. Image interpretation also plays a 
+major role in biomedical science and particle physics, where many of the 
+results are recorded in the form of photographs.
+<P>
+Traditionally, the task of image interpretation is performed by 
+experienced human experts. However, analyzing a complex image is quite 
+labor intensive, hence, much of the research is directed towards 
+constructing automated image interpretation systems. Recent research in 
+intelligent robots has created yet another need for automated image 
+interpretation. In this case, the requirement is to understand what the 
+robots see with the imaging sensors to be able to perform intelligent 
+task in complex environments. Here, the robots have to rely entirely on 
+automated image interpretation.
+<P>
+The main approach in early research in image interpretation was that of
+classification, in which, isolated image primitives were classified into a
+finite set of object classes according to their feature measurements. 
+However, since low-level processing often produces erroneous or incomplete
+primitives, and the noise in the image may cause measurement errors in the
+features, the performance of the image interpretation systems using the
+classification approach is quite limited and prone to mistakes. The main
+problem here is that the rich knowledge in the spatial relationships that
+the human expert use is not used in the process of image interpretation.
+<P>
+<H1><A NAME=SECTION00130000000000000000> Literature Review</A></H1>
+<P>
+<A NAME=secscene_litsurvey>&#160;</A>
+<P>
+The interpretation literature is quite vast and is under investigation
+since a couple of decades. The first available literature dates back to
+1969 [<A HREF="Chap.html#bk_Gras_69">2</A>,<A HREF="Chap.html#bk_Andr_69">3</A>,<A HREF="Chap.html#bk_Nara_69">4</A>]. Research in the area of
+image interpretation encompasses images related to biomedical 
+applications [<A HREF="Chap.html#pr_Hofm_85">5</A>,<A HREF="Chap.html#jr_Sage_88">6</A>,<A HREF="Chap.html#phd_Kars_89">7</A>,<A HREF="Chap.html#jr_Bald_92">8</A>,<A HREF="Chap.html#jr_Coot_94">9</A>], satellite images [<A HREF="Chap.html#pr_Desa_92">10</A>], aerial imagery
+[<A HREF="Chap.html#bk_Naga_80">11</A>,<A HREF="Chap.html#pr_Mcke_85">12</A>,<A HREF="Chap.html#pr_Mcke_87">13</A>,<A HREF="Chap.html#pr_Silb_88">14</A>,<A HREF="Chap.html#pr_Kuan_88">15</A>,<A HREF="Chap.html#jr_Mcke_89">16</A>,<A HREF="Chap.html#pr_Garn_90">17</A>,<A HREF="Chap.html#pr_Venka_90">18</A>,<A HREF="Chap.html#phd_Schu_94">19</A>], road scenes
+[<A HREF="Chap.html#pr_Drap_87">20</A>], range images [<A HREF="Chap.html#pr_Ozak_88">21</A>,<A HREF="Chap.html#pr_Chel_90">22</A>,<A HREF="Chap.html#bk_Agga_90">23</A>,<A HREF="Chap.html#bk_Rame_90">24</A>], natural scenes [<A HREF="Chap.html#pr_Stra_90">25</A>,<A HREF="Chap.html#pr_Hild_93">26</A>],
+natural color scenes [<A HREF="Chap.html#bk_Ohta_85">27</A>], infra red imagery
+[<A HREF="Chap.html#pr_Silb_87">28</A>,<A HREF="Chap.html#jr_Nand_88">29</A>], remotely sensed data [<A HREF="Chap.html#jr_Tayl_86">30</A>,<A HREF="Chap.html#pr_Clem_92">31</A>], seismic data [<A HREF="Chap.html#jr_Zhan_87">32</A>], SAR images
+[<A HREF="Chap.html#pr_Hell_92">33</A>], laser radar images [<A HREF="Chap.html#jr_Cchu_91">34</A>], astronomical
+image [<A HREF="Chap.html#jr_Kurt_90">35</A>], thermal images [<A HREF="Chap.html#jr_Nand_88">29</A>], ultra sound
+images [<A HREF="Chap.html#pr_Towe_88">36</A>,<A HREF="Chap.html#jr_Bald_92">8</A>], geophysical image
+[<A HREF="Chap.html#jr_Robe_89">37</A>], from stereo [<A HREF="Chap.html#pr_Sugi_88">38</A>,<A HREF="Chap.html#jr_Pid_90">39</A>] and
+moving images [<A HREF="Chap.html#jr_Guil_85">40</A>,<A HREF="Chap.html#jr_Mila_91">41</A>] or moving viewer
+[<A HREF="Chap.html#pr_Tsui_88">42</A>].
+<P>
+Early work on image interpretation was based largely on isolated image
+features and these salient features were classified  into a finite set
+of classes, namely, interpretation labels,  presumably this scheme is
+not robust especially when the low-level vision tasks give out an
+erroneous output. More recent approaches adopt knowledge based systems
+for image interpretation. Here, a great amount of non-image related
+knowledge underlying the scene representation is used along with the
+spatial constraints.  Thus, even an ambiguous object can be recognized
+based on the successful recognition of its neighborhood objects.
+<P>
+The early work in knowledge based image interpretation is summarized in
+Nago and Matsuyama [<A HREF="Chap.html#bk_Naga_80">11</A>], Binford [<A HREF="Chap.html#jr_Binf_82">43</A>], Ohata
+[<A HREF="Chap.html#bk_Ohta_85">27</A>], Smyrniotis [<A HREF="Chap.html#pr_Smyr_88">44</A>], Ballard
+[<A HREF="Chap.html#pr_Ball_xx">45</A>], Draper [<A HREF="Chap.html#pr_Drap_87">20</A>], Mitiche [<A HREF="Chap.html#pr_Miti_88">46</A>] and
+more recently by Chu [<A HREF="Chap.html#jr_Cchu_91">34</A>,<A HREF="Chap.html#jr_Cchu_92">47</A>] and for man made
+objects like office buildings and houses in an aerial images by Schutte
+[<A HREF="Chap.html#phd_Schu_94">19</A>]. Rule based strategies are especially appropriate in
+view of lack of complete models and algorithmic strategies
+[<A HREF="Chap.html#jr_Zhan_87">32</A>,<A HREF="Chap.html#bk_Scha_89">1</A>,<A HREF="Chap.html#jr_Robe_93">48</A>,<A HREF="Chap.html#jr_Puli_93">49</A>]. Fourier domain has
+been used for interpretation and classification of images
+[<A HREF="Chap.html#bk_Andr_69">3</A>], projective invariants and deformable templates for
+interpretation of SAR by [<A HREF="Chap.html#pr_Hell_92">33</A>], cellular automata
+[<A HREF="Chap.html#jr_Smol_94">50</A>], morphometric and densitometric approach
+[<A HREF="Chap.html#jr_Evan_93">51</A>], Bayesian networks [<A HREF="Chap.html#jr_Dick_91">52</A>,<A HREF="Chap.html#jr_Jens_92">53</A>,<A HREF="Chap.html#pr_Bish_92">54</A>,<A HREF="Chap.html#jr_Kuma_96">55</A>], Algebraic Topology [<A HREF="Chap.html#jr_Wilh_92">56</A>] and of late,
+Markov Random Field (MRF) models are being used for image interpretation
+with the view to make the interpretation systematic and domain independent
+[<A HREF="Chap.html#jr_Mode_92">57</A>,<A HREF="Chap.html#jr_Kim_93b">58</A>,<A HREF="Chap.html#jr_Kuma_96">55</A>].  Most of the interpretation
+schemes assume the availability of a good segmented image of the scene a
+priori.  But in practice obtaining a <em> good</em> segmented image is
+difficult for the simple reason that segmentation itself depends on
+interpretation and hence is a function of the output of interpretation.
+<P>
+Experiments conducted by Tenenbaum and Barrow [<A HREF="Chap.html#jr_Tene_77">59</A>], where they
+experiment on the use of interpretation to guide segmentation, indicate
+the first possible use of interaction between the interpretation and
+segmentation modules. 
+Though their requirement was to segment an image, we
+see that it was a good step, till then though it was known that
+both segmentation and interpretation were related, the fact was not 
+exploited. Later
+there was discussion in this regard by Bajcsy in [<A HREF="Chap.html#bk_Ruze_90">60</A>].
+Sonka et al [<A HREF="Chap.html#jr_Sonk_93">61</A>] have integrated segmentation and
+interpretation into a single feedback process that incorporates
+contextual knowledge. They use genetic algorithm to produce an
+optimal image interpretation. More recently,  Kim and Yang
+[<A HREF="Chap.html#jr_Kim_93b">58</A>] integrate segmentation and interpretation by forming a
+combined weighted energy function; the segmentation block is weighted
+high initially and as the algorithm iterates the weights shift to the
+interpretation block.
+<P>
+In this thesis, we propose a scheme for joint segmentation and image
+interpretation in a multiresolution framework. The scheme is developed in
+the modular integration and multiresolution framework (Chapter
+<A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>). 
+ Unlike earlier work in multiresolution interpretation
+[<A HREF="Chap.html#pr_Silb_88">14</A>] we do not assume a priori, the availability of the 
+segmented
+image. In fact, in our approach, segmentation and interpretation are
+interleaved (modular integration) as shown in Figure <A HREF="Chap.html#figscheme">1.2</A> and
+the two operations are carried out at each resolution (multiresolution),
+the idea being that the two operations while integrating, <em> help</em> each
+other to perform better. The segmentation module helps the interpretation
+module which in turn helps the segmentation module.
+<P>
+<P><A NAME=246>&#160;</A><A NAME=figscheme>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img15.gif">
+<BR><STRONG>Figure 1.2:</STRONG> Macro-level joint segmentation and image interpretation scheme.<BR>
+<P><H1><A NAME=SECTION00140000000000000000> Problem Formulation</A></H1>
+<P>
+<A NAME=secii_prob_form>&#160;</A>
+<P>
+The problem of image interpretation would essentially involve the 
+low-level vision task of image segmentation to produce regions in the given
+image corresponding to some objects in the scene and then giving some
+labels or interpretation to the segmented regions based on some a priori
+knowledge. Table <A HREF="Chap.html#tabii_gen_inter">1.1</A>, gives the high-level vision task
+of image interpretation as seen in the generalized framework of modular
+integration and multiresolution. In
+general, one is given an image which is a projection of a 3D scene onto
+the 2D plane and some knowledge about the 3D environment. From the 2D
+image we need to segment the image and interpret the regions based on the
+segmented image.  This is shown in Figure <A HREF="Chap.html#figscheme">1.2</A>, except for the
+fact that the portions corresponding to <em> wavelet transform</em> and <em>
+refine using difference image</em> do not come into existence.
+<P>
+<P><A NAME=348>&#160;</A><A NAME=tabii_gen_inter>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img16.gif">
+<BR><STRONG>Table:</STRONG> Image interpretation in the generalized framework perspective 
+developed in Chapter <A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>. <BR>
+<P>
+<P>
+The vision task of image interpretation in the perspective of the
+developed generalized framework of modular integration and multiresolution
+can be explicitly stated as:
+<P>
+<blockquote> <em>
+<P>
+Given the image <IMG  ALIGN=MIDDLE ALT="" SRC="img17.gif"> which is a projection of a 3D scene onto the 2D
+plane at the finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img18.gif">, defined over the 2D lattice of size
+<IMG  ALIGN=MIDDLE ALT="" SRC="img19.gif">, and some knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif"> about the 3D environment.
+The problem of interpretation involves
+<P>
+<OL><LI>  segmenting the image <IMG  ALIGN=MIDDLE ALT="" SRC="img21.gif"> to
+obtain <IMG  ALIGN=MIDDLE ALT="" SRC="img22.gif"> and
+<LI>  interpreting the image <IMG  ALIGN=MIDDLE ALT="" SRC="img23.gif">, based on the segmented image
+<IMG  ALIGN=MIDDLE ALT="" SRC="img24.gif"> and the domain knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img25.gif">.
+</OL></blockquote>
+<P>
+We now formulate the problem of image interpretation by synergistically
+integrating both the segmentation and the interpretation modules in a
+multiresolution framework. We term this procedure of interleaving
+segmentation and interpretation procedures as <em> joint segmentation and
+interpretation</em> scheme. The idea of integrating these two operations is
+two fold (i) both segmentation and interpretation modules by themselves do
+not work efficiently because a good segmented image helps the
+interpretation module perform better and to get a good segmentation,
+knowledge of the scene, or in other words the interpretation of the scene
+is essential, and (ii) we end up getting as a byproduct a <em> better</em>
+segmented image in addition to a correctly interpreted image. The idea of
+formulating this problem in a multiresolution framework is to speed up
+computation as discussed in Section <A HREF="#secintro_multi"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>. It turns out
+that we need not work on the whole image but could stop at one level
+coarser resolution while interpreting, namely if we need to interpret a
+<IMG  ALIGN=MIDDLE ALT="" SRC="img26.gif"> image it is enough if we interpret a <IMG  ALIGN=MIDDLE ALT="" SRC="img27.gif">
+image.
+<P>
+<P><A NAME=273>&#160;</A><A NAME=figwt>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img30.gif">
+<BR><STRONG>Figure 1.3:</STRONG> Wavelet Transform representation of <IMG  ALIGN=BOTTOM ALT="" SRC="img29.gif">.<BR>
+<P>
+<P>
+We  construct the wavelet transform of the image 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img31.gif">
+[<A HREF="Chap.html#jr_Mall_89">62</A>] which results in <IMG  ALIGN=MIDDLE ALT="" SRC="img32.gif">=<IMG  ALIGN=MIDDLE ALT="" SRC="img33.gif">,
+the low pass filtered image and <IMG  ALIGN=MIDDLE ALT="" SRC="img34.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img35.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img36.gif"> the difference image, each of size
+<IMG  ALIGN=MIDDLE ALT="" SRC="img37.gif">.  Figure <A HREF="Chap.html#figwt">1.3</A> shows the
+wavelet transformed structure of <IMG  ALIGN=MIDDLE ALT="" SRC="img38.gif">, where <IMG  ALIGN=MIDDLE ALT="" SRC="img39.gif">
+(<IMG  ALIGN=MIDDLE ALT="" SRC="img40.gif">) corresponds to the difference image obtained
+when <IMG  ALIGN=MIDDLE ALT="" SRC="img41.gif"> is filtered by a high pass filter along the rows
+(columns) and by a low pass filter along the columns (rows).
+The low pass filtered image <IMG  ALIGN=MIDDLE ALT="" SRC="img42.gif"> is segmented using any
+segmentation algorithm. In this thesis for the purpose of simulations  we
+have used the k-means clustering
+algorithm (see Appendix <A HREF="#appk_means"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) to produce a crude segmented 
+image. The segmented 
+image is refined using the difference image (<IMG  ALIGN=MIDDLE ALT="" SRC="img43.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img44.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img45.gif">) as described in Section
+<A HREF="Chap.html#secii_scheme">1.5</A>.
+<P>
+The segmented image is subjected to interpretation. The problem of image
+interpretation is formulated in a MRF framework along the lines of
+Modestino and Zhang [<A HREF="Chap.html#jr_Mode_92">57</A>] except that we have a provision for
+a <em> no-interpretation</em> label <IMG  ALIGN=MIDDLE ALT="" SRC="img46.gif">. The reason for having <em> 
+no-interpretation</em> label, as a possible label, is to refine the segmented
+image before further interpretation can be carried out. The process of,
+interpretation, merging of the <em> no-interpretation</em> labels to produce a
+<em> better</em> segmented image and again interpretation, is carried out
+until none of the regions have label <em> no-interpretation</em> (see Figure
+<A HREF="Chap.html#figscheme">1.2</A>). The resulting segmented image is assumed to be
+the final segmented image and final interpretation is carried out on it.
+<P>
+<P><A NAME=311>&#160;</A><A NAME=figgraph>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img47.gif">
+<BR><STRONG>Figure 1.4:</STRONG> Segmented image represented as a graph.<BR>
+<P>
+<P>
+At each resolution (say <b>k</b>) let the segmented image (see Figure
+<A HREF="Chap.html#figgraph">1.4</A>) be
+represented as an undirected simple planar graph. The nodes <IMG  ALIGN=MIDDLE ALT="" SRC="img48.gif"> being represented by the <b>n</b> regions in
+the segmented image and the edges representing the connectivity of the
+regions. Let <IMG  ALIGN=MIDDLE ALT="" SRC="img49.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img50.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img51.gif">,<IMG  ALIGN=BOTTOM ALT="" SRC="img52.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img53.gif"> be the possible labels (<IMG  ALIGN=MIDDLE ALT="" SRC="img54.gif"> <em>
+no-interpretation</em> label, and <IMG  ALIGN=MIDDLE ALT="" SRC="img55.gif"> are
+the <b>m</b> interpretation labels) and let the interpretation <IMG  ALIGN=MIDDLE ALT="" SRC="img56.gif"> be a
+random variable associated with the region <IMG  ALIGN=MIDDLE ALT="" SRC="img57.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img58.gif">,
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img59.gif"> takes a value from the label set <IMG  ALIGN=MIDDLE ALT="" SRC="img60.gif">. Define <IMG  ALIGN=MIDDLE ALT="" SRC="img61.gif">. If
+<IMG  ALIGN=BOTTOM ALT="" SRC="img62.gif"> is the domain knowledge and <IMG  ALIGN=MIDDLE ALT="" SRC="img63.gif"> are the core variables
+obtained as a result of measurements made on the segmented image
+<IMG  ALIGN=MIDDLE ALT="" SRC="img64.gif">, then analogous to [<A HREF="Chap.html#jr_Mode_92">57</A>] we assume that the
+conditional probability of <IMG  ALIGN=BOTTOM ALT="" SRC="img65.gif">, given <IMG  ALIGN=BOTTOM ALT="" SRC="img66.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img67.gif"> is a Markov Random Field, namely,
+<P>
+<P><A NAME=eqmax>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img68.gif"><P>
+<P>
+  is a MRF.
+The image interpretation problem is posed as an optimization problem and the
+optimal interpretation
+label vector <IMG  ALIGN=MIDDLE ALT="" SRC="img69.gif"> is obtained by solving the MAP estimation problem,
+namely, <P><IMG  ALIGN=BOTTOM ALT="" SRC="img70.gif"><P>
+
+<P>
+The problem of interpretation reduces to the problem of minimizing the
+energy function <IMG  ALIGN=MIDDLE ALT="" SRC="img71.gif">. The energy
+function is constructed such that it takes a minimum value when the
+interpretation labels are consistent with the knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img72.gif"> and the
+core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img73.gif"> derived from <IMG  ALIGN=MIDDLE ALT="" SRC="img74.gif">. The
+minimization of the energy functional <IMG  ALIGN=MIDDLE ALT="" SRC="img75.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img76.gif"> results in interpretation of the given scene.  Now,
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img77.gif"><P>
+<P>
+  where <IMG  ALIGN=MIDDLE ALT="" SRC="img78.gif">'s are the clique functions which
+need to be constructed.
+The clique function
+should decrease when the interpretation labels are consistent with the 
+domain knowledge and core variables, thus resulting in a decrease of the
+energy function. This
+means that the interpretation of the image that is <em> most</em> consistent
+with the domain knowledge and core variables will have minimum energy. For
+completeness, we present the clique function for 1-node and 2-node
+cliques [<A HREF="Chap.html#jr_Mode_92">57</A>].
+<P>
+</em><H2><A NAME=SECTION00141000000000000000> Construction of Clique Functions [#jr_Mode_92##1#]</A></H2>
+<P>
+<A NAME=secii_clique>&#160;</A>
+<P>
+  <em> Single or 1 - node clique functions</em>: Let <b>c</b> be an
+arbitrary single node clique corresponding to the region
+<IMG  ALIGN=MIDDLE ALT="" SRC="img79.gif">, with a single node <IMG  ALIGN=MIDDLE ALT="" SRC="img80.gif">. Let
+<IMG  ALIGN=MIDDLE ALT="" SRC="img81.gif"> be the corresponding clique
+function. Let there be <b>p</b> features associated with core variables
+<IMG  ALIGN=MIDDLE ALT="" SRC="img82.gif"> = <IMG  ALIGN=MIDDLE ALT="" SRC="img83.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img84.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img85.gif">
+<IMG  ALIGN=MIDDLE ALT="" SRC="img86.gif">. Assume these core variables to be
+independent<A NAME=tex2html8 HREF="#391"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A>, then the clique function can be defined
+as
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img87.gif"><P>
+<P>
+  where <IMG  ALIGN=MIDDLE ALT="" SRC="img88.gif"> are positive constants called
+weights, such that <IMG  ALIGN=MIDDLE ALT="" SRC="img89.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img90.gif"> is the basis function associated with the feature <b>i</b>, which
+satisfies the requirement of the clique function, namely, it should take a
+small value when the interpretation labels are consistent with the domain
+knowledge and the core variables. Now, the construction of the clique
+function reduces to the construction of a basis function. The choice of
+the basis function could come from <IMG  ALIGN=MIDDLE ALT="" SRC="img91.gif"> suitably modified to adhere to the requirement
+mentioned above<A NAME=tex2html9 HREF="#400"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A>,
+or we could use a piecewise linear basis function as in
+[<A HREF="Chap.html#jr_Mode_92">57</A>]. An example is illustrated in Figure 
+<A HREF="Chap.html#figbasis_function">1.5</A>
+for the average gray level feature for road, and using the knowledge-base
+in Table <A HREF="Chap.html#tabroad">1.5</A>.
+<P>
+<P><A NAME=425>&#160;</A><A NAME=figbasis_function>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img95.gif">
+<BR><STRONG>Figure:</STRONG> Example of a basis function used for  the average gray level
+feature for road (see Table <A HREF="Chap.html#tabroad">1.5</A>). Here, <b>a=60, b=65, c=75, d=80</b><BR>
+<P>
+ The basis function (Figure <A HREF="Chap.html#figbasis_function">1.5</A>) is defined
+as:
+ <P><A NAME=eqbasis>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img96.gif"><P>
+ There is nothing special about (<A HREF="Chap.html#eqbasis">1.3</A>), any function which has
+the form shown in Figure <A HREF="Chap.html#figbasis_function">1.5</A> can be used in place of
+<IMG  ALIGN=MIDDLE ALT="" SRC="img97.gif">. For example a variation of sigmoidal,   
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img98.gif"><P>
+<P>
+can be used.  The plot of this function is given in Figure <A HREF="Chap.html#figappen_cost">1.6</A>.
+<P>
+<P><A NAME=1716>&#160;</A><A NAME=figappen_cost>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img99.gif">
+<BR><STRONG>Figure 1.6:</STRONG> Basis function - variation of sigmoidal.<BR>
+<P>
+<P>
+  <em> 2 - node clique functions</em>: The construction of a multiple node
+clique function is similar in philosophy to the 1 - node clique except
+that it has two types of basis functions.
+The first one is similar to that of 1 - node clique function, and
+depends on
+the feature measurements (core variables); the second part depends on the
+spatial
+constraints (<em> like a car can be in the neighborhood of a road but not
+in the neighborhood of sky</em>).
+<P>
+<P><A NAME=eq2node>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img100.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img101.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img102.gif">, such that,
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img103.gif"><P>
+<P>
+  Note, <b>c</b> is a 2 - node clique and <IMG  ALIGN=MIDDLE ALT="" SRC="img104.gif">
+represents a valid combination and <IMG  ALIGN=MIDDLE ALT="" SRC="img105.gif"> represents
+an invalid combination (See Tables <A HREF="Chap.html#tabroad">1.5</A>,
+<A HREF="Chap.html#tabhira_know">1.6</A> and  <A HREF="Chap.html#tabcompi">1.7</A>).
+<P>
+
+<P>
+<H1><A NAME=SECTION00150000000000000000> The Joint Segmentation and Image Interpretation Scheme</A></H1>
+<P>
+<A NAME=secii_scheme>&#160;</A>
+<P>
+<P><A NAME=2817>&#160;</A><A NAME=figexplain>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img106.gif">
+<BR><STRONG>Figure 1.7:</STRONG> Micro-level joint segmentation and image interpretation 
+scheme.<BR>
+<P>
+<P>
+The proposed scheme of joint segmentation and image interpretation is 
+pictorially depicted for two resolutions in Figure 
+<A HREF="Chap.html#figexplain">1.7</A>. The description of the algorithm is based on Figure 
+<A HREF="Chap.html#figexplain">1.7</A>.
+<P>
+  <b> The joint segmentation and image interpretation algorithm</b>
+<P>
+<DL COMPACT><DT>Step 0:
+<DD> <b> Initialization</b>
+<OL><LI>  Given:
+<IMG  ALIGN=BOTTOM ALT="" SRC="img107.gif"> the a priori knowledge and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img108.gif"> (Figure <A HREF="Chap.html#figexplain">1.7</A> component a), the scene to be 
+interpreted,  defined on a lattice of size  <IMG  ALIGN=MIDDLE ALT="" SRC="img109.gif">
+<P>
+<LI> Construct
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img110.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img111.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img112.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img113.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img114.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img115.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img116.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img117.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img118.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img119.gif"> using a wavelet filter (Figure <A HREF="Chap.html#figexplain">1.7</A> component b).
+</OL>
+<P>
+
+<P>
+<DT>Step I:
+<DD> <b> Segmentation and refining:</b> 
+Obtain <IMG  ALIGN=MIDDLE ALT="" SRC="img120.gif"> the segmented image of <IMG  ALIGN=MIDDLE ALT="" SRC="img121.gif"> using k-means clustering
+algorithm (Figure <A HREF="Chap.html#figexplain">1.7</A> component c) and refine 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img122.gif">,
+using <IMG  ALIGN=MIDDLE ALT="" SRC="img123.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img124.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img125.gif"> and using a predefined threshold to merge all segments whose
+area is less than the prespecified <em> minimum area</em>, to get
+<IMG  ALIGN=MIDDLE ALT="" SRC="img126.gif"> (Figure <A HREF="Chap.html#figexplain">1.7</A> component d).
+<P>
+<OL><LI> At the coarsest resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img127.gif">.
+<OL><LI> Construct histogram of <IMG  ALIGN=MIDDLE ALT="" SRC="img128.gif">, choose dominant peaks - let
+there be <b>B</b> such peaks. These are the chosen values of the bins in the
+k-means clustering algorithm.
+<P>
+<LI> k-means clustering algorithm will produce, say, some <b>M</b> segments
+using the optimality criterion, namely, that the pixels which are within a 
+region are as close as possible to the centroid of the region.
+<P>
+<LI> Refine the regions or segments obtained from Step (I.1.b) using the
+difference images <IMG  ALIGN=MIDDLE ALT="" SRC="img129.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img130.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img131.gif"> and the <em> minimum area</em> criteria.
+<P>
+<P><A NAME=2878>&#160;</A><A NAME=figtable>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img132.gif">
+<BR><STRONG>Figure 1.8:</STRONG> To describe the process of refining segmentation.<BR>
+<P>
+<P>
+  <em> Refinement using the difference image :</em> The refinement procedure
+is best described by looking at Figure <A HREF="Chap.html#figtable">1.8</A>.  For example if
+<IMG  ALIGN=MIDDLE ALT="" SRC="img133.gif"> is not zero at the pixel location <IMG  ALIGN=MIDDLE ALT="" SRC="img134.gif"> it means
+that there is a <em> diagonal edge</em> present at the pixel location <IMG  ALIGN=MIDDLE ALT="" SRC="img135.gif">.
+The presence of an edge means that pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img136.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img137.gif">
+should not belong to the same segment.  If the pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img138.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img139.gif"> belong to different clusters they are not touched, else pixel
+<IMG  ALIGN=MIDDLE ALT="" SRC="img140.gif"> is assigned a new segment which is not the same as that
+occupied by pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img141.gif">. The assignment of the segment label is based on
+the nearest neighborhood scheme: pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img142.gif"> is assigned to that
+segment whose centroid is closest to the gray level value of the pixel
+<IMG  ALIGN=MIDDLE ALT="" SRC="img143.gif"> and excluding the centroid of the segment to which pixel 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img144.gif"> belongs. In a similar manner refinement is done using the 
+difference
+images <IMG  ALIGN=MIDDLE ALT="" SRC="img145.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img146.gif"> corresponding to
+the vertical and horizontal edge fields respectively.
+<P>
+  <em> Refinement using the minimum area criterion:</em> Let <b>k</b> be a
+region with an area less than the <em> minimum area</em> and let <b>l, m</b> be
+regions adjacent to region <b>k</b> and having areas greater than the <em>
+minimum area</em>. Then the refinement criterion is:
+<blockquote> region <b>k</b> is merged with region <b>l</b> if the difference between the gray
+level of the centroids of regions <b>k</b> and <b>l</b> is less than the difference
+between the gray level of the centroids of regions <b>k</b> and <b>m</b>. 
+</blockquote>
+In other words, if <IMG  ALIGN=MIDDLE ALT="" SRC="img147.gif"> represents region <b>q</b> and <IMG  ALIGN=MIDDLE ALT="" SRC="img148.gif"> 
+represents the average gray level value of region <IMG  ALIGN=MIDDLE ALT="" SRC="img149.gif">, then the above 
+criterion translates as: 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img150.gif"><P>
+where, the notation <IMG  ALIGN=MIDDLE ALT="" SRC="img151.gif"> means that region 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img152.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img153.gif"> are merged to form a new region  <IMG  ALIGN=MIDDLE ALT="" SRC="img154.gif">.
+<P>
+</OL>
+<P>
+<LI> At any resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img155.gif">
+<P>
+<OL><LI> Quadtree interpolate the segmented image at <IMG  ALIGN=MIDDLE ALT="" SRC="img156.gif"> to
+<IMG  ALIGN=MIDDLE ALT="" SRC="img157.gif"> resolution. If <IMG  ALIGN=MIDDLE ALT="" SRC="img158.gif"> is the 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img159.gif"> pixel of the  segmented image at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img160.gif">, 
+then <P><IMG  ALIGN=BOTTOM ALT="" SRC="img161.gif"><P>
+Use this information as the initial segmented image. In addition the 
+centroids of each of the regions is also transfered to the next
+finer resolution. These centroids are then used to initialize the bins to
+be used in the k-means clustering algorithm at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img162.gif">.
+<P>
+<LI> use the interpretation labels obtained from the previous resolution
+<IMG  ALIGN=MIDDLE ALT="" SRC="img163.gif">, to initialize the interpretation labels at this resolution. 
+<LI> Repeat (I.1.b) and (I.1.c) for resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img164.gif">. 
+</OL></OL>
+<P>
+<DT>Step II:
+<DD> <b> Interpretation - Segmentation loop</b>
+<OL><LI> <b> Interpretation:</b> The segments are
+interpreted using the knowledge base <IMG  ALIGN=BOTTOM ALT="" SRC="img165.gif">, the core variables 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img166.gif"> derived from 
+the segmented image <IMG  ALIGN=MIDDLE ALT="" SRC="img167.gif"> and using the assumption that the 
+conditional probability  is a MRF (<A HREF="Chap.html#eqmax">1.1</A>). This 
+conditional probability can be minimized using a relaxation 
+algorithm (in our simulations we used the simulated
+annealing algorithm). The energy to be minimized is 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img168.gif"><P>
+where, 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img169.gif"><P> 
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img170.gif"> 
+are the clique potentials
+(See Section 
+<A HREF="Chap.html#secii_clique">1.4.1</A>).
+<P>
+<LI> Recall that <IMG  ALIGN=MIDDLE ALT="" SRC="img171.gif"> contains the <em> no-interpretation</em> 
+label. Thus our criterion for moving from coarse to fine resolution is:
+<blockquote> if none of the labels have the label <em> no-interpretation</em> then move 
+from the present <em> coarse</em> resolution to the next <em> fine</em> 
+resolution (Step III).
+</blockquote>
+<P>
+<LI> <b> Segmentation:</b> In case any segment has the label <em> 
+no-interpretation</em>, we merge it  
+with one of the
+interpreted segments which is adjacent to it,
+depending on a probability criterion. For example:
+If region <b>j</b> has label <em> no-interpretation</em>, that is, <IMG  ALIGN=MIDDLE ALT="" SRC="img172.gif"> 
+takes the label <IMG  ALIGN=MIDDLE ALT="" SRC="img173.gif"> and if <b>l,m</b> are the
+regions adjacent to region <b>j</b>, then region <b>j</b> is assigned the
+interpretation label <IMG  ALIGN=MIDDLE ALT="" SRC="img174.gif"> corresponding to the region <b>l</b> if 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img175.gif"> <b>&gt; </b> <IMG  ALIGN=MIDDLE ALT="" SRC="img176.gif">. In other words,
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img177.gif"><P>
+This step will output a better segmented image.
+<P>
+<LI> Go back to Step II (Interpretation-Segmentation loop)
+<P>
+</OL>
+<P>
+<DT>Step III:
+<DD> <b> Coarse to fine resolution</b>
+<OL><LI> If not working at <IMG  ALIGN=MIDDLE ALT="" SRC="img178.gif"> resolution 
+<OL><LI> Interpretation
+labels at this resolution are transfered to the next finer resolution
+(<IMG  ALIGN=BOTTOM ALT="" SRC="img179.gif">)
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img180.gif">; go back to Step I (segmentation and refining)
+</OL>
+<P>
+<LI> At resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img181.gif">:
+<OL><LI> Output the interpretation labels, 
+<LI>
+Output the segmented image
+<LI> Quadtree interpolate the segmented and interpreted images to obtain 
+the final segmented and interpreted images at the finest resolution 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img182.gif"> (in all our experiments, we have found that it was 
+sufficient to stop the algorithm at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img183.gif"> instead of 
+segmenting and interpreting the image at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img184.gif">).
+<P>
+</OL></OL> 
+ </DL>
+<P>
+<P><A NAME=2985>&#160;</A><A NAME=tabrules_know>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img185.gif">
+<BR><STRONG>Table 1.2:</STRONG> Rules for constructing knowledge pyramid<BR>
+<P>
+<P>
+  <em> Remark:</em> In principle it may be possible to generate the
+knowledge base separately at each resolution. But, knowledge base
+generation is a user interactive process, which tends to get difficult at
+coarser resolutions. Thus, we prefer to use the rules described in Table
+<A HREF="Chap.html#tabrules_know">1.2</A> for constructing the knowledge pyramid.
+<P>
+<H1><A NAME=SECTION00160000000000000000> Features used in Image Interpretation</A></H1>
+<P>
+<A NAME=secfeatures>&#160;</A>
+<P>
+Though there is usually not much discussion initiated on the selection of
+features as applicable to image interpretation, feature selection forms an
+important aspect of image interpretation. The choice 
+of features <em>
+impose</em> assumptions on the problem of image interpretation.   Table <A HREF="Chap.html#tabii_fea_ass_prob">1.3</A> illustrates the assumptions that
+are imposed on the problem  when that feature alone
+is used for the purpose of image interpretation. For example, if average
+gray level is selected as the only feature for image interpretation, then
+one is assuming the fact  that the scenes that are 
+being interpreted have been captured under the same lighting condition 
+(else the use of this feature for image interpretation does not makes
+much sense).  
+The choice of features and the assumptions that they explicitly
+impose on the problem are tabulated in Table <A HREF="Chap.html#tabii_fea_ass_prob">1.3</A>. The
+a priori knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img186.gif"> is also very crucial, infact this imposes a very
+strong assumption that we are aware of what to expect from the scene even
+before we allow the algorithm to do the interpretation. In other words, we
+cannot have the knowledge associated with a scene which is completely
+different from the scene to be interpreted, for example we cannot use the
+knowledge obtained for an indoor scene to interpret outdoor scenes.
+<P>
+ Features that are useful for image interpretation can be broadly
+classified as (i) primary features, namely the features that are obtained
+from the scene through direct measurement and (ii) secondary features,
+namely the features that are derived from primary features and hence are
+not directly measured from the scene.
+<P>
+<P><A NAME=3072>&#160;</A><A NAME=tabii_fea_ass_prob>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img187.gif">
+<BR><STRONG>Table 1.3:</STRONG> Assumptions imposed on the problem due to the choice of
+features.<BR>
+<P><H2><A NAME=SECTION00161000000000000000> Primary Features</A></H2>
+<P>
+Primary features are features obtained from the scene through direct
+measurement. A few primary features are enumerated below:
+<P>
+<DL ><DT><em> Area</em>
+<DD> <b>A =</b> the number of pixels in the region <b>R</b>
+<P>
+<DT><em> Perimeter</em>
+<DD> <b>P =</b> the number of pixels on the boundary of the 
+region <b>R</b>
+<P>
+<DT><em> Maximum Diameter</em>
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img188.gif">   
+<DT><em> Minimum Diameter</em>
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img189.gif">
+<P>
+<DT><em> Average gray value</em>
+<DD> <P><IMG  ALIGN=BOTTOM ALT="" SRC="img190.gif"><P> 
+where <IMG  ALIGN=MIDDLE ALT="" SRC="img191.gif"> are the gray levels of the pixel at the location <IMG  ALIGN=MIDDLE ALT="" SRC="img192.gif"> in the region <b>R</b>.
+<P>
+<DT><em> Variance of gray levels</em>
+<DD>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img193.gif"><P>
+<P>
+<DT><em> Mass Center</em>
+<DD>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img194.gif"><P>
+<P>
+<DT><em> Scatter Matrix</em>
+<DD> represents the elliptical area which 
+approximates the
+shape of the region. In other words it quantifies what can be termed as the shape variance.
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img195.gif"><P>
+<P>
+<DT><em> Common Perimeter</em>
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img196.gif"> The boundary common to region <b>I</b> 
+and <b>J</b> 
+ </DL><H2><A NAME=SECTION00162000000000000000> Secondary Features</A></H2>
+<P>
+The secondary features are nothing but shape descriptors and are simply
+combinations of primary features or size parameters, arranged so that
+their dimensions cancel out. 
+This helps in retaining the numerical value of the  secondary feature 
+when the size of the feature is changed. There are many dimensionless
+expressions (formed from the combinations of the size parameters), but
+only a few are relatively common combinations [<A HREF="Chap.html#bk_Russ_94">63</A>].
+<P>
+<DL ><DT><em> Compactness</em>
+<DD>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img197.gif"><P>
+<P>
+<DT><em> Orientation</em>
+<DD>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img198.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img199.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img200.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img201.gif"> and 
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img202.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img203.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img204.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img205.gif">,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img206.gif">
+<P>
+<DT><em> Boundary length</em>
+<DD> The length of the boundary common to two 
+adjoint regions I and J is given by 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img207.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img208.gif"> is the boundary of region <b>I</b>,  
+<IMG  ALIGN=MIDDLE ALT="" SRC="img209.gif"> is the boundary of region <b>J</b>  and 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img210.gif"> is the boundary common to  regions <b>I</b> and <b>J</b>
+<P>
+<DT><em> Contrast</em>
+<DD> <P><IMG  ALIGN=BOTTOM ALT="" SRC="img211.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img212.gif"> is the average gray value  of the region <b>I</b>,  
+<IMG  ALIGN=MIDDLE ALT="" SRC="img213.gif"> is the average gray value  of the region <b>J</b>
+<P>
+
+<DT><em> Roundness</em>
+<DD> <P><IMG  ALIGN=BOTTOM ALT="" SRC="img214.gif"><P>
+<DT><em> Aspect Ratio</em>
+<DD> <P><IMG  ALIGN=BOTTOM ALT="" SRC="img215.gif"><P> 
+ </DL>
+<P>
+<em> Convex area</em> and <em> area</em> are best described in Figure 
+<A HREF="Chap.html#figarea">1.9</A>.
+The region <b>A</b> gives a measure of the area of a segment while the convex
+area is obtained by summing <b>A, B, C, D, E, F, G,</b> and <b>H</b>. Convex perimeter
+is defined as the length of the hashed line. The secondary
+features associated with these features are  convexity and solidity are
+as defined below
+<P>
+<P><A NAME=3147>&#160;</A><A NAME=figarea>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img216.gif">
+<BR><STRONG>Figure 1.9:</STRONG> Area (<b>A</b>), convex area (<b>A+B +C+D+E+F+G+H</b>).<BR>
+<P>
+<DL ><DT><em> Convexity</em>
+<DD> <P><IMG  ALIGN=BOTTOM ALT="" SRC="img217.gif"><P>
+<DT><em> Solidity</em>
+<DD>  <P><IMG  ALIGN=BOTTOM ALT="" SRC="img218.gif"><P> 
+ </DL>
+<DL >
+<P>
+<DT><em> Extent</em>
+<DD>  <P><IMG  ALIGN=BOTTOM ALT="" SRC="img219.gif"><P> 
+ </DL>
+<P>
+Length and width make more sense when the body is rigid, on the other
+hand, if the object is really a worm or a noodle that is flexible, and
+the overall shape is an accident of placement, it would be much more
+meaningful to measure the length along the fiber axis and the width
+across it. To distinguish from length and width these are sometimes
+called fiber length and fiber width. <em> Curl</em> and <em> Elongation</em> are the
+secondary features that are associated with these features.
+<P>
+<DL ><DT><em> Curl</em>
+<DD>  <P><IMG  ALIGN=BOTTOM ALT="" SRC="img220.gif"><P>
+<DT><em> Elongation</em>
+<DD>  <P><IMG  ALIGN=BOTTOM ALT="" SRC="img221.gif"><P> 
+ </DL>
+<P>
+There is a definite advantage of using features which are <em> invariant
+under certain operations</em> compared to those that change. For example, the
+secondary features that are obtained as ratio of other primary features
+may prove to be more useful even when the two images (image from which
+knowledge was acquired and image to be interpreted) are scaled versions of
+each other or we are working in a multiresolution framework. Another example 
+which would work under different lighting
+conditions is the contrast in the gray levels between two adjacent
+regions. 
+Nevertheless, one can still use these <em> non-ratio</em> features
+provided one is aware as to how the features change 
+over scales (see Table <A HREF="Chap.html#tabrules_know">1.2</A>). This knowledge can be 
+appropriately used to solve the vision 
+task of image interpretation in the proposed multiresolution framework.
+<P>
+<H1><A NAME=SECTION00170000000000000000> Experimental Results</A></H1>
+<P>
+<A NAME=secscene_simulations>&#160;</A>
+<P>
+Experiments were carried out to validate the proposed scheme of joint
+segmentation and image interpretation in the framework of
+modular integration and multiresolution. Tests were conducted
+both  on real
+outdoor (road images) and indoor (computer images) images<A NAME=tex2html16 HREF="#3204"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A> of size <IMG  ALIGN=MIDDLE ALT="" SRC="img222.gif">
+which were either captured using the QuickTake100 digital camera (Figures
+in Section <A HREF="Chap.html#secroad_img">1.7.2</A>) or  using an <em> aim and
+shoot</em> Kodak Pro 111 camera and then scanning using the HP Color Scanner
+(Figures in Section <A HREF="Chap.html#sechira_img">1.7.3</A>).
+<P>
+<P><A NAME=3250>&#160;</A><A NAME=figfeatures>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img223.gif">
+<BR><STRONG>Figure:</STRONG> Features used in scene interpretation. 
+Table <A HREF="Chap.html#tabii_fea_ass">1.4</A> gives their mathematical definition.<BR>
+<P><H2><A NAME=SECTION00171000000000000000> Features Used</A></H2>
+<P>
+<A NAME=secii_features_used>&#160;</A>
+<P>
+Feature selection is an important aspect of image interpretation.  
+<P><A NAME=3252>&#160;</A><A NAME=tabii_fea_ass>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img224.gif">
+<BR><STRONG>Table:</STRONG> Definitions of features used in our simulations (Figure
+<A HREF="Chap.html#figfeatures">1.10</A>
+shows these features with an example).<BR>
+<P>
+The features used in all our experimental work are (Table
+<A HREF="Chap.html#tabii_fea_ass">1.4</A>):  (i) Single node cliques: area <IMG  ALIGN=MIDDLE ALT="" SRC="img225.gif">, perimeter
+<IMG  ALIGN=MIDDLE ALT="" SRC="img226.gif">, average gray level <IMG  ALIGN=MIDDLE ALT="" SRC="img227.gif">, the mass center <IMG  ALIGN=MIDDLE ALT="" SRC="img228.gif">, variance
+<IMG  ALIGN=MIDDLE ALT="" SRC="img229.gif">, compactness <IMG  ALIGN=MIDDLE ALT="" SRC="img230.gif"> and (ii) Two node cliques: contrast <IMG  ALIGN=MIDDLE ALT="" SRC="img231.gif">,  
+common perimeter ratio or boundary length <IMG  ALIGN=MIDDLE ALT="" SRC="img232.gif">.
+<P>
+<H2><A NAME=SECTION00172000000000000000> Road Images</A></H2>
+<P>
+<A NAME=secroad_img>&#160;</A>
+<P>
+Figures <A HREF="Chap.html#figscene_6">1.11</A>a and <A HREF="Chap.html#figscene_5">1.12</A>a are the original images
+of the scene to be interpreted and <A HREF="Chap.html#figscene_6">1.11</A>b and
+<A HREF="Chap.html#figscene_5">1.12</A>b are the wavelet transformed images of
+<A HREF="Chap.html#figscene_6">1.11</A>a and <A HREF="Chap.html#figscene_5">1.12</A>a respectively using the 4 tap
+Daubechies filter coefficients.  The <IMG  ALIGN=MIDDLE ALT="" SRC="img233.gif"> is segmented
+using the k-means clustering algorithm and refined using <IMG  ALIGN=MIDDLE ALT="" SRC="img234.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img235.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img236.gif"> as
+described in Section <A HREF="Chap.html#secii_scheme">1.5</A> (See Figure <A HREF="Chap.html#figwt">1.3</A>). The
+resulting image is displayed in Figure <A HREF="Chap.html#figscene_6">1.11</A>c and
+<A HREF="Chap.html#figscene_5">1.12</A>c.  Figure <A HREF="Chap.html#figscene_6">1.11</A>d, <A HREF="Chap.html#figscene_5">1.12</A>d and Figure
+<A HREF="Chap.html#figscene_6">1.11</A>e, <A HREF="Chap.html#figscene_5">1.12</A>e  depict segmentation and 
+interpretation of the scene at
+an intermediate stage. The final segmented image is shown in Figure
+<A HREF="Chap.html#figscene_6">1.11</A>f and <A HREF="Chap.html#figscene_5">1.12</A>f. The final interpreted image is
+shown in Figure <A HREF="Chap.html#figscene_6">1.11</A>g and <A HREF="Chap.html#figscene_5">1.12</A>g. The a priori
+knowledge (details regarding the acquization of knowledge can be found in
+[<A HREF="Chap.html#tr_Suni_96">64</A>]) that is used for interpreting the images in this
+section is tabulated in Table <A HREF="Chap.html#tabroad">1.5</A>.
+<P>
+<P><A NAME=3374>&#160;</A><A NAME=tabroad>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img237.gif">
+<BR><STRONG>Table:</STRONG> Knowledge base used for the road images (Section 
+<A HREF="Chap.html#secroad_img">1.7.2</A>).<BR>
+<P>
+<P>
+Figure <A HREF="Chap.html#figscene_6">1.11</A>f the segmentation is not perfect, for example the
+road is in fact divided into 2 different segments, but the interpretation
+block interprets both the segments as road and this is seen in Figure
+<A HREF="Chap.html#figscene_6">1.11</A>g. This is an indication that the segmentation and the
+interpretation modules cannot work independently, they work best when they
+work synergistically. This aspect of modular integration is also seen in
+Figure <A HREF="Chap.html#figscene_5">1.12</A>g, where the segments corresponding to sky (see
+Figure <A HREF="Chap.html#figscene_5">1.12</A>f ) are all merged into a single segment after
+interpretation.
+<P>
+<P><A NAME=3428>&#160;</A><A NAME=figscene_6>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img242.gif">
+<BR><STRONG>Figure 1.11:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img240.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img241.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P>
+<P>
+<P><A NAME=3429>&#160;</A><A NAME=figscene_5>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img247.gif">
+<BR><STRONG>Figure 1.12:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img245.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img246.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P>
+<P>
+
+<P>
+<P><A NAME=3430>&#160;</A><A NAME=figscene_1>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img252.gif">
+<BR><STRONG>Figure 1.13:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img250.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img251.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P>
+<P>
+Figure <A HREF="Chap.html#figscene_1">1.13</A>a is the original image of a scene to be
+interpreted. The interpretation labels that one is looking for in this
+image are (i) sky, (ii) tree, (iii) sidewalk and (iv) road. 
+Interpretation was done as described in Section <A HREF="Chap.html#secii_scheme">1.5</A>.
+Figure <A HREF="Chap.html#figscene_1">1.13</A>b is the the wavelet transformed images of Figure
+<A HREF="Chap.html#figscene_1">1.13</A>a. Figure <A HREF="Chap.html#figscene_1">1.13</A>c depicts the output of Step I
+of the proposed joint segmentation and image interpretation scheme (see
+Section <A HREF="Chap.html#secii_scheme">1.5</A>). Figure <A HREF="Chap.html#figscene_1">1.13</A>d and Figure
+<A HREF="Chap.html#figscene_1">1.13</A>e depict segmentation and interpretation of the scene at
+an intermediate stage. The final segmented image is shown in Figure
+<A HREF="Chap.html#figscene_1">1.13</A>f and the final interpreted image is shown in Figure
+<A HREF="Chap.html#figscene_6">1.11</A>g. Unlike the earlier experimental results, here the
+segmented image is perfect and so the interpretation module assigns
+different labels to different segments and hence there is no merging of
+segments.
+<P>
+<H2><A NAME=SECTION00173000000000000000> Building Image</A></H2>
+<P>
+<A NAME=sechira_img>&#160;</A>
+<P>
+Figure <A HREF="Chap.html#figbuild_2">1.14</A>a is the image to be interpreted using the
+knowledge acquired and tabulated in Table <A HREF="Chap.html#tabhira_know">1.6</A>. 
+Observe
+that we have two interpretation labels (Table <A HREF="Chap.html#tabhira_know">1.6</A>)
+corresponding to the Tree, namely, Tree (Left) and Tree (Right), in our
+knowledge base, 
+this to take care of the fact that tree cover occurs in two different 
+shapes and having different gray level variation. Nevertheless,
+  we interpret either of the
+ labels as Tree in our simulations and hence have a single legend (Figure
+ <A HREF="Chap.html#figbuild_2">1.14</A>). A similar observation is true for the interpretation
+ label Build.
+Figure 
+<A HREF="Chap.html#figbuild_2">1.14</A>b is the wavelet transformed image and
+<A HREF="Chap.html#figbuild_2">1.14</A>c is the output of the k-means segmentation algorithm and
+Figure <A HREF="Chap.html#figbuild_2">1.14</A>f is the resultant image obtained after refining
+the k-means segmented image using the difference image information present
+in Figure <A HREF="Chap.html#figbuild_2">1.14</A>b.  Figure <A HREF="Chap.html#figbuild_2">1.14</A>d depicts
+segmentation and Figure <A HREF="Chap.html#figbuild_2">1.14</A>e depicts interpretation of the
+scene at an intermediate stage. Figure <A HREF="Chap.html#figbuild_2">1.14</A>g gives the final
+interpreted image.  In this example, the interpretation merges segments of
+sky by assigning them labels corresponding to sky. In fact, as seen from
+Figure <A HREF="Chap.html#figbuild_2">1.14</A>g, there are three different segments from Figure
+<A HREF="Chap.html#figbuild_2">1.14</A>f which have been correctly assigned the same label, sky.
+<P>
+
+<P>
+<P><A NAME=3479>&#160;</A><A NAME=tabhira_know>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img253.gif">
+<BR><STRONG>Table:</STRONG> Knowledge base used for outdoor building scene (Section 
+<A HREF="Chap.html#sechira_img">1.7.3</A>).<BR>
+<P>
+<P>
+<P><A NAME=3504>&#160;</A><A NAME=figbuild_2>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img258.gif">
+<BR><STRONG>Figure 1.14:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img256.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img257.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P><H2><A NAME=SECTION00174000000000000000> Computer Images</A></H2>
+<P>
+<A NAME=seccompi_img>&#160;</A>
+<P>
+Figures <A HREF="Chap.html#figcompi_0">1.15</A>a and <A HREF="Chap.html#figcompi_1">1.16</A>a are images captured in
+the laboratory using the Pulnix CCD camera with zoom. The interpretations
+that we are looking forward for are (i) background, (ii) screen, (iii)
+screen-frame, (iv) keyboard, (v) shoebox and  (vi) table-top.
+Figure <A HREF="Chap.html#figcompi_0">1.15</A>b and
+<A HREF="Chap.html#figcompi_1">1.16</A>b are the wavelet transformed images of Figures
+<A HREF="Chap.html#figcompi_0">1.15</A>a and <A HREF="Chap.html#figcompi_1">1.16</A>a respectively. Figures
+<A HREF="Chap.html#figcompi_0">1.15</A>c and <A HREF="Chap.html#figcompi_1">1.16</A>c are the output of the k-means
+segmentation algorithm after refinement of Figures <A HREF="Chap.html#figcompi_0">1.15</A>a and
+<A HREF="Chap.html#figcompi_1">1.16</A>a respectively. Figures <A HREF="Chap.html#figcompi_0">1.15</A>f and
+<A HREF="Chap.html#figcompi_1">1.16</A>f are the final segmentation and <A HREF="Chap.html#figcompi_0">1.15</A>g and
+<A HREF="Chap.html#figcompi_1">1.16</A>g are the finally interpreted images. An intermediate
+stage in the joint segmentation and interpretation scheme is shown in
+Figures <A HREF="Chap.html#figcompi_0">1.15</A>d, <A HREF="Chap.html#figcompi_1">1.16</A>d (segmentation) and Figures
+<A HREF="Chap.html#figcompi_0">1.15</A>e, <A HREF="Chap.html#figcompi_1">1.16</A>e (interpretation). The knowledge
+base that was used for the purpose of interpretation is shown in Table
+<A HREF="Chap.html#tabcompi">1.7</A>.
+<P>
+<P><A NAME=3586>&#160;</A><A NAME=tabcompi>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img259.gif">
+<BR><STRONG>Table:</STRONG> Knowledge base used for the indoor computer images(Section 
+<A HREF="Chap.html#seccompi_img">1.7.4</A>).<BR>
+<P>
+<P>
+As seen earlier, interpretation helps in refining segmentation and hence
+producing a better segmentation. Figure <A HREF="Chap.html#figcompi_0">1.15</A>f shows the
+shoebox as three segments, while after interpretation the three segments
+of the shoebox get labeled as shoebox (see Figure <A HREF="Chap.html#figcompi_0">1.15</A>g) and
+hence form a single segment. The spot above the shoebox looks like a
+rectangular strip and hence gets labeled as a shoebox, though it is
+because of a shadow formed by a black cloth kept behind the computer while
+capturing the image. A similar situation is seen in Figure
+<A HREF="Chap.html#figcompi_1">1.16</A>g where the background (above the keyboard and right of
+the monitor screen-frame) gets labeled as screen because of the shape
+which looks more like a screen. But for these, the labeling is correct in
+both the examples.
+<P>
+
+<P>
+<P><A NAME=3628>&#160;</A><A NAME=figcompi_0>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img264.gif">
+<BR><STRONG>Figure 1.15:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img262.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img263.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P>
+<P>
+<P><A NAME=3629>&#160;</A><A NAME=figcompi_1>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img269.gif">
+<BR><STRONG>Figure 1.16:</STRONG>  (a) Original image of size <IMG  ALIGN=MIDDLE ALT="" SRC="img267.gif">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <IMG  ALIGN=MIDDLE ALT="" SRC="img268.gif">, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.<BR>
+<P>
+<P>
+
+<P>
+The three sets of experimental results show that the proposed framework
+of  modular integration and multiresolution produces results which can
+only be better than that produced when there were to be no integration between
+the modules (just a feed forward interaction). The multiresolution aspect
+of the proposed framework not only helps in refining the segmented image,
+but we find that we need not interpret the image at the finest resolution
+namely <IMG  ALIGN=MIDDLE ALT="" SRC="img270.gif">; it is sufficient to stop interpretation at one
+level coarser namely at <IMG  ALIGN=MIDDLE ALT="" SRC="img271.gif"> without affecting the
+interpretation results. This helps in 
+reducing
+computational cost.
+<P>
+<H1><A NAME=SECTION00180000000000000000> Conclusion</A></H1>
+<P>
+<A NAME=secscene_conclusions>&#160;</A>
+<P>
+<H2><A NAME=SECTION00181000000000000000> Conclusion</A></H2>
+<P>
+The applicability of the proposed modular integration and multiresolution
+for the high-level vision task of image interpretation has been
+demonstrated by proposing a joint segmentation and image interpretation
+scheme. The proposed scheme has been tested on both indoor and outdoor
+real images and it is found that the scheme is not only capable of
+interpreting the segments correctly but also is able to produce a good
+segmented image. The main reason for the good performance (in terms of 
+correct interpretation) of the
+proposed scheme lies in the synergistic integration of the segmentation 
+and the interpretation  modules. This
+supports the belief which led to the development of the proposed 
+framework (Chapter <A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>),  that integration of different 
+modules is very useful.
+<P>
+The use of multiresolution for joint segmentation and image interpretation
+has the following advantages: <UL><LI> the difference image which results 
+as an outcome of multiresolution pyramid, is used to refine the k-means
+segmented image (See Figure <A HREF="Chap.html#figexplain">1.7</A> part d), <LI> it reduces the
+computational time <UL><LI> by using the interpretation labels 
+estimated at
+coarse resolution to initialize the interpretation labels at fine
+resolution and thus reducing the number of iteration for the
+interpretation module to converge, and <LI> by actually requiring the
+interpretation to be carried out on <IMG  ALIGN=MIDDLE ALT="" SRC="img272.gif"> of the total number of pixels of
+the image to be interpreted. In all our experiments we found that stopping
+the interpretation at one resolution below the finest resolution, namely
+stopping at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img273.gif">, did not effect the interpretation
+results. 
+ </UL></UL>
+<P>
+
+<P>
+<H2><A NAME=SECTION00182000000000000000> Future Direction</A></H2>
+<P>
+<UL><LI> Building a knowledge base is an important aspect of image
+interpretation and needs to be explored. One could possibly generate
+knowledge by constructing conditional probabilities from the test images
+and use the resultant density functions instead of what is shown in
+Figures <A HREF="Chap.html#figbasis_function">1.5</A> or <A HREF="Chap.html#figappen_cost">1.6</A> as the basis
+function. Figure <A HREF="Chap.html#figtest_basis">1.17</A> gives a sample plot of one such
+basis function. The <b>x</b> - axis is the feature value (in this case it is
+the gray level value) and <b>y</b> - axis shows the normalized frequency of
+occurrence of gray level subtracted from 1.  This would be more realistic
+than the presently used linear basis function (Figure
+<A HREF="Chap.html#figbasis_function">1.5</A>). The other possibility is to
+design a neural network to derive knowledge. One could also think in 
+terms of integrating the knowledge base module into the interpretation 
+system.
+<P>
+ <P><A NAME=3652>&#160;</A><A NAME=figtest_basis>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img274.gif">
+<BR><STRONG>Figure:</STRONG> A possible basis function which could be used in the cost 
+function instead of the used basis function in Figure 
+<A HREF="Chap.html#figbasis_function">1.5</A>.<BR>
+<P>
+<P>
+<LI> Build some amount of user interactibility into the 
+interpretation scheme. The interactibility may prove useful in the
+segmentation stage, since it is well known that no known segmentation
+scheme exist that can give a <em> good</em> segmentation in all parts of the
+image. User interactibility would enhance the overall performance of the
+proposed joint segmentation and image interpretation scheme.
+<P>
+
+<P>
+<LI> Some study is called for to decide on how the features should be
+chosen. This study would come in handy and would provide guidelines as to
+the choice of the features. The choice of the features would invariably 
+depend on some a priori knowledge that the user has about the scene to be 
+interpreted.
+<P>
+
+<P>
+<LI> One could think of using an additional cue in the form of color to
+enhance the interpretation scheme [<A HREF="Chap.html#bk_Ohta_85">27</A>]. The other effort
+could go towards construction of a single energy function which would do
+both segmentation and image interpretation similar to [<A HREF="Chap.html#jr_Kim_95">65</A>],
+but in a multiresolution framework.
+<P>
+
+<P>
+<LI> One major drawback of the image interpretation scheme is the
+inherent assumption that one makes when choosing the features. The
+strongest one being that the details of the scene are <em> known</em> even
+before the proposed algorithm is put to test, meaning we are a priori
+aware as to what to expect from the scene. This is in some sense
+constraining the algorithm by telling it what to expect in the scene. One
+should think of schemes which either integrate these constraints into the
+knowledge base or possibly take care by some other means. Even a small
+breakthrough in this path will be a good contribution.
+<P>
+</UL><H1><A NAME=SECTION00200000000000000000> Conclusion</A></H1>
+<P>
+<A NAME=chapconclude>&#160;</A>
+
+<P>
+<em> Human mind is like a parachute: works best when open </em> - Anonymous
+<P>
+
+<P>
+<H1><A NAME=SECTION00210000000000000000> Conclusion</A></H1>
+<P>
+In this thesis, we have developed a framework for solving low-level and
+high-level computer vision problems and have validated the proposed framework
+by applying it to the following three problems, namely, (i) color image
+restoration, (ii) disparity estimation from stereo images and (iii) image
+interpretation. The framework of modular integration and multiresolution
+that has been developed in this thesis is motivated by (i) the way the HVS
+functions because without doubt the HVS is the best vision system and a
+superb image processor and (ii) the need for a correct and computationally
+efficient solution for solving any computer vision task. The fact that the
+given vision task can be best solved by first dividing the task into
+smaller subtasks and then synergistically integrating them is demonstrated
+by the simulation results where it is observed that the results obtained
+using the proposed scheme can only be better than those obtained when the
+modules have only feedforward interaction.
+<P>
+It is important to note that the developed framework is very general in
+nature and can be applied to any vision task, provided one is able to (i)
+divide the vision task in hand into smaller tasks and (ii) is aware of the
+manner in which the desired vision task output varies with resolution.
+This is not a handicap, because this only means that the understanding of
+the vision task be clear, this is analogous to the fact that an algorithm
+cannot be made any faster if there exists no <em> parallelism</em> what so
+ever in the proposed scheme or the algorithm.
+<P>
+In this thesis, we have only looked at a few problems in vision and have
+tried solving them in the modular integration and multiresolution
+framework. As required, we divided each of the vision task into subtasks
+(see Table <A HREF="#tabgen_probs"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) such that each of these modules interacted
+with one another, also, we have used the knowledge regarding the behavior
+of the vision task variables which are of interest over scales. The
+knowledge of the behavior of the output variable in general and the output
+variable of interest in particular is very essential, because these
+variables need to be passed from the coarse to the fine
+resolution. The behavior of the variables of interest are straightforward
+in some problems, like disparity in the stereo (Section <A HREF="#secMR"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) and
+restored image intensity values in image restoration when an additive
+model is assumed (Section <A HREF="#seccir_unsup_scheme"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>, Step III), but it is
+not so straightforward when a model that includes blur is used (Appendix
+<A HREF="#chapblur_over_scales"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>).
+<P>
+It should be noted that the choice of a certain model, certain technique
+or a certain scheme in this thesis is only incidental. They have been used
+to demonstrate the validity and applicability of the proposed
+framework. In fact they can be easily replaced by any other 
+equivalent technique or scheme
+without any affect, for 
+example (i) the simulated annealing algorithm for
+energy minimization could have been replaced by genetic algorithm, without 
+affecting the functioning of the proposed
+framework, and (ii) in case of image interpretation, the MRF based
+interpretation module could have been replaced by a knowledge base based
+module or a Hidden Markov Model (HMM) module.
+<P>
+The use of a pyramid structure which decreases in octaves, in this thesis
+is not a restriction. One could use a non-octave sampled pyramid
+[<A HREF="Chap.html#jr_Kim_93a">66</A>,<A HREF="Chap.html#bk_Pele_87">67</A>] (one such construction is given in Appendix
+<A HREF="#appcustom_made"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>) and still the framework would support such a
+pyramid. However, the way the pyramids are constructed would reflect on
+the way the variables of interest would be passed from the coarser
+resolution to the finer resolution.
+<P>
+<H1><A NAME=SECTION00220000000000000000> Future Directions</A></H1>
+<P>
+ <UL><LI> A significant extension to this work would be a mathematical backing
+justifying the use of modular integration and multiresolution as a <em>
+good</em> framework. The <em> goodness</em> could be measured in terms of (i) how
+close the obtained solution is from the actual solution and (ii) in terms
+of computational complexity.
+<P>
+ <LI> We have only concentrated on images that come from a single sensor.
+It is well known experimentally, that animals use information coming from
+more than one sensor and the specific modalities in the fusion of
+information is dictated by the application, namely the domain and the
+manner in which the animal functions [<A HREF="Chap.html#bk_Agga_90">23</A>]. For example, it is
+known that the pit vipers and boid snakes combine information coming from
+thermal and visual imagery, owls on the other hand use acoustic and visual
+imagery. Keeping this in mind, it would be a better idea to look at the
+details coming from different sensor modalities. This will prove useful
+because multiple sensors that sense different physical properties of the
+same scene provide additional information that can be used to minimize the
+ambiguity in interpreting the scene.
+<P>
+ <LI> Though we have applied the developed framework for three specific
+problems, we conjecture that the proposed a framework could be used to
+effectively solve any computer vision problems. In Table <A HREF="Chap.html#tabfuture">2.1</A> 
+we look at a few problems in the perspective of the developed modular 
+integration and multiresolution framework.
+<P>
+ <P><A NAME=3680>&#160;</A><A NAME=tabfuture>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img275.gif">
+<BR><STRONG>Table 2.1:</STRONG> Vision tasks in the modular integration and multiresolution 
+framework<BR>
+<P></UL>
+<P>
+
+<P>
+
+<P>
+<P><A NAME=SECTIONREF><H2>References</H2></A><P>
+<DL COMPACT>
+<DT><A NAME=bk_Scha_89><STRONG>1</STRONG></A><DD>
+R. J. Schalkoff,
+ <em> ``Digital image processing and computer vision''</em>,
+ John Wiley and Sons, Singapore, 1989.
+<P>
+<DT><A NAME=bk_Gras_69><STRONG>2</STRONG></A><DD>
+A. Grasselli,
+ <em> ``Automatic interpretation and classification of images''</em>,
+ Academic Press, New York, 1969.
+<P>
+<DT><A NAME=bk_Andr_69><STRONG>3</STRONG></A><DD>
+H. C. Andrews,
+ <em> ``Automatic interpretation and classification of images by use
+  of the Fourier domain''</em>,
+ Academic Press, New York, 1969.
+<P>
+<DT><A NAME=bk_Nara_69><STRONG>4</STRONG></A><DD>
+R. Narasimham,
+ <em> ``On the Description, generation and recognition of classes of
+  pictures''</em>,
+ Academic Press, New York, 1969.
+<P>
+<DT><A NAME=pr_Hofm_85><STRONG>5</STRONG></A><DD>
+I. Hofmann, H. Niemann, and G. Sagerer,
+ ``Model based interpretation of image sequences from the heart'',
+ in <em> Proceedings of an international workshop held in Amsterdam,
+  Holland</em>, 1985.
+<P>
+<DT><A NAME=jr_Sage_88><STRONG>6</STRONG></A><DD>
+C. Sagerer,
+ ``Automatic interpretation of medical image sequences'',
+ <em> Pattern Recognition Letters</em>, pp. 87--102, 1988.
+<P>
+<DT><A NAME=phd_Kars_89><STRONG>7</STRONG></A><DD>
+N. Karssemeijer,
+ <em> ``Interpretation of medical images by model guided
+  analysis''</em>,
+ PhD thesis, Katholieke Universiteit Leuven, 1989.
+<P>
+<DT><A NAME=jr_Bald_92><STRONG>8</STRONG></A><DD>
+R. A. Baldock,
+ ``Trainable models for the interpretation of biomedical images'',
+ <em> Image and Vision Computing</em>, vol. 10, pp. 444--450, 1992.
+<P>
+<DT><A NAME=jr_Coot_94><STRONG>9</STRONG></A><DD>
+T. F. Cootes, A. Hill, C. J. Taylor, and J. Haslam,
+ ``Use of active shape models for locating structure in medical
+  images'',
+ <em> Image and Vision Computing</em>, vol. 12, pp. 355--365, 1994.
+<P>
+<DT><A NAME=pr_Desa_92><STRONG>10</STRONG></A><DD>
+J. Desachy,
+ ``A knowledge-based system for satellite image interpretation'',
+ in <em> Proceedings 11th International Conference on Pattern
+  Recognition</em>, 1992, pp. 198--200.
+<P>
+<DT><A NAME=bk_Naga_80><STRONG>11</STRONG></A><DD>
+M. Nagao and T. Matsuyama,
+ <em> ``A structural analysis of complex aerial photographs''</em>,
+ Plenum, New York, 1980.
+<P>
+<DT><A NAME=pr_Mcke_85><STRONG>12</STRONG></A><DD>
+J. D. McKendrick and M. Lybanon,
+ ``Knowledge-based interpretation aids to the navy oceanographic
+  image analyst'',
+ in <em> Proceedings: Image Understanding Workshop</em>, 1985, pp. 61--63.
+<P>
+<DT><A NAME=pr_Mcke_87><STRONG>13</STRONG></A><DD>
+D. M. McKeown and W. A. Harvey,
+ ``Automating knowledge acquisition for aerial image
+  interpretation'',
+ in <em> Image Understanding Workshop</em>, 1987.
+<P>
+<DT><A NAME=pr_Silb_88><STRONG>14</STRONG></A><DD>
+T. M. Silberberg,
+ ``Multiresolution aerial image interpretation'',
+ in <em> Proceedings Image Understanding Workshop</em>, 1988, pp.
+  505--511.
+<P>
+<DT><A NAME=pr_Kuan_88><STRONG>15</STRONG></A><DD>
+D. Kuan, H. Shariat, K. Dutta, and P. Ransil,
+ ``A constraint-based system for interpretation of aerial imagery'',
+ in <em> Second International Conference on Computer Vision</em>, 1988.
+<P>
+<DT><A NAME=jr_Mcke_89><STRONG>16</STRONG></A><DD>
+D. M. McKeown, W. A. Harvey, and L. E. Wixson,
+ ``Automating knowledge acquisition for aerial image
+  interpretation'',
+ <em> CVGIP: Image Understanding</em>, vol. 46, pp. 37--81, 1989.
+<P>
+<DT><A NAME=pr_Garn_90><STRONG>17</STRONG></A><DD>
+P. Garnesson, G. Giraudon, and P. Montesinos,
+ ``An image analysis system, application for aerial imagery
+  interpretation'',
+ in <em> Tenth International Conference on Pattern Recognition</em>, 1990.
+<P>
+<DT><A NAME=pr_Venka_90><STRONG>18</STRONG></A><DD>
+V. Venkateswar and R. Chellappa,
+ ``A framework for interpretation of aerial images'',
+ in <em> Tenth International Conference on Pattern Recognition</em>, 1990.
+<P>
+<DT><A NAME=phd_Schu_94><STRONG>19</STRONG></A><DD>
+Klamer Schutte,
+ <em> ``Knowledge Based Recognition of Man-Made
+  Objects''</em>,
+ PhD thesis, University of Twente, February 1994.
+<P>
+<DT><A NAME=pr_Drap_87><STRONG>20</STRONG></A><DD>
+B. A. Draper, R. T. Collins, and J. Brolio et al.,
+ ``Tools and experiments in the knowledge-directed interpretation of
+  road scenes'',
+ in <em> Image Understanding Workshop</em>, 1987.
+<P>
+<DT><A NAME=pr_Ozak_88><STRONG>21</STRONG></A><DD>
+Y. Ozaki, K. Sato, and S. Inokuchi,
+ ``Rule-driven processing and recognition from range image'',
+ in <em> International Conference on Pattern Recognition</em>, 1988, pp.
+  804--807.
+<P>
+<DT><A NAME=pr_Chel_90><STRONG>22</STRONG></A><DD>
+D. M. Chelberg,
+ ``Uncertainty in interpretation of range imagery'',
+ in <em> Third International Conference on Computer Vision</em>, 1990.
+<P>
+<DT><A NAME=bk_Agga_90><STRONG>23</STRONG></A><DD>
+J. K. Aggarwal and N. Nandhakumar,
+ ``Multisensor fusion for automatic scene interpretation'',
+ in <em> Analysis and Interpretation of Range Images</em>, R. C. Jain and
+  A. K. Jain, Eds., chapter 8, pp. 339--361. Springer-Verlag, New York, 1990.
+<P>
+<DT><A NAME=bk_Rame_90><STRONG>24</STRONG></A><DD>
+R. C. Jain and A. K. Jain,
+ <em> ``Analysis and Interpretation of Range Images''</em>,
+ Springer-Verlag, 1990.
+<P>
+<DT><A NAME=pr_Stra_90><STRONG>25</STRONG></A><DD>
+T. M. Strat and M. A. Fischler,
+ ``A context-based recognition system for natural scenes and complex
+  domains'',
+ in <em> Image Understanding Workshop</em>, 1990, pp. 456--472.
+<P>
+<DT><A NAME=pr_Hild_93><STRONG>26</STRONG></A><DD>
+M. Hild and Y. Shirai,
+ ``Interpretation of natural scenes using multi-parameter default
+  models and qualitative constraints'',
+ in <em> International Conference on Computer Vision</em>, 1993, pp.
+  497--501.
+<P>
+<DT><A NAME=bk_Ohta_85><STRONG>27</STRONG></A><DD>
+Y. Ohta,
+ <em> ``Knowledge based interpretation of outdoor natural color
+  scenes''</em>,
+ Pitman, Boston, 1985.
+<P>
+<DT><A NAME=pr_Silb_87><STRONG>28</STRONG></A><DD>
+T. M. Silberberg,
+ ``Infrared image interpretation using spatial and temporal
+  knowledge'',
+ in <em> Workshop on Computer Vision</em>, 1987, pp. 264--267.
+<P>
+<DT><A NAME=jr_Nand_88><STRONG>29</STRONG></A><DD>
+N. Nandhakumar and J. K. Aggarwal,
+ ``Integrated analysis of thermal and visual images for scene
+  interpretation'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, vol.
+  10, pp. 469--481, 1988.
+<P>
+<DT><A NAME=jr_Tayl_86><STRONG>30</STRONG></A><DD>
+A. Taylor, A. Gross, D. C. Hogg, and D. C. Mason,
+ ``Knowledge-based interpretation of remotely sensed images'',
+ <em> International J. of Visual Computing</em>, vol. 4, pp. 67--83, 1986.
+<P>
+<DT><A NAME=pr_Clem_92><STRONG>31</STRONG></A><DD>
+V. Clement, G. Giraudon, and S. Houzelle,
+ ``Interpretation of remotely sensed images in a context of
+  multisensor fusion'',
+ in <em> Second European Conference on Compute Vision</em>, 1992.
+<P>
+<DT><A NAME=jr_Zhan_87><STRONG>32</STRONG></A><DD>
+Z. Zhang and M. Simaan,
+ ``A rule-based interpretation system for segmentation of seismic
+  images'',
+ <em> Pattern Recognition</em>, vol. 20, pp. 45--53, 1987.
+<P>
+<DT><A NAME=pr_Hell_92><STRONG>33</STRONG></A><DD>
+A. J. Heller, D. M. LaRocque, and J. L. Mundy,
+ ``The interpretation of synthetic aperture radar images using
+  projective invariants and deformable templates'',
+ in <em> DARPA Image Understanding Workshop</em>, 1992, pp. 831--837.
+<P>
+<DT><A NAME=jr_Cchu_91><STRONG>34</STRONG></A><DD>
+C. C. Chu and J. K. Aggarwal,
+ ``The interpretation of laser radar images by a knowledge-based
+  system'',
+ <em> Machine Vision and Applications</em>, vol. 4, pp. 145--163, 1991.
+<P>
+<DT><A NAME=jr_Kurt_90><STRONG>35</STRONG></A><DD>
+M. J. Kurtz, P. Mussio, and P. G. Ossorio,
+ ``A cognitive system for astronomical image interpretation'',
+ <em> Pattern Recognition Letters</em>, vol. 11, pp. 507--515, 1990.
+<P>
+<DT><A NAME=pr_Towe_88><STRONG>36</STRONG></A><DD>
+S. Towers and R. Baldock,
+ ``Application of a knowledge-based system to the interpretation of
+  ultrasound images'',
+ in <em> Ninth International Conference on Pattern Recognition</em>, 1988.
+<P>
+<DT><A NAME=jr_Robe_89><STRONG>37</STRONG></A><DD>
+V. Roberto, A. Peron, and P. L. Fumis,
+ ``Low-level processing techniques in geophysical image
+  interpretation'',
+ <em> Pattern Recognition Letters</em>, vol. 10, pp. 111--122, 1989.
+<P>
+<DT><A NAME=pr_Sugi_88><STRONG>38</STRONG></A><DD>
+K. Sugimoto, M. Takahashi, and F. Tomita,
+ ``Scene interpretation based on boundary representations of stereo
+  images'',
+ in <em> Ninth International Conference on Pattern Recognition</em>, 1988.
+<P>
+<DT><A NAME=jr_Pid_90><STRONG>39</STRONG></A><DD>
+T. P. Pridmore, J. E. W. Mayhew, and J. P. Frisby,
+ ``Exploiting image-plane data in the interpretation of edge-based
+  binocular disparity'',
+ <em> Computer Vision, Graphics, and Image Processing</em>, vol. 52, pp.
+  1--25, 1990.
+<P>
+<DT><A NAME=jr_Guil_85><STRONG>40</STRONG></A><DD>
+Y. Le Guilloux,
+ ``Automatic computation of motion in an image sequence, interest
+  for interpretation'',
+ <em> Signal Processing</em>, vol. 8, pp. 377--, 1985.
+<P>
+<DT><A NAME=jr_Mila_91><STRONG>41</STRONG></A><DD>
+A. Milano, F. Perotti, S. B. Serpico, and G. Vernazza,
+ ``A system for the interpretation of 3-D moving scenes from 2-D
+  image sequences'',
+ <em> International Journal of Pattern Recognition and Artificial
+  Intelligence</em>, pp. 765--796, 1991.
+<P>
+<DT><A NAME=pr_Tsui_88><STRONG>42</STRONG></A><DD>
+S. Tsuji,
+ ``Continuous image interpretation by a moving viewer'',
+ in <em> Ninth International Conference on Pattern Recognition</em>, 1988,
+  pp. 514--519.
+<P>
+<DT><A NAME=jr_Binf_82><STRONG>43</STRONG></A><DD>
+T. Binford,
+ ``Survey of model based image analysis systems '',
+ <em> Int. J. Robotics Res.</em>, pp. 587--633, 1982.
+<P>
+<DT><A NAME=pr_Smyr_88><STRONG>44</STRONG></A><DD>
+C. Smyrniotis and K. Dutta,
+ ``A knowledge-based system for recognizing man-made objects in
+  aerial images'',
+ in <em> International Conference on Computer Vision and Pattern
+  Recognition</em>, 1988, pp. 111--117.
+<P>
+<DT><A NAME=pr_Ball_xx><STRONG>45</STRONG></A><DD>
+D. H. Ballard, C. M. Brown, and J. A. Feldman,
+ ``An approach to knowledge-directed scene analysis'',
+ in <em> CVS</em>, 19.., pp. 271--281.
+<P>
+<DT><A NAME=pr_Miti_88><STRONG>46</STRONG></A><DD>
+A. Mitiche, A. Mansouri, and C. Meubus,
+ ``A knowledge based image interpretation system'',
+ in <em> International Conference on Pattern Recognition</em>, 1988.
+<P>
+<DT><A NAME=jr_Cchu_92><STRONG>47</STRONG></A><DD>
+C. C. Chu and J. K. Aggarwal,
+ ``Image interpretation using multiple sensing modalities'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, vol.
+  14, pp. 840--847, 1992.
+<P>
+<DT><A NAME=jr_Robe_93><STRONG>48</STRONG></A><DD>
+V. Roberto,
+ ``Knowledge-based understanding of signals: An introduction'',
+ <em> Signal Processing</em>, vol. 32, pp. 29--56, 1993.
+<P>
+<DT><A NAME=jr_Puli_93><STRONG>49</STRONG></A><DD>
+P. Puliti and G. Tascini,
+ ``Knowledge-based approach to image interpretation'',
+ <em> Image and Vision Computing</em>, vol. 11, pp. 122--128, 1993.
+<P>
+<DT><A NAME=jr_Smol_94><STRONG>50</STRONG></A><DD>
+J. Smolle, R. Hofmann-Wellenhof, and H. Kerl,
+ ``Pattern interpretation by cellular automata (PICA)- evaluation
+  of tumour cell adhesion in human melanomas'',
+ <em> Analytical Cellular Pathology</em>, vol. 7, pp. 91--106, 1994.
+<P>
+<DT><A NAME=jr_Evan_93><STRONG>51</STRONG></A><DD>
+R. Evangelista and O. Salvetti,
+ ``A morphometric and densitometric approach to image
+  interpretation'',
+ <em> Pattern Recognition and Image Analysis</em>, vol. 3, pp. 305--310,
+  1993.
+<P>
+<DT><A NAME=jr_Dick_91><STRONG>52</STRONG></A><DD>
+W. Dickson,
+ ``Feature grouping in a hierarchical probabilistic network'',
+ <em> Image and Vision Computing</em>, vol. 9, pp. 51--57, 1991.
+<P>
+<DT><A NAME=jr_Jens_92><STRONG>53</STRONG></A><DD>
+F. V. Jensen, H. I. Christensen, and J. Nielsen,
+ ``Bayesian methods for interpretation and control in multi-agent
+  vision systems'',
+ <em> Applications of Artificial Intelligence X: Machine Vision and
+  Robotics, SPIE Proceedings Series</em>, 1992.
+<P>
+<DT><A NAME=pr_Bish_92><STRONG>54</STRONG></A><DD>
+W. B. Mann and T. O. Binford,
+ ``An example of 3-D interpretation of images using Bayesian
+  networks'',
+ in <em> Proceedings DARPA Image Understanding Workshop,</em>, 1992.
+<P>
+<DT><A NAME=jr_Kuma_96><STRONG>55</STRONG></A><DD>
+V. P. Kumar and U. B. Desai,
+ ``Image interpretation using Bayesian networks'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  74--77, 1996.
+<P>
+<DT><A NAME=jr_Wilh_92><STRONG>56</STRONG></A><DD>
+W. Wilhelmi,
+ ``Image interpretation by algebraic topology'',
+ <em> Pattern Recognition and Image Analysis</em>, vol. 2, pp. 126--134,
+  1992.
+<P>
+<DT><A NAME=jr_Mode_92><STRONG>57</STRONG></A><DD>
+J. A. Modestino and J. Zhang,
+ ``A Markov random field model based approach to image
+  interpretation'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  606--615, 1992.
+<P>
+<DT><A NAME=jr_Kim_93b><STRONG>58</STRONG></A><DD>
+I. Y. Kim and H. S. Yang,
+ `` Efficient image labeling based on Markov random field and
+  error backpropagation network'',
+ <em> Pattern Recog.</em>, vol. 26, pp. 1695--1707, 1993.
+<P>
+<DT><A NAME=jr_Tene_77><STRONG>59</STRONG></A><DD>
+J. M. Tenenbaum and H. G. Barrow,
+ ``Experiments in interpretaion-guided segmentation'',
+ <em> Artificial Intelligence</em>, pp. 241--274, 1977.
+<P>
+<DT><A NAME=bk_Ruze_90><STRONG>60</STRONG></A><DD>
+R. Bajcsy, F. Solina, and A. Gupta,
+ <em> ``Segmentation versus Object Representation--Are They
+  Separable?''</em>,
+ Springer-Verlag, 1990.
+<P>
+<DT><A NAME=jr_Sonk_93><STRONG>61</STRONG></A><DD>
+M. Sonka, S. K. Tadikonda, and S. M. Collins,
+ ``Genetic algorithms in hypothesize-and-verify image
+  interpretation'',
+ <em> Proc. SPIE - Sensor Fusion VI</em>, pp. 236--247, 1993.
+<P>
+<DT><A NAME=jr_Mall_89><STRONG>62</STRONG></A><DD>
+S. G. Mallat,
+ ``Multifrequency channel decompositions of images and wavelet
+  models'',
+ <em> IEEE Tran. Acoustics, Speech and Signal Processing</em>, vol. 37,
+  pp. 2091--2110, 1989.
+<P>
+<DT><A NAME=bk_Russ_94><STRONG>63</STRONG></A><DD>
+John C. Russ,
+ <em> ``The image processing handbook''</em>,
+ CRC Press, Boca Raton, Florida, 1994.
+<P>
+<DT><A NAME=tr_Suni_96><STRONG>64</STRONG></A><DD>
+K. Sunil Kumar and U. B. Desai,
+ ``Joint segmentation and image interpretation'',
+ Tech. Rep. SPANN.96.2, Indian Institute of Technology - Bombay, May
+  1996, (http://144.16.100.100/ nil/doc/jseginter/tr.html).
+<P>
+<DT><A NAME=jr_Kim_95><STRONG>65</STRONG></A><DD>
+I. Y. Kim and H. S. Yang,
+ ``An integrated approach for scene understanding based on Markov
+  random field'',
+ <em> Pattern Recog.</em>, pp. 1887--1897, 1995.
+<P>
+<DT><A NAME=jr_Kim_93a><STRONG>66</STRONG></A><DD>
+M. G. Kim, I. Distein, and L. Shaw,
+ ``A prototype filter design approach to pyramid generation'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, vol.
+  15, pp. 1233--1240, 1993.
+<P>
+<DT><A NAME=bk_Pele_87><STRONG>67</STRONG></A><DD>
+S. Peleg, O. Federbusch, and R. Hummel,
+ ``Custom made pyramids'',
+ in <em> ``Parallel Computer vision''</em>, Leonard Uhr, Ed., pp.
+  125--146. Academic Press, 1987.
+<P>
+<DT><A NAME=jr_Van_92><STRONG>68</STRONG></A><DD>
+D. C. Van Essen, C. H. Anderson, and D. J. Felleman,
+ ``Information processing in the primate visual system: an
+  integrated systems perspective'',
+ <em> Science</em>, vol. 255, pp. 419--423, 1992.
+<P>
+<DT><A NAME=bk_Laks_93><STRONG>69</STRONG></A><DD>
+S. Lakshmanan and H. Derin,
+ ``Gaussian MRF at multiple resolutions'',
+ in <em> ``Markov Random Fields - theory and applications''</em>,
+  R. Chellappa and A. Jain, Eds., chapter 6, pp. 131--158. Academic Press, San
+  Diego, 1993.
+<P>
+<DT><A NAME=pr_Nand_94><STRONG>70</STRONG></A><DD>
+P. K. Nanda, U. B. Desai, and P. G. Poonacha,
+ ``A homotopy continuation method for parameter estimation in MRF
+  models and image restoration'',
+ in <em> International Symposium on Circuits and Systems</em>, 1994.
+<P>
+<DT><A NAME=bk_Clar_90><STRONG>71</STRONG></A><DD>
+J. J. Clark and A. L. Yullie,
+ <em> ``Data fusion for sensory information processing systems''</em>,
+ Kluwer Academics Publishers, 1990.
+<P>
+<DT><A NAME=jr_Gamb_89><STRONG>72</STRONG></A><DD>
+E. B. Gamble, D. Geiger, T. A. Poggio, and D. Weinshall,
+ ``Integration of vision modules and labeling of surface
+  discontinuities'',
+ <em> IEEE Tran. on Systems Man and Cybernetics</em>, pp. 1576--1581,
+  1989.
+<P>
+<DT><A NAME=jr_Gema_84><STRONG>73</STRONG></A><DD>
+S. Geman and D. Geman,
+ ``Stochastic relaxation, Gibbs distribution, and Bayesian
+  restoration of images'',
+ <em> IEEE Tran. on Pattern Analysis and Machine Intelligence</em>, pp.
+  721--741, 1984.
+<P>
+<DT><A NAME=pr_Suni_95><STRONG>74</STRONG></A><DD>
+K. Sunil Kumar and U. B. Desai,
+ ``A multiresolution approach to integrated optical flow
+  computation'',
+ in <em> International Conference on Image Processing and its
+  Applications</em>, 1995.
+</DL>
+<P>
+<H1><A NAME=SECTION00400000000000000000> Courses Taken</A></H1>
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img276.gif"><P><H1><A NAME=SECTION00500000000000000000> Publications Resulting from Thesis</A></H1>
+<P>
+<OL><LI> K. Sunil Kumar and U. B. Desai, ``New Algorithms for 3D Depth
+Estimation from Binocular Stereo'', <em> Journal of the Franklin Institute</em>, 
+Vol. 331B, No. 5, pp 531 - 554, 1994.
+<P>
+<LI> K. Sunil Kumar and U. B. Desai, ``Adaptive Algorithm for
+discontinuity Preserving Image Restoration'', <em> Proceedings of
+International Symposium on Circuits and Systems</em>, pp 399-402, May 1993,
+Chicago, Illinois, USA.
+<P>
+<LI> K. Sunil Kumar and U. B. Desai, ``Integrated Stereo Vision'',
+<em> Proceedings of the Asian Conference on Computer Vision</em>, November 1993,
+Osaka, Japan.
+<P>
+<LI>  K. Sunil Kumar and U. B. Desai, ``Integrated Stereo Vision - A
+Multiresolution Approach'', <em> Proceedings, <IMG  ALIGN=BOTTOM ALT="" SRC="img277.gif"> IAPR International
+Conference on Pattern Recognition</em>, pp 714-716, Jerusalem, Israel, 1994.
+<P>
+<LI>  K. Sunil Kumar and U. B. Desai, ``A Multiresolution approach to
+Integrated Optical Flow Computation'', <em> Proceedings of the Fifth
+International Conference on Image Processing and Applications</em> IPA-95, pp
+852-857, Heriot-Watt University, UK, 4-6 July 1995.
+<P>
+<LI> P. K. Nanda,  K. Sunil Kumar, Sameer Ghokale and U. B. Desai, ``A
+Multiresolution Approach to Color Image Restoration and Parameter
+Estimation Using Homotopy Continuation Method'', <em> Proceedings of the 
+second IEEE International Conference on Image Processing</em> (ICIP 95).
+<P>
+<LI> K. Sunil Kumar and U. B. Desai, ``Joint Segmentation and Image
+Interpretation'', <em> Proc. of the IEEE International Conference on Image 
+Processing</em> ICIP-96, Lausanne, Switzerland, 1996.
+<P>
+<LI>  K. Sunil Kumar and U. B. Desai, ``Joint Image Segmentation and
+Scene Interpretation'', Invited paper, <em> Fourth International 
+Conference on
+Control, Automation, Robotics and Vision</em>, ICARCV '96, 3-6 Dec, 1996,
+Singapore.
+<P>
+<LI> K. Sunil Kumar and U. B. Desai, ``Adaptive Algorithm for
+Discontinuity Preserving Signal Restoration'', <em> Proceeding of the 
+Discussion
+meeting on Recent Advances in Signal Processing</em>, pp 63-67, January 1991,
+Bangalore, India.
+<P>
+<LI> K. Sunil Kumar and U. B. Desai, ``Integrated Optical Flow
+Estimation'', <em> Proceedings of the National Conference on 
+Communication</em>, pp 161 - 168, March 1995, IIT Kanpur, India.
+<P>
+<LI> K. Sunil Kumar, P. K. Nanda, Sameer Ghokale and U. B. Desai,
+``Unsupervised Parameter Estimation Using Homotopy Continuation method for
+Color Image Restoration in a multiresolution framework'', <em> Proceedings
+Indian Conference on Pattern Recognition, Image Processing and Computer
+Vision</em>, pp 29 - 34, Dec 13-15, 1995, IIT Kharagpur, India.
+<P>
+
+</OL><H1><A NAME=SECTION00600000000000000000> Acknowledgments</A></H1>
+<P>
+I am grateful and wish to thank:
+<P>
+Professor Desai and Professor Poonacha for having put up with
+a such a noisy person like me and for giving me the freedom to do what I
+liked. They have been instrumental in making me a better person,
+academically and otherwise. It is just impossible to thank them. I only 
+wish that all supervisors were like them.
+<P>
+Professor Chaudhuri, for his comments on my work which have been
+helpful time and again. I need to mention that he has been available
+without a hint of annoyance to examine my work at very very short notices.
+<P>
+Professor Kannan for the discussions, encouragement and the friendly
+advises. Professor HN for being so helpful and enquiring my progress and
+giving the much needed encouragement. Professor Sudhakar for being very
+helpful and spending hours helping us procure a computer for the hostel.
+<P>
+May look more like a formality, but I am extremely thankful to the
+department of EE for all the help right from providing me funds to go and
+present papers at conferences to the computer that was provided in the RS
+301.  Mrs Mukerjee, Mrs Prabha, Mr Shirgoankar, and Mr Singh of the EE
+office for being of help without any sign of annoyance.
+<P>
+Hostel friends Gupta, Tagore, Appaji, and Palani for the affection and
+love they bestow upon me. I cannot help remember the great moments that we
+had together. The few time that we went out either shopping or dining have
+become outings worth remembering.  Namita, for being a great pal and for
+doing the initial proof reading. Sastry, Vidyalankar, Rishikesh,
+Hemachandra, BV, Ramanamurthy, Srinivas have been a source of inspiration
+over the e-mail and s-mail. Arya, Velu for all those bright ideas and the
+enthusiasm and the energy. Ramana's for the wonderful lunches and
+Hanumantha Rao for the chikki's and discussions on various topics.
+<P>
+Departmental pals, Milind, his presence has made things really different
+in the laboratory and the hostel.  Nilesh, for all the help and of course
+for the neat imitation on and off the mess table. JK's, Bhatt, Sanjay are
+the guys who have guided me when I was fresh, they do lend a hand even
+now.  Mani, Raju, Shree, for the discussion which have been of immense
+help on various topics.  More recently, Kaulgud for the oneliner's.
+Yeasin, for the Bengali that I never learnt. Nanda's, for the great
+lunches and dinners we have had together. Pillai, for the discussion we
+had ranging from academics to hostel affairs.
+<P>
+Signal Processing and Artificial Neural Networks Laboratory (popularly
+called the SPANN Lab) and Research Scholars room , my favorite hangouts in
+the department where I spent most of my time.  It will be difficult to
+forget these places.
+<P>
+Linux, the free operating system which made things very easy which
+otherwise I am sure would have been tough and boring. Email, though
+limited has been of immense help in exchanging information at an
+unbelievable speed. WWW, ftp and gopher for being of help to dig out
+information as and when required. Latex, the typesetter which I was forced
+to learn when I wrote my first report as a doctoral student (another
+thanks to Professor Desai), I wish I had captured the expression on my
+face when I saw the output of my first Tex ed report. Of course, this
+thesis owes its shape to Latex.  MHRD project on Computer Vision for
+supporting me indirectly for all the resources in the laboratory and for
+supporting me directly after I overstayed my scholarship. Convocation
+Hall, unminding its name for the regular movies, Lecture theater (LT) for
+the occasional dance, music and other programs, Vihar Lake and the Campus
+Temple, for being so serene that one visit could remove any though that
+lingers in ones mind for long, the FM radio, presented by my friends, that
+bounced back music 24 hours a day. My bicycle, which has been very handy 
+- for early morning or late night departmental visits!
+<P>
+Vergeese, Rama in the Hostel 1 mess for serving food in the hostel mess
+with so much love, plugging in an extra sweet dish or on a dull day or
+surprising you with an air-filled pulka. The fact that I have not had even
+a single stomach upset through out my stay in the hostel tells about the
+cooks.
+<P>
+Amma and Nana, for being so understanding and allowing me to do what I
+liked without an eyebrow raised. I doubt if I will ever be able to repay
+for their sacrifices. I feel so lucky to be brought up by these 4 careful
+hands - they have taught me the importance of money, time, love and
+sacrifice.  I just do not have words to say Thank you to them. Dr.
+Suneetha - my pretty little sister, who has shouldered responsibilities
+(which rightfully I should have shouldered) in the real testing moments in
+the family. Thank you Suneetha.
+<P>
+<H1><A NAME=SECTION00700000000000000000> Summary</A></H1>
+<P>
+
+<P>
+
+<P>
+Vision comes to human so naturally that the processing capability of the
+human visual system is often taken for granted. We neither realize 
+its complexity nor the difficulty in automating it. Problems in vision can
+be broadly categorized into (i) low-level vision and (ii) high-level
+vision. The vision tasks that make up for the low-level vision are, for
+example, edge detection, segmentation, optical flow estimation and depth
+estimation from stereo pair to name a few. The tasks of image recognition,
+scene interpretation or understanding, navigation make up the
+high-level vision.
+<P>
+In the generalized framework, a vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img278.gif"> can be considered to be
+performing the task of estimating an image attribute , say <IMG  ALIGN=BOTTOM ALT="" SRC="img279.gif">, from an observed
+image <IMG  ALIGN=MIDDLE ALT="" SRC="img280.gif"> or a sequence of observed images. For example, in case of the
+vision task of scene interpretation, <IMG  ALIGN=BOTTOM ALT="" SRC="img281.gif"> would correspond to the semantic
+labels associated with different regions in the image <IMG  ALIGN=MIDDLE ALT="" SRC="img282.gif">, or in case of
+disparity estimation from stereo, <IMG  ALIGN=BOTTOM ALT="" SRC="img283.gif"> would correspond to the disparity or 
+the depth 
+map. In many vision tasks, the observed image may not be used as it is in
+estimating the attribute  <IMG  ALIGN=BOTTOM ALT="" SRC="img284.gif">. In fact, in many vision tasks, it is some
+information derived from the observed image or images <IMG  ALIGN=MIDDLE ALT="" SRC="img285.gif"> which would be
+utilized. For example, in case of stereo vision, in addition to the
+observed image <IMG  ALIGN=MIDDLE ALT="" SRC="img286.gif">, one would use the zero crossings or edge information
+derived from the observed stereo pair. We refer to these variables derived
+from the observed image <IMG  ALIGN=MIDDLE ALT="" SRC="img287.gif"> as <em> core variables</em> and denote them by
+<IMG  ALIGN=MIDDLE ALT="" SRC="img288.gif">. Note, in some vision tasks <IMG  ALIGN=MIDDLE ALT="" SRC="img289.gif">, for example image restoration. 
+There is one more item, which often gets relegated to the list of 
+assumptions which is used in solving a vision task. This is the a priori 
+knowledge, for example, in stereo vision one assumes that the range of 
+disparity is known. We denote the domain knowledge by  <IMG  ALIGN=BOTTOM ALT="" SRC="img290.gif">.
+<P>
+In order to present a formal computational model  for the vision 
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img291.gif">, we need a relation between the attribute   <IMG  ALIGN=BOTTOM ALT="" SRC="img292.gif"> and the pair <IMG  ALIGN=BOTTOM ALT="" SRC="img293.gif">. In our work, a probabilistic relationship is assumed, namely 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img294.gif">, the probability distribution of the attribute   <IMG  ALIGN=BOTTOM ALT="" SRC="img295.gif"> given the 
+core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img296.gif"> and the domain knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img297.gif">  is either known or 
+derived. We can now solve the attribute   estimation problem as a maximum 
+a posteriori (MAP) estimation problem. We can express the problem of 
+solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img298.gif"> as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img299.gif">, (ii) a priori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img300.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img301.gif">. The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img302.gif"> is obtained by solving the MAP estimation problem
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img303.gif"><P></blockquote>
+<P>
+Most vision tasks are motivated by the human visual system (HVS) which is
+undoubtedly the best vision system and an excellent image processor. HVS
+is robust in the sense it rarely gets <em> fooled</em>. Results obtained from
+experiments conducted on the visual systems of primates and experiments
+conducted in psychophysics and physiology of vision are used as factors to
+motivate the vision tasks, because HVS is one of those subjects which is
+least understood though very widely used.
+<P>
+<P><A NAME=3729>&#160;</A><A NAME=figsum_int_mult>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img304.gif">
+<BR><STRONG>Figure 2.1:</STRONG> The approach that we follow in the thesis - the modular integration 
+is along the <b>y</b>-axis and the multiresolution is seen along the <b>x</b>-axis. The 
+subtasks are shown with dotted rectangles and the vision task by dotted 
+rectangles. The largest solid rectangle is the vision task to be solved<BR>
+<P>
+<P>
+Experiments from psychophysics and physiology of the visual system
+[<A HREF="Chap.html#jr_Van_92">68</A>] motivate us to look at the problem of solving the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img305.gif"> by dividing it into <b>m</b> smaller tasks (called subtasks or
+modules) <IMG  ALIGN=MIDDLE ALT="" SRC="img306.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img307.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img308.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img309.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img310.gif">. Each subtask or module
+<IMG  ALIGN=MIDDLE ALT="" SRC="img311.gif"> interacts with other modules  <IMG  ALIGN=MIDDLE ALT="" SRC="img312.gif"> -- this is referred
+to as modular integration. For example, the low-level vision task of
+stereo vision can be looked upon as being made up of three smaller modules,
+namely (i) the feature extraction module, (ii) the matching module and
+(iii) the interpolation module. Integration or synergism of modules is a
+technique where various modules get together to perform the given task
+better than when working individually with only feedforward interaction. In 
+other
+words, the modules work as a team rather than as individual modules; as a 
+result the performance of each module is enhanced and this reflects in the
+overall improvement in the solution of the given vision task. Figure
+<A HREF="Chap.html#figsum_int_mult">2.1</A> shows the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img313.gif"> at any given resolution
+being divided into three subtasks <IMG  ALIGN=MIDDLE ALT="" SRC="img314.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img315.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img316.gif">. The MAP
+estimation problem is solved for each module <IMG  ALIGN=MIDDLE ALT="" SRC="img317.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img318.gif"> to
+obtain the optimal attribute  for each module, the attribute  corresponding to the
+vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img319.gif"> could be any one of these attributes.  For example, in 
+case of
+stereo vision we obtain attributes corresponding to the line fields and the 
+disparity field, though the attribute  of interest is only the disparity map. 
+Now, the problem of solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img320.gif"> can be expressed as:
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img321.gif">, (ii) a priori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img322.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img323.gif">. The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img324.gif"> is obtained by solving the MAP estimation problem for <IMG  ALIGN=MIDDLE ALT="" SRC="img325.gif"> ( <IMG  ALIGN=BOTTOM ALT="" SRC="img326.gif"> number of subtasks)
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img327.gif"><P>
+<P>
+Of all the attributes <IMG  ALIGN=MIDDLE ALT="" SRC="img328.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img329.gif">, one or more
+attributes would
+correspond to  the solution of the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img330.gif">. <IMG  ALIGN=MIDDLE ALT="" SRC="img331.gif"> would
+correspond to some initial assignment of the attribute <IMG  ALIGN=MIDDLE ALT="" SRC="img332.gif">.
+<P>
+</blockquote>
+<P>
+Again, experimental results show that a multi-frequency channel decomposition
+seems to be taking place in the human visual cortex [<A HREF="Chap.html#jr_Mall_89">62</A>]. 
+Experiments based on adaptation techniques show that at some stage in the
+HVS, the visual information in different frequency bands is processed
+separately. It was also experimentally found that the retina image seems
+to be decomposed in several frequency bands having approximately the same
+bandwidth on an octave scale. These experimental results motivate us to
+look at the vision tasks in a multiresolution framework.
+<P>
+Multiresolution is an efficient and effective way of representing data.
+The data at each resolution is the output of a bandpass filter with some
+center frequency (usually the center frequency of the filters are octave
+apart). The use of multiresolution is also motivated by the fact that the
+computational complexity of any vision task is large and multiresolution
+can be used effectively to reduce the computational complexity. Now, the
+problem of solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img333.gif"> is reduced to the task of solving
+<IMG  ALIGN=BOTTOM ALT="" SRC="img334.gif"> at each resolution. Figure <A HREF="Chap.html#figsum_int_mult">2.1</A> along the <b>x</b>-axis
+shows the multiresolution approach. Let, <IMG  ALIGN=BOTTOM ALT="" SRC="img335.gif"> represent the given
+vision task at finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img336.gif">. In the multiresolution approach
+the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img337.gif"> is not solved directly at the resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img338.gif">,
+but by solving the vision tasks <IMG  ALIGN=BOTTOM ALT="" SRC="img339.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img340.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img341.gif">,
+<IMG  ALIGN=BOTTOM ALT="" SRC="img342.gif"> (<IMG  ALIGN=MIDDLE ALT="" SRC="img343.gif">) at coarser resolutions.  Now, we can express
+the problem of solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img344.gif"> in the multiresolution
+framework as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img345.gif">, (ii) a priori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img346.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img347.gif">.
+The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img348.gif"> is obtained by solving the MAP 
+estimation problem for <IMG  ALIGN=MIDDLE ALT="" SRC="img349.gif">
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img350.gif"><P>
+<P>
+followed by a quadtree interpolation
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img351.gif"><P>
+<P>
+At the coarsest resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img352.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img353.gif"> would correspond
+to some initial estimate of the attribute <b>a</b>.
+<P>
+</blockquote>
+<P>
+In this thesis, we look at the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img354.gif"> in the framework of
+modular integration and multiresolution. The formulation of the vision
+task involving both modular integration and multiresolution would be as
+shown for the modular integration, except that the modular integration
+would be carried out at each resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img355.gif">. The problem of solving the
+vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img356.gif"> in the framework of multiresolution and modular
+integration can be expressed as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img357.gif">, (ii) a priori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img358.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img359.gif">.
+The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img360.gif"> is obtained by solving the MAP
+estimation problem for <IMG  ALIGN=MIDDLE ALT="" SRC="img361.gif"> (multiresolution) and  <IMG  ALIGN=MIDDLE ALT="" SRC="img362.gif"> (modular integration)
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img363.gif"><P>
+<P>
+Of all the attributes <IMG  ALIGN=MIDDLE ALT="" SRC="img364.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img365.gif">, one or more
+attributes
+(say <IMG  ALIGN=MIDDLE ALT="" SRC="img366.gif">) would correspond to  the solution of the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img367.gif">.
+The optimal solution <IMG  ALIGN=MIDDLE ALT="" SRC="img368.gif"> obtained at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img369.gif">
+is quadtree interpolated as:
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img370.gif"><P>
+and is used to solve the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img371.gif"> at the next finer
+resolution.
+<IMG  ALIGN=MIDDLE ALT="" SRC="img372.gif"> would correspond to some initial
+assignment of the attributes at the coarsest resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img373.gif">.
+</blockquote>
+<P>
+  In this thesis, we
+specifically look at three problems, namely,
+(i) color image restoration, (ii) disparity estimation from  
+stereo images, and
+(iii) image interpretation.  Table <A HREF="Chap.html#tabsum_probs">2.2</A> shows these vision
+tasks in the generalized framework. Associated with each vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img374.gif">,
+the knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img375.gif">, the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img376.gif">, the modules that are
+integrated and the attribute  that is extracted have been shown.
+<P>
+<P><A NAME=3796>&#160;</A><A NAME=tabsum_probs>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img377.gif">
+<BR><STRONG>Table 2.2:</STRONG> Some specific vision tasks in the generalized
+framework<BR>
+<P>
+<P>
+<b> Note:</b> Though in the strict sense color image
+restoration is a preprocessing task, we have categorized it as a low level
+vision task along with the stereo vision.
+<P>
+
+<P>
+
+</em></em></em></em><H1><A NAME=SECTION00710000000000000000> Color Image Restoration</A></H1>
+<P>
+In color image restoration, the image is modeled as a Markov Random field
+(MRF) and an additive noise degradation model (<IMG  ALIGN=MIDDLE ALT="" SRC="img378.gif">) is considered. 
+The color image restoration becomes one of estimating the parameter
+associated with the clique potentials coming from the imposed assumption
+of MRF model on the image, and then using the obtained parameters to
+restore the image. The problem can be stated as:
+<P>
+<blockquote> <em>
+Given the observed image <IMG  ALIGN=MIDDLE ALT="" SRC="img379.gif"> at resolution <b>k</b> and the degradation   
+model <IMG  ALIGN=MIDDLE ALT="" SRC="img380.gif">.  Find the optimum parameter
+and restored image pair (<IMG  ALIGN=MIDDLE ALT="" SRC="img381.gif"> ) such that
+ <P><A NAME=eqsum_un_sup_optimum>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img382.gif"><P>
+<P>
+Both <IMG  ALIGN=BOTTOM ALT="" SRC="img383.gif"> and <IMG  ALIGN=BOTTOM ALT="" SRC="img384.gif"> need to be estimated to
+satisfy the optimality criterion of (<A HREF="#equn_sup_optimum"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>). It is 
+difficult to find the optimum pair ( <IMG  ALIGN=MIDDLE ALT="" SRC="img385.gif"> )
+[<A HREF="Chap.html#bk_Laks_93">69</A>], and
+hence this problem is tackled by splitting the problem into two problems,
+namely,
+<DL ><DT><em> (i) Color image restoration:</em>
+<DD>
+<P><A NAME=eqsum_un_sup_restoration>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img386.gif"><P>
+<P>
+<DT><em> (ii) Parameter estimation:</em>
+<DD>
+<P><A NAME=eqsum_un_sup_parameter>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img387.gif"><P> 
+ </DL></blockquote>
+<P>
+Parameter estimation (<A HREF="Chap.html#eqsum_un_sup_parameter">2.3</A>) is done along the lines
+of [<A HREF="Chap.html#pr_Nand_94">70</A>] using the homotopy continuation method. The 
+restoration (<A HREF="Chap.html#eqsum_un_sup_restoration">2.2</A>) would involve the minimization 
+of the energy function
+<P>
+<P><A NAME=eqsum_energy>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img388.gif"><P>
+<P>
+  Equation (<A HREF="Chap.html#eqsum_energy">2.4</A>) results from the following 
+assumptions: (i) the additive noise degradation model, (ii) 
+the image being modeled as a MRF, and (iii) the noise being Gaussian. 
+In (<A HREF="Chap.html#eqsum_energy">2.4</A>), 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img389.gif">, and the three components <IMG  ALIGN=MIDDLE ALT="" SRC="img390.gif">, <b>k=1, 2, 3</b> correspond 
+to the three components of the color image. For example in the RGB color 
+coordinate system they would correspond to the red, green and blue 
+components. <IMG  ALIGN=MIDDLE ALT="" SRC="img391.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img392.gif"> are the line fields 
+defined as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img393.gif"><P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img394.gif"><P>
+<P>
+  In our simulation work we use
+<P><A NAME=eqsum_line>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img395.gif"><P>
+<P>
+Estimation of parameter <IMG  ALIGN=BOTTOM ALT="" SRC="img396.gif"> would imply estimation of <IMG  ALIGN=MIDDLE ALT="" SRC="img397.gif">
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img398.gif"> of (<A HREF="Chap.html#eqsum_energy">2.4</A>) and <IMG  ALIGN=BOTTOM ALT="" SRC="img399.gif"> which comes due
+to the degradation model. The parameter estimation module and the
+restoration module interact over resolutions in the proposed framework. In
+the parameter estimation and restoration algorithm, the schematic of which
+is shown in Figure <A HREF="Chap.html#figsum_unsup_scheme">2.2</A>, we assume that the degraded
+image at the coarsest resolution (which is obtained by low-pass filtering
+the degraded image at the finest resolution) to be the restored image. We
+estimate the clique parameters, <IMG  ALIGN=MIDDLE ALT="" SRC="img400.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img401.gif">, at this
+resolution. Having obtained the clique parameters we carry out image
+restoration (solve (<A HREF="Chap.html#eqsum_un_sup_restoration">2.2</A>)) at that resolution.
+As seen in Figure <A HREF="Chap.html#figsum_unsup_scheme">2.2</A>, a part of the restored image
+is used for the parameter estimation at the next fine resolution, this is
+followed by restoration using the recently obtained parameters. This
+procedure is carried out until restoration at the finest resolution.
+<P>
+It is known that if <IMG  ALIGN=BOTTOM ALT="" SRC="img402.gif"> is a MRF then <IMG  ALIGN=BOTTOM ALT="" SRC="img403.gif"> at a coarser resolution
+need <em> not</em> be a MRF; this result, for the case when <IMG  ALIGN=BOTTOM ALT="" SRC="img404.gif"> is a
+Gaussian-MRF has been shown by Lakshmanan and Derin [<A HREF="Chap.html#bk_Laks_93">69</A>]. In
+the proposed scheme, we have assumed that <em> if the image is a MRF at
+resolution <b>k</b>, then it is a MRF at coarser resolution <b>k-1</b> too</em>. The
+following discussion gives a plausibility argument for approximating <IMG  ALIGN=BOTTOM ALT="" SRC="img405.gif">
+at a coarser resolutions by a MRF model.
+<P>
+      Let <IMG  ALIGN=BOTTOM ALT="" SRC="img406.gif"> at resolution <b>k</b> be a MRF. Now, let
+<IMG  ALIGN=BOTTOM ALT="" SRC="img407.gif"> denote  <IMG  ALIGN=BOTTOM ALT="" SRC="img408.gif"> at one level coarser resolution, obtained
+from <IMG  ALIGN=BOTTOM ALT="" SRC="img409.gif"> at resolution <b>k</b> using the Gaussian pyramid approach or the
+wavelet transform method.  Since
+going from a fine resolution <b>k</b> to a coarse resolution <b>k-1</b> is a
+linear operation, we should be able to find an expression for the
+probability distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img410.gif">, given the probability
+distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img411.gif">.
+<P>
+Let <IMG  ALIGN=MIDDLE ALT="" SRC="img412.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img413.gif"> be the probability distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img414.gif">
+and <IMG  ALIGN=BOTTOM ALT="" SRC="img415.gif"> respectively. <IMG  ALIGN=MIDDLE ALT="" SRC="img416.gif"> is MRF but <IMG  ALIGN=MIDDLE ALT="" SRC="img417.gif"> need
+not be a MRF [<A HREF="Chap.html#bk_Laks_93">69</A>]. Now, define a Gibbs distribution using 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img418.gif"> as
+<P>
+       <P><IMG  ALIGN=BOTTOM ALT="" SRC="img419.gif"><P>
+<P>
+      Now <IMG  ALIGN=MIDDLE ALT="" SRC="img420.gif"> will not exhibit local dependence among its 
+      variables. The question is can we approximate <IMG  ALIGN=MIDDLE ALT="" SRC="img421.gif"> by
+      <IMG  ALIGN=MIDDLE ALT="" SRC="img422.gif"> such that <IMG  ALIGN=BOTTOM ALT="" SRC="img423.gif"> will exhibit local
+      dependencies. Perhaps we can talk about approximation such that
+      <IMG  ALIGN=BOTTOM ALT="" SRC="img424.gif"> exhibit local dependencies of a specified order. If
+      we can do this, then we can go ahead and approximate the 
+attribute  at resolution <b>k-1</b> to be a MRF. In this thesis, we assume a first 
+order model for <IMG  ALIGN=BOTTOM ALT="" SRC="img425.gif">. This assumption then parameterizes the
+     approximation by the clique parameters. We then do not solve an
+     approximation problem for obtaining the clique parameters, but
+     we learn the clique parameters given  the image data
+     (noisy or otherwise). Though we do not have a theoretical 
+justification for this approximation, the merit of the approximation is 
+judged by the good restoration results that we obtain.
+<P>
+We derive the behavior of the degradation model <IMG  ALIGN=MIDDLE ALT="" SRC="img426.gif">, which
+incorporates blur and is more general over scales. This information can
+be used to extend the color image restoration in the proposed framework to
+incorporate the general degradation model instead of the additive noise
+degradation model that we have used in this thesis to validate the 
+proposed scheme.
+<P>
+<P><A NAME=3911>&#160;</A><A NAME=figsum_unsup_scheme>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img427.gif">
+<BR><STRONG>Figure 2.2:</STRONG> Unsupervised parameter estimation and restoration scheme<BR>
+<P>
+<P>
+
+<P>
+</em><H1><A NAME=SECTION00720000000000000000> Disparity Estimation using Stereo Images</A></H1>
+<P>
+  The task of disparity estimation from stereo images can be stated as:
+<P>
+<blockquote> <em>
+<P>
+Given the stereo image pair <IMG  ALIGN=MIDDLE ALT="" SRC="img428.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img429.gif">, the 
+images of size <IMG  ALIGN=MIDDLE ALT="" SRC="img430.gif"> captured by the left and the right camera separated by a
+baseline distance of <b>b</b> and having a lens of focal length <b>f</b>. Find the
+depth map <IMG  ALIGN=MIDDLE ALT="" SRC="img431.gif">.
+<P>
+</blockquote>
+<P>
+The disparity <IMG  ALIGN=MIDDLE ALT="" SRC="img432.gif"> is estimated from the stereo image pair <IMG  ALIGN=MIDDLE ALT="" SRC="img433.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img434.gif">. If the pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img435.gif"> in the left image
+matches the pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img436.gif"> in the right image, then the disparity 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img437.gif"> at the pixel location <IMG  ALIGN=MIDDLE ALT="" SRC="img438.gif"> is <IMG  ALIGN=MIDDLE ALT="" SRC="img439.gif">. Most of the 
+literature assume zero disparity along the <b>y</b>-axis, namely, <IMG  ALIGN=MIDDLE ALT="" SRC="img440.gif"> 
+by invoking the epipolar line constraint. In this thesis, we impose the 
+epipolar constraint of the problem of stereo vision.
+<P>
+The integrated stereo vision, described in this thesis is a feature based
+disparity estimation scheme. It consists of three subtasks or modules,
+namely, (i) the feature extraction module, (ii) the feature matching
+module, and (iii) the disparity interpolation module.  The requirement for
+any <em> good</em> stereo algorithm is a dense and a correct disparity map. 
+The need for integration is not only motivated by the way
+of the human
+visual system works, as seen through experiments in psychophysics and 
+physiology
+of human visual system, but also by the requirement of a good stereo
+algorithm. Figure <A HREF="Chap.html#sum_STEREO_PROBLEM">2.3</A> shows that the requirements of a
+good stereo appear on either side of the modules; explicitly stated
+the two quantities that describe the goodness of a stereo algorithm,
+namely, (i) dense disparity, and (ii) correct disparity map are
+conflicting. This motivates the use of integration in stereo vision. In
+this thesis, we formulate the problem of stereo vision in a multiresolution
+framework where all the three modules associated with stereo interact in a
+fashion shown in Figure <A HREF="Chap.html#figsum_stereo">2.4</A>. This form of integration is 
+called modular integration in literature [<A HREF="Chap.html#bk_Clar_90">71</A>] and is 
+motivated by [<A HREF="Chap.html#jr_Gamb_89">72</A>].
+<P>
+<P><A NAME=3962>&#160;</A><A NAME=sum_STEREO_PROBLEM>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img441.gif">
+<BR><STRONG>Figure 2.3:</STRONG>  Procedure involved in a  typical  stereo  vision algorithm<BR>
+<P>
+<P>
+The procedure adopted for solving the integrated stereo vision is by
+constructing an energy function for each of the three modules which while
+achieving the requirement of the module when minimized, also integrates
+information available from other modules, so as not to overlook the
+outcome of the other modules. Integration is achieved through the use of
+line fields [<A HREF="Chap.html#jr_Gema_84">73</A>].  There is a Markov Random Field (MRF) model
+underlying the construction of each energy function. The disparity map
+estimated at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img442.gif"> is passed on to the next finer resolution
+<IMG  ALIGN=MIDDLE ALT="" SRC="img443.gif"> as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img444.gif"><P>
+<P>
+The schematic of the proposed scheme at a given resolution is shown in
+Figure <A HREF="Chap.html#figsum_stereo">2.4</A>.  The proposed scheme is validated by
+experimenting with some stereo image pairs used in literature. We present
+experimental results for both monoresolution (using only the given images
+at the finest resolution) and multiresolution cases.  Under each head we
+look at results obtained for (i) no integration, (ii) only precomputed
+edges, (iii) interactive edge computation and (iv) precomputed edges and
+interactive edge computation. It is found that the multiresolution
+formulation reduces the computational complexity of the disparity
+estimation scheme by approximately <IMG  ALIGN=MIDDLE ALT="" SRC="img445.gif"> times.  The 
+scheme developed for stereo 
+is quite general in the sense,  it can be used in any vision
+task which requires correspondence between two <em> related</em> images.
+However, the constraints that arise from the physics of the vision task
+need to be exploited. For example, the proposed scheme could be used for
+optical flow estimation [<A HREF="Chap.html#pr_Suni_95">74</A>], where the relation between
+images is temporal.  The integrated stereo scheme developed in the thesis
+gives accurate and dense disparity; it is computationally fast because of
+the good initial estimation of the disparity field coming as an outcome of
+the disparity estimated at  coarser resolution.
+<P>
+<P><A NAME=3979>&#160;</A><A NAME=figsum_stereo>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img446.gif">
+<BR><STRONG>Figure 2.4:</STRONG> The integrated stereo vision scheme<BR>
+<P>
+<P>
+
+<P>
+</em><H1><A NAME=SECTION00730000000000000000> Image Interpretation</A></H1>
+<P>
+Image interpretation is a high level vision task where we 
+try to obtain a description of the environment from which the image was 
+taken. It is  basically an analysis problem where we try to understand 
+the image by identifying some important features or objects and analyze 
+them depending on their spatial relationship. For high level 
+interpretation, the principle unit of information is a 
+symbolic description of an object, or a set of image events, sometimes 
+referred to as symbolic tokens, extracted from the image. The description
+includes relationships to other 2D symbolic tokens extracted from
+the sensory data, such as lines, segments and other objects in the 3D
+scene being viewed. It also includes pointers to elements of general
+knowledge that has been used to support the interpretation process.
+<P>
+  The vision task of scene interpretation can be stated as:
+<P>
+<blockquote> <em>
+<P>
+Given the image <IMG  ALIGN=MIDDLE ALT="" SRC="img447.gif"> which is a projection of a 3D scene onto the 2D
+plane at the finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img448.gif">, defined over the 2D lattice of size
+<IMG  ALIGN=MIDDLE ALT="" SRC="img449.gif">, and some knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img450.gif"> about the 3D environment.
+The problem of interpretation involves
+<P>
+<OL><LI>  segmenting the image <IMG  ALIGN=MIDDLE ALT="" SRC="img451.gif"> to
+obtain <IMG  ALIGN=MIDDLE ALT="" SRC="img452.gif"> and
+<LI>  interpreting the image <IMG  ALIGN=MIDDLE ALT="" SRC="img453.gif">, based on the segmented image 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img454.gif"> and the domain knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img455.gif">.
+</OL></blockquote>
+<P>
+<P><A NAME=3989>&#160;</A><A NAME=figsum_inter_scheme>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img456.gif">
+<BR><STRONG>Figure 2.5:</STRONG> The joint segmentation and interpretation scheme<BR>
+<P>
+<P>
+Scene  interpretation is a two phase process
+consisting of the segmentation module and the interpretation module. These
+two modules are not entirely independent; a good segmentation is a
+prerequisite for a correct interpretation and knowledge of the scene
+(explicitly stated - the interpretation of the scene) is essential for a
+good segmentation. This  suggests that there should exist interaction
+between the two modules. This fact was exploited first by Tenenbaum and
+Barrow [<A HREF="Chap.html#jr_Tene_77">59</A>] where they use interpretation to guide their
+segmentation algorithm.
+<P>
+In this thesis, we propose a joint scheme for  segmentation and
+image interpretation in a multiresolution framework. The schematic of the
+proposed scheme is shown in Figure <A HREF="Chap.html#figsum_inter_scheme">2.5</A>. A crude
+segmentation of the image is obtained by segmenting the low pass filtered
+version of the wavelet transform of the given image [<A HREF="Chap.html#jr_Mall_89">62</A>]
+using the k-means clustering algorithm. The segmented image is refined
+using (i) the difference images resulting from the wavelet transform of
+the observed image, and (ii) using a predefined threshold to merge all
+segments whose area is less than the prespecified <em> minimum area</em>. 
+This refinement reduces the number of segments in the k-means segmented
+image.
+<P>
+The problem of image interpretation is formulated in a MRF framework along
+the lines of Modestino and Zhang [<A HREF="Chap.html#jr_Mode_92">57</A>], except that we have an
+additional <em> no-interpretation</em> label, which is useful for refining the
+segmented image and hence bringing in the required interaction between the
+segmentation and interpretation module. The optimal interpretation labels
+<IMG  ALIGN=MIDDLE ALT="" SRC="img457.gif"> are obtained by solving the MAP estimation problem
+ <P><IMG  ALIGN=BOTTOM ALT="" SRC="img458.gif"><P>
+where, <IMG  ALIGN=BOTTOM ALT="" SRC="img459.gif"> is the knowledge associated with the 3D scene, <IMG  ALIGN=MIDDLE ALT="" SRC="img460.gif"> are the 
+core variables associated with the measurements made on the segmented 
+image, <b>n</b> corresponds to the number of segments in the segmented image 
+and <IMG  ALIGN=BOTTOM ALT="" SRC="img461.gif"> denotes the  possible interpretation labels. In our approach, 
+ the <em> no interpretation</em> label is used in refining the segmented
+image based on the interpreted image (see Figure <A HREF="Chap.html#figsum_inter_scheme">2.5</A>,
+the refinement occurs in the <em> interpretation -- refining segmentation</em> 
+loop) using the following criteria:
+<P>
+If region <b>j</b> has label <em> no-interpretation</em>, that is, <IMG  ALIGN=MIDDLE ALT="" SRC="img462.gif">
+takes the label <IMG  ALIGN=MIDDLE ALT="" SRC="img463.gif"> and if <b>l,m</b> are the
+regions adjacent to region <b>j</b>, then region <b>j</b> is assigned the
+interpretation label <IMG  ALIGN=MIDDLE ALT="" SRC="img464.gif"> corresponding to the region <b>l</b> if
+<IMG  ALIGN=MIDDLE ALT="" SRC="img465.gif"> <b>&gt; </b> <IMG  ALIGN=MIDDLE ALT="" SRC="img466.gif">. In other words,
+<P>
+<P><A NAME=eqsum_criteria>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img467.gif"><P>
+<P>
+The refined segmented image is subject to interpretation again. This
+process of refinement of the segmented image and interpretation is carried
+out a number of times until there is no region labeled as <em> no
+interpretation</em>. The outcome of this <em> interpretation -- refining
+segmentation</em> loop results in a correctly interpreted image. This
+resulting interpreted image can be additionally used to refine the
+segmented image to obtain the final segmented image.  The proposed scheme
+has been successfully tested on outdoor and indoor scenes.
+<P>
+
+</em><H1><A NAME=SECTION00740000000000000000> Conclusion</A></H1>
+<P>
+In this thesis a general framework based on modular integration and
+multiresolution for tackling vision problems is developed. The developed
+framework results in correct solutions (modular integration) and is
+computationally fast (multiresolution). The applicability and the
+usefulness of this formulation is illustrated by considering three vision
+problems: color image restoration, stereo vision and scene interpretation.
+We conjecture that other vision problems can be effectively tackled in the
+proposed general framework.
+<P>
+
+<P>
+<H1><A NAME=SECTION00800000000000000000>   About this document ... </A></H1>
+<P>
+ <STRONG></STRONG><P>
+This document was generated using the <A HREF="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 95.1 (Fri Jan 20 1995) Copyright &#169; 1993, 1994,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 -auto_navigation -address Sunil /home/malhar/nil/tex/LANIF/Chap.tex</tt>. <P>The translation was initiated by Sunil Kumar K. on Wed Dec 18 00:31:00 IST 1996<DL> <A NAME=391><DT>...independent <DD>if they are not independent, we could ``merge''
+core variables which are independent into one core variable and work with a
+core variable set of smaller size</A>
+<PRE><P>
+</PRE><A NAME=400><DT>...above <DD>since 92#92 takes
+a value near <b>1</b> when the interpretation labels coincide with 93#93, we need to properly modify it. One could use, for example 94#94</A>
+<PRE><P>
+</PRE><A NAME=3204><DT>...images <DD> url
+http://144.16.100.30/images/Interpretation/</A>
+<PRE><P>
+</PRE> </DL>
+<BR> <HR>
+<P><ADDRESS>
+Sunil
+</ADDRESS>
+</BODY>

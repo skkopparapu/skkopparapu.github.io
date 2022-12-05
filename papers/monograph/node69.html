@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Experiments</TITLE>
+<META NAME="description" CONTENT="Experiments">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node75.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1098"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1094"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1088"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1096"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1099"
+  HREF="node70.html">Interpreting (D.1)</A>
+<B>Up:</B> <A NAME="tex2html1095"
+  HREF="node66.html">Conclusions</A>
+<B> Previous:</B> <A NAME="tex2html1089"
+  HREF="node68.html">Proof of the Hammersley-Clifford</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00920000000000000000">
+Experiments</A>
+</H1>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:sa_orig"></A><A NAME="fig:sa_noisy"></A><A NAME="14967"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure C.2:</STRONG>
+Original and Noisy images.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Assume a simple degradation model , where 
+ be the observed, original and noise images respectively. The aim of
+image restoration is to recover <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> from the observation <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$">.
+We formulate the problem of image restoration as an optimization problem as
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\min_{\X } && \lambda_1 \sum_{ij} (Y_{ij} - \X _{ij})^2  \nonumber \\
+&+& \lambda_2 \left (
+\sum_{ij} (\X _{ij}-\X _{ij-1})^2 +
+\sum_{ij} (\X _{ij}-\X _{i-1j})^2 \right ) \nonumber  \\
+\end{eqnarray*}
+ -->
+<BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P>
+<BR CLEAR="ALL"><P></P>
+Simulated annealing algorithm is used to find the optimal solution .
+Figure <A HREF="node69.html#fig:arbit_restore">C.3(a)</A> and 
+<A HREF="node69.html#fig:real_restore">C.3(b)</A> shows restored images after  iterations 
+using the cooling schedule of the
+form <!-- MATH
+ $T_{k+1} = 0.9 \times T_{k}$
+ -->
+ (for computational reasons we do not use
+the inverse log cooling schedule).
+An arbitrary  was chosen for restoring
+Figure <A HREF="node69.html#fig:arbit_restore">C.3(a)</A> while the temperature variable was
+chosen as  which satisfies the discussion in this  
+appendix to restore image (Figure <A HREF="node69.html#fig:real_restore">C.3(b)</A>).
+The SNR improvement is for both the cases are tabulated in Table
+<A HREF="node69.html#tab:results">C.1</A>. Clearly, the right choice of the start temperature is useful
+in the restoration process.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="14999"></A>
+<TABLE>
+<CAPTION><STRONG>Table C.1:</STRONG>
+Restoration comparison.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">Figure  <A HREF="node69.html#fig:arbit_restore">C.3(a)</A></TD>
+<TD ALIGN="CENTER">Figure  <A HREF="node69.html#fig:real_restore">C.3(b)</A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">SNR improvement</TD>
+<TD ALIGN="CENTER">0.8 dB</TD>
+<TD ALIGN="CENTER">0.2 dB</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> (choice)</TD>
+<TD ALIGN="CENTER">using information in this appendix</TD>
+<TD ALIGN="CENTER">arbitrary</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$T_0$"> (initial)</TD>
+<TD ALIGN="CENTER">25</TD>
+<TD ALIGN="CENTER">250</TD>
+</TR>
+</TABLE>
+
+<A NAME="tab:results"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<DIV ALIGN="CENTER"><A NAME="fig:arbit_restore"></A><A NAME="fig:real_restore"></A><A NAME="15009"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure C.3:</STRONG>
+Restored images.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+Custom Made Pyramids
+<A NAME="chap:custom_made_pyramid"></A>Pyramids are data structures used to store and process images at multiple
+levels of resolutions. 
+Use of pyramids wavelet pyramid with dimensions given by power of
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img147.gif"
+ ALT="$2$"> is an unnecessary restriction on the construction of the pyramids
+[<A
+ HREF="node80.html#bk_Pele_87">116</A>]. The question of what size levels are most appropriate
+are not known but the size depends on the application and empirical
+experiences. Here we show how pyramids of arbitrary size reductions
+between levels can be constructed. The reduction level can be different in
+each direction and could also differ between levels. The basic idea is the
+use of spatial resampling technique used in graphics which is related to
+anti-sampling. 
+
+<P>
+For simplicity, we look at the case of one dimensional resampling. The 
+problem of constructing pyramids of arbitrary size reductions can be 
+defined as follows
+
+<P>
+<P>
+<BLOCKQUOTE><EM>Given <!-- MATH
+ $N, M \in I\!\! I$
+ -->
+, reduce a given vector <!-- MATH
+ $\left [ V_0, V_1, \cdots,
+V_{N-1} \right ]$
+ -->
+ of size  pixels to a vector <!-- MATH
+ $\left [ W_0, W_1,
+\cdots, W_{M-1} \right ]$
+ -->
+ of size  pixels. 
+</EM></BLOCKQUOTE>
+<P>
+
+<P>
+Observe that there is no restriction on both , except that <!-- MATH
+ $N,
+M \in I\!\! I$
+ -->
+. The three possibilities that arise are (i) 
+(interpolation), (ii)  (sub-sampling) and (iii)  (trivial).
+For the purpose of discussion we restrict ourselves to . 
+
+<P>
+The vector <!-- MATH
+ $\left [ W_0, W_1, \cdots,
+W_{M-1} \right ]$
+ -->
+ can be constructed by uniformly sampling the vector <!-- MATH
+ $\left [ V_0, V_1, \cdots, V_{N-1} \right ]$
+ -->
+ as follows: 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+W_i = \sum_{j=\lfloor \frac{i}{\rho} \rfloor}^{\lceil \frac{(i+1)}{\rho}\rceil} r_{ij}V_j
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:cus_made_uniform_sampling"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(52)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+r_{ij}= \left \{ \begin{array}{lll}
+               \min \{1, \rho, (\rho(j+1)-i) \} &\mbox{if }&\lfloor \frac{i}{\rho} \rfloor \leq  j \leq \frac{i}{\rho} \\
+               \min \{1, \rho, ((i+1)-\rho j) \}& \mbox{if} & 
+\frac{i}{\rho} \leq j \leq \lceil \frac{(i+1)}{\rho} \rceil ,
+                 \end{array} 
+        \right .
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<!-- MATH
+ $\lceil a \rceil$
+ -->
+ represents the ceil of , <!-- MATH
+ $\lfloor a \rfloor$
+ -->
+represents the floor of  and .
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><UL>
+<LI><UL>
+<LI><A NAME="tex2html1100"
+  HREF="node70.html">Interpreting (D.1)</A>
+<LI><A NAME="tex2html1101"
+  HREF="node71.html">Example</A>
+<LI><A NAME="tex2html1102"
+  HREF="node72.html">Properties</A>
+<LI><A NAME="tex2html1103"
+  HREF="node73.html">The Algorithm</A>
+<LI><A NAME="tex2html1104"
+  HREF="node74.html">Initial assignment of bin values</A>
+</UL></UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<A NAME="tex2html1098"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1094"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1088"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1096"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1099"
+  HREF="node70.html">Interpreting (D.1)</A>
+<B>Up:</B> <A NAME="tex2html1095"
+  HREF="node66.html">Conclusions</A>
+<B> Previous:</B> <A NAME="tex2html1089"
+  HREF="node68.html">Proof of the Hammersley-Clifford</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

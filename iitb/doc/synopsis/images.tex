@@ -1,0 +1,1352 @@
+\batchmode
+
+\documentstyle[12pt,psfig,a4]{article}
+\makeatletter
+\evensidemargin -0.15in
+\oddsidemargin 0.15in
+\topmargin -0.1in
+\textwidth 6in
+\textheight 9.25in
+\headheight 0in
+\headsep 5mm
+\footskip 0.1in
+\footheight 0in
+\columnsep 0in
+\parskip 0.03in
+
+
+%
+
+
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagestyle{empty}
+
+\newcommand {\iitbseal}{\newfont{\iitblogofont}{iitblogo}{\iitblogofont a}}
+
+\newcommand {\mytitle} {Modular Integration\\ [0.5ex] for\\ [0.5ex] Low-level
+and High-level Vision Problems\\ [1.5ex] in a Multiresolution Framework }
+
+\newcommand {\DEF}{\stackrel{\Delta}{=}}
+
+\newcommand {\conv}{\otimes}
+
+\newcommand {\ba}{\begin{abstract}}
+
+\newcommand {\ea}{\end{abstract}}
+
+\newcommand {\bdouble}{\addtolength{\baselineskip}{+1.0\baselineskip}}
+
+\newcommand {\edouble}{\addtolength{\baselineskip}{-0.5\baselineskip}}
+
+\newcommand {\bonehalf}{\addtolength{\baselineskip}{+0.7\baselineskip}}
+
+\newcommand {\eonehalf}{\addtolength{\baselineskip}{-0.5\baselineskip}}
+
+\newcommand {\foot}{\footnotetext{This work is supported by an MHRD (India) 
+project on `` Computer Vision ''. }}
+
+\newcommand {\bs}{\begin{small}}
+
+\newcommand {\es}{\end{small}}
+
+\newcommand {\bh}{\begin{huge}}
+
+\newcommand {\eh}{\end{huge}}
+
+\newcommand {\bl}{\begin{large}}
+
+\newcommand {\el}{\end{large}}
+
+\newcommand {\bc}{\begin{center}}
+
+\newcommand {\ec}{\end{center}}
+
+\newcommand {\bt}{\begin{tabular}}
+
+\newcommand {\et}{\end{tabular}}
+
+\newcommand {\vs}{\vspace{2ex}}
+
+\newcommand {\noi}{\noindent}
+
+\newcommand {\beqa}{\begin{eqnarray}}
+
+\newcommand {\eeqa}{\end{eqnarray}}
+
+\newcommand {\nn}{\nonumber}
+
+\newcommand {\pbrk}{\pagebreak}
+
+\newcommand {\ul}{\underline}
+
+\newcommand {\bb}{\begin{thebibliography}{99}}
+
+\newcommand {\eb}{\end{thebibliography}}
+
+\newcommand {\bd}{\begin{document}}
+
+\newcommand {\ed}{\end{document}}
+
+\newcommand {\beq}{\begin{equation}}
+
+\newcommand {\eeq}{\end{equation}}
+
+\newcommand {\bi}{\begin{itemize}}
+
+\newcommand {\ei}{\end{itemize}}
+
+\newcommand {\be}{\begin{enumerate}}
+
+\newcommand {\ee}{\end{enumerate}}
+
+\newcommand {\A}{attribute}
+
+\newcommand {\X}{{\cal{A}}}
+
+\newcommand {\Y}{{\cal{Y}}}
+
+\renewcommand {\P}{{\cal{P}}}
+
+\newcommand {\V}{{\cal{V}}}
+
+\newcommand {\K}{{\cal{K}}}
+
+\newcommand {\W}{{\cal{W}}}
+
+\newcommand {\C}{{\cal{C(Y)}}}
+
+\newcommand {\N}{\eta}
+
+\newcommand {\Om}{\Omega}
+
+\newcommand {\I}{{\cal I}}
+
+\renewcommand {\L}{{\cal L}}
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline791: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline793: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline795: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline797: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline799: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline801: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline803: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline805: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline807: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline809: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline811: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal{C(Y)}}  = \Y$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline813: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline815: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline817: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline819: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ {\cal{C(Y)}} ; {\cal{K}}  
+\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline821: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[{\cal{A}} =a|{\cal{C(Y)}} ;{\cal{K}} ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline823: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline825: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline827: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline829: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline831: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline833: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline835: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[{\cal{A}} =a|{\cal{C(Y)}} ;{\cal{K}} ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline837: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal{A}} 
+= a_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline839: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a_* = arg\ \max_a \P[{\cal{A}} =a|{\cal{C(Y)}} ;{\cal{K}} ].
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=int_mult.ps,width=0.9\textwidth}}
+
+\label{fig:int_mult}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline845: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline849: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline851: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_3$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline853: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\cdots$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline855: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline857: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline859: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline861: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline863: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline865: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline867: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_3$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline869: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline871: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=1, \cdots m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline873: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline875: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline877: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline879: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline881: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[{\cal{A}} =a|{\cal{C(Y)}} ;{\cal{K}} ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline883: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal{A}} 
+= a_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline885: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=1, 
+\cdots, m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline887: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}{a_i}_* = arg\ \max_{a_i} \P[\X_i=a_i|\C_i;\K_i, \X_j=a_j, j \ne i]
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${a_i}_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline889: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=0, 1, \cdots m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline891: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline893: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline895: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline897: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline901: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline903: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline905: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline907: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline909: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -2}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline911: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\cdots$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline913: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -N}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline915: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N \ne 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline917: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a^{\Omega -N}_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline919: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -N}_* = arg\ \max_{a^{\Omega -N}} 
+\P[\X^{\Omega -N}=a^{\Omega -N}|\C^{\Omega -N};\K^{\Omega -N}] \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a^{\Omega -N}_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline921: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline923: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -N}_* \stackrel{\mbox{\em Quadtree Interpolate}} 
+{\hrulefill_>} \tilde{a}^{\Omega -N+1}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline925: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{a}^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline927: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline929: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline931: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N+1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline933: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a^{\Omega -N+1}_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline935: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -N+1}_* = arg\ \max_{a^{\Omega -N+1}} 
+\P[\X^{\Omega -N+1}=a^{\Omega -N+1}|\C^{\Omega -N+1};\K^{\Omega -N+1}]
+ \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline937: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline939: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline941: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[\X^\Omega =a^\Om|\C^\Omega ;\K^\Omega ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline943: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^\Omega  = a^\Om_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline945: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n=N, \cdots, 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline947: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -n}_* = arg\ \max_{a^{\Omega -n}} 
+\P[\X^{\Omega -n}=a^{\Omega -n}|\C^{\Omega -n};\K^{\Omega -n}] \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -n}_* \stackrel{\mbox{Quadtree Interpolate}}
+{\hrulefill_>} \tilde{a}^{\Omega -n+1}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{a}^{\Omega -n+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline949: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K^{\Omega -n+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline951: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline953: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline955: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline957: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline959: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline961: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[\X^\Omega =a^\Om|\C^\Omega ;\K^\Omega ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline963: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^\Omega  = a^\Om_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline965: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n=N, \cdots, 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline967: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=1,   
+\cdots, m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline969: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}{a^{\Omega -N}_{i*}} = arg\ \max_{a^{\Omega -N}_i}
+\P[\X^{\Omega -N}_i=a^{\Omega -N}_i|\C^{\Omega -N}_i;\K^{\Omega -N}_i,
+\X^{\Omega -N}_j=a^{\Omega -N}_j, j \ne i]      \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${a^{\Omega -N}_{i*}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline971: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i=0, 1, \cdots m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline973: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${a^{\Omega -N}_{k*}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline975: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline977: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${a^{\Omega -N}_{k*}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline979: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline981: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}{a^{\Omega -N}_{k*}} \stackrel{\mbox{\em Quadtree Interpolate}}
+{\hrulefill_>} \tilde{a}_k^{\Omega -N+1}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline983: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\tilde{a}^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline985: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline987: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V^{\Omega -N+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline989: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N+1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline991: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a^{\Omega -N+1}_{i*}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline993: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a^{\Omega -N+1}_{i*} = arg\ \max_{a^{\Omega -N+1}_i}
+\P[\X^{\Omega -N+1}=a^{\Omega -N+1}_i|\C^{\Omega -N+1};\K^{\Omega -N+1}].
+ \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\V$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline995: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline997: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline999: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{table}\begin{center}
+ 
+\begin{tabular}{||l|l|l|l|l||} \hline \hline
+Vision task & Modules  & Core varib & Knowledge & Attribute  \\ 
+ $\V$            & Integrated & $\C$  &    $\K$       & $\X$ \\  \hline \hline
+color & (i) parameter  & degraded  & (i) degradation model& restored \\ 
+image & estimation, & color & ${\cal{Y}}  = {\cal{A}}  + \W$& image\\ 
+restoration & (ii) restoration &image & (ii) $\W$ is Gaussian & \\   \hline
+
+stereo &(i) feature & stereo&(i) precomputed edges & disparity \\ 
+vision &extraction  & image& (ii) disparity range & or depth\\ 
+       & (ii) matching &  pair & (iii) disparity varies & map \\ 
+       & (iii) interpolation&   & smoothly & \\ 
+&  && (iv) epipolar constraint & \\  \hline
+image& (i) segmentation        & grey levels,&  apriori knowledge   &
+inter- \\ 
+ interpretation &(ii) image      &scene based  &  & pretations\\ 
+              & interpretation &  features     &   & \\ 
+\hline \hline
+\end{tabular}
+\end{center}
+ 
+
+\label{tab:probs}
+\end{table}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal{Y}} =\X+\W$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1013: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{% latex2html id marker 1015
+$\theta^\Omega, x^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1015: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}% latex2html id marker 577
+{\theta^\Omega}^{k+1}=arg\ \max_{\theta^\Omega} 
+\P \left [ \X^\Omega={a^\Omega} | \theta^\Omega, 
+\Y^\Omega=y^\Omega \right ] .
+\label{eq:un_sup_parameter}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}% latex2html id marker 579
+{a^\Omega}^{k+1}=arg\ \max_{a^\Omega}
+\P \left [ \X^\Omega=a^\Omega | {\theta^\Omega}^{k+1}, \Y^\Omega=y^\Omega 
+\right ] \label{eq:un_sup_restoration}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\sum_{i,j}  \left\{  \mu^\Omega  [   \|a^\Omega_{i,j}-a^\Omega_{i,j-1} \|^2
+(1-v^\Omega_{i,j})   \right .
++ \left .  \|a^\Omega_{i,j}-a^\Omega_{i-1,j} \|^2 \ 
+(1-h^\Omega_{i,j})     
+\right ]
++  \left.  \gamma^\Omega  [  v^\Omega_{i,j} + h^\Omega_{i,j}  ]  \right\}
+\label{eq:energy}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$
+\|a^\Omega_{i,j} \|^2 = 
+(^1a^\Omega_{i,j})^2+(^2a^\Omega_{i,j})^2+(^3a^\Omega_{i,j})^2 
+$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1017: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^ka^\Omega_{i,j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1019: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$v^\Omega_{i,j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1023: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$h^\Omega_{i,j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1025: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}v^\Omega_{i,j}= \left \{ \begin{array}{cl}
+                    1& \mbox{if} \;\;\;\; 
+f_v(a_{i,j}^\Omega, a_{i,j-1}^\Omega) > thresh  \\ 
+                    0 & \mbox{otherwise}
+                    \end{array}
+                 \right .
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}h^\Omega_{i,j}= \left \{ \begin{array}{cl}
+                    1& \mbox{if} \;\;\;\; 
+f_h(a_{i,j}^\Omega, a_{i-1,j}^\Omega) > thresh  \\ 
+                    0 & \mbox{otherwise}
+                    \end{array}
+                 \right .
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray}f_v(a_{i,j}^\Omega, a_{i,j-1}^\Omega)&=&\frac{1}{3} 
+\sum_{q=1}^{3}\ \left | ^qa_{i,j}^\Omega - {^qa_{i,j-1}^\Omega} \right |  
+\;\; \mbox{and,} \nonumber
+  \\ 
+f_h(a_{i,j}^\Omega, a_{i-1,j}^\Omega)&=&\frac{1}{3} 
+\sum_{q=1}^{3}\ \left | ^qa_{i,j}^\Omega - {^qa_{i-1,j}^\Omega} \right |.  
+\label{eq:line}  
+\end{eqnarray}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{% latex2html id marker 1027
+$\theta^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1027: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mu^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1029: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\gamma^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1031: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sigma^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1033: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\mu^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1035: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\gamma^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1037: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1039: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1041: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1043: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1045: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1047: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1049: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1051: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1053: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^{\Omega -1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1055: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1057: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1059: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1061: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1063: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1065: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^{\Omega -1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1067: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1069: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P_{{\cal{A}} }$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1071: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P_{\X^{\Omega -1}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1073: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1075: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\X^{\Omega -1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1077: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P_{{\cal{A}} }$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1079: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P_{\X^{\Omega -1}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1081: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P_{\X^{\Omega -1}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1083: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\begin{array}{rcl}
+        U(a^{\Omega -1}) & \stackrel{\Delta}{=}
+  & \ln (\P_{\X^{\Omega -1}}) \\ 
+       \P_{gibbs}[\X^{\Omega -1} =a^{\Omega -1}] & \stackrel{\Delta}{=}
+  & \exp{( U(a^{\Omega -1}))}. 
+       \end{array}
+       \end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(a^{\Omega -1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1085: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(a^{\Omega -1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1087: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{U}(a^{\Omega -1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1089: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{U}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1091: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{U}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1093: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1095: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\hat{U}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1097: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{${\cal{Y}} ={\cal H}\X+\W$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1099: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=../COLOR/FIG/unsup_scheme.ps,width=0.9\textwidth}}
+
+\label{fig:unsup_scheme}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ x^L(i,j) \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1101: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ x^R(i,j) \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1103: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^\Omega 
+\times 2^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1105: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$z(i,j), \forall i,j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1111: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$d_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1113: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ x^L(i,j) \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1115: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ x^R(i,j) \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1117: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}d_* = arg\ \min_{d} \sum_{i,j} \left [ x^L(i,j) - x^R(i,j+d(i,j)) \right ]^2
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}z = \frac{bf}{d}
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{ z \}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1119: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\begin{center}
+
+\begin{tabular}{c}
+Image\\ 
+$\downarrow$\\ 
+$\swarrow$ \fbox{Feature Extraction} $\searrow$ \\ 
+\end{tabular}
+
+\begin{tabular}{cccc}
+$\bullet$ more features $_{\searrow}$ & \hspace{0.2cm} & \hspace{0.2cm} & $_{\swarrow} \bullet$ less features\\ 
+\end{tabular}
+
+\begin{tabular}{c}
+$\swarrow$ \fbox{Feature Matching} $\searrow$  \\ 
+\end{tabular}
+
+\begin{tabular}{cccl}
+$\bullet$ false matches & \hspace{0.2cm} & \hspace{0.2cm} & $\bullet$ {\bf correct matches}\\ 
+$\bullet$ computationally& & & $\bullet$ {\bf computationally}\\ 
+more complex  &  & & {\bf less complex} \\ 
+$\downarrow$  &  & & $\downarrow$ \\ [0.5cm]
+$\bullet$ {\bf dense depth map} $_{\searrow}$ & & & $_{\swarrow} \bullet$ sparse depth map\\ 
+(false depth points) & & & \\ 
+\end{tabular}
+
+\begin{tabular}{c}
+$\swarrow$ \fbox{Disparity Interpolation} $\searrow$ \\ 
+\end{tabular}
+
+\begin{tabular}{cccl}
+$\bullet$ poor reconstruction & \hspace{0.2cm} & \hspace{0.2cm} & $\bullet$  poor reconstruction\\ 
+\end{tabular}
+
+\end{center}
+
+\label{STEREO_PROBLEM}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1163: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Omega -N+1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1165: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}d^{\Omega -N+1}_{2 \star i+k,2 \star j+l} = 2 \star d^{\Omega -N}_{i,j},\  
+0 \le i,j \le 2^{\Omega -N}-1\ \mbox{and}\ 0 \le k,l \le 1. 
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$7 \frac{1}{2}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1167: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=../STEREO/FIG/new_integ.ps,width=0.9\textwidth}}
+
+\label{fig:stereo}
+\end{figure}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1169: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1171: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$2^\Omega  \times 2^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1173: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1175: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1177: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1179: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Y^\Omega$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1181: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$^sY^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1183: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1185: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\I_*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1187: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\I_* = arg \max_{{\bf {\cal I} } \in \{{\cal L}  \}^n} \P[{\bf {\cal I} }|{\cal{C(Y)}} ; {\cal{K}} ]  
+\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1189: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\C$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1191: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\L$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1195: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\I_k$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1197: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$L_l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1201: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$l=0, 1, \cdots
+M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1203: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\I_k$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1207: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\L_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1209: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\L_l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1217: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[\I_{k}=\L_l \mid {\cal{C(Y)}} ;
+{\cal{K}} ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1221: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\P[\I_{k}=\L_m \mid {\cal{C(Y)}} ; {\cal{K}} ]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1225: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{equation}\I_k = \left \{
+             \begin{array}{ccl}
+             \L_l& \mbox{if} &\P[\I_k 
+= \L_l \mid {\cal{K}} ; {\cal{C(Y)}} ] > 
+\P[\I_k = \L_m \mid {\cal{K}} ; {\cal{C(Y)}} ] \\ 
+             \L_m& \mbox{if} & 
+\P[\I_k = \L_m \mid {\cal{K}} ; {\cal{C(Y)}} ] > 
+\P[\I_k = \L_l \mid {\cal{K}} ; {\cal{C(Y)}} ]. \\ 
+             \end{array}
+             \right .
+\label{eq:criteria}
+\end{equation}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{figure}\centerline{\psfig{figure=../IMAGES/int_block.ps,width=5in}}
+
+\label{fig:inter_scheme}
+\end{figure}
+}
+
+\stepcounter{section}
+
+\end{document}

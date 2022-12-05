@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1-node Clique Functions</TITLE>
+<META NAME="description" CONTENT="1-node Clique Functions">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html600"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html596"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html590"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html598"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html601"
+  HREF="node32.html">Multiple Node Clique Function</A>
+<B>Up:</B> <A NAME="tex2html597"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B> Previous:</B> <A NAME="tex2html591"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00612100000000000000">
+1-node Clique Functions</A>
+</H3> 
+
+<P>
+These are  specified by 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+V_{c}^{1}(x^{c} | f^{c}, {\cal K})
+    =  \sum_{i=1}^{q} w_{c}^{i} B_{c}^{i}(x^{c} | f^{c}, {\cal K})
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="1-node-clique-modestino"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(25)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where  is a 1-node clique,  are the number of 1-node features,
+  is the basis function corresponding to the 1-node
+clique  and the feature , and the weights  
+selected such that <!-- MATH
+ $\sum_{i=1}^{q} w_{c}^{i} = 1$
+ -->
+. Most often
+ is chosen to be  implying that 
+all features are equally important.
+
+<P>
+To get an idea as how the basis function are constructed, consider an
+example:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><EM>Interpretation:</EM></TD>
+<TD ALIGN="LEFT">Car</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Feature:</EM></TD>
+<TD ALIGN="LEFT">Average gray level</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Domain Knowledge:</EM></TD>
+<TD ALIGN="LEFT">Average gray level </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+Then we can have a basis function as shown Figure 
+<A HREF="node31.html#eq:1-node-basis-function">3.2</A>.
+
+<DIV ALIGN="CENTER"><A NAME="eq:1-node-basis-function"></A><A NAME="3775"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.2:</STRONG>
+1-node Basis function.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+Since the average gray level is approximately , we give a value of
+zero for  <!-- MATH
+ $B_{{car}}^{{avg\_gray\_level}}$
+ -->
+ for average 
+gray level for the
+car, in the observed image, to be in the range  to . Outside
+this range the basis function gradually increases. 
+Another possible form of  the basis function is 
+
+<DIV ALIGN="CENTER"><A NAME="fig:basis_function"></A><A NAME="3825"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.3:</STRONG>
+Example of a basis function
+used for  the average gray level
+feature for road (see Table <A HREF="node62.html#tab:road">5.2</A>,Chapter <A HREF="node55.html#chap:joint_seg_mrf">7</A>). Here, <!-- MATH
+ $a=60, b=65, c=75, d=80$
+ -->
+</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+B_c^i(\xi) = \left\{ \begin{array}{ccc}
+                 1  & & \xi \leq a \\
+                 \frac{b - \xi}{b-a} & & a \leq \xi \leq b \\
+                 0            &  &  b \leq \xi \leq c  \\
+                 \frac{\xi -c}{d-c} &  c \leq \xi \leq d \\
+                 1                  &  \xi \geq d
+               \end{array} \right.
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and is characterized by four parameters, which are determined
+heuristically based on the domain knowledge . It is to be noted that
+the basis function is very much like the logic function used in fuzzy
+systems [<A
+ HREF="node80.html#bk_bart_92">103</A>].
+
+<P>
+An alternate form of the basis function 
+is based on variation of the sigmoidal function,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+B_c^i(\xi) = \frac{2}{1 + e^{(-\beta \xi^{2})}} -1
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:appen_cost"></A><A NAME="5552"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.4:</STRONG>
+Basis function - variation of sigmoidal.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In case the minimization algorithm for the MAP estimation problem
+requires mathematical 
+differentiation  then the above form will be preferable. Note,
+that the above form is characterized by only one parameter <IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$\beta$">,
+this could also be another point in favor of sigmoidal form.
+
+<P>
+<HR>
+<A NAME="tex2html600"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html596"
+  HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html590"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html598"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html601"
+  HREF="node32.html">Multiple Node Clique Function</A>
+<B>Up:</B> <A NAME="tex2html597"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B> Previous:</B> <A NAME="tex2html591"
+  HREF="node30.html">Selection of Cliques Functions</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

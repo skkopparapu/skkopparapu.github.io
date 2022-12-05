@@ -1,0 +1,569 @@
+<HEAD>
+<TITLE>Synopsis</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<!--meta name="description" value="No Title">
+<meta name="keywords" value="synopsis">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global"-->
+<!--P-->
+ <!--BR> <HR><A NAME=tex2html7 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif_gr.gif"> <IMG ALIGN=BOTTOM ALT="previous" S
+RC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif_gr.gif">   <BR>
+<B> Next:</B> <A NAME=tex2html8 HREF="node1.html">References</A>
+<BR> <HR> <P>
+<P-->
+
+<H4> <b> Modular Integration<BR> for<BR> Low-level
+and High-level Vision Problems<BR> in a Multiresolution Framework
+ </b> 
+ </H4>
+<P>
+Synopsis
+<P>
+Submitted in Partial Fulfillment of the Requirements<BR> 
+of the degree of
+<P>
+Doctor of Philosophy
+<P>
+by<BR>
+<b> K. Sunil Kumar</b>
+<P>
+Thesis Advisors<BR>
+ <b> Professor U. B. Desai</b> <BR>
+ <b> Professor P. G. Poonacha</b>
+<P>
+DEPARTMENT OF ELECTRICAL ENGINEERING<BR> INDIAN INSTITUTE OF TECHNOLOGY - BOMBAY<BR> POWAI, MUMBAI 400 076.<BR> 1996
+<P>
+
+<P>
+<P>
+<P>
+
+<hr>
+
+<P>
+Vision comes to human so naturally that the processing capability of the
+human visual system is often taken for granted. We neither realize 
+its complexity nor the difficulty in automating it. Problems in vision can
+be broadly categorized into (i) low-level vision and (ii) high-level
+vision. The vision tasks that make up for the low-level vision are, for
+example, edge detection, segmentation, optical flow estimation and depth
+estimation from stereo pair to name a few. The tasks of image recognition,
+scene interpretation or understanding, navigation make up the
+high-level vision.
+<P>
+In the generalized framework, a vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img1.gif"> can be considered to be
+performing the  task of estimating an image attribute , say <IMG  ALIGN=BOTTOM ALT="" SRC="img2.gif">, from an observed 
+image <IMG  ALIGN=MIDDLE ALT="" SRC="img3.gif"> or a sequence of observed images. For example, in case of the 
+vision 
+task of scene interpretation, <IMG  ALIGN=BOTTOM ALT="" SRC="img4.gif"> would correspond to the semantic 
+labels associated with different regions in the image <IMG  ALIGN=MIDDLE ALT="" SRC="img5.gif">, or in case of 
+stereo vision, <IMG  ALIGN=BOTTOM ALT="" SRC="img6.gif"> would correspond to the disparity or the depth map. 
+In many vision tasks, the observed image may not be used as it is in 
+estimating the attribute   <IMG  ALIGN=BOTTOM ALT="" SRC="img7.gif">. In fact, in many vision tasks, it is some 
+information derived from the observed image or images <IMG  ALIGN=MIDDLE ALT="" SRC="img8.gif">  which would 
+be utilized. For example, in case of stereo vision, in addition to the 
+observed image <IMG  ALIGN=MIDDLE ALT="" SRC="img9.gif">, one would use the zero crossings or edge information 
+derived from the observed stereo pair. We refer to these variables 
+derived from the observed image <IMG  ALIGN=MIDDLE ALT="" SRC="img10.gif"> as <em> core variables</em> and denote 
+them by <IMG  ALIGN=MIDDLE ALT="" SRC="img11.gif">. Note, in some vision tasks <IMG  ALIGN=MIDDLE ALT="" SRC="img12.gif">, for example image 
+restoration.
+<P>
+There is one more item, which often gets relegated to the list of 
+assumptions which is used in solving a vision task. This is the apriori 
+knowledge, for example, in stereo vision one assumes that the range of 
+disparity is known. We denote the domain knowledge by  <IMG  ALIGN=BOTTOM ALT="" SRC="img13.gif">.
+<P>
+In order to present a formal computational formulation for the vision 
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img14.gif">, we need a relation between the attribute   <IMG  ALIGN=BOTTOM ALT="" SRC="img15.gif"> and the pair <IMG  ALIGN=MIDDLE ALT="" SRC="img16.gif">. In our work, a probabilistic relationship is assumed, namely 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img17.gif">, the probability distribution of the attribute   <IMG  ALIGN=BOTTOM ALT="" SRC="img18.gif"> given the 
+core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img19.gif"> and the domain knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif">  is either known or 
+derived. We can now solve the attribute   estimation problem as a maximum 
+apostoriori (MAP) estimation problem. We can express the problem of 
+solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img21.gif"> as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img22.gif">, (ii) apriori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img23.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img24.gif">. The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img25.gif"> is obtained by solving the MAP estimation problem
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img26.gif"><P></blockquote>
+<P>
+Most vision tasks are motivated by the human visual system (HVS) which is
+undoubtedly the best vision system and an excellent image processor. HVS
+is robust in the sense it rarely gets <em> fooled</em>. Results obtained from
+experiments conducted on the visual systems of primates and experiments
+conducted in psychophysics and physiology of vision are used as factors to
+motivate the vision tasks, because HVS is one of those subjects which is
+least understood though very widely used.
+<P>
+<P><A NAME=163>&#160;</A><A NAME=figint_mult>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img27.gif">
+<BR><STRONG>Figure 1:</STRONG> The approach that we follow in the thesis - the modular integration 
+is along the <b>y</b>-axis and the multiresolution is seen along the <b>x</b>-axis. The 
+subtasks are shown with dotted rectangles and the vision task by dotted 
+rectangles. The largest solid rectangle is the vision task to be solved<BR>
+<P>
+<P>
+Experiments from psychophysics and physiology of the visual system
+[<A HREF="node1.html#jr_Van_92">1</A>] motivate us to look at the problem of solving the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img28.gif"> by dividing it into <b>m</b> smaller tasks (called subtasks or
+modules) <IMG  ALIGN=MIDDLE ALT="" SRC="img29.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img30.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img31.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img32.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img33.gif">. Each subtask or module
+<IMG  ALIGN=MIDDLE ALT="" SRC="img34.gif"> interacts with other modules  <IMG  ALIGN=MIDDLE ALT="" SRC="img35.gif"> -- this is referred
+to as modular integration. For example, the low-level vision task of
+stereo vision can be looked upon as being made up of three smaller modules,
+namely (i) the feature extraction module, (ii) the matching module and
+(iii) the interpolation module. Integration or synergism of modules is a
+technique where various modules get together to perform the given task
+better than when working individually with only feedforward interaction. In 
+other
+words, the modules work as a team rather than as individual modules; as a 
+result the performance of each module is enhanced and this reflects in the
+overall improvement in the solution of the given vision task. Figure
+<A HREF="synopsis.html#figint_mult">1</A> shows the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img36.gif"> at any given resolution
+being divided into three subtasks <IMG  ALIGN=MIDDLE ALT="" SRC="img37.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img38.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img39.gif">. The MAP
+estimation problem is solved for each module <IMG  ALIGN=MIDDLE ALT="" SRC="img40.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img41.gif"> to
+obtain the optimal attribute  for each module, the attribute  corresponding to the
+vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img42.gif"> could be any one of these attributes.  For example, in 
+case of
+stereo vision we obtain attributes corresponding to the line fields and the 
+disparity field, though the attribute  of interest is only the disparity map. 
+Now, the problem of solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img43.gif"> can be expressed as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img44.gif">, (ii) apriori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img45.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img46.gif">. The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img47.gif"> is obtained by solving the MAP estimation problem for <IMG  ALIGN=MI
+DDLE ALT="" SRC="img48.gif">
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img49.gif"><P>
+<P>
+Of all the attribute  <IMG  ALIGN=MIDDLE ALT="" SRC="img50.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img51.gif">, only one attribute   would 
+correspond to  the solution of the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img52.gif">. Nevertheless other 
+attributes may be of interest in themselves.
+<P>
+</blockquote>
+<P>
+Again, experimental results show that a multi-frequency channel decomposition
+seems to be taking place in the human visual cortex [<A HREF="node1.html#jr_Mall_89">2</A>]. 
+Experiments based on adaptation techniques show that at some stage in the
+HVS, the visual information in different frequency bands is processed
+separately. It was also experimentally found that the retina image seems
+to be decomposed in several frequency bands having approximately the same
+bandwidth on an octave scale. These experimental results motivate us to
+look at the vision tasks in a multiresolution framework.
+<P>
+Multiresolution is an efficient and effective way of representing data.
+The data at each resolution is the output of a bandpass filter with
+some center frequency (usually the center frequency of the filters are
+octave apart). The use of multiresolution is also motivated by the fact
+that the computational complexity of any vision task is large and
+multiresolution can be used effectively to reduce the computational
+complexity. Now, the problem of solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img53.gif"> is reduced to
+the task of solving <IMG  ALIGN=BOTTOM ALT="" SRC="img54.gif"> at each resolution. Figure <A HREF="synopsis.html#figint_mult">1</A> 
+along the <b>x</b>-axis shows the multiresolution approach. Let, <IMG  ALIGN=BOTTOM ALT="" SRC="img55.gif"> 
+represent the
+vision task at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img56.gif">. In the multiresolution approach the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img57.gif"> is not solved directly at the resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img58.gif">,  but by
+solving the vision tasks <IMG  ALIGN=BOTTOM ALT="" SRC="img59.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img60.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img61.gif"> at coarser
+resolutions. Typically the vision task at the coarsest resolution
+<IMG  ALIGN=BOTTOM ALT="" SRC="img62.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img63.gif"> is solved by estimating the optimal attribute   
+<IMG  ALIGN=MIDDLE ALT="" SRC="img64.gif"> by
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img65.gif"><P>
+The optimal solution <IMG  ALIGN=MIDDLE ALT="" SRC="img66.gif"> obtained at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img67.gif"> is 
+quadtree interpolated to the next finer resolution,
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img68.gif"><P>
+is used to solve the vision task at the next finer resolution, namely, in 
+solving the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img69.gif">. The obtained 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img70.gif"> which is used as initialization is clubbed into the 
+apriori knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img71.gif"> and the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img72.gif"> at 
+resolution 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img73.gif"> is solved by estimating the optimal attribute  <IMG  ALIGN=MIDDLE ALT="" SRC="img74.gif"> as,
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img75.gif"><P>
+Now, we can express the problem of solving the  vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img76.gif"> in the 
+multiresolution framework as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img77.gif">, (ii) apriori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img78.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img79.gif">. 
+The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img80.gif"> is obtained by solving the MAP 
+estimation problem for <IMG  ALIGN=MIDDLE ALT="" SRC="img81.gif">
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img82.gif"><P>
+<P>
+followed by a quadtree interpolation
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img83.gif"><P>
+<P>
+the knowledge of <IMG  ALIGN=BOTTOM ALT="" SRC="img84.gif"> is embedded into <IMG  ALIGN=BOTTOM ALT="" SRC="img85.gif"> to 
+be used at the next resolution.
+</blockquote>
+<P>
+In this thesis, we look at the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img86.gif"> in the framework of
+modular integration and multiresolution. The formulation of the vision
+task involving both modular integration and multiresolution would be as
+shown for the modular integration, except that the modular integration
+would be carried out at each resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img87.gif">. The problem of solving the
+vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img88.gif"> in the framework of multiresolution and modular
+integration can be expressed as:
+<P>
+<blockquote> <em> Given (i) the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img89.gif">, (ii) apriori domain
+knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img90.gif"> and (iii) the relation <IMG  ALIGN=MIDDLE ALT="" SRC="img91.gif">.
+The optimal attribute   <IMG  ALIGN=MIDDLE ALT="" SRC="img92.gif"> is obtained by solving the MAP
+estimation problem for <IMG  ALIGN=MIDDLE ALT="" SRC="img93.gif"> (multiresolution) and  <IMG  ALIGN=MIDDLE ALT="" SRC="img94.gif"> (modular integration)
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img95.gif"><P>
+<P>
+Of all the attribute  <IMG  ALIGN=MIDDLE ALT="" SRC="img96.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img97.gif">, only one attribute \
+(say <IMG  ALIGN=MIDDLE ALT="" SRC="img98.gif">) would correspond to  the solution of the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img99.gif">.
+The optimal solution <IMG  ALIGN=MIDDLE ALT="" SRC="img100.gif"> obtained at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img101.gif">
+is quadtree interpolated as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img102.gif"><P>
+and is used to solve the vision task at the next finer resolution namely
+<IMG  ALIGN=BOTTOM ALT="" SRC="img103.gif">. The obtained
+<IMG  ALIGN=BOTTOM ALT="" SRC="img104.gif"> which is used as initialization is clubbed into the
+apriori knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img105.gif"> and the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img106.gif"> at
+resolution
+<IMG  ALIGN=MIDDLE ALT="" SRC="img107.gif"> is solved by estimating the optimal attribute  <IMG  ALIGN=MIDDLE ALT="" SRC="img108.gif"> as,
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img109.gif"><P></blockquote>
+<P>
+  In this thesis, we
+specifically look at three problems, namely,
+<P>
+<OL><LI> color image restoration, <LI> integrated stereo vision, and
+<LI> scene interpretation.  </OL>
+  Table <A HREF="synopsis.html#tabprobs">1</A> shows these vision
+tasks in the generalized framework. Associated with each vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img110.gif">,
+the knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img111.gif">, the core variables <IMG  ALIGN=MIDDLE ALT="" SRC="img112.gif">, the modules that are
+integrated and the attribute  that is extracted have been shown.
+<P>
+<P><A NAME=261>&#160;</A><A NAME=tabprobs>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img113.gif">
+<BR><STRONG>Table 1:</STRONG> Some specific vision tasks in the generalized
+framework<BR>
+<P>
+<P>
+<b> Note:</b> Though in the strict sense color image
+restoration is a preprocessing task, we have categorized it as a low level
+vision task along with the stereo vision.
+<P>
+  <H5> <b> Color Image Restoration </H5>
+ </b>
+<P>
+In color image restoration, the image is modeled as a Markov Random field
+(MRF) and an additive noise degradation model (<IMG  ALIGN=MIDDLE ALT="" SRC="img114.gif">) is considered. 
+The color
+image restoration becomes one of estimating the parameter associated with
+the clique potentials coming from the imposed assumption of MRF model on
+the image, and then using the obtained parameters to restore the image.
+The problem can be stated as:
+<P>
+<blockquote> <em>
+Find the optimum parameter and restored image
+pair (<IMG  ALIGN=MIDDLE ALT="" SRC="img115.gif"> ) such that
+<P>
+<P><A NAME=equn_sup_parameter>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img116.gif"><P>
+<P>
+and
+<P>
+<P><A NAME=equn_sup_restoration>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img117.gif"><P></blockquote>
+<P>
+Parameter estimation (<A HREF="synopsis.html#equn_sup_parameter">1</A>) is done along the lines
+of [<A HREF="node1.html#pr_Nand_94">3</A>] using the homotopy continuation method. The 
+restoration (<A HREF="synopsis.html#equn_sup_restoration">2</A>) would involve the minimization 
+of the energy function
+<P>
+<P><A NAME=eqenergy>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img118.gif"><P>
+<P>
+  Equation (<A HREF="synopsis.html#eqenergy">3</A>) results from the following 
+assumptions: (i) the additive noise degradation model, (ii) 
+the image being modeled as a MRF, and (iii) the noise being Gaussian. 
+In (<A HREF="synopsis.html#eqenergy">3</A>), 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img119.gif">, and the three components <IMG  ALIGN=MIDDLE ALT="" SRC="img120.gif">, <b>k=1, 2, 3</b> correspond 
+to the three components of the color image. For example in the RGB color 
+coordinate system they would correspond to the red, green and blue 
+components. <IMG  ALIGN=MIDDLE ALT="" SRC="img121.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img122.gif"> are the line fields 
+defined as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img123.gif"><P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img124.gif"><P>
+<P>
+  In our simulation work we use
+<P><A NAME=eqline>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img125.gif"><P>
+<P>
+Estimation of parameter <IMG  ALIGN=BOTTOM ALT="" SRC="img126.gif"> would imply estimation of <IMG  ALIGN=MIDDLE ALT="" SRC="img127.gif"> 
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img128.gif"> of (<A HREF="synopsis.html#eqenergy">3</A>) and <IMG  ALIGN=BOTTOM ALT="" SRC="img129.gif"> which comes due to 
+the degradation model.
+The parameter estimation module and the restoration module interact over
+resolutions in an unsupervised framework. In the unsupervised
+parameter estimation and restoration algorithm, the schematic of which is
+shown in Figure <A HREF="synopsis.html#figunsup_scheme">2</A>, we assume that the degraded image
+at the coarsest resolution (which is obtained by low-pass filtering the
+degraded image at the finest resolution) to be the restored image. We
+estimate the clique parameters, <IMG  ALIGN=MIDDLE ALT="" SRC="img130.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img131.gif">, at this 
+resolution. Having 
+obtained the clique parameters we carry out image restoration (solve
+(<A HREF="synopsis.html#equn_sup_restoration">2</A>)) at that resolution. As seen in Figure
+<A HREF="synopsis.html#figunsup_scheme">2</A>, a part of the restored image is used for the
+parameter estimation at the next finer resolution, this is followed by
+restoration using the recently obtained parameters. This procedure is
+carried out until restoration at the finest resolution.
+<P>
+It is known that if <IMG  ALIGN=BOTTOM ALT="" SRC="img132.gif"> is a MRF then <IMG  ALIGN=BOTTOM ALT="" SRC="img133.gif"> at a coarser resolution
+need <em> not</em> be a MRF; this result, for the case when <IMG  ALIGN=BOTTOM ALT="" SRC="img134.gif"> is a
+Gaussian-MRF has been shown by Lakshmanan and Derin [<A HREF="node1.html#bk_Laks_93">4</A>]. In
+the proposed scheme, we have assumed that <em> if the image is a MRF at
+resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img135.gif">, then it is a MRF at coarser resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img136.gif"> too</em>. The
+following discussion gives a plausibility argument for approximating <IMG  ALIGN=BOTTOM ALT="" SRC="img137.gif">
+at a coarser resolutions by a MRF model.
+<P>
+      Let <IMG  ALIGN=BOTTOM ALT="" SRC="img138.gif"> at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img139.gif"> be a MRF. Now, let
+<IMG  ALIGN=BOTTOM ALT="" SRC="img140.gif"> denote  <IMG  ALIGN=BOTTOM ALT="" SRC="img141.gif"> at one level coarser resolution, obtained
+from <IMG  ALIGN=BOTTOM ALT="" SRC="img142.gif"> at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img143.gif"> using the Gaussian pyramid approach or the
+wavelet transform method.  Since
+going from a finer resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img144.gif"> to a coarser resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img145.gif"> is a
+linear operation, we should be able to find an expression for the
+probability distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img146.gif">, given the probability
+distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img147.gif">.
+<P>
+Let <IMG  ALIGN=MIDDLE ALT="" SRC="img148.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img149.gif"> be the probability distribution for <IMG  ALIGN=BOTTOM ALT="" SRC="img150.gif">
+and <IMG  ALIGN=BOTTOM ALT="" SRC="img151.gif"> respectively. <IMG  ALIGN=MIDDLE ALT="" SRC="img152.gif"> is MRF but <IMG  ALIGN=MIDDLE ALT="" SRC="img153.gif"> need
+not be a MRF [<A HREF="node1.html#bk_Laks_93">4</A>]. Now, define a Gibbs distribution using 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img154.gif"> as
+<P>
+       <P><IMG  ALIGN=BOTTOM ALT="" SRC="img155.gif"><P>
+<P>
+      Now <IMG  ALIGN=MIDDLE ALT="" SRC="img156.gif"> will not exhibit local dependence among its 
+      variables. The question is can we approximate <IMG  ALIGN=MIDDLE ALT="" SRC="img157.gif"> by
+      <IMG  ALIGN=MIDDLE ALT="" SRC="img158.gif"> such that <IMG  ALIGN=BOTTOM ALT="" SRC="img159.gif"> will exhibit local
+      dependencies. Perhaps we can talk about approximation such that
+      <IMG  ALIGN=BOTTOM ALT="" SRC="img160.gif"> exhibit local dependencies of a specified order. If
+      we can do this, then we can go ahead and approximate the 
+attribute  at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img161.gif"> to be a MRF. In this thesis, we assume a first 
+order model for <IMG  ALIGN=BOTTOM ALT="" SRC="img162.gif">. This assumption then parameterizes the
+     approximation by the clique parameters. We then do not solve an
+     approximation problem for obtaining the clique parameters, but
+     we learn the clique parameters given  the image data
+     (noisy or otherwise). Though we do not have a theoretical 
+justification for this approximation, the merit of the approximation is 
+judged by the good restoration results that we obtain.
+<P>
+We validate the proposed scheme of color image restoration by experimental
+results and compare it with the monoresolution case. It is observed that
+the multiresolution result is almost as good as the result obtained by
+working at the finest resolution (monoresolution).
+<P>
+We derive the behavior of the degradation model <IMG  ALIGN=MIDDLE ALT="" SRC="img163.gif">, which
+incorporates blur and is more general over scales. This information can
+be used to extend the color image restoration in the proposed framework to
+incorporate the general degradation model instead of the additive noise
+degradation model that we have used in this thesis to validate the 
+proposed scheme.
+<P>
+<P><A NAME=373>&#160;</A><A NAME=figunsup_scheme>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img164.gif">
+<BR><STRONG>Figure 2:</STRONG> Unsupervised parameter estimation and restoration scheme<BR>
+<P>
+<P>
+  <H5> <b> Integrated Stereo Vision </H5>
+ </b>
+<P>
+  The task of stereo vision can be stated as:
+<P>
+<blockquote> <em>
+<P>
+Given the stereo image pair <IMG  ALIGN=MIDDLE ALT="" SRC="img165.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img166.gif">, the 
+images of size <IMG  ALIGN=MIDDLE ALT="" SRC="img167.gif"> captured by the left and the right camera separated by a
+baseline distance of <b>b</b> and having a lens of focal length <b>f</b>. Find the
+depth map <IMG  ALIGN=MIDDLE ALT="" SRC="img168.gif">.
+<P>
+</blockquote>
+<P>
+Typically,  the disparity <IMG  ALIGN=MIDDLE ALT="" SRC="img169.gif"> is estimated from the 
+stereo image pair <IMG  ALIGN=MIDDLE ALT="" SRC="img170.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img171.gif"> such that
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img172.gif"><P>
+<P>
+  and using triangulation relation 
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img173.gif"><P>
+the depth <IMG  ALIGN=MIDDLE ALT="" SRC="img174.gif"> is calculated.
+<P>
+The integrated stereo vision, described in this thesis is a feature based
+disparity estimation scheme. It consists of three subtasks or modules,
+namely, (i) the feature extraction module, (ii) the feature matching
+module, and (iii) the disparity interpolation module.  The requirement for
+any <em> good</em> stereo algorithm is a dense and a correct disparity map. 
+The need for integration is not only motivated by the way
+of the human
+visual system works, as seen through experiments in psychophysics and 
+physiology
+of human visual system, but also by the requirement of a good stereo
+algorithm. Figure <A HREF="synopsis.html#STEREO_PROBLEM">3</A> shows that the requirements of a
+good stereo appear on either side of the modules; explicitly stated
+the two quantities that describe the goodness of a stereo algorithm,
+namely, (i) dense disparity, and (ii) correct disparity map are
+conflicting. This motivates the use of integration in stereo vision. In
+this thesis, we formulate the problem of stereo vision in a multiresolution
+framework where all the three modules associated with stereo interact in a
+fashion shown in Figure <A HREF="synopsis.html#figstereo">4</A>. This form of integration is 
+called intra module integration in literature [<A HREF="node1.html#bk_Clar_90">5</A>] and is 
+motivated by [<A HREF="node1.html#jr_Gamb_89">6</A>].
+<P>
+<P><A NAME=427>&#160;</A><A NAME=STEREO_PROBLEM>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img175.gif">
+<BR><STRONG>Figure 3:</STRONG>  Procedure involved in a  typical  stereo  vision algorithm<BR>
+<P>
+<P>
+The procedure adopted for solving the integrated stereo vision is by
+constructing an energy function for each of the three modules which while
+achieving the requirement of the module when minimized, also integrates
+information available from other modules, so as not to overlook the
+outcome of the other modules. Integration is achieved through the use
+of line fields [<A HREF="node1.html#jr_Gema_84">7</A>].  There is
+a Markov Random Field (MRF) model underlying the construction of each energy
+function. The disparity map estimated at resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img176.gif"> is passed 
+on to the next finer resolution <IMG  ALIGN=MIDDLE ALT="" SRC="img177.gif"> as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img178.gif"><P>
+<P>
+The schematic of the proposed scheme at a given resolution is shown in
+Figure <A HREF="synopsis.html#figstereo">4</A>.  The proposed scheme is validated by
+experimenting with some stereo image pairs used in literature. We present
+experimental results for both monoresolution (using only the given images
+at the finest resolution) and multiresolution cases.  Under each head we
+look at results obtained for (i) no integration, (ii) only precomputed
+edges, (iii) interactive edge computation and (iv) precomputed edges and
+interactive edge computation. It is found that the multiresolution
+formulation reduces the computational complexity of the disparity
+estimation scheme by approximately <IMG  ALIGN=MIDDLE ALT="" SRC="img179.gif"> times.  The 
+scheme developed for stereo 
+is quite general in the sense,  it can be used in any vision
+task which requires correspondence between two <em> related</em> images.
+However, the constraints that arise from the physics of the vision task
+need to be exploited. For example, the proposed scheme could be used for
+optical flow estimation [<A HREF="node1.html#pr_Suni_95">8</A>], where the relation between
+images is temporal.  The integrated stereo scheme developed in the thesis
+gives accurate and dense disparity; it is computationally fast because of
+the good initial estimation of the disparity field coming as an outcome of
+the disparity estimated at  coarser resolution.
+<P>
+<P><A NAME=444>&#160;</A><A NAME=figstereo>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img180.gif">
+<BR><STRONG>Figure 4:</STRONG> The integrated stereo vision scheme<BR>
+<P>
+<P>
+  <H5> <b> Scene Interpretation </H5>
+ </b>
+<P>
+Scene or image interpretation is a high level vision task where we 
+try to obtain a description of the environment from which the image was 
+taken. It is  basically an analysis problem where we try to understand 
+the image by identifying some important features or objects and analyze 
+them depending on their spatial relationship. For high level 
+interpretation, the principle unit of information is a 
+symbolic description of an object, or a set of image events, sometimes 
+referred to as symbolic tokens, extracted from the image. The description
+includes relationships to other 2D symbolic tokens extracted from
+the sensory data, such as lines, segments and other objects in the 3D
+scene being viewed. It also includes pointers to elements of general
+knowledge that has been used to support the interpretation process.
+<P>
+  The vision task of scene interpretation can be stated as:
+<P>
+<blockquote> <em>
+<P>
+Given the image <IMG  ALIGN=BOTTOM ALT="" SRC="img181.gif"> which is a projection of a 3D scene onto the 2D
+plane at the finest resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img182.gif">, defined over the 2D lattice of size
+<IMG  ALIGN=MIDDLE ALT="" SRC="img183.gif">, and some knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img184.gif"> about the 3D environment.
+The problem of interpretation involves
+<P>
+<OL><LI>  segmenting the image <IMG  ALIGN=BOTTOM ALT="" SRC="img185.gif"> to
+obtain <IMG  ALIGN=BOTTOM ALT="" SRC="img186.gif"> and
+<LI>  interpreting the image <IMG  ALIGN=BOTTOM ALT="" SRC="img187.gif">, based on the segmented image 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img188.gif"> and the domain knowledge <IMG  ALIGN=BOTTOM ALT="" SRC="img189.gif">.
+</OL></blockquote>
+<P>
+Scene  interpretation is a two phase process
+consisting of the segmentation module and the interpretation module. These
+two modules are not entirely independent; a good segmentation is a
+prerequisite for a correct interpretation and knowledge of the scene
+(explicitly stated - the interpretation of the scene) is essential for a
+good segmentation. This  suggests that there should exist interaction
+between the two modules. This fact was exploited first by Tenenbaum and
+Barrow [<A HREF="node1.html#jr_Tene_77">9</A>] where they use interpretation to guide their
+segmentation algorithm.
+<P>
+In this thesis, we propose a joint scheme for image segmentation and
+interpretation in a multiresolution framework. The schematic of the
+proposed scheme is shown in Figure <A HREF="synopsis.html#figinter_scheme">5</A>. A crude
+segmentation of the image is obtained by segmenting the low pass filtered
+version of the wavelet transform of the given image [<A HREF="node1.html#jr_Mall_89">2</A>]
+using the k-means clustering algorithm. The segmented image is refined
+using (i) the difference images resulting from the wavelet transform of
+the observed image, and (ii) using a predefined threshold to merge all
+segments whose area is less than the prespecified <em> minimum area</em>. 
+This refinement reduces the number of segments in the k-means segmented
+image.
+<P>
+The problem of image interpretation is formulated in a MRF framework along
+the lines of Modestino and Zhang [<A HREF="node1.html#jr_Mode_92">10</A>]. The optimal
+interpretation labels <IMG  ALIGN=MIDDLE ALT="" SRC="img190.gif"> are obtained by solving the MAP estimation
+problem
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img191.gif"><P>
+where, <IMG  ALIGN=BOTTOM ALT="" SRC="img192.gif"> is the knowledge associated with the 3D scene, <IMG  ALIGN=MIDDLE ALT="" SRC="img193.gif"> are the 
+core variables associated with the measurements made on the segmented 
+image, <b>n</b> corresponds to the number of segments in the segmented image 
+and <IMG  ALIGN=BOTTOM ALT="" SRC="img194.gif"> denotes the  possible interpretation labels. In our approach, we 
+have provision for
+the possibility of a <em> no interpretation</em> label as a possible label.
+ The <em> no interpretation</em> label is used in refining the segmented
+image based on the interpreted image (see Figure <A HREF="synopsis.html#figinter_scheme">5</A>,
+the refinement occurs in the <em> interpretation -- refining segmentation</em> 
+loop) using the following criteria:
+<P>
+Let
+<IMG  ALIGN=MIDDLE ALT="" SRC="img195.gif"> be the interpretation of the segment <b>k</b> and <IMG  ALIGN=MIDDLE ALT="" SRC="img196.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img197.gif"> be the possible interpretation labels. If region <b>k</b> has <em> no
+interpretation</em>, that is, <IMG  ALIGN=MIDDLE ALT="" SRC="img198.gif"> takes the label <IMG  ALIGN=MIDDLE ALT="" SRC="img199.gif"> and if <b>l,m</b> are the
+regions adjacent to region <b>k</b>, then region <b>k</b> is given the
+interpretation label <IMG  ALIGN=MIDDLE ALT="" SRC="img200.gif"> of the region <b>l</b> if <IMG  ALIGN=MIDDLE ALT="" SRC="img201.gif"> <b>&gt; </b> <IMG  ALIGN=MIDDLE ALT="" SRC="img202.gif">. In other words,
+<P>
+<P><A NAME=eqcriteria>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img203.gif"><P>
+<P>
+<P><A NAME=481>&#160;</A><A NAME=figinter_scheme>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img204.gif">
+<BR><STRONG>Figure 5:</STRONG> The joint segmentation and interpretation scheme<BR>
+<P>
+<P>
+The refined segmented image is subject to interpretation again. This
+process of refinement of the segmented image and interpretation is carried
+out a number of times until there is no region labeled as <em> no
+interpretation</em>. The outcome of this <em> interpretation -- refining
+segmentation</em> loop results in a correctly interpreted image. This
+resulting interpreted image can be additionally used to refine the
+segmented image to obtain the final segmented image.  The proposed scheme
+has been successfully tested on some outdoor and indoor scenes.
+<P>
+  <H5> <b> Conclusions </H5>
+ </b>
+<P>
+In this thesis a general framework based on modular integration and 
+multiresolution for tackling vision problems is developed. The 
+applicability and 
+the usefulness of this formulation is illustrated by considering three 
+vision problems: color image restoration, stereo vision and scene 
+interpretation. We conjecture that other vision problems can be 
+effectively tackled in the proposed general framework.
+<P>
+
+<P>
+</em></em></em></em></em></em></em><BR> <HR>
+<!--UL> 
+<LI> <A NAME=tex2html9 HREF="node1.html#SECTION00010000000000000000">References</A>
+<LI> <A NAME=tex2html10 HREF="node2.html#SECTION00020000000000000000">   About this document ... </A>
+</UL-->
+<!--BR> <HR><A NAME=tex2html7 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif_gr.gif"> <IMG ALIGN=BOTTOM ALT="previous" SR
+C="http://cbl.leeds.ac.uk/nikos/figs//previous_motif_gr.gif">   <BR>
+<B> Next:</B> <A NAME=tex2html8 HREF="node1.html">References</A>
+<BR> <HR> <P>
+<BR> <HR-->
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Mon Aug 19 22:56:35 IST 1996</I>
+</ADDRESS>
+</BODY>

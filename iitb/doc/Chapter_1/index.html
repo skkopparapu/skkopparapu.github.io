@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>No Title</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="No Title">
+<meta name="keywords" value="Chap">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ 
+<center> 
+<H1> <b> Modular Integration for Low-level and High-level Vision Problems 
+in a Multiresolution Framework
+ </b> 
+ </H1>
+
+<P>
+Thesis
+<P>
+Submitted in Partial Fulfillment of the Requirements<BR> 
+of the degree of
+<P>
+Doctor of Philosophy
+<P>
+by<BR>
+<b> K. Sunil Kumar</b>
+<P>
+Thesis Advisors<BR>
+ <b> Professor U. B. Desai</b> <BR>
+ <b> Professor P. G. Poonacha</b>
+<P>
+ <IMG  ALIGN=BOTTOM ALT="" SRC="logo.gif">
+<P>
+DEPARTMENT OF ELECTRICAL ENGINEERING<BR> INDIAN INSTITUTE OF TECHNOLOGY, BOMBAY<BR> 1996
+<P>
+
+<hr>
+
+<P>
+<H1><b> Approval Sheet</b> </h1>
+</center>
+<P>
+Thesis entitled : <em> Modular Integration for Low-level and High-level Vision Problems in a Multiresolution Framework
+   </em>  
+ by <b> K. Sunil Kumar</b> is approved for the 
+degree of   <b> Doctor of Philosophy</b>. <BR>
+<b> Examiners</b><BR>
+ 
+ <BR>
+ 
+ <BR>
+ 
+ <BR>
+ 
+ <BR>
+ <b> Supervisor(s)</b><BR>
+ 
+ <BR>
+ 
+ <BR>
+ <b> Chairman</b> <BR>
+Date : <IMG  ALIGN=BOTTOM ALT="" SRC="img1.gif">
+
+<P>
+
+
+<P>
+</H4><H1><A NAME=SECTION00100000000000000000> Abstract</A></H1>
+<P>
+Vision is a hard task to automate, especially because it come to humans so
+easily that it is often taken for granted. In this thesis, we develop a
+framework based on modular integration<A NAME=226>&#160;</A> and 
+multiresolution<A NAME=227>&#160;</A> for solving
+computer vision tasks. The developed framework is based on the following
+considerations:  (i) it should represent the functioning of the human
+visual system<A NAME=228>&#160;</A>, (ii) the framework should be 
+sufficiently general so as to
+be applicable to any vision task, (iii) should be efficient in terms of
+the correctness of the solution and the speed of computation.
+<P>
+In this thesis, we develop a general framework<A NAME=229>&#160;</A> to 
+solve computer vision
+tasks. The development of the generalized framework is based on modular
+integration and multiresolution, these concepts are motivated by the
+following observations:  (i) the belief that the human visual system very
+much works in a multiresolution framework, (ii)almost all the computer
+vision problems are ill-posed<A NAME=230>&#160;</A> [<A HREF="Chap.html#jr_Bert_88">1</A>] in the
+sense of Hadamard<A NAME=232>&#160;</A>, and hence modules working individually
+without interaction cannot come out with the required solution because of
+lack of sufficient constraints, (iii) the human visual system which rarely
+gets <em> fooled</em> by illusions, uses module integration to overcome visual
+illusions which can occur when the assumptions used by the visual system
+are wrong. The modular interaction in fact builds robustness in the form of
+the mistakes made by one sensory module being corrected by another module,
+(iv) we get an efficient representation of data which can be used with
+effect to reduce the computational complexity<A NAME=234>&#160;</A>.
+<P>
+The developed generalized framework for solving vision task is validated
+by applying it to both low-level and high-level vision tasks.
+Specifically, we develop schemes based on modular integration and 
+multiresolution framework to solve (i) the color image restoration
+problem, (ii) the problem of disparity estimation<A NAME=235>&#160;</A> from stereo pair, both
+being classified as low-level<A NAME=236>&#160;</A> vision tasks and (iii) 
+the vision task of
+image interpretation, which comes under the category, high-level 
+vision<A NAME=237>&#160;</A>. In the process we obtain new algorithms 
+for the three problems.
+<P>
+The main contribution of the thesis is the development of a generalized
+framework for solving vision task and demonstrating its applicability for
+solving vision tasks. The other contributions which arise when the
+proposed framework is applied to the specific problems are (i) integration
+of the parameter estimation module and the restoration module for color
+image restoration, (ii) a new algorithm for disparity computation from a
+given pair of stereo images exploiting intra-module integration and
+multiresolution analysis. and (iii) new algorithm for the problem of joint
+segmentation and image interpretation.
+<P>
+  <b> Keywords:</b> Modular Integration, Multiresolution, Color Image
+Restoration, Disparity Estimation from Stereo, Image Interpretation, Scene
+Interpretation, Parameter Estimation, Energy Minimization, Segmentation. 
+Low-level, High-level Vision,
+<P>
+<H1><A NAME=SECTION00200000000000000000> Notations and Acronyms</A></H1>
+<P>
+<H1><A NAME=SECTION00210000000000000000> Notations</A></H1>
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img2.gif"><P>
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img3.gif"><P><H1><A NAME=SECTION00220000000000000000> Acronyms</A></H1>
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img4.gif"><P>
+<P>
+
+<P>
+
+<P>
+<H1><A NAME=SECTION00300000000000000000> Introduction</A></H1>
+<P>
+<A NAME=chapintroduction>&#160;</A>
+<P>
+
+<em> I paint objects as I think them, not as I see them </em> - Pablo Picasso
+<P>
+  Vision comes to human so naturally that the processing capability of
+the human visual system<A NAME=332>&#160;</A> is often taken for 
+granted. We neither realize its
+complexity nor the difficulty in automating it and this is one of the
+reasons why research in the area of computer vision took off late. 
+Computer vision is the science that develops theoretical and algorithmic
+basis by which useful information about the world can be extracted and
+analyzed automatically from an observed image or a sequence of images,
+by computations made on special or general purpose computers. The
+information derived from the image or a sequence of images could relate to
+three dimensional description of an unknown object, motion or spatial
+property of the object or calculation of any other attribute of interest.
+<P>
+Problems in computer vision essentially revolve around the concept of <em>
+providing vision capability of the human eye to the computer</em>, albeit in a
+very small way. Often, one is trying to mimic the functioning of the eye
+or the human visual system (HVS) in general. Most of the theoretical and
+algorithmic basis for computer vision is motivated by the way the HVS
+functions because of the undisputed fact that, HVS is, undoubtedly the
+best vision system and in addition an excellent image processor.  It is
+robust in the sense that it rarely gets <em> fooled</em>; this is because the
+HVS makes use of other sources of information, which help in
+disambiguating illusions.  Problems in computer vision become hard to
+solve, because, one cannot claim complete knowledge regarding the
+functioning of the human visual system, though, vision is one of the
+widely used senses by a human. Studies in
+psychophysics<A NAME=335>&#160;</A>, physiology<A NAME=336>&#160;</A>, and
+experiments carried out on the visual system of primates help in
+understanding the HVS. These studies and experiments form a basis for
+solving vision problems.
+<P>
+Computer vision is the enterprise of automating and integrating a wide
+range of processes and representations useful for vision 
+perception<A NAME=337>&#160;</A>. 
+Though there is no strict demarcation between vision problems in terms of
+classification, we can broadly categorize vision problems into (i)
+low-level<A NAME=338>&#160;</A> vision problems and (ii) 
+high-level<A NAME=339>&#160;</A> vision problems. Low-level
+vision problems are essentially image-image vision tasks, for example edge
+detection<A NAME=340>&#160;</A>, segmentation<A NAME=341>&#160;</A>, optical 
+flow<A NAME=342>&#160;</A> estimation and depth estimation<A NAME=343>&#160;</A> from
+stereo pair to name a few, and high-level vision problems are image-scene
+vision tasks, where the objective is essentially to develop an
+understanding of the 3D scene contents contained in the 2D image.  The tasks of
+image recognition<A NAME=344>&#160;</A>, scene 
+interpretation<A NAME=345>&#160;</A> or 
+understanding, navigation<A NAME=346>&#160;</A> can be categorized as high-level 
+vision.
+<P>
+<H1><A NAME=SECTION00310000000000000000> Problem Definition</A></H1>
+<P>
+
+<P>
+The<A NAME=348>&#160;</A> main task of computer vision scientist is
+to develop the sense of vision using computers.  This would essentially
+imply that we should be able to solve vision tasks effectively in terms of
+the correctness of the solution and efficiently in terms of the
+computational speed complexity<A NAME=349>&#160;</A>.  To
+achieve this we take ``hints'' from the HVS and in a way try to
+simulate<A NAME=350>&#160;</A> the functioning of the eye.  This understanding,
+is useful in solving vision tasks along the lines of the functioning of
+the HVS.
+<P>
+Experiments from psychophysics and physiology of the visual system
+[<A HREF="Chap.html#jr_Van_92">2</A>] motivate us to look at the problem of solving the vision
+task <IMG  ALIGN=BOTTOM ALT="" SRC="img5.gif"> by breaking it into <b>m</b> smaller tasks (called 
+subtasks<A NAME=352>&#160;</A> or
+modules) <IMG  ALIGN=MIDDLE ALT="" SRC="img6.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img7.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img8.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img9.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img10.gif">. Each subtask or module
+<IMG  ALIGN=MIDDLE ALT="" SRC="img11.gif"> interacts with other modules <IMG  ALIGN=MIDDLE ALT="" SRC="img12.gif"> -- this is referred to as
+modular integration.  Integration<A NAME=353>&#160;</A> or 
+synergism<A NAME=354>&#160;</A> of modules is a technique
+where various modules get together to perform the given task better than
+when working individually with only feedforward<A NAME=355>&#160;</A> 
+interaction.  Figure
+<A HREF="Chap.html#figint_mult">1.1</A> shows the vision task <IMG  ALIGN=BOTTOM ALT="" SRC="img13.gif"> at any given resolution
+being divided into three subtasks <IMG  ALIGN=MIDDLE ALT="" SRC="img14.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img15.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img16.gif">, for example
+in case of the vision task of depth extraction<A NAME=357>&#160;</A> from 
+stereo images the
+vision task could be thought of as being made up of three subtasks, namely
+(i) the task of salient feature extraction<A NAME=358>&#160;</A> for 
+each of the stereo pair,
+(ii) the task of matching<A NAME=359>&#160;</A> the features and (iii) the task of 
+interpolating<A NAME=360>&#160;</A>
+the obtained disparity map<A NAME=361>&#160;</A>.  Each module or subtask 
+<IMG  ALIGN=MIDDLE ALT="" SRC="img17.gif"> has associated
+with it a set of input variables and possibly a set of output variables.
+More often the output may be a single variable. The relation between the
+output and input variables is modeled and the problem essentially becomes
+one of estimating the output variable given the input variables under 
+some constraints. Usually the estimation problem becomes an
+optimization problem which would involve the construction of an energy
+function<A NAME=362>&#160;</A> which when minimized would return the 
+optimal output variable. The
+energy function of one module could contain output variables of other
+modules (which form the subtask of a bigger vision task) as its input
+variables. The estimation problem is solved for each module <IMG  ALIGN=MIDDLE ALT="" SRC="img18.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img19.gif"> to obtain the optimal attribute
+  for each module. Depending on the
+vision task, one or more of these attributes may be of interest.
+<P>
+In
+addition, experimental results show that a multi-frequency 
+channel<A NAME=363>&#160;</A>
+decomposition seems to be taking place in the human visual cortex
+[<A HREF="Chap.html#jr_Mall_89">3</A>,<A HREF="Chap.html#bk_Joli_94">4</A>]. Experiments based on adaptation techniques 
+show that at
+some stage in the HVS, the visual information in different frequency bands
+is processed separately. It is also experimentally found that the retina
+image seems to be decomposed into several frequency bands having
+approximately the same bandwidth on an octave scale.  These experimental
+results motivate us to look at the vision task in a multiresolution
+framework. This hierarchical processing<A NAME=365>&#160;</A> 
+approach is operational in the HVS,
+in the sense that the processing proceeds from a coarse descriptive level
+to levels of increasing refinement, popularly called the coarse to 
+fine<A NAME=366>&#160;</A> 
+strategy [<A HREF="Chap.html#bk_Joli_94">4</A>]. One of the most significant benefits
+of this is the resultant computational savings [<A HREF="Chap.html#bk_Scha_89">5</A>].
+<P>
+<P><A NAME=371>&#160;</A><A NAME=figint_mult>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif">
+<BR><STRONG>Figure 1.1:</STRONG> Modular
+integration is along the <b>y</b>-axis and the multiresolution is seen along
+the <b>x</b>-axis. The subtasks are shown as dotted rectangles and the vision
+task by solid rectangles. The largest solid rectangle is the vision
+task to be solved.<BR>
+<P><H2><A NAME=SECTION00311000000000000000> Goal and Motivation</A></H2>
+<P>
+The main goal<A NAME=375>&#160;</A> of this thesis is to develop a framework to
+tackle problems in computer vision such that the framework is efficient in
+terms of both correctness of the solution and the total time taken to
+obtain the solution.  The motivation for the development of such a
+framework comes from the understanding of the functioning of the HVS. We
+use two aspects of the HVS, namely (i) modular integration<A NAME=376>&#160;</A> and (ii) multiresolution<A NAME=377>&#160;</A> to develop a
+general framework<A NAME=378>&#160;</A> useful for solving vision
+tasks. We formulate the framework and validate the formulation by applying
+it to problems of color image restoration<A NAME=379>&#160;</A>,
+stereo vision<A NAME=380>&#160;</A> and image
+interpretation<A NAME=381>&#160;</A>. In this process, we obtain new
+algorithms  for the three problems.
+<P>
+<H1><A NAME=SECTION00320000000000000000> Thesis Outline and Contribution</A></H1>
+<P>
+<H2><A NAME=SECTION00321000000000000000> Thesis Outline</A></H2>
+<P>
+The thesis is divided into 7 chapters. In Chapter <A HREF="#chapbackground"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> we
+describe relevant concepts and material that will be useful while reading
+the other chapters. Chapter <A HREF="#chapgeneral"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> develops the generalized
+framework for solving low-level and high-level vision tasks. We validate
+the applicability and usefulness of the proposed generalized framework by
+applying it to solve low-level tasks of color image restoration and
+disparity estimation, and the high-level vision task of image
+interpretation. The low-level vision task of color image
+restoration in the generalized framework is developed in Chapter
+<A HREF="#chapcolor"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> and vision task of disparity estimation from stereo pair
+in Chapter <A HREF="#chapstereo"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>. Chapter <A HREF="#chapscene"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A> addr
+
+esses the
+high-level vision task of image interpretation in the developed
+generalized framework. By and large the presentation in each chapter is
+self contained, in the sense we introduce the problem, cite the available
+literature, formulate the problem in the proposed framework and validate
+the correctness and usefulness of the proposed framework through
+experimental results. We conclude and suggest issues that can be taken up
+as extensions of this work at the end of each chapter.  Overall
+conclusions and extensions of this work are presented in Chapter
+<A HREF="#chapconclude"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//cross_ref_motif.gif"></A>.
+<P>
+<H2><A NAME=SECTION00322000000000000000> Contributions</A></H2>
+<P>
+The main contribution and hence the theme of this thesis is to develop a
+generalized framework to solve vision tasks. The main criterion for
+developing this framework is twofold (i) accuracy of the obtained result
+and (ii) reduction in computational complexity<A NAME=392>&#160;</A>. The concepts that go into the formulation of the vision task
+are motivated by the functioning of the HVS. In this thesis, the concepts
+that are embedded into the development of a framework for solving vision
+tasks are (i) modular integration and (ii) multiresolution.
+<P>
+The proposed framework can be used for solving <em> any</em> vision task, the
+main requirement would be the ability to break the given vision task into
+smaller tasks and understand the interaction between these smaller vision
+tasks. For example, for the estimation of optical flow from temporal
+images [<A HREF="Chap.html#pr_Suni_95">6</A>] we recognize that the vision task of optical
+flow<A NAME=395>&#160;</A> estimation would essentially comprise of three
+smaller tasks: (i) feature extraction<A NAME=396>&#160;</A> task, (ii)
+task of optical flow estimation which incorporates the motion or optical
+flow constraints and (iii) interpolation<A NAME=397>&#160;</A> of the
+sparse optical flow estimates.
+<P>
+  The main 
+contribution of this thesis are:
+<UL><LI> development of a new generalized framework to solve low-level 
+and high-level vision tasks
+<P>
+<LI> formulation of low-level vision task like color image 
+restoration and disparity estimation from stereo images and high-level 
+vision task of scene interpretation in the proposed framework by 
+identifying the subtasks and also the variables involved in   
+integration of modules
+<P>
+<LI> New faster algorithms for the three problems emanating from the use
+of the proposed generalized framework
+<P>
+</UL>
+<P>
+  The application of the generalized framework to the three problems 
+addressed in this thesis results in the following contributions
+<P>
+<OL><LI> Color Image Restoration
+<P>
+<UL><LI> identifying the subtasks of parameter estimation and image
+restoration to solve the problem of color image restoration <LI>
+development of a parameter estimation and image restoration algorithm
+in the proposed framework of modular integration and multiresolution <LI>
+As a byproduct we identify the transformation required to pass variables
+of interest from coarser to finer resolutions in general and deriving the
+behavior of degradation model<A NAME=399>&#160;</A> over scales in
+particular
+ </UL>
+<P>
+<LI> Disparity Estimation using Stereo Images
+<P>
+ <UL><LI> construction of a new energy function which incorporates 
+information regarding discontinuities for the stereo matching module 
+ <LI> use of precomputed feature map, which come as a byproduct of the 
+multiresolution scheme in the algorithm
+ <LI> integration model which is a combination of both strong and weak 
+integration schemes
+ <LI>  developing  the disparity estimation algorithm in the proposed 
+framework of integration and multiresolution 
+ </UL>
+<P>
+<LI> Joint Segmentation and Image Interpretation
+<P>
+ <UL><LI> integration of segmentation and interpretation modules in a 
+multiresolution framework
+ <LI> incorporation of a <em> no-interpretation</em> label to aid the 
+proposed scheme of joint segmentation and image interpretation
+ <LI> developing an algorithm for scene interpretation in the proposed 
+generalized framework of modular integration and multiresolution
+ </UL></OL>
+<P>
+
+<P>
+
+<P>
+<P><A NAME=SECTIONREF><H2>References</H2></A><P>
+<DL COMPACT>
+<DT><A NAME=jr_Bert_88><STRONG>1</STRONG></A><DD>
+M. Bertero and T. A. Poggio,
+ ``Ill-posed problems in early vision'',
+ <em> Proc. of IEEE</em>, vol. 76, pp. 869 -- 889, 1988.
+<P>
+<DT><A NAME=jr_Van_92><STRONG>2</STRONG></A><DD>
+D. C. Van Essen, C. H. Anderson, and D. J. Felleman,
+ ``Information processing in the primate visual system: an
+  integrated systems perspective'',
+ <em> Science</em>, vol. 255, pp. 419--423, 1992.
+<P>
+<DT><A NAME=jr_Mall_89><STRONG>3</STRONG></A><DD>
+S. G. Mallat,
+ ``Multifrequency channel decompositions of images and wavelet
+  models'',
+ <em> IEEE Tran. Acoustics, Speech and Signal Processing</em>, vol. 37,
+  pp. 2091--2110, 1989.
+<P>
+<DT><A NAME=bk_Joli_94><STRONG>4</STRONG></A><DD>
+J. M. Jolion and A. Rosenfeld,
+ <em> A pyramid framework for early vision</em>,
+ Kluwer Academic Publishers, The Netherlands, 1994.
+<P>
+<DT><A NAME=bk_Scha_89><STRONG>5</STRONG></A><DD>
+R. J. Schalkoff,
+ <em> ``Digital image processing and computer vision''</em>,
+ John Wiley and Sons, Singapore, 1989.
+<P>
+<DT><A NAME=pr_Suni_95><STRONG>6</STRONG></A><DD>
+K. Sunil Kumar and U. B. Desai,
+ ``A multiresolution approach to integrated optical flow
+  computation'',
+ in <em> International Conference on Image Processing and its
+  Applications</em>, 1995.
+</DL>
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1><A NAME=SECTION00500000000000000000>   About this document ... </A></H1>
+<P>
+ <STRONG></STRONG><P>
+This document was generated using the <A HREF="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 95.1 (Fri Jan 20 1995) Copyright &#169; 1993, 1994,  <A HREF="http://cbl.leeds
+
+.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 /home/malhar/nil/tex/LANIF/Chap.tex</tt>. <P>The translation was initiated by Sunil Kumar K. on Sun Dec 15 22:41:38 IST 1996<BR> <HR>
+<P><ADDRESS>
+<I>Sunil Kumar K. <BR>
+Sun Dec 15 22:41:38 IST 1996</I>
+</ADDRESS>
+</BODY>

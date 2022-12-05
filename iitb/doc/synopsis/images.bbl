@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{jr_Van_92}
+D.~C.~Van Essen, C.~H. Anderson, and D.~J. Felleman,
+\newblock ``{I}nformation processing in the primate visual system: an
+  integrated systems perspective'',
+\newblock {\em Science}, pp. 419--423, 1992.
+
+\bibitem{jr_Mall_89}
+S.~G. Mallat,
+\newblock ``{M}ultifrequency channel decompositions of images and wavelet
+  models'',
+\newblock {\em IEEE Tran. Acoustics, Speech and Signal Processing}, pp.
+  2091--2110, 1989.
+
+\bibitem{pr_Nand_94}
+P.~K. Nanda, U.~B. Desai, and P.~G. Poonacha,
+\newblock ``{A} homotopy continuation method for parameter estimation in {MRF}
+  models and image restoration'',
+\newblock in {\em International Symposium on Circuits and Systems}, 1994.
+
+\bibitem{bk_Laks_93}
+S.~Lakshmanan and H.~Derin,
+\newblock {``{G}aussian {MRF} at multiple resolutions''},
+in {\em ``{M}arkov {R}andom {F}ields - theory and applications''}, Edited 
+by Chellappa and Jain, \newblock Academic Press, San Diego, 1993.
+
+\bibitem{bk_Clar_90}
+J.~J. Clark and A.~L. Yullie,
+\newblock {\em ``{D}ata fusion for sensory information processing systems''},
+\newblock Kluwer Academics Publishers, 1990.
+
+\bibitem{jr_Gamb_89}
+E.~B. Gamble, D.~Geiger, T.~A. Poggio, and D.~Weinshall,
+\newblock ``{I}ntegration of vision modules and labeling of surface
+  discontinuities'',
+\newblock {\em IEEE Tran. on Systems Man and Cybernetics}, pp. 1576--1581,
+  1989.
+
+\bibitem{jr_Gema_84}
+S.~Geman and D.~Geman,
+\newblock ``{S}tochastic relaxation, Gibbs distribution, and Bayesian
+  restoration of images'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  721--741, 1984.
+
+\bibitem{pr_Suni_95}
+K.~Sunil Kumar and U.~B. Desai,
+\newblock ``{A} multiresolution approach to integrated optical flow
+  computation'',
+\newblock in {\em International Conference on Pattern Recognition}, 1995.
+
+\bibitem{jr_Tene_77}
+J.~M. Tenenbaum and H.~G. Barrow,
+\newblock ``{E}xperiments in interpretaion-guided segmentation'',
+\newblock {\em Artificial Intelligence}, pp. 241--274, 1977.
+
+\bibitem{jr_Mode_92}
+J.~A. Modestino and J.~Zhang,
+\newblock ``{A} {M}arkov {R}andom {F}ield model based approach to image
+  interpretation'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  606--615, 1992.
+
+\end{thebibliography}

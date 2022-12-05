@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node11.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html360"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html356"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html350"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html358"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html361"
+  HREF="node13.html">Markov Random Field Models</A>
+<B>Up:</B> <A NAME="tex2html357"
+  HREF="node11.html">Background</A>
+<B> Previous:</B> <A NAME="tex2html351"
+  HREF="node11.html">Background</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00510000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+The basic objective in  machine vision
+is to give the machine a sense of vision, that is to use 
+visual sensors for such tasks as detection and recognition
+of  objects,  tracking of  objects,  avoiding obstacles, 
+navigation, and perhaps reasoning! Since the work of Marr 
+[<A
+ HREF="node80.html#bk_Marr_82">75</A>] a generally accepted view is to consider a 
+vision system as an information processing system which has 
+a two level hierarchical structure. The first 
+level is referred to as <EM>early vision</EM>  and the 
+second level as <EM>high-level vision</EM> (see Table <A HREF="node6.html#tab:scope_of_cv">1.1</A>).
+Typical early vision modules are,    edge detection, 
+texture, segmentation, shape, surface discontinuities,
+stereo disparity, depth, color, motion; while high-level 
+vision  modules are recognition, vision based navigation, 
+tracking, scene understanding, image interpretation.
+
+<P>
+Early vision modules are assumed to operate relatively 
+independently, and then the information provided by these 
+modules is integrated to solve the high-level vision
+problem. More recently the relative independence of early 
+vision modules is being questioned, and the scenario 
+emerging is that there is considerable interaction 
+between these modules (modular integration). 
+
+<P>
+Early vision problems can be viewed as problems of recovering 3-D 
+surface properties (for example depth) form 2-D observations 
+(for example intensity images); thus vision problems can be 
+regarded as problems in <EM>inverse optics</EM>. Most inverse 
+problems are <EM>ill posed</EM>ill-posed, namely (a)  solution may not 
+exist, or (b) solution may not be unique, or (c) solution 
+may not depend continuously on the data. 
+Vision is no 
+exception, all the early vision problems listed above
+are <EM>ill posed</EM>. 
+
+<P>
+Another observation has been that in case of images, unlike 
+one dimensional signals,  important information is in 
+the discontinuities. Thus one needs to have a somewhat 
+different perspective when dealing with images, since a 
+fundamental attribute to be estimated would be 
+discontinuities (for example edges  or 
+segments).
+
+<P>
+We will focus on early vision problems;
+ and that too 
+from the perspective that early vision modules are 
+essentially independent. 
+Most early vision problems are 
+formulated as energy (cost function) minimization problems, 
+(see for example Horn [<A
+ HREF="node80.html#bk_Horn_86">76</A>] and Shah and Mumford 
+[<A
+ HREF="node80.html#mumford">77</A>]) and are solved using a variational approach.
+An alternate approach is to use probabilistic methods based 
+on Markov random field (MRF) models of the image; solution 
+is then cast as a  maximum <EM>a posteriori</EM> (MAP) 
+estimation problem (Besag [<A
+ HREF="node80.html#jr_Besa_74">78</A>], Geman and Geman 
+[<A
+ HREF="node80.html#jr_Gema_84">79</A>]). This approach also involves solving an 
+energy minimization problem; except the MRF framework makes it  
+relatively easy to incorporate terms in the energy function 
+to account for image discontinuities [<A
+ HREF="node80.html#jr_Gema_84">79</A>]. 
+
+<P>
+In general, the energy function associated with early vision 
+problems will be non-convex, and could have several local 
+minima, and also the global minima need not be unique. In 
+fact, under the digitally quantized condition for images, 
+one could view this as a problem in combinatorics.
+Typically one uses the simulated annealing (Kirkpatrick 
+et al [<A
+ HREF="node80.html#jr_Kirk_83">80</A>]) algorithm (SAA) for 
+non-convex minimization problems. Under very mild 
+conditions convergence with probability one to the set of 
+global minima is guaranteed 
+(Geman and Geman [<A
+ HREF="node80.html#jr_Gema_84">79</A>], 
+Hajek [<A
+ HREF="node80.html#hajek">81</A>], Aarts and Korst [<A
+ HREF="node80.html#bk_Aart_89">82</A>]). 
+The Boltzmann machine
+(Hinton and Sejnowski [<A
+ HREF="node80.html#hinton">83</A>])  can be viewed as a 
+parallel and distributed implementation of the SAA 
+(Aarts and Korst [<A
+ HREF="node80.html#bk_Aart_89">82</A>]). This is where neural 
+networks come into the picture. We shall see that the 
+selection of parameters in the MRF model would be equivalent 
+to the learning problem in the Boltzmann machine (BM).
+
+<P>
+Thus the flow of relationship we attempt to describe in this 
+section is to formulate an early vision problem using a MRF 
+model, the emerging energy function minimization is then 
+carried out using a neural network. 
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">Early Vision</TD>
+<TD ALIGN="CENTER"><!-- MATH
+ $\longleftrightarrow$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \longleftrightarrow $"></TD>
+<TD ALIGN="CENTER">Markov Random Field</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><IMG
+ WIDTH="36" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\searrow$"></TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\swarrow$"></TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">Neural Networks</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+It is essential to note that MRF based formulation is by 
+no means the only one. A deterministic approach to the 
+problem is indeed taken in literature (Koch et al 
+[<A
+ HREF="node80.html#jr_Koch_86">84</A>], Yuille [<A
+ HREF="node80.html#jr_Yuil_89">85</A>]). A direct formulation 
+of the an energy function, taking into account 
+discontinuities, is given. This energy function could then be 
+minimized using a Hopfield network.  
+
+<P>
+An alternate deterministic approach starting with the MRF 
+formulation is also possible (see for example Zerubia and 
+Chellappa [<A
+ HREF="node80.html#zerubia">86</A>], and Geiger and Girosi 
+[<A
+ HREF="node80.html#jr_Geig_91">87</A>]). This approach is referred to as the mean 
+field approximation or sometimes mean field annealing. This 
+algorithm is  inherently parallel and can be implemented 
+using neural networks. Moreover, 
+through simulations it has been observed that the mean 
+field 
+approximation algorithm is significantly faster than the
+simulated annealing algorithm.  
+
+<P>
+<HR>
+<A NAME="tex2html360"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html356"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html350"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html358"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html361"
+  HREF="node13.html">Markov Random Field Models</A>
+<B>Up:</B> <A NAME="tex2html357"
+  HREF="node11.html">Background</A>
+<B> Previous:</B> <A NAME="tex2html351"
+  HREF="node11.html">Background</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

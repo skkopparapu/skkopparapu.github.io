@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Primary Features</TITLE>
+<META NAME="description" CONTENT="Primary Features">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node76.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node66.html">
+<LINK REL="next" HREF="node76.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1173"
+  HREF="node76.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1169"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1163"
+  HREF="node74.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1171"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1174"
+  HREF="node76.html">Secondary Features</A>
+<B>Up:</B> <A NAME="tex2html1170"
+  HREF="node66.html">Conclusions</A>
+<B> Previous:</B> <A NAME="tex2html1164"
+  HREF="node74.html">Initial assignment of bin</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00930000000000000000">
+Primary Features</A>
+</H1>
+
+<P>
+primary features Primary features are features obtained from the scene through direct
+measurement. A few primary features are enumerated below: 
+
+<P>
+<DL>
+<DT><STRONG><EM>Area</EM></STRONG></DT>
+<DD> the number of pixels in the region  feature,
+area
+
+<P>
+</DD>
+<DT><STRONG><EM>Perimeter</EM></STRONG></DT>
+<DD> the number of pixels on the boundary of the 
+region  feature, perimeter
+
+<P>
+</DD>
+<DT><STRONG><EM>Maximum Diameter</EM></STRONG></DT>
+<DD> 
+</DD>
+<DT><STRONG><EM>Minimum Diameter</EM></STRONG></DT>
+<DD> 
+feature, maximum diameter
+feature, minimum diameter
+</DD>
+<DT><STRONG><EM>Average gray value</EM></STRONG></DT>
+<DD>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+G = \frac{1}{A} \sum_{i,j \in R} 
+x(i,j)
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+feature, gray value
+where  are the gray levels of the pixel at the location <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> in the region .
+
+<P>
+</DD>
+<DT><STRONG><EM>Variance of gray levels</EM></STRONG></DT>
+<DD>feature, variance
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+V =  \left \{ \frac{1}{A} \sum_{i,j \in R} \left ( x(i,j) - G \right )^2 \right \}^{1/2}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</DD>
+<DT><STRONG><EM>Mass Center</EM></STRONG></DT>
+<DD>feature, mass center
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+M = \left \{ m_x , m_y \right \}= \left \{ \frac{1}{A} \sum_{i,j \in R} i  ,
+ \frac{1}{A} \sum_{i,j \in R} j  \right \}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</DD>
+<DT><STRONG><EM>Scatter Matrix</EM></STRONG></DT>
+<DD>represents the elliptical feature, scatter
+matrix area which 
+approximates the
+shape of the region. In other words it quantifies what can be termed as the 
+shape variance.
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+S = \frac{1}{A} \sum_{i,j \in R} \left [ \begin{array}{c} i-m_x \\j-m_y 
+\end{array} \right ] \left [ i-m_x,  j-m_y \right ]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</DD>
+<DT><STRONG><EM>Common Perimeter</EM></STRONG></DT>
+<DD>feature, common perimeter  The boundary common to region  
+and  
+</DD>
+</DL>
+
+<P>
+<HR>
+<A NAME="tex2html1173"
+  HREF="node76.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1169"
+  HREF="node66.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1163"
+  HREF="node74.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1171"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1174"
+  HREF="node76.html">Secondary Features</A>
+<B>Up:</B> <A NAME="tex2html1170"
+  HREF="node66.html">Conclusions</A>
+<B> Previous:</B> <A NAME="tex2html1164"
+  HREF="node74.html">Initial assignment of bin</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MRF on a Graph</TITLE>
+<META NAME="description" CONTENT="MRF on a Graph">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node26.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html547"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html543"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html539"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html545"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html548"
+  HREF="node28.html">Notion of Cliques</A>
+<B>Up:</B> <A NAME="tex2html544"
+  HREF="node26.html">MRF Framework for Image</A>
+<B> Previous:</B> <A NAME="tex2html540"
+  HREF="node26.html">MRF Framework for Image</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00610000000000000000"></A>
+<A NAME="sec:mrf_on_graph"></A>
+<BR>
+MRF on a Graph
+</H1>
+
+<P>
+Consider a segmented image having  segments <!-- MATH
+ $\{R_{1}, R_{2}, \cdots
+R_{n}\}$
+ -->
+ and the corresponding  RAG is as shown in Figure <A HREF="node27.html#RAG">3.1</A>.
+
+<DIV ALIGN="CENTER"><A NAME="RAG"></A><A NAME="3558"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3.1:</STRONG>
+Segmented image and RAG.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Let 
+
+<P>
+
+<UL>
+<LI> be a RAG with nodes <!-- MATH
+ $R=\{R_{1}, R_{2}, \cdots R_{n}\}$
+ -->
+and  denoting the set of edges. There will be an edge between node
+ and  if the corresponding segments  and 
+  share a common boundary. 
+
+<P>
+</LI>
+<LI>the neighborhood system on  be
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\eta = \{ \eta(R_1), \eta(R_2), \cdots \eta(R_n) \}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Note, <!-- MATH
+ $R_{i} \in \eta(R_{j})$
+ -->
+ if <!-- MATH
+ $R_{i} \notin \eta(R_{i})$
+ -->
+ and <!-- MATH
+ $R_{j}
+\in \eta(R_{i})$
+ -->
+.
+
+<P>
+</LI>
+<LI><!-- MATH
+ $X = \{X_{1}, X_2, \cdots X_{n} \}$
+ -->
+ be the set of random variables 
+           defined on . Each  corresponds to
+           . Moreover we assume that  takes values form
+           a finite sample space. 
+
+<P>
+</LI>
+</UL>
+<BR>
+
+<BR>
+
+<P>
+One of the advantages of a MRF model is that under some very mild
+assumption there exist a functional form for the probability
+distribution function, namely the Gibbs distribution. This is 
+established
+by the theorem, Hammersley-Clifford Hammersley-Clifford theorem.
+
+<P>
+<BR>
+
+<BR>
+
+<P>
+<BR>
+<A NAME="thm:ham_clif"></A><A NAME="gibbs"></A>
+<BR>
+
+<P>
+<B>Proof:</B>  See Appendix <A HREF="node66.html#gibbs_mrf">B</A>.
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><UL>
+<LI><A NAME="tex2html549"
+  HREF="node28.html">Notion of Cliques</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html550"
+  HREF="node29.html">MRF based Formulation for Interpretation</A>
+<LI><A NAME="tex2html551"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<UL>
+<LI><A NAME="tex2html552"
+  HREF="node31.html">1-node Clique Functions</A>
+<LI><A NAME="tex2html553"
+  HREF="node32.html">Multiple Node Clique Function</A>
+<LI><A NAME="tex2html554"
+  HREF="node33.html">Minimization Algorithm</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<A NAME="tex2html547"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html543"
+  HREF="node26.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html539"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html545"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html548"
+  HREF="node28.html">Notion of Cliques</A>
+<B>Up:</B> <A NAME="tex2html544"
+  HREF="node26.html">MRF Framework for Image</A>
+<B> Previous:</B> <A NAME="tex2html540"
+  HREF="node26.html">MRF Framework for Image</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

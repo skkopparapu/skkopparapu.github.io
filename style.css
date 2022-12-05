@@ -1,0 +1,63 @@
+BODY {background-color: rgb(40,40,40); font-size: normal; color: rgb(255,255,255);} 
+
+H1 {font-size: x-large;  font-variant:small-caps; color: rgb(255,255,255); background: rgb(120,120,120)}
+H1 {text-decoration: none}
+H2 {font-size: large; color: rgb(255,255,255); background: rgb(120,120,120)}
+H4 {font-family:Arial  color: rgb(225,225,25);background: rgb(120,120,120) }
+
+/* BODY {background-image: URL(figs/small_100.jpg)} */
+/* BODY {background-image: URL(figs/nam_sum_01.jpg)} */
+BODY {background-repeat:repeat}
+BODY {font-family: Arial, Verdana, sans-serif; font-size:85%; color:
+rgb(256,256,256)}
+ADDRESS  {background-color:rgb(120,120,120); color: rgb(256,256,256); font-family:Verdana; font-size:90%}
+
+TABLE { /* border-spacing:0; cellpadding:1;  border: inset 1pt; */
+       color:rgb(256,256,256);background-image:URL(figs/nam_sum_01.jpg);
+       font-family:sans-serif, Verdana, Arial, sans-serif;font-size:100%;
+        text-transform:normal}
+/*
+        text-transform:lowercase}
+*/
+CAPTION{caption-side:bottom;color:rgb(256,256,256);
+        background-color:rgb(120,120,120)}
+
+TD {border: inset 1pt;text-align:left}
+
+P {text-indent: 0.01in; text-transform: normal;  text-decoration:normal;
+color:rgb(255,255,255);font-family: Arial, Verdana, sans-serif; font-size:100%}
+
+/*
+P {text-indent: 0.01in; text-transform: lowercase;  text-decoration:normal;
+color:rgb(255,255,255);font-family: Arial, Verdana, sans-serif; font-size:100%}
+*/
+
+a:link {cursor:help}
+a:active {font-size: 100% }
+a:visited {font-size: 100% }
+
+a:link {color: rgb(153, 153, 255);text-decoration:none }  /* for unvisited links */
+a:visited {color: rgb(153, 255, 153);text-decoration:none } /* for visited links */
+a:active {color: rgb(255, 0, 102) } /* when link is clicked */
+a:hover {color: rgb(0, 96, 255); background: rgb(160,160,0)} /* when mouse is over link */
+
+LI { 
+    color: white ;    
+    margin: 0 2 3 4; 
+    padding: 1 1 1 1;
+  }
+
+/*
+LI { list-style-type: circle }
+LI LI { list-style-type: square }
+LI LI LI { list-style-type: disc }
+*/
+
+OL       { list-style-type: decimal }      /* 1 2 3 4 5 etc. */
+OL OL    { list-style-type: lower-roman }  /* i ii iii iv v etc. */
+OL OL OL { list-style-type: upper-alpha }  /* A B C D E etc. */
+
+DIV {font-size: x-small; color: rgb(255,255,255);}
+
+SUMMARY {font-size: large; font-weight:bold; font-variant:small-caps;color: rgb(255,255,255); background: rgb(128,128,128);}
+

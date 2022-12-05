@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Maximum Entropy Interpretation</TITLE>
+<META NAME="description" CONTENT="Maximum Entropy Interpretation">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html404"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html400"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html394"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html402"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html405"
+  HREF="node16.html">Application: Estimating Image Attribute</A>
+<B>Up:</B> <A NAME="tex2html401"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html395"
+  HREF="node14.html">MRF Model and Gibbs</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00522000000000000000">
+Maximum Entropy Interpretation</A>
+</H2>
+
+<P>
+Besides the Theorem, Hammersley-Clifford 
+Hammersley-Clifford Theorem there is another 
+reason for selecting the Gibbs distribution model; this is 
+based on the solution to a constrained maximum entropy
+problem. Let the entropy be defined as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+S = - \sum_{x} p(x) \ln p(x)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="11" HEIGHT="16" BORDER="0"
+ SRC="img58.gif"
+ ALT="\begin{displaymath}
+S = - \sum_{x} p(x) \ln p(x)
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p(x) = P[X= x]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="71" HEIGHT="34" BORDER="0"
+ SRC="img59.gif"
+ ALT="\begin{displaymath}p(x) = P[X= x] \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Now consider the maximization problem: 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle { \max_{p}[S] = \max_{p} \left [ - \sum_{x} x \ln 
+p(x) \right ] } \\[3ex]
+\mbox{subject to} \;\; 
+\displaystyle {  \sum_{x} U(x) p(x) = m \;\;
+\mbox{and} \;\;\; \sum_{x} p(x) = 1}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="159" HEIGHT="45" BORDER="0"
+ SRC="img60.gif"
+ ALT="\begin{displaymath}\begin{array}{c}
+\displaystyle { \max_{p}[S] = \max_{p} \left...
+... p(x) = m \;\;
+\mbox{and} \;\;\; \sum_{x} p(x) = 1}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Then the solution to this problem (which can be easily 
+obtained using the method of Lagrange multipliers) is 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+p(x) = \frac{\exp^{(-U(x))}}
+                 { \displaystyle { \sum_{x} \exp^{(- U(x))}}  }
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:gibbs_distribution"></A><IMG
+ WIDTH="127" HEIGHT="30" BORDER="0"
+ SRC="img61.gif"
+ ALT="\begin{displaymath}
+p(x) = \frac{\exp^{(-U(x))}}
+{ \displaystyle { \sum_{x} \exp^{(- U(x))}} }
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+namely, the Gibbs distribution.
+
+<P>
+Thus we are choosing a probability measure (Gibbs) which has 
+the largest uncertainty (with respect to entropy) among all 
+possible measures with a specified expected energy.
+
+<P>
+<P>
+<DIV><B>Note  2.3</B> &nbsp; 
+A typical unconditional problem can be defined as:
+Find a configuration <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> such that <IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.gif"
+ ALT="$P[X = x]$"> is 
+maximized, equivalently <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$"> is minimized.</DIV><P></P>
+
+<P>
+<HR>
+<A NAME="tex2html404"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html400"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html394"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html402"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html405"
+  HREF="node16.html">Application: Estimating Image Attribute</A>
+<B>Up:</B> <A NAME="tex2html401"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html395"
+  HREF="node14.html">MRF Model and Gibbs</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

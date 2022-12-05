@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>  Notation used </TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="  Notation used ">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html76 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html74 HREF="node3.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html70 HREF="node3.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html77 HREF="node5.html"> The energy functions </A>
+<B>Up:</B> <A NAME=tex2html75 HREF="node3.html"> Problem Formulation</A>
+<B> Previous:</B> <A NAME=tex2html71 HREF="node3.html"> Problem Formulation</A>
+<BR> <HR> <P>
+<H2><A NAME=SECTION00031000000000000000>  Notation used </A></H2>
+<P>
+ At resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif">
+<UL><LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img21.gif"> is the  intensity value of the <IMG  ALIGN=MIDDLE ALT="" SRC="img22.gif"> pixel in the right 
+image
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img23.gif"> is the intensity value of the <IMG  ALIGN=MIDDLE ALT="" SRC="img24.gif"> pixel in the left image
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img25.gif"> is the vertical line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img26.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img27.gif"> 
+for the interactive left image edge detector
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img28.gif"> is the vertical line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img29.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img30.gif">
+for the interactive right image edge detector
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img31.gif"> is the horizontal line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img32.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img33.gif">
+for the interactive left image edge detector
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img34.gif"> is the horizontal line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img35.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img36.gif">
+for the interactive right image edge detector
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img37.gif"> is the horizontal line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img38.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img39.gif">
+for the precomputed left image edge detector 
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img40.gif"> is the horizontal line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img41.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img42.gif">
+for the precomputed right image edge detector 
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img43.gif"> is the vertical line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img44.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img45.gif">
+for the precomputed left image edge detector 
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img46.gif"> is the vertical line field between pixels <IMG  ALIGN=MIDDLE ALT="" SRC="img47.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img48.gif">
+for the precomputed right image edge detector 
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img49.gif"> is the  disparity at <IMG  ALIGN=MIDDLE ALT="" SRC="img50.gif"> pixel
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img51.gif"> is the horizontal line field in the interpolated scene
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img52.gif"> is the vertical line field in the interpolated scene 
+<LI> all line fields take values 1 or 0
+<LI> <IMG  ALIGN=MIDDLE ALT="" SRC="img53.gif">  with all subscripts
+are real constants, and <IMG  ALIGN=MIDDLE ALT="" SRC="img54.gif"> is the binary operator such that <IMG  ALIGN=MIDDLE ALT="" SRC="img55.gif">
+only if <b>a=b=0</b>, where <b>a,b</b> take binary values 0 or 1
+<LI> we assume epipolar line constraint so that there is disparity  only
+in the <b>j</b> direction
+</UL>
+<P>
+We proceed by constructing an energy function for each of the module
+which while achieving the 
+requirement of the module when minimized, also integrates information
+available from other modules, so as not to overlook the outcome of the
+other modules. This integration is achieved through the use of line fields.
+Though not explicitly stated, there is an obvious Markov Random Field (MRF) model
+underlying each energy function.   For further details on line fields please
+see Geman and Geman [<A HREF="node24.html#gema">27</A>].
+<P>
+The energy functions are constructed and a brief description of the terms 
+appearing in each energy function is given below. While  constructing the
+energy function we assume that the stereo pair is neither noisy nor blurred
+(one can, without much difficulty, add an extra term  to the energy function to
+take care of noise in the stereo image pair). The energy functions appearing
+in Section <A HREF="node5.html#secenergy">4</A> are constructed at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img56.gif"> and the
+energy functions at other resolutions can, for example at resolution
+<IMG  ALIGN=MIDDLE ALT="" SRC="img57.gif">, be  obtained by replacing <IMG  ALIGN=BOTTOM ALT="" SRC="img58.gif"> with
+<IMG  ALIGN=MIDDLE ALT="" SRC="img59.gif">.
+<P>
+<BR> <HR><A NAME=tex2html76 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html74 HREF="node3.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html70 HREF="node3.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html77 HREF="node5.html"> The energy functions </A>
+<B>Up:</B> <A NAME=tex2html75 HREF="node3.html"> Problem Formulation</A>
+<B> Previous:</B> <A NAME=tex2html71 HREF="node3.html"> Problem Formulation</A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>  Results</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="  Results">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html258 HREF="node22.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html256 HREF="node12.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html252 HREF="node20.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html259 HREF="node22.html"> Observations</A>
+<B>Up:</B> <A NAME=tex2html257 HREF="node12.html"> Experiments</A>
+<B> Previous:</B> <A NAME=tex2html253 HREF="node20.html"> Interactive edge computation</A>
+<BR> <HR> <P>
+<H2><A NAME=SECTION00073000000000000000>  Results</A></H2>
+<P>
+
+Simulations were carried out to validate and justify the use of the proposed algorithm
+for obtaining surface description from binocular stereo. One of the main
+objective was to show the enhanced performance when various modules are 
+integrated.  In addition, we wanted to study the effect of integration 
+when a precomputed edge map was used to drive the integration model. 
+We also wanted to explore the accuracy of the disparity map and the reduction in
+computation when multiresolution approach was used in the stereo algorithm.
+<P>
+Simulations were carried out on three different pairs of stereo images of
+size <IMG  ALIGN=BOTTOM ALT="" SRC="img232.gif">. The first pair is the random dot stereogram (Figure 9 , Figure 10 ),
+the two images are identical except for the fact that a small square portion of the 
+left image (Figure 9 ) has been shifted by ten pixels to the right and placed in
+Figure 10 . The second set (Figure 11 , Figure 12 ) is that of an auto part and the third pair
+(Figure 13 , Figure 14 ) is the aerial view of the Pentagon. In all our simulations we make
+use of the knowledge of the maximum disparity range in each of the stereo pair
+as shown in Table <A HREF="node21.html#tabdisp">1</A>.
+<P>
+<P><A NAME=1324>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img233.gif">
+<BR><STRONG>Table 1:</STRONG> <A NAME=tabdisp>&#160;</A> Disparity range<BR>
+<P>
+<P>
+Figure 15  through Figure 26  are concerned with the random dot stereogram (Figure 9 , Figure 10 ).
+The first set of results (Figure 15  and  Figure 16 ) are obtained when no integration 
+is used (Section <A HREF="node14.html#secNI">7.1.1</A>), Figure 15  is the disparity plotted as an intensity map (black
+shows zero disparity) and Figure 16  is the disparity plotted as a depth map. The next set of 
+results (Figure 17 , Figure 18 ) are the intensity plot and the depth map of the disparity using the
+precomputed edge integration model of Figure <A HREF="node15.html#figprecomputed">7</A>. Figure 19  and  Figure 20  are obtained using the 
+interactive edge integration model of 
+Figure <A HREF="node16.html#figestimated">8</A>. Figure 21  is the intensity plot of the disparity and Figure 22  is the depth plot
+of the disparity using the general stereo integration model of Figure <A HREF="node2.html#INTEGRATION_MODEL">2</A>. Figure 23  - Figure 26  are obtained
+using the multiresolution technique. Figure 23  and  Figure 24  are the disparity plotted as an intensity map
+and disparity plotted as  depth for the case where only precomputed edges are used along
+with multiresolution,
+(Section <A HREF="node19.html#secMPE">7.2.1</A>). Figure 25  and Figure 26 \
+ are obtained using interactive edge computation along with multiresolution (Section <A HREF="node20.html#secMIE">7.2.2</A>).
+<P>
+Figure 27  through Figure 38  and Figure 39  through Figure 50  
+depict the results of various experiments using the auto part stereo pair and 
+the Pentagon stereo pair, respectively. The sequence of operations is the same
+as that depicted for the random dot stereogram and this follows the sequence of
+subsections and sub-subsections of Section <A HREF="node12.html#secexpt">7</A>. This sequence is, no integration,
+only precomputed edges, interactive edge computation, precomputed edges and interactive
+edge computation, only precomputed edged using multiresolution, and interactive edges
+using multiresolution. In each case the intensity disparity map as well as
+3D display of the disparity map are shown.
+<P>
+In all our simulations the number of integrated iterations was fixed at <b>200</b> for the 
+monoresolution case and <b>20</b> for the multiresolution case. The value of the
+threshold in (<A HREF="node11.html#eqdiff_2_lf">6</A>) was set to <b>20</b>.
+<P>
+The parameter values are shown in  Table <A HREF="node21.html#tabparameter">2</A>. Those
+that are not shown (i.e <IMG  ALIGN=MIDDLE ALT="" SRC="img234.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img235.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img236.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img237.gif">) take a
+value 1. The value of the parameters in the case of multiresolution was kept
+identical over all resolutions.
+<P>
+<P><A NAME=1322>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img238.gif">
+<BR><STRONG>Table 2:</STRONG> <A NAME=tabparameter>&#160;</A> Values of parameters used in simulation<BR>
+<P><BR> <HR>
+<UL> 
+<LI> <A NAME=tex2html260 HREF="node22.html#SECTION00073100000000000000"> Observations</A>
+</UL>
+<BR> <HR><A NAME=tex2html258 HREF="node22.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html256 HREF="node12.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html252 HREF="node20.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html259 HREF="node22.html"> Observations</A>
+<B>Up:</B> <A NAME=tex2html257 HREF="node12.html"> Experiments</A>
+<B> Previous:</B> <A NAME=tex2html253 HREF="node20.html"> Interactive edge computation</A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> The matching block</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" The matching block">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html120 HREF="node9.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html118 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html112 HREF="node7.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html121 HREF="node9.html"> The interpolation block</A>
+<B>Up:</B> <A NAME=tex2html119 HREF="node5.html"> The energy functions </A>
+<B> Previous:</B> <A NAME=tex2html113 HREF="node7.html">  The interactive right </A>
+<BR> <HR> <P>
+<H2><A NAME=SECTION00043000000000000000> The matching block</A></H2>
+<P>
+<P><A NAME=eqmatch>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img91.gif"><P>
+<P>
+  where,
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img92.gif"><P>
+<P>
+The first term in (<A HREF="node8.html#eqmatch">3</A>) is the grey level matching at selected pixel
+locations, namely, at those locations where there is no vertical line field, or horizontal line field,
+or both vertical and horizontal line fields are not present. The reason for such a selection
+process is that, at edge points (i.e. points where <IMG  ALIGN=MIDDLE ALT="" SRC="img93.gif"> or  <IMG  ALIGN=MIDDLE ALT="" SRC="img94.gif"> )
+we cannot expect the grey levels to be similar in the left image and the right 
+image. On the other hand , where ever there is no edge we can expect similar grey levels
+in the left image and the right image.
+<P>
+Next, since it is not very meaningful to  compare one pixel in the
+left image with one pixel in the right image, we average the grey values around
+the pixel displaced by <IMG  ALIGN=MIDDLE ALT="" SRC="img95.gif"> in the neighborhood <IMG  ALIGN=MIDDLE ALT="" SRC="img96.gif"> in the
+right image. Here
+<IMG  ALIGN=MIDDLE ALT="" SRC="img97.gif"> represents the number  pixels over which the average is 
+obtained. 
+The second term is the smoothing term with the expression in the curly bracket 
+as the controlling parameter. The disparity <IMG  ALIGN=MIDDLE ALT="" SRC="img98.gif">, (<b>p,q</b>) <IMG  ALIGN=MIDDLE ALT="" SRC="img99.gif">
+(<IMG  ALIGN=MIDDLE ALT="" SRC="img100.gif"> is a window around the pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img101.gif">) does not vary much provided 
+there are no edges in the interpolated scene within the window <IMG  ALIGN=MIDDLE ALT="" SRC="img102.gif">. The
+term in the square bracket precisely does this by switching off smoothing
+within  the window <IMG  ALIGN=MIDDLE ALT="" SRC="img103.gif"> whenever a line field is encountered in
+the interpolated image in the window <IMG  ALIGN=MIDDLE ALT="" SRC="img104.gif">. 
+This term is better explained by looking at 
+Figure <A HREF="node8.html#LATTICE">3</A>
+<P>
+<P><A NAME=1114>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img105.gif">
+<BR><STRONG>Figure 3:</STRONG> <A NAME=LATTICE>&#160;</A>A Sample Lattice<BR>
+<P>
+<P>
+Consider a <IMG  ALIGN=MIDDLE ALT="" SRC="img106.gif"> window around the pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img107.gif"> 
+in Figure <A HREF="node8.html#LATTICE">3</A>.
+Let the lines marked between the pixels represent the edge in the interpolated
+scene or the disparity map. Clearly the disparity value at <IMG  ALIGN=MIDDLE ALT="" SRC="img108.gif">
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img109.gif"> or <IMG  ALIGN=MIDDLE ALT="" SRC="img110.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img111.gif">  cannot be similar, because of the presence of an 
+edge. In the
+same way the disparity value at <IMG  ALIGN=MIDDLE ALT="" SRC="img112.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img113.gif"> or <IMG  ALIGN=MIDDLE ALT="" SRC="img114.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img115.gif">  cannot 
+be similar. Hence the disparity values should not be smoothed, and this is
+precisely being done by the term in the square bracket. The term in the square 
+bracket
+returns a non-zero value only when there is no edge in the window under 
+consideration.
+<P>
+Next we consider the incorporation of the two constraints, smoothness and
+uniqueness first proposed by Marr [<A HREF="node24.html#bkmarr">26</A>]. In our case, Marr's 
+smoothness constraint gets modified as: <em> Disparity varies smoothly between edges.</em>
+The term in the curly bracket takes care of this; we refer to this as the
+selective smoothing term.
+The third term takes care of the uniqueness constraint. The idea  being that 
+each point in the left image should have one and only one corresponding
+point in the right image. More explicitly, it means that along any 
+row <b>i</b> if we were to calculate the disparity at the <IMG  ALIGN=MIDDLE ALT="" SRC="img116.gif"> and the <IMG  ALIGN=BOTTOM ALT="" SRC="img117.gif">  
+column (call it <IMG  ALIGN=MIDDLE ALT="" SRC="img118.gif">) then according to the uniqueness
+constraint <IMG  ALIGN=MIDDLE ALT="" SRC="img119.gif">; for the whole image this  translates
+into the third term of (<A HREF="node8.html#eqmatch">3</A>).
+To our knowledge this energy function for the matching block is new.
+<P>
+<BR> <HR><A NAME=tex2html120 HREF="node9.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html118 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html112 HREF="node7.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html121 HREF="node9.html"> The interpolation block</A>
+<B>Up:</B> <A NAME=tex2html119 HREF="node5.html"> The energy functions </A>
+<B> Previous:</B> <A NAME=tex2html113 HREF="node7.html">  The interactive right </A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

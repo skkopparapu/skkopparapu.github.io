@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE> The Integration Model </TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value=" The Integration Model ">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html57 HREF="node3.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html55 HREF="run.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html49 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html58 HREF="node3.html"> Problem Formulation</A>
+<B>Up:</B> <A NAME=tex2html56 HREF="run.html">  New Algorithms for </A>
+<B> Previous:</B> <A NAME=tex2html50 HREF="node1.html">  Introduction</A>
+<BR> <HR> <P>
+<H1><A NAME=SECTION00020000000000000000> The Integration Model </A></H1>
+<P>
+Our stereo integration model is depicted in Figure <A HREF="node2.html#INTEGRATION_MODEL">2</A>. As
+seen from the figure there is feed forward as well as feedback (strong) interaction
+among the following modules: the interactive left and the right edge detectors, the
+matching module, and the interpolation module. There is only feedforward (weak)
+interaction between the precomputed edge map and the interactive edge detectors. The 
+interaction model structure is analogous  
+ to Clark and Yullie's [<A HREF="node24.html#clar">24</A>] recurrent interactive model, except that
+ we also have strong interaction with the interpolation module.
+Interaction between modules is achieved through line fields, which also 
+facilitates preserving discontinuities in the reconstructed surface. In the
+multiresolution framework, Figure <A HREF="node2.html#INTEGRATION_MODEL">2</A>
+represents the interaction
+ model at any given resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img2.gif">. The specifics of the interaction 
+ achieved between different modules is explicated in Section <A HREF="node5.html#secenergy">4</A>.
+ Though we use line fields (edges) for interaction in this paper, it is
+ concieveable to use some other feature amenable to interaction.
+<P>
+<P><A NAME=1112>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img3.gif">
+<BR><STRONG>Figure 2:</STRONG> <A NAME=INTEGRATION_MODEL>&#160;</A>The Integration Model<BR>
+<P><BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

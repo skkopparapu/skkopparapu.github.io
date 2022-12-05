@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MRF Model and Gibbs Distribution</TITLE>
+<META NAME="description" CONTENT="MRF Model and Gibbs Distribution">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html392"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html388"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html382"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html390"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html393"
+  HREF="node15.html">Maximum Entropy Interpretation</A>
+<B>Up:</B> <A NAME="tex2html389"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html383"
+  HREF="node13.html">Markov Random Field Models</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00521000000000000000">
+Markov Random Field Model and Gibbs Distribution</A>
+</H2>
+
+<P>
+Let Gibbs Distribution MRF 
+<IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> be an image (for example intensity or  range) over 
+an <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$N \times M$"> lattice of sites <!-- MATH
+ $S = \{ (i,j) : 1 \leq i 
+\leq N, \; 1 \leq j \leq M \}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$S = \{ (i,j) : 1 \leq i
+\leq N, \; 1 \leq j \leq M \}$">, namely
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{X} = \underbrace{\left[ \begin{array}{cccc}
+X_{1,1} & X_{1,2} & \ldots & X_{1,M} \\
+X_{2,1} & X_{2,2} & \ldots & X_{2,M} \\
+\vdots  & \vdots &    \vdots & \vdots \\
+X_{N,1} & X_{N,2} & \ldots & X_{N,M} 
+\end{array}\right]}_{\mbox{2D image}}
+\;\longrightarrow \;
+\underbrace{\left[ \begin{array}{c}
+     X_{1,1} \\\vdots \\X_{1,M} \\
+     X_{2,1} \\\vdots \\X_{2,M} \\
+     \vdots \\
+          X_{N,1} \\\vdots \\X_{N,M} 
+     \end{array}\right]}_{\mbox{Lexicographical ordering}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="271" HEIGHT="34" BORDER="0"
+ SRC="img20.gif"
+ ALT="\begin{displaymath}
+{X} = \underbrace{\left[ \begin{array}{cccc}
+X_{1,1} &amp; X_{1,...
+..._{N,M}
+\end{array}\right]}_{\mbox{Lexicographical ordering}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The second equation represents the conventional 
+lexicographical ordering for images. We assume that each 
+pixel <IMG
+ WIDTH="603" HEIGHT="283" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$X_{i,j}$"> takes values from a 
+finite set of <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$P$"> levels. These <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$P$"> levels could be <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.gif"
+ ALT="$256$">
+intensity levels in a typical <IMG
+ WIDTH="31" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$8$"> bit intensity image, or <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$512$"> range 
+levels in a typical range image. Thus the number of possible 
+configurations for <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> becomes finite, namely, <IMG
+ WIDTH="31" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.gif"
+ ALT="$P^{NM}$">, 
+but <EM>extremely</EM> large. 
+
+<P>
+The basic idea behind Markovianess is for   <IMG
+ WIDTH="603" HEIGHT="283" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$X_{i,j}$"> to 
+have local dependencies. In fact, among other 
+properties, it is this locality property which makes MRF
+modeling an attractive proposition for problems in  vision. Formally,  
+we say that 
+
+<P>
+<BR>
+<IMG
+ WIDTH="47" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="\begin{definition}
+$X$\ is a Markov random field (\inx{MRF}), if and only if
+\...
+...y},
+and $\eta_{i,j}$\ is the neighborhood of the site $(i,j)$.
+\end{definition}">
+<BR>
+
+<P>
+For 
+example a first order neighborhood neighborhood, first order 
+of <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> would consists 
+of sites <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$(i-1,j)$">, <IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$(i+1,j)$">, <IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$(i,j-1)$">, and <IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$(i,j+1)$">.  
+Figure <A HREF="node14.html#fig:clique_ngbd">2.1</A> illustrates first and second order 
+neighborhood, second order
+neighborhood. 
+
+<DIV ALIGN="CENTER"><A NAME="fig:clique_ngbd_a"></A><A NAME="fig:clique_ngbd_b"></A><A NAME="fig:clique_ngbd"></A><A NAME="1273"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.1:</STRONG>
+Clique neighborhood.</CAPTION>
+<TR><TD><IMG
+ WIDTH="72" HEIGHT="37" BORDER="0"
+ SRC="img33.gif"
+ ALT="\begin{figure}\subfigure[First order.]{
+\centerline{\psfig{figure=Chap_2/images/...
+...line{\psfig{figure=Chap_2/images/clique2.eps,width=0.9\textwidth}}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+The neighborhood structure is assumed to be translational 
+invariant, except at the boundary, where the free boundary 
+assumption is made, namely,  
+ the set of neighbors of a boundary 
+site is the intersection of  the translational invariant 
+neighborhood with the finite lattice. 
+For example, assuming a second 
+order neighborhood, the boundary site  will have 
+neighbors <!-- MATH
+ $\{\, x(1,j-1),\; x(1,j+1),\; x(2,j-1),\; 
+x(2,j+1)\,\}$
+ -->
+<IMG
+ WIDTH="644" HEIGHT="919" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$\{\, x(1,j-1),\; x(1,j+1),\; x(2,j-1),\;
+x(2,j+1)\,\}$">. In essence, this amounts to appending rows 
+and columns of zeros all around the image; the size of 
+these rows and columns will depend on the size of the image 
+and the neighborhood order. 
+
+<P>
+Besides locality another important aspect of MRF models is 
+that their distribution can be explicitly stated, and this 
+is what lends real power to the use of MRF models. 
+
+<P>
+<BR>
+<A NAME="theorem:hc"></A><A NAME="eq:mrf_model"></A><IMG
+ WIDTH="55" HEIGHT="37" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="\begin{theorem}[Hammersley-Clifford]
+\inxx{theorem, Hammersley-Clifford}
+Assume ...
+...$\ if
+$x_{i,j}$\ and $x_{m,n}$\ do not belong to the same clique.
+\end{theorem}">
+<BR>
+<B>Proof:</B> See Appendix <A HREF="node66.html#gibbs_mrf">B</A>. 
+
+<P>
+<P>
+<DIV><B>Note  2.1</B> &nbsp; 
+<!-- MATH
+ $G_{\cdots}(\cdots)$
+ -->
+<IMG
+ WIDTH="378" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$G_{\cdots}(\cdots)$"> need not be a continuous function; in 
+fact when the line process is introduced  one would 
+indeed have a discontinuous <IMG
+ WIDTH="721" HEIGHT="659" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$G_{\ldots}$">. Appendix <A HREF="node66.html#gibbs_mrf">B</A>
+also gives a justification for the general form of <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$">.</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Note  2.2</B> &nbsp; 
+Note that, for a <IMG
+ WIDTH="31" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$8$"> bit gray image of size <!-- MATH
+ $256 \times 256$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$256 \times 256$">
+image there are <!-- MATH
+ $(256)^{(256)^2}$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$(256)^{(256)^2}$"> <EM>  configurations</EM> of  <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$">. Thus, <!-- MATH
+ $\sum_{\mbox{all config.}}$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$\sum_{\mbox{all config.}}$"> is indeed
+not practical.</DIV><P></P>
+
+<P>
+Now <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U(x)$">, also referred to as  simply the energy function
+is defined by
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+U(x) = \sum_{ c \in {\cal C}} V_{c}(x)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="9" HEIGHT="16" BORDER="0"
+ SRC="img43.gif"
+ ALT="\begin{displaymath}U(x) = \sum_{ c \in {\cal C}} V_{c}(x) \end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+where <IMG
+ WIDTH="92" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.gif"
+ ALT="$V_{c}(x)$"> is the potential function defined over <EM>cliques</EM> <IMG
+ WIDTH="422" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.gif"
+ ALT="${\cal C}$">. This bring us to the discussion on 
+cliques.
+
+<P>
+<BR>
+<IMG
+ WIDTH="47" HEIGHT="37" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.gif"
+ ALT="\begin{definition}
+{ A \inx{clique} is a subset $ {\cal C }
+\subseteq S$\ such that every pair of distinct sites in $ {\cal C }$are neighbors. }
+\end{definition}">
+<BR>
+
+<P>
+This definition is best understood by considering some 
+examples. For a first order neighborhood corresponding to 
+the site <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> the clique set is
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{ll}
+{\cal C } = &\{ \;\; \{ (i,j)\}, \{ (i,j), (i,j+1) \} \\
+&          \{ (i,j), (i,j-1) \}, \{ (i,j), (i+1,j) \} 
+          \{ (i,j), (i-1,j) \} \;\; \}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="10" HEIGHT="16" BORDER="0"
+ SRC="img47.gif"
+ ALT="\begin{displaymath}\begin{array}{ll}
+{\cal C } = &amp;\{ \;\; \{ (i,j)\}, \{ (i,j), ...
+...\{ (i,j), (i+1,j) \}
+\{ (i,j), (i-1,j) \} \;\; \}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+For a second order neighborhoodneighborhood, second order, 
+corresponding to the site <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$">, the clique set is
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{ll}
+{\cal C } = & \{ \;\;
+           \{ (i,j)\}, \{ (i,j), (i,j+1) \}, 
+          \{ (i,j), (i,j-1) \}, \{ (i,j), (i+1,j) \}, \\
+&          \{ (i,j), (i-1,j) \}, 
+          \{ (i,j), (i-1,j-1) \}, \{ (i,j), (i+1,j+1) \},\\
+&          \{ (i,j), (i+1,j-1) \}, \{ (i,j), (i-1,j+1) \}, 
+\{ (i,j), (i-1,j), \\
+& (i,j-1) \}, 
+           \{ (i,j), (i-1,j), (i,j+1) \}, 
+\{ (i,j), (i+1,j), (i,j+1) \}, \\
+&          \{ (i,j), (i+1,j), (i,j-1) \} , 
+          \{ (i,j), (i-1,j), (i,j-1),\\
+& (i-1,j-1) \}, 
+          \{ (i,j), (i-1,j), (i,j+1) , (i-1,j+1) \}, \\
+&          \{ (i,j), (i+1,j), (i,j+1) , (i+1,j+1) \}, \\
+&          \{ (i,j), (i+1,j), (i,j-1) , (i+1,j-1) \}, \\
+&         \{ (i,j), (i,j-1), (i-1,j-1) \}, 
+         \{ (i,j), (i,j+1), (i-1,j+1) \},  \\
+  &      \{ (i,j), (i,j-1), (i+1,j-1) \}, 
+         \{ (i,j), (i,j+1), (i+1,j+1) \}
+\;\; \}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="699" HEIGHT="17" BORDER="0"
+ SRC="img48.gif"
+ ALT="\begin{displaymath}\begin{array}{ll}
+{\cal C } = &amp; \{ \;\;
+\{ (i,j)\}, \{ (i,j)...
+...,j-1) \},
+\{ (i,j), (i,j+1), (i+1,j+1) \}
+\;\; \}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Figure <A HREF="node14.html#fig:clique_ngbd_a">2.1(a)</A> and Figure <A HREF="node14.html#fig:clique_ngbd_b">2.1(b)</A>
+display cliques for a first neighborhood, first order
+order and second order neighborhood systems respectively. 
+Note that the number of cliques quickly blows up by 
+increasing the neighborhood order. Thus, in most applications 
+one considers a first order or a second order neighborhood 
+systems. Often one considers higher order neighborhood 
+systems but restricts attention to pair cliques, or some such 
+simplification, to ensure that the total number of cliques 
+per pixel is not <EM>too large</EM>.
+
+<P>
+To illustrate the above definitions we cite the example of the
+Ising model [<A
+ HREF="node80.html#ising">89</A>]. Here <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is a binary image with 
+<!-- MATH
+ $x_{i,j} = \pm 1$
+ -->
+<IMG
+ WIDTH="584" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$x_{i,j} = \pm 1$"> (<IMG
+ WIDTH="628" HEIGHT="214" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.gif"
+ ALT="$+1$"> representing an up-spin and <IMG
+ WIDTH="75" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.gif"
+ ALT="$-1$"> 
+representing a down-spin). Moreover the Ising model assumes a 
+first order neighborhood, and the energy function in 
+ is given by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U(x) = -\sum_{i,j} [ \alpha x_{i,j} 
+                  + \beta\{ x_{i,j} x_{i+1,j} +
+                           x_{i,j} x_{i,j+1} +
+              x_{i,j} x_{i-1,j} + x_{i,j} x_{i,j-1} \} ]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="20" HEIGHT="31" BORDER="0"
+ SRC="img52.gif"
+ ALT="\begin{displaymath}
+U(x) = -\sum_{i,j} [ \alpha x_{i,j}
++ \beta\{ x_{i,j} x_{i...
+...{i,j} x_{i,j+1} +
+x_{i,j} x_{i-1,j} + x_{i,j} x_{i,j-1} \} ]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Such models were studied in the context of ferro magnetism. 
+<IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$\beta$"> depends on the property of the material, and <IMG
+ WIDTH="624" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$\beta &gt;
+0$"> represents the attractive case while <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.gif"
+ ALT="$\beta &lt; 0$"> the 
+repulsive case. <IMG
+ WIDTH="47" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.gif"
+ ALT="$\alpha$"> represents the effect of the 
+external force field. A typical problem would be to find 
+that configuration of up and down spins <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> which maximizes 
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.gif"
+ ALT="$P[X = x]$">. We see that for <IMG
+ WIDTH="624" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$\beta &gt;
+0$"> this will amount to 
+aligning all the spins in the same direction as the external 
+force field.
+
+<P>
+<HR>
+<A NAME="tex2html392"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html388"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html382"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html390"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html393"
+  HREF="node15.html">Maximum Entropy Interpretation</A>
+<B>Up:</B> <A NAME="tex2html389"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html383"
+  HREF="node13.html">Markov Random Field Models</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

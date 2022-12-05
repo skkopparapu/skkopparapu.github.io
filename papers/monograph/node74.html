@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Initial assignment of bin values</TITLE>
+<META NAME="description" CONTENT="Initial assignment of bin values">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node73.html">
+<LINK REL="up" HREF="node69.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1161"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1157"
+  HREF="node69.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1153"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1159"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1162"
+  HREF="node75.html">Primary Features</A>
+<B>Up:</B> <A NAME="tex2html1158"
+  HREF="node69.html">Experiments</A>
+<B> Previous:</B> <A NAME="tex2html1154"
+  HREF="node73.html">The Algorithm</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00920050000000000000">
+Initial assignment of bin values</A>
+</H4>:
+<A NAME="app:k_means3"></A>There are a number of ways in which the bins can be initialized. 
+<DL>
+<DT><STRONG><EM>First N vectors</STRONG></DT>
+<DD>: choose the first  vectors of the training 
+vector and assign the values taken by the vectors to the bins
+</EM>
+<P>
+<EM>
+</DD>
+<DT><STRONG><EM>Histogram</STRONG></DT>
+<DD>: calculate the histogram 
+of the image and select the 
+ local maxima and assign them as the initial bin values.
+</EM></EM>
+<P>
+<EM><EM>
+</DD>
+<DT><STRONG><EM>Splitting</STRONG></DT>
+<DD>:  
+</EM></EM></EM>
+<P>
+<DL>
+<DT><STRONG><EM>Step 0</EM></STRONG></DT>
+<DD>Initialization: Set  and define
+<!-- MATH
+ $\hat{A}_0(1)=\hat{x}(A)$
+ -->
+, the centre of the entire training set. 
+
+<P>
+</DD>
+<DT><STRONG><EM>Step 1</EM></STRONG></DT>
+<DD>Given the reproduction alphabet or the bins
+ containing  vectors <!-- MATH
+ $\{ y_i, i=1, 2, \cdots, M \}$
+ -->
+ split
+each vector  into 2 close vectors  where  is
+a fixed perturbation vector. Now  has  vectors ( <!-- MATH
+ $\{ y_i
+\pm \epsilon; i=1, \cdots, M\}$
+ -->
+). Replace <!-- MATH
+ $M \leftarrow 2M$
+ -->
+. 
+
+<P>
+</DD>
+<DT><STRONG><EM>Step 2</EM></STRONG></DT>
+<DD>Is (the required number of bins)? If yes, set
+<!-- MATH
+ $\hat{A}_0 = \tilde{A}(M)$
+ -->
+ and halt.  is then the initial
+reproduction vector for the  initial bins. If not run the algorithm for
+an  level quantizer on  to produce a good reproduction
+alphabet  and then return to <EM>Step 1</EM>. 
+
+<P>
+</DD>
+</DL><EM><EM><EM>
+</DD>
+</DL></EM></EM></EM>
+
+<P>
+Features used in Image Interpretation
+<A NAME="app:features"></A>
+<P>
+Though there is usually not much discussion initiated on the selection of
+features feature selection 
+as applicable to image interpretation, feature selection forms an
+important aspect of image interpretation. The choice 
+of features <EM>impose</EM> assumptions on the problem of image interpretation.   Table <A HREF="node74.html#tab:ii_fea_ass_prob">G.1</A> illustrates the assumptions that
+are imposed on the problem  when that feature alone
+is used for the purpose of image interpretation. For example, if average
+gray level is selected as the only feature for image interpretation, then
+one is assuming the fact  that the scenes that are 
+being interpreted have been captured under the same lighting condition 
+(else the use of this feature for image interpretation does not makes
+much sense).  
+The choice of features and the assumptions that they explicitly
+impose on the problem are tabulated in Table <A HREF="node74.html#tab:ii_fea_ass_prob">G.1</A>. The
+a priori knowledge  is also very crucial, in fact this imposes a very
+strong assumption that we are aware of what to expect from the scene even
+before we allow the algorithm to do the interpretation. In other words, we
+cannot have the knowledge associated with a scene which is completely
+different from the scene to be interpreted, for example we cannot use the
+knowledge obtained for an indoor scene to interpret outdoor scenes. 
+
+<P>
+Features that are useful for image interpretation can be broadly
+classified as (i) primary features, namely the features that are obtained
+from the scene through direct measurement and (ii) secondary features,
+namely the features that are derived from primary features and hence are
+not directly measured from the scene. 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="15910"></A>
+<TABLE>
+<CAPTION><STRONG>Table G.1:</STRONG>
+Assumptions imposed on the problem due to the choice of
+features.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Feature</TD>
+<TD ALIGN="LEFT">Imposed inherent assumption (when that feature alone is used)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">average gray value</TD>
+<TD ALIGN="LEFT">the scenes have the same lighting conditions</TD>
+</TR>
+<TR><TD ALIGN="LEFT">area, perimeter</TD>
+<TD ALIGN="LEFT">same object at different scales are not present</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mass center</TD>
+<TD ALIGN="LEFT">objects are in the same position in the scene</TD>
+</TR>
+<TR><TD ALIGN="LEFT">variance,</TD>
+<TD ALIGN="LEFT">objects have same <EM>structure</EM> (for example, a tree in 
+a scene with</TD>
+</TR>
+<TR><TD ALIGN="LEFT">scatter matrix</TD>
+<TD ALIGN="LEFT">leaves and without leaves do not have the same structure)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">compactness,</TD>
+<TD ALIGN="LEFT">objects having the same <EM>form</EM> cannot coexist in the
+scene,</TD>
+</TR>
+<TR><TD ALIGN="LEFT">aspect</TD>
+<TD ALIGN="LEFT">(meaning if there are two different objects corresponding to a big</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">and a small square - both of them will be labeled the same)</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<A NAME="tab:ii_fea_ass_prob"></A></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<HR>
+<A NAME="tex2html1161"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1157"
+  HREF="node69.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1153"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1159"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1162"
+  HREF="node75.html">Primary Features</A>
+<B>Up:</B> <A NAME="tex2html1158"
+  HREF="node69.html">Experiments</A>
+<B> Previous:</B> <A NAME="tex2html1154"
+  HREF="node73.html">The Algorithm</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

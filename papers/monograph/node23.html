@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Gaussian and Laplacian Pyramid</TITLE>
+<META NAME="description" CONTENT="Gaussian and Laplacian Pyramid">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node22.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html497"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html493"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html487"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html495"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node24.html">Wavelet Pyramid</A>
+<B>Up:</B> <A NAME="tex2html494"
+  HREF="node22.html">Multiresolution</A>
+<B> Previous:</B> <A NAME="tex2html488"
+  HREF="node22.html">Multiresolution</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00531000000000000000"></A>
+<A NAME="sec:gauss_pyramid"></A>
+<BR>
+Gaussian and Laplacian Pyramid
+</H2>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:gaussian_procedure"></A><A NAME="3018"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.2:</STRONG>
+Procedure for obtaining the Gaussian
+(<IMG
+ WIDTH="44" HEIGHT="94" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.gif"
+ ALT="$x^{k-1}$">) and Laplacian (<IMG
+ WIDTH="64" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$\Delta^k$">) pyramid images from
+<IMG
+ WIDTH="40" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="$x^{k}$">.</CAPTION>
+<TR><TD><IMG
+ WIDTH="29" HEIGHT="22" BORDER="0"
+ SRC="img153.gif"
+ ALT="\begin{figure}\begin{center}
+&lt;tex2html_file&gt; ..."></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The basic approach of Burt and Adelson Gaussian pyramid Laplacian
+pyramid is depicted in Figure
+<A HREF="node23.html#fig:gaussian_procedure">2.2</A>.  Let, <IMG
+ WIDTH="40" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="$x^{k}$"> be the gray level image at
+resolution <IMG
+ WIDTH="23" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.gif"
+ ALT="$k$"> and let <IMG
+ WIDTH="44" HEIGHT="94" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.gif"
+ ALT="$x^{k-1}$"> represent the image at resolution
+, which is obtained using the algorithm proposed in
+[<A
+ HREF="node80.html#jr_Burt_83">95</A>].  An image <IMG
+ WIDTH="40" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="$x^{k}$"> at a given resolution is low pass
+filtered so that the high spatial frequencies are removed, as a result we
+can sample it at a lower rate (typically one half) and hence we have an
+image of lower resolution and one half the size of the original image in
+each dimension. This process of low pass filtering and sub-sampling 
+results
+in images, which are at different resolutions. In addition, the difference
+images, 
+<IMG
+ WIDTH="64" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$\Delta^k$"> at different resolutions are obtained by up-sampling the
+coarse image by a factor of <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img147.gif"
+ ALT="$2$">, interpolating it, and then subtracting
+it from the next fine resolution image. 
+
+<P>
+A <EM>suitable kernel</EM> for low pass filtering is used to obtain images at
+different resolutions. If we assume a 1-D signal and the size of the
+kernel to be , then as shown by Burt and Adelson [<A
+ HREF="node80.html#jr_Burt_83">95</A>] the
+weights of the kernel, denoted by , , , ,
+, should satisfy the following constraints, 
+
+<OL>
+<LI><!-- MATH
+ $\sum_{i=-2}^{i=2}w(i) = 1$
+ -->
+ (Normalizationnormalization),
+</LI>
+<LI> for 
+ (Symmetrysymmetry) and
+</LI>
+<LI>if <!-- MATH
+ $w(0) = a, w(1) = b, 
+w(2) = c$
+ -->
+, then  must be satisfied (Equal 
+Contributionequal contribution). 
+</LI>
+</OL>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:resolution"></A><A NAME="3055"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.3:</STRONG>
+Gaussian pyramid () constructed using
+the procedure depicted in  Figure <A HREF="node23.html#fig:gaussian_procedure">2.2</A>.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+A <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.gif"
+ ALT="$5 \times 5$"> kernel from [<A
+ HREF="node80.html#jr_Burt_83">95</A>] 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\mbox{Ker} = \left [ \begin{array}{ccccc}
+             c^2 & bc & ac & bc & c^2 \\
+             bc  & b^2 & ab & b^2 & bc \\
+             ac  & ab & a^2 & ab & ac \\
+             bc  & b^2 & ab & b^2 & bc \\
+             c^2 & bc & ac & bc & c^2 \\
+            \end{array}
+    \right ]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with ,  and , can be  used to convolve
+ with the high resolution image ; the convolved image
+ is then down-sampled 
+(for example, selecting every alternate pixel along each
+ row and column) to obtain the image at lower resolution <IMG
+ WIDTH="44" HEIGHT="94" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.gif"
+ ALT="$x^{k-1}$">. 
+ The process of obtaining the low resolution image and the difference image is
+ depicted in Figure <A HREF="node23.html#fig:gaussian_procedure">2.2</A>, where the block 
+
+ represents convolution with the kernel Ker  and 
+  
+ represents
+ down-samplingdown sample by 2 (namely, considering only every 
+alternate sample of 
+the signal or in other words discarding every alternate sample of the 
+signal), and 
+  
+ represents up-samplingup sampling by <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img147.gif"
+ ALT="$2$"> (namely, introducing a
+zero between every sample of the signal). Figure <A HREF="node23.html#fig:resolution">2.3</A>
+depicts the Gaussian pyramid () and Figure <A HREF="node23.html#fig:difference">2.4</A>
+depicts that Laplacian pyramid (<IMG
+ WIDTH="64" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img151.gif"
+ ALT="$\Delta^k$">) constructed using the 
+procedure shown in Figure <A HREF="node23.html#fig:gaussian_procedure">2.2</A>. The leftmost 
+image in Figure <A HREF="node23.html#fig:resolution">2.3</A> is the image of size <!-- MATH
+ $256 \times 
+256$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$256 \times 256$"> at the finest resolution .
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:difference"></A><A NAME="3057"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2.4:</STRONG>
+Laplacian pyramid  constructed 
+using procedure depicted in Figure <A HREF="node23.html#fig:gaussian_procedure">2.2</A>.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<A NAME="tex2html497"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html493"
+  HREF="node22.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html487"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html495"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node24.html">Wavelet Pyramid</A>
+<B>Up:</B> <A NAME="tex2html494"
+  HREF="node22.html">Multiresolution</A>
+<B> Previous:</B> <A NAME="tex2html488"
+  HREF="node22.html">Multiresolution</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

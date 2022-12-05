@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Neighborhood for the Posterior Distribution</TITLE>
+<META NAME="description" CONTENT="Neighborhood for the Posterior Distribution">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html439"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html435"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html431"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html437"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html440"
+  HREF="node19.html">Detecting Discontinuities: Line Field</A>
+<B>Up:</B> <A NAME="tex2html436"
+  HREF="node17.html">Posterior Distribution</A>
+<B> Previous:</B> <A NAME="tex2html432"
+  HREF="node17.html">Posterior Distribution</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00524100000000000000">
+Neighborhood for the Posterior Distribution</A>
+</H3>
+
+<P>
+In order to determine the neighborhood for the posterior 
+distribution  we consider the conditional 
+probability of a pixel <!-- MATH
+ $x_{i,j},\; 1 \leq (i,j) \leq (N, M)$
+ -->
+<IMG
+ WIDTH="507" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$x_{i,j},\; 1 \leq (i,j) \leq (N, M)$">, 
+given all the remaining pixels  <!-- MATH
+ $x_{k,l},\; 1 \leq (k,l) \leq (N, M)$
+ -->
+<IMG
+ WIDTH="502" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$x_{k,l},\; 1 \leq (k,l) \leq (N, M)$"> and
+<!-- MATH
+ $(k,l) \neq (i,j)$
+ -->
+<IMG
+ WIDTH="188" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.gif"
+ ALT="$(k,l) \neq (i,j)$">, and the observed image <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$">.
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+P[X_{i,j}=x_{i,j} \mid  Y=y] \!\!\!&\!\!=\!\!&\!\!\!  P[X_{i,j}=x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \neq (i,j); Y=y] \\
+\!\!\!&\!\!\times\!\!\!&  P[X_{k,l}=x_{k,l},(k,l) \neq (i,j) \mid Y=y]
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="184" HEIGHT="34" BORDER="0"
+ SRC="img99.gif"
+ ALT="\begin{eqnarray*}
+P[X_{i,j}=x_{i,j} \mid Y=y] \!\!\!&amp;\!\!=\!\!&amp;\!\!\! P[X_{i,j}=...
+...!&amp;\!\!\times\!\!\!&amp; P[X_{k,l}=x_{k,l},(k,l) \neq (i,j) \mid Y=y]
+\end{eqnarray*}">
+<BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P>
+<BR CLEAR="ALL"><P></P>
+Using (<A HREF="node15.html#eq:gibbs_distribution">2.7</A>) it is easily shown that
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq:posterior"></A>
+<!-- MATH
+ \begin{eqnarray}
+P[X_{i,j} &=& x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \neq (i,j); Y=y]  \nonumber
+\\
+ &=& \frac{\displaystyle { \exp^{-U^{p}(x)}} }
+  { \displaystyle { \sum_{\begin{tabular}{lll}
+   $x_{i,j}$\  & = & \mbox{all}\\
+     &   & \mbox{possible}\\
+     &   & \mbox{levels}\\\end{tabular} } } 
+     \exp^{-U^{p}(x)} }
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="100" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$\displaystyle P[X_{i,j}$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="624" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$\displaystyle x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \neq (i,j); Y=y]$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="53" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$\displaystyle \frac{\displaystyle { \exp^{-U^{p}(x)}} }
+{ \displaystyle { \sum_...
+... &amp; \mbox{possible}\\
+&amp; &amp; \mbox{levels}\\  \end{tabular} } }
+\exp^{-U^{p}(x)} }$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In (<A HREF="node18.html#eq:posterior">2.14</A>),  <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> is a vector whose components are 
+fixed except for the <IMG
+ WIDTH="286" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$(i,j)^{th}$"> component <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> in 
+lexicographical ordering. The component <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> can take 
+any of the <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$P$"> possible levels (for example <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.gif"
+ ALT="$256$"> gray 
+levels). The summation is over these <IMG
+ WIDTH="34" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ ALT="$P$"> levels.
+
+<P>
+Define the vector
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\left[ \begin{array}{c}
+\gamma_{1,1} \\\gamma_{1,2} \\\vdots \\\gamma_{N,M} 
+\end{array}\right] \stackrel{\rm def}{=}
+   \frac{1}{2 \sigma^{2}} \left[  \begin{array}{c}
+    \mu - \{ \odot^{-1}(y,\phi(x)) \}_{1,1}  \\
+    \mu - \{ \odot^{-1}(y,\phi(x)) \}_{1,2} \\
+     \vdots   \\
+    \mu - \{ \odot^{-1}(y,\phi(x)) \}_{N,M} 
+   \end{array}\right]
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="47" HEIGHT="38" BORDER="0"
+ SRC="img105.gif"
+ ALT="\begin{displaymath}
+\left[ \begin{array}{c}
+\gamma_{1,1} \\ \gamma_{1,2} \\ \vdo...
+...
+\mu - \{ \odot^{-1}(y,\phi(x)) \}_{N,M}
+\end{array}\right]
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(11)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Consequently the posterior distribution can be written as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+U^{p}(x) =  \sum_{ c \in {\cal C}} V_{c}(x)
+           + \sum_{ (1,1) \leq (i,j) \leq (N,M)} 
+               \gamma_{i,j}^{2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="24" HEIGHT="31" BORDER="0"
+ SRC="img106.gif"
+ ALT="\begin{displaymath}
+U^{p}(x) = \sum_{ c \in {\cal C}} V_{c}(x)
++ \sum_{ (1,1) \leq (i,j) \leq (N,M)}
+\gamma_{i,j}^{2}
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(12)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+We assume that operator <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$\phi$"> has the locality property, 
+that is, <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$\phi$"> operating on <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> will involve 
+<IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> and pixels in the neighborhood of <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$">. Let 
+this neighborhood corresponding to site <IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> be denoted 
+by <IMG
+ WIDTH="531" HEIGHT="97" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.gif"
+ ALT="$\zeta_{i,j}$">, which we also assume to be translationally 
+invariant. Note that this neighborhood will, in 
+general, be different from <IMG
+ WIDTH="508" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$\eta_{i,j}$"> the neighborhood for 
+the MRF model.
+
+<P>
+Keeping in mind that we are interested in finding the 
+neighborhood for the conditional probability distribution of 
+the pixel <IMG
+ WIDTH="219" HEIGHT="168" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$x_{i,j}$"> given all other pixels and the 
+observation <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$">, we now decompose  <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$U^{p}(x)$"> as follows.
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+U^{p}(x) = \sum_{ c: (i,j) \in {\cal C}} \!\!\! V_{c}(x)
+           + \sum_{ (k,l) :(i,j) \in \zeta_{k,l} } \!\!\!\!\!\!\!\!\! \gamma_{k,l}^{2}
+           + \sum_{ c: (i,j) \not\in {\cal C}} \!\!\! V_{c}(x)
+       + \sum_{ (k,l) : (i,j) \not\in \zeta_{k,l} }\!\!\!\!\!\!\!\!\!  \gamma_{k,l}^{2}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:Upx"></A><IMG
+ WIDTH="23" HEIGHT="31" BORDER="0"
+ SRC="img110.gif"
+ ALT="\begin{displaymath}
+U^{p}(x) = \sum_{ c: (i,j) \in {\cal C}} \!\!\! V_{c}(x)
++ ...
+...(i,j) \not\in \zeta_{k,l} }\!\!\!\!\!\!\!\!\! \gamma_{k,l}^{2}
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(13)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Now substituting (<A HREF="node18.html#eq:Upx">2.17</A>) in (<A HREF="node18.html#eq:posterior">2.14</A>) and canceling common 
+terms in the numerator and the denominator we obtain
+<P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+P[X_{i,j}&=&x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \neq (i,j); Y=y] \\
+&=&
+\frac{ 
+  \exp^{
+     \left (-
+         \displaystyle {
+           \sum_{ c: (i,j) \in {\cal C}}
+						} \!\!   V_{c}(x) - 
+					\displaystyle {
+					 \sum_{ (k,l) : (i,j) \in \zeta_{k,l}  } 
+						} \!\!\!\!\!\!\!\! \gamma_{k,l}^{2}
+      \right )
+				}  
+			}
+  	{ 
+		\displaystyle { 
+			\sum_{ \begin{tabular}{lll}
+								$x_{i,j}$\  &= & \mbox{all}\\
+											 && \mbox{possible}\\
+											 &&  \mbox{levels} \\
+							 \end{tabular}
+						} 
+			%%	\sum_{ x_{i,j} = \mbox{all possible levels}}
+				
+} 
+       \exp^{ 
+					 \left (- 
+								\displaystyle { 
+										\sum_{ c: (i,j) \in {\cal C} } 
+									}\!\!  V_{c}(x) - 
+								\displaystyle { 
+									\sum_{(k,l) : (i,j) \in \zeta_{k,l}} 
+									}\!\!\!\!\!\!\!\!  \gamma_{k,l}^{2}
+        	 \right )
+						} 
+		}
+\end{eqnarray*}
+ -->
+<IMG
+ WIDTH="42" HEIGHT="34" BORDER="0"
+ SRC="img111.gif"
+ ALT="\begin{eqnarray*}
+P[X_{i,j}&amp;=&amp;x_{i,j} \mid X_{k,l}=x_{k,l}, (k,l) \neq (i,j); Y=...
+...ta_{k,l}}
+}\!\!\!\!\!\!\!\! \gamma_{k,l}^{2}
+\right )
+}
+}
+\end{eqnarray*}">
+<BR CLEAR="ALL"></DIV><P></P>
+<BR CLEAR="ALL"><P></P>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Clearly the posterior neighborhood structure corresponding to site 
+<IMG
+ WIDTH="612" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$(i,j)$"> is determined by the the sites involved in the above 
+expression, namely
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\eta^{p}_{i,j} = \eta_{i,j} \cup 
+              \{ (k,l) : (i,j) \in \zeta_{k,l} \}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="475" HEIGHT="52" BORDER="0"
+ SRC="img112.gif"
+ ALT="\begin{displaymath}
+\eta^{p}_{i,j} = \eta_{i,j} \cup
+\{ (k,l) : (i,j) \in \zeta_{k,l} \}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+
+<P>
+which shows that the posterior distribution also has local 
+dependencies and consequently 
+
+<P>
+<P>
+<DIV><B>Lemma  2.1</B> &nbsp; 
+The posterior probability distribution (<A HREF="node18.html#eq:posterior">2.14</A>) is a Markov 
+random field with the neighborhood <!-- MATH
+ $\eta^{p}_{i,j}$
+ -->
+<IMG
+ WIDTH="546" HEIGHT="118" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.gif"
+ ALT="$\eta^{p}_{i,j}$">.</DIV><P></P>
+
+<P>
+Thus a typical conditional problem is 
+
+<P>
+<BLOCKQUOTE>
+<EM>Find a configuration <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> such that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.gif"
+ ALT="$P[X=x\vert Y=y]$"> is maximized,  
+ equivalently   <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.gif"
+ ALT="$U^{p}(x)$"> (<A HREF="node18.html#eq:Upx">2.17</A>) is minimized.
+</EM>
+
+</BLOCKQUOTE>
+
+<P>
+Though the above is in the context of image 
+restoration, it generalizes to 
+estimating early vision attributes by incorporating extra 
+fields besides <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$">, and appropriately modifying the 
+potential function <IMG
+ WIDTH="92" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.gif"
+ ALT="$V_{c}(x)$">.
+
+<P>
+<HR>
+<A NAME="tex2html439"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html435"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html431"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html437"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html440"
+  HREF="node19.html">Detecting Discontinuities: Line Field</A>
+<B>Up:</B> <A NAME="tex2html436"
+  HREF="node17.html">Posterior Distribution</A>
+<B> Previous:</B> <A NAME="tex2html432"
+  HREF="node17.html">Posterior Distribution</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

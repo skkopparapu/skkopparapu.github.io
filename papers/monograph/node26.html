@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MRF Framework for Image Interpretation</TITLE>
+<META NAME="description" CONTENT="MRF Framework for Image Interpretation">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="kmono.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html530"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html526"
+  HREF="kmono.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html520"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html528"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html531"
+  HREF="node27.html">MRF on a Graph</A>
+<B>Up:</B> <A NAME="tex2html527"
+  HREF="kmono.html">kmono</A>
+<B> Previous:</B> <A NAME="tex2html521"
+  HREF="node25.html">Where to Use Multiresolution?</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000"></A>
+<A NAME="chap:mrf_framework"></A>
+<BR>
+MRF Framework for
+<BR>
+Image Interpretation
+</H1>
+
+<P>
+The MRF formulation for the image interpretation 
+problem is as follows: 
+Using the available segmented image, for the image to be interpreted, a
+region adjacency graph (RAG) is constructed. Each node
+of the RAG corresponds to an image segment, and two nodes have
+connectivity between them if the corresponding two segments share a
+common boundary. Next it is assumed that the node interpretation given
+the domain knowledge and the features obtained from the observed image
+obey a MRF model. Constructing this model involves
+defining appropriate clique functions and estimating the clique
+parameters. The interpretation problem is then solved as a MAP
+estimation problem [<A
+ HREF="node80.html#jr_Mode_92">58</A>].
+
+<P>
+<BR> <HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html532"
+  HREF="node27.html">MRF on a Graph</A>
+<UL>
+<LI><A NAME="tex2html533"
+  HREF="node28.html">Notion of Cliques</A>
+<LI><A NAME="tex2html534"
+  HREF="node29.html">MRF based Formulation for Interpretation</A>
+<LI><A NAME="tex2html535"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<UL>
+<LI><A NAME="tex2html536"
+  HREF="node31.html">1-node Clique Functions</A>
+<LI><A NAME="tex2html537"
+  HREF="node32.html">Multiple Node Clique Function</A>
+<LI><A NAME="tex2html538"
+  HREF="node33.html">Minimization Algorithm</A>
+</UL></UL></UL>
+<!--End of Table of Child-Links-->
+<BR> <HR>
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

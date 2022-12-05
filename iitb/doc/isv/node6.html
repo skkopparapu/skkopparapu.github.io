@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>  The interactive left image edge detector</TITLE>
+</HEAD>
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<BODY>
+<meta name="description" value="  The interactive left image edge detector">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html100 HREF="node7.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html98 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html92 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html101 HREF="node7.html">  The interactive right </A>
+<B>Up:</B> <A NAME=tex2html99 HREF="node5.html"> The energy functions </A>
+<B> Previous:</B> <A NAME=tex2html93 HREF="node5.html"> The energy functions </A>
+<BR> <HR> <P>
+<H2><A NAME=SECTION00041000000000000000>  The interactive left image edge detector</A></H2>
+<P>
+<P><A NAME=eq4>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img60.gif"><P>
+<P>
+The first term in (<A HREF="node6.html#eq4">1</A>) is the usual <em> discontinuous regularization</em> 
+term because
+of the line field terms <IMG  ALIGN=MIDDLE ALT="" SRC="img61.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img62.gif">. 
+This term is to take care of discontinuities. If there is a discontinuity, 
+namely, the gradient <IMG  ALIGN=MIDDLE ALT="" SRC="img63.gif"> becomes large,
+then <IMG  ALIGN=MIDDLE ALT="" SRC="img64.gif"> the line function takes a value of <b>1</b> and hence there is a
+reduction in the cost contributed by the first term of (<A HREF="node6.html#eq4">1</A>). But
+then the cost contributed by this term would be a minimum assuming
+discontinuities
+everywhere. To overcome this we introduce a penalty term, namely,  the second term of
+(<A HREF="node6.html#eq4">1</A>) which adds to the cost whenever a discontinuity is detected. The
+first two
+terms suggest that if the discontinuity is of significance then it is cheaper
+to introduce a line rather than trying to interpolate between the two pixels
+(meaning, if <IMG  ALIGN=MIDDLE ALT="" SRC="img65.gif"> 
+then introducing a discontinuity costs less than trying to interpolate). The
+choice of <IMG  ALIGN=MIDDLE ALT="" SRC="img66.gif"> and  <IMG  ALIGN=MIDDLE ALT="" SRC="img67.gif"> depend on what variation in pixel
+intensity
+values would be significant enough to assume the presence of an edge.
+<P>
+The third,
+fourth, fifth, sixth and the seventh terms are the integration 
+terms. The idea behind constructing
+these terms is the <em> belief</em> that if there is a feature in the 
+right image then there should exist a corresponding feature in the left image,
+and
+the fact that  the function <IMG  ALIGN=MIDDLE ALT="" SRC="img68.gif">  takes a minimum
+value (in this case <b>0</b>) only when <b>x</b> and <b>y</b> agree with  each other, namely 
+<b>x=0=y</b> or <b>x=1=y</b>; in our case the feature is a line field or equivalently
+an edge.
+<P>
+ <em> Remark:</em> On occasions, we shall use the terms line field or edge interchangeably.
+Thus, in this paper, phrases like, precomputed edge map or precomputed line field
+mean the same thing.
+<P>
+The third, fourth, fifth, sixth and the seventh  terms
+adhere to the above belief. As an example consider   the 
+third term in (<A HREF="node6.html#eq4">1</A>). First this term assumes the availability of the
+disparity map <IMG  ALIGN=MIDDLE ALT="" SRC="img69.gif">. Now if there is a feature <IMG  ALIGN=MIDDLE ALT="" SRC="img70.gif">
+in the left image, then we expect a corresponding feature in the right
+image at pixel location <IMG  ALIGN=MIDDLE ALT="" SRC="img71.gif">, namely the feature
+<IMG  ALIGN=MIDDLE ALT="" SRC="img72.gif">. Similar arguments holds for the vertical line
+fields. Thus the third term will be minimum when indeed there is a proper correspondence
+between <IMG  ALIGN=MIDDLE ALT="" SRC="img73.gif">, and between
+<IMG  ALIGN=MIDDLE ALT="" SRC="img74.gif">.
+<IMG  ALIGN=MIDDLE ALT="" SRC="img75.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img76.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img77.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img78.gif"> 
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img79.gif">, can be looked upon as parameters that
+determine the degree of influence of the other modules on the present module.
+<P>
+The third term integrates information obtained from the right edge detector
+(<IMG  ALIGN=BOTTOM ALT="" SRC="img80.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img81.gif">) and
+the matching block (<IMG  ALIGN=BOTTOM ALT="" SRC="img82.gif">);  this integration is achieved via
+<IMG  ALIGN=MIDDLE ALT="" SRC="img83.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img84.gif">.
+Analogously, the fourth term integrates information
+obtained from the interpolation block (<IMG  ALIGN=BOTTOM ALT="" SRC="img85.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img86.gif">) 
+and the matching block (<IMG  ALIGN=BOTTOM ALT="" SRC="img87.gif">).  The effect of the third and the fourth term is
+to re-enforce edges in the left image depending on the presence or absence
+of edges in the right image and the interpolated scene. The fifth, sixth and the
+seventh term are driven by the presence or absence of precomputed edges in the 
+left image.
+<P>
+
+<P>
+<BR> <HR><A NAME=tex2html100 HREF="node7.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <A NAME=tex2html98 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif.gif"></A> <A NAME=tex2html92 HREF="node5.html"><IMG ALIGN=BOTTOM ALT="previous" SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif.gif"></A>   <BR>
+<B> Next:</B> <A NAME=tex2html101 HREF="node7.html">  The interactive right </A>
+<B>Up:</B> <A NAME=tex2html99 HREF="node5.html"> The energy functions </A>
+<B> Previous:</B> <A NAME=tex2html93 HREF="node5.html"> The energy functions </A>
+<BR> <HR> <P>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

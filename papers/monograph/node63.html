@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Building Image</TITLE>
+<META NAME="description" CONTENT="Building Image">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node60.html">
+<LINK REL="next" HREF="node64.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html1018"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1014"
+  HREF="node60.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1008"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1016"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1019"
+  HREF="node64.html">Computer Images</A>
+<B>Up:</B> <A NAME="tex2html1015"
+  HREF="node60.html">Experimental Results</A>
+<B> Previous:</B> <A NAME="tex2html1009"
+  HREF="node62.html">Road Images</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00843000000000000000"></A>
+<A NAME="sec:hira_img"></A>
+<BR>
+Building Image
+</H2>
+
+<P>
+Figure <A HREF="node63.html#fig:build_2">5.8</A>a is the image to be interpreted using the
+knowledge acquired and tabulated in Table <A HREF="node63.html#tab:hira_know">5.3</A>. 
+Observe
+that we have two interpretation labels (Table <A HREF="node63.html#tab:hira_know">5.3</A>)
+corresponding to the Tree, namely, Tree (Left) and Tree (Right), in our
+knowledge base, 
+this to take care of the fact that tree cover occurs in two different 
+shapes and having different gray level variation. Nevertheless,
+  we interpret either of the
+ labels as Tree in our simulations and hence have a single legend (Figure
+ <A HREF="node63.html#fig:build_2">5.8</A>). A similar observation is true for the interpretation
+ label Build.
+Figure 
+<A HREF="node63.html#fig:build_2">5.8</A>b is the wavelet transform 
+wavelet transformed image and
+<A HREF="node63.html#fig:build_2">5.8</A>c is the output of the k-means segmentation 
+algorithm and
+Figure <A HREF="node63.html#fig:build_2">5.8</A>f is the resultant image obtained after refining
+the k-means segmented image using the difference image information present
+in Figure <A HREF="node63.html#fig:build_2">5.8</A>b.  Figure <A HREF="node63.html#fig:build_2">5.8</A>d depicts
+segmentation and Figure <A HREF="node63.html#fig:build_2">5.8</A>e depicts interpretation of the
+scene at an intermediate stage. Figure <A HREF="node63.html#fig:build_2">5.8</A>g gives the final
+interpreted image.  In this example, the interpretation merges segments of
+sky by assigning them labels corresponding to sky. In fact, as seen from
+Figure <A HREF="node63.html#fig:build_2">5.8</A>g, there are three different segments from Figure
+<A HREF="node63.html#fig:build_2">5.8</A>f which have been correctly assigned the same label, sky. 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="12914"></A>
+<TABLE>
+<CAPTION><STRONG>Table 5.3:</STRONG>
+Knowledge base used for outdoor building scene (Section 
+<A HREF="node63.html#sec:hira_img">4.3</A>).</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Label</TD>
+<TD ALIGN="RIGHT">A</TD>
+<TD ALIGN="RIGHT">G</TD>
+<TD ALIGN="RIGHT">P</TD>
+<TD></TD>
+<TD></TD>
+<TD ALIGN="CENTER">V</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Road</TD>
+<TD ALIGN="RIGHT">4999</TD>
+<TD ALIGN="RIGHT">106</TD>
+<TD ALIGN="RIGHT">395</TD>
+<TD ALIGN="RIGHT">64</TD>
+<TD ALIGN="RIGHT">107</TD>
+<TD ALIGN="CENTER">18.334378</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Sky</TD>
+<TD ALIGN="RIGHT">7730</TD>
+<TD ALIGN="RIGHT">208</TD>
+<TD ALIGN="RIGHT">443</TD>
+<TD ALIGN="RIGHT">64</TD>
+<TD ALIGN="RIGHT">30</TD>
+<TD ALIGN="CENTER">20.975156</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Tree (Left)</TD>
+<TD ALIGN="RIGHT">1535</TD>
+<TD ALIGN="RIGHT">85</TD>
+<TD ALIGN="RIGHT">285</TD>
+<TD ALIGN="RIGHT">37</TD>
+<TD ALIGN="RIGHT">80</TD>
+<TD ALIGN="CENTER">17.957333</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Tree (Right)</TD>
+<TD ALIGN="RIGHT">550</TD>
+<TD ALIGN="RIGHT">78</TD>
+<TD ALIGN="RIGHT">113</TD>
+<TD ALIGN="RIGHT">117</TD>
+<TD ALIGN="RIGHT">84</TD>
+<TD ALIGN="CENTER">14.810193</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Build (Left)</TD>
+<TD ALIGN="RIGHT">879</TD>
+<TD ALIGN="RIGHT">137</TD>
+<TD ALIGN="RIGHT">204</TD>
+<TD ALIGN="RIGHT">24</TD>
+<TD ALIGN="RIGHT">63</TD>
+<TD ALIGN="CENTER">19.207092</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Build (Right)</TD>
+<TD ALIGN="RIGHT">685</TD>
+<TD ALIGN="RIGHT">145</TD>
+<TD ALIGN="RIGHT">127</TD>
+<TD ALIGN="RIGHT">108</TD>
+<TD ALIGN="RIGHT">65</TD>
+<TD ALIGN="CENTER">15.920010</TD>
+</TR>
+</TABLE>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Common</TD>
+<TD ALIGN="CENTER">Road</TD>
+<TD ALIGN="CENTER">Sky</TD>
+<TD ALIGN="CENTER">Tree</TD>
+<TD ALIGN="CENTER">Tree</TD>
+<TD ALIGN="CENTER">Build</TD>
+<TD ALIGN="CENTER">Build</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Perimeter  </TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">(Left)</TD>
+<TD ALIGN="CENTER">(Right)</TD>
+<TD ALIGN="CENTER">(Left)</TD>
+<TD ALIGN="CENTER">(Right)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Road</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">192</TD>
+<TD ALIGN="CENTER">89</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">29</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Sky</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">82</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">151</TD>
+<TD ALIGN="CENTER">100</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Tree (Left)</TD>
+<TD ALIGN="CENTER">192</TD>
+<TD ALIGN="CENTER">82</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">94</TD>
+<TD ALIGN="CENTER">-</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Tree (Right)</TD>
+<TD ALIGN="CENTER">89</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">74</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Build (Left)</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">151</TD>
+<TD ALIGN="CENTER">94</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Build (Right)</TD>
+<TD ALIGN="CENTER">29</TD>
+<TD ALIGN="CENTER">100</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">74</TD>
+<TD ALIGN="CENTER">-</TD>
+<TD ALIGN="CENTER">-</TD>
+</TR>
+</TABLE>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">, <!-- MATH
+ $\;\;\;F\rightarrow$
+ -->
+</TD>
+<TD ALIGN="CENTER">Road</TD>
+<TD ALIGN="CENTER">Sky</TD>
+<TD ALIGN="CENTER">Tree (Left or Right)</TD>
+<TD ALIGN="CENTER">Build 
+(Left or Right)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"> { </TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Road</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Sky</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Tree (Left or Right)</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Build (Left or Right)</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+</TABLE>
+</DIV>
+ <A NAME="tab:hira_know"></A></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:build_2"></A><A NAME="12982"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5.8:</STRONG>
+ (a) Original image of size <!-- MATH
+ $256 \times 256$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$256 \times 256$">,
+(b) wavelet transformed image, (c) initial segmentation (after k-means
+clustering) of size <!-- MATH
+ $128 \times 128$
+ -->
+, (d) segmentation at an intermediate
+stage, (e) interpretation at an intermediate stage, (f) final
+segmentation, and (g) final interpretation.</CAPTION>
+<TR><TD></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<A NAME="tex2html1018"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html1014"
+  HREF="node60.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html1008"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html1016"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html1019"
+  HREF="node64.html">Computer Images</A>
+<B>Up:</B> <A NAME="tex2html1015"
+  HREF="node60.html">Experimental Results</A>
+<B> Previous:</B> <A NAME="tex2html1009"
+  HREF="node62.html">Road Images</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

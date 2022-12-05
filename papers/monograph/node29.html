@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MRF based Formulation for Interpretation</TITLE>
+<META NAME="description" CONTENT="MRF based Formulation for Interpretation">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node30.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html575"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html571"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html565"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html573"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html576"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B>Up:</B> <A NAME="tex2html572"
+  HREF="node27.html">MRF on a Graph</A>
+<B> Previous:</B> <A NAME="tex2html566"
+  HREF="node28.html">Notion of Cliques</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00611000000000000000"></A>
+<A NAME="sec:mrf_formulation_of_ii"></A>
+<BR>
+MRF based Formulation for Interpretation
+</H2>
+
+<P>
+When the  problem of image interpretation 
+is restricted to labelling the regions of 
+a segmented image, we  can   assign a  node in  to every segment. The
+edge set   is  such  that node  is  connected  to 
+only if the 
+corresponding segments are  spatially adjacent. Then the segmented image of
+Figure <A HREF="node27.html#RAG">3.1</A> (a) takes the form of the adjacency graph 
+in Figure <A HREF="node27.html#RAG">3.1</A> (b).
+
+<P>
+Let  
+
+<P>
+
+<UL>
+<LI>each node  have an interpretation from the set 
+<!-- MATH
+ $I = \{ I_1, \; I_2, \; \cdots \; I_M \}$
+ -->
+.
+Then the sample space for each  will be <!-- MATH
+ $\{ I_1, \; I_2, \; \cdots \;
+I_M \}$
+ -->
+. 
+ For example, the possible set of interpretation could be
+            { grassland,  road, <!-- MATH
+ $I_{3}
+           =$
+ -->
+sky,  buildings,  carr}, then 
+           would take a value from the set <!-- MATH
+ $\{ I_{1}, I_{2}, I_{3},
+           I_{4}, I_{5}\}$
+ -->
+ corresponding to the five possible
+           interpretations.
+
+<P>
+</LI>
+<LI> be the domain knowledge or a priori knowledge
+  regarding the various interpretation, obtained from the set of
+  training images. For example, if we consider features like average
+  gray level for sky the grassland, and the compactness for the
+  grassland, then  would include the nominal values for these
+  features. Thus, characterizing  would imply computing
+  nominal values for all features which are considered important for
+  deciding on an interpretation. These features  could be based gray
+  level or shape characteristics on 
+  1-node cliques (example: average gray level, area), 2-node cliques
+  (mutual contrast, common boundary length), or multiple node
+  cliques.   For more on different
+  type of features please see Appendix <A HREF="node74.html#app:features">G</A>. 
+
+<P>
+In order to obtain the domain knowledge it is assumed that a
+  segmented image for each training image is available.
+
+<P>
+At this point we would like to mention that selection of features is
+  in a sense a knowledge representation problem. What would like is a
+   way of characterizing and represent knowledge such that it would be
+  optimal for interpretation.  As far as we know, in general, this
+  problem is unsolved. Thus, in the absence of any other method, the
+  approach has been to create a set of features and then validate its
+  selection through empirical studies. The creation of this set is
+  based on our understanding on what we use for interpretation and some
+  studies in psychophysics of vision.
+
+<P>
+</LI>
+<LI>the set of feature measurements on the <EM>observed image</EM> be 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+F = \{ F^{c} | \forall \; c \in \; {\cal C}(G,\eta) \}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+F^{c} = \{ F_{1}^{c}, \; \cdots \; F_{q}^{c} \}
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is  the set of  features measured on the clique .
+Once again the  features would be the same
+as those used in the domain knowledge , and that 
+segmentation
+on the observed image is already achieved.
+
+<P>
+</LI>
+</UL>
+
+<P>
+Next, we <EM>assume </EM> that the probability distribution of the
+interpretation random vector <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> defined on the RAG  given the 
+domain knowledge   
+and the set of feature measurements on the observed
+image is a MRF, namely,
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+P[X=x | F=f, {\cal K}] = \frac{1}{Z} \exp^{-U(x|f,{\cal K})}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="int_pdf"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(23)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+U(x |f,{\cal K}) = \sum_{c \in {\cal C}(G,\eta)} V_{c}(x^{c} | f^{c}, {\cal K})
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Now the image interpretation problem is solved as a <EM>maximum
+  a posteriori estimation</EM> (MAP) estimation problem, namely
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_{*} = \arg \max_{x} P[X=x | F = f, {\cal K}]
+\end{displaymath}
+ -->
+
+
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Or equivalently,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+%%   \Longleftrightarrow
+   
+x_{*} = \arg \min_{x} U(x | f, {\cal K})
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="map"></A></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(24)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The fundamental question at this point is 
+<BLOCKQUOTE>
+<EM>How to select the clique functions?</EM>
+
+</BLOCKQUOTE>
+
+<P>
+<HR>
+<A NAME="tex2html575"
+  HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html571"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html565"
+  HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html573"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html576"
+  HREF="node30.html">Selection of Cliques Functions</A>
+<B>Up:</B> <A NAME="tex2html572"
+  HREF="node27.html">MRF on a Graph</A>
+<B> Previous:</B> <A NAME="tex2html566"
+  HREF="node28.html">Notion of Cliques</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

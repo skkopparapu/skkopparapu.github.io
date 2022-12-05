@@ -1,0 +1,2518 @@
+This is TeX, Version 3.14159 (C version 6.1) (format=latex 95.10.31)  18 DEC 1996 00:36
+**images.tex
+(images.tex
+LaTeX2e <1995/06/01> patch level 3
+Hyphenation patterns for english, german, loaded.
+
+(/usr/lib/texmf/texmf/tex/latex/base/latex209.def
+File: latex209.def 1995/07/07 v0.47 Standard LaTeX file
+Entering LaTeX 2.09 compatibility mode.
+\footheight=\dimen102
+\@maxsep=\dimen103
+\@dblmaxsep=\dimen104
+(/usr/lib/texmf/texmf/tex/latex/base/tracefnt.sty
+Package: tracefnt 1995/06/15 v3.0b Standard LaTeX package (font tracing)
+\tracingfonts=\count82
+LaTeX Info: Redefining \selectfont on input line 133.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 276.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 277.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 278.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 284.
+LaTeX Info: Redefining \em on input line 294.
+(/usr/lib/texmf/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1995/03/18 v2.2a Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 81.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 359.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 361.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 363.
+(/usr/lib/texmf/texmf/tex/latex/config/latex209.cfg (/usr/lib/texmf/texmf/tex/l
+atex/tools/rawfonts.sty
+Compatibility mode: package `' requested, but `rawfonts' provided.
+Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
+(/usr/lib/texmf/texmf/tex/latex/tools/somedefs.sty
+Package: somedefs 1994/06/01 Toolkit for optional definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+(/usr/lib/texmf/texmf/tex/latex/base/Ulasy.fd
+File: Ulasy.fd 1995/03/18 v2.2aLaTeX symbol font definitions
+))))
+Compatibility mode: loading buk.sty rather than buk.cls.
+(/home/malhar/nil/tex/LANIF/buk.sty
+Compatibility mode: inputting `book.cls' instead of obsolete `book.sty'.
+(/usr/lib/texmf/texmf/tex/latex/base/book.cls
+Document Class: book 1995/06/26 v1.3g Standard LaTeX document class
+(/usr/lib/texmf/texmf/tex/latex/base/bk11.clo
+File: bk11.clo 1995/06/26 v1.3g Standard LaTeX file (size option)
+)
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+Compatibility mode: definition of \rm ignored.
+Compatibility mode: definition of \sf ignored.
+Compatibility mode: definition of \tt ignored.
+Compatibility mode: definition of \bf ignored.
+Compatibility mode: definition of \it ignored.
+Compatibility mode: definition of \sl ignored.
+Compatibility mode: definition of \sc ignored.
+LaTeX Info: Redefining \cal on input line 544.
+LaTeX Info: Redefining \mit on input line 545.
+\bibindent=\dimen105
+)) (/usr/lib/texmf/texmf/tex/generic/misc/psfig.sty
+\@unused=\write3
+\ps@stream=\read1
+\p@intvaluex=\dimen106
+\p@intvaluey=\dimen107
+psfig/tex 1.10-dvips
+) (/usr/lib/texmf/texmf/tex/latex/misc/a4.sty
+Package: a4 1995/08/10 v1.2d A4 based page layout
+)
+\lthtmlwrite=\write4
+\sizebox=\box26
+(images.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 201.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 201.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 201.
+latex2htmlSize :tex2html_wrap_inline4956: 9.44032pt::0.0pt.
+[1
+
+
+]
+latex2htmlSize :tex2html_wrap_inline4964: 7.05666pt::0.9125pt.
+[2
+
+]
+latex2htmlSize :tex2html_wrap_inline4966: 7.05666pt::0.9125pt.
+[3
+
+]
+latex2htmlSize :tex2html_wrap_inline4968: 7.05666pt::0.9125pt.
+[4
+
+]
+latex2htmlSize :tex2html_wrap_inline4970: 7.05666pt::0.9125pt.
+[5
+
+]
+latex2htmlSize :tex2html_wrap_inline4972: 7.05666pt::0.9125pt.
+[6
+
+]
+latex2htmlSize :tex2html_wrap_inline4974: 7.05666pt::0.9125pt.
+[7
+
+]
+latex2htmlSize :tex2html_wrap_inline4976: 7.05666pt::0.9125pt.
+[8
+
+]
+latex2htmlSize :tex2html_wrap_inline4978: 7.05666pt::0.9125pt.
+[9
+
+]
+latex2htmlSize :tex2html_wrap_inline4980: 7.05666pt::0.9125pt.
+[10
+
+]
+latex2htmlSize :tex2html_wrap_inline4982: 7.05666pt::0.9125pt.
+[11
+
+]
+latex2htmlSize :tex2html_wrap_inline4984: 7.05666pt::0.9125pt.
+[12
+
+]
+latex2htmlSize :tex2html_wrap_inline4986: 7.05666pt::0.9125pt.
+[13
+
+]
+psfig: searching FIG/over_view.ps for bounding box
+psfig: including FIG/over_view.ps 
+[14]
+Can't find ./IMAGES/int_block.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.278 ...IMAGES/int_block.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
+[]\OT1/cmr/m/n/10.95 -bb-error =  =            []    [] []
+ []
+
+[15] [16]
+latex2htmlSize :tex2html_wrap_inline5006: 9.44032pt::1.06459pt.
+[17
+
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5008: 7.48248pt::0.0pt.
+[18
+
+]
+latex2htmlSize :tex2html_wrap_inline5010: 9.44032pt::0.9125pt.
+[19
+
+]
+latex2htmlSize :tex2html_wrap_inline5012: 7.48248pt::0.0pt.
+[20
+
+]
+latex2htmlSize :tex2html_wrap_inline5014: 9.44032pt::1.06459pt.
+[21
+
+]
+latex2htmlSize :tex2html_wrap_inline5016: 9.44032pt::1.06459pt.
+[22
+
+]
+latex2htmlSize :tex2html_wrap_inline5018: 9.44032pt::1.06459pt.
+[23
+
+]
+latex2htmlSize :tex2html_wrap_inline5020: 9.44032pt::1.06459pt.
+[24
+
+]
+latex2htmlSize :tex2html_wrap_inline5022: 7.48248pt::0.0pt.
+[25
+
+]
+latex2htmlSize :tex2html_wrap_inline5024: 7.05666pt::0.9125pt.
+[26
+
+]
+latex2htmlSize :tex2html_wrap_inline5026: 7.05666pt::0.9125pt.
+[27
+
+]
+latex2htmlSize :tex2html_wrap_inline5028: 9.44032pt::0.0pt.
+[28
+
+]
+latex2htmlSize :tex2html_wrap_inline5028: 9.44032pt::0.0pt.
+[29
+
+]
+psfig: searching wt.ps for bounding box
+psfig: including wt.ps 
+[30]
+latex2htmlSize :tex2html_wrap_inline5030: 9.44032pt::1.06459pt.
+[31
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5032: 9.44032pt::1.06459pt.
+[32
+
+]
+latex2htmlSize :tex2html_wrap_inline5034: 10.07169pt::4.85048pt.
+[33
+
+]
+latex2htmlSize :tex2html_wrap_inline5036: 10.07169pt::4.85048pt.
+[34
+
+]
+latex2htmlSize :tex2html_wrap_inline5038: 10.07169pt::4.85048pt.
+[35
+
+]
+latex2htmlSize :tex2html_wrap_inline5040: 10.07169pt::4.85048pt.
+[36
+
+]
+latex2htmlSize :tex2html_wrap_inline5042: 9.97366pt::0.9125pt.
+[37
+
+]
+latex2htmlSize :tex2html_wrap_inline5044: 9.44032pt::1.06459pt.
+[38
+
+]
+latex2htmlSize :tex2html_wrap_inline5046: 10.07169pt::4.85048pt.
+[39
+
+]
+latex2htmlSize :tex2html_wrap_inline5048: 10.07169pt::4.85048pt.
+[40
+
+]
+latex2htmlSize :tex2html_wrap_inline5050: 9.44032pt::1.06459pt.
+[41
+
+]
+latex2htmlSize :tex2html_wrap_inline5052: 9.44032pt::1.06459pt.
+[42
+
+]
+latex2htmlSize :tex2html_wrap_inline5054: 10.07169pt::4.85048pt.
+[43
+
+]
+latex2htmlSize :tex2html_wrap_inline5056: 10.07169pt::4.85048pt.
+[44
+
+]
+latex2htmlSize :tex2html_wrap_inline5058: 10.07169pt::4.85048pt.
+[45
+
+]
+latex2htmlSize :tex2html_wrap_inline5060: 7.48248pt::1.64249pt.
+[46
+
+]
+psfig: searching IMAGES/graph.ps for bounding box
+psfig: including IMAGES/graph.ps 
+[47]
+latex2htmlSize :tex2html_wrap_inline5064: 9.52922pt::2.78181pt.
+[48
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5068: 9.52922pt::2.78181pt.
+[49
+
+]
+latex2htmlSize :tex2html_wrap_inline5070: 9.52922pt::2.78181pt.
+[50
+
+]
+latex2htmlSize :tex2html_wrap_inline5072: 9.52922pt::2.78181pt.
+[51
+
+]
+latex2htmlSize :tex2html_wrap_inline5074: 4.86667pt::0.0pt.
+[52
+
+]
+latex2htmlSize :tex2html_wrap_inline5076: 9.52922pt::2.70702pt.
+[53
+
+]
+latex2htmlSize :tex2html_wrap_inline5078: 9.52922pt::2.78181pt.
+[54
+
+]
+latex2htmlSize :tex2html_wrap_inline5080: 9.52922pt::2.91495pt.
+[55
+
+]
+latex2htmlSize :tex2html_wrap_inline5084: 9.52922pt::4.4705pt.
+[56
+
+]
+latex2htmlSize :tex2html_wrap_inline5086: 9.52922pt::4.4705pt.
+[57
+
+]
+latex2htmlSize :tex2html_wrap_inline5088: 7.22179pt::2.12917pt.
+[58
+
+]
+latex2htmlSize :tex2html_wrap_inline5090: 9.52922pt::4.4705pt.
+[59
+
+]
+latex2htmlSize :tex2html_wrap_inline5092: 12.48392pt::2.78181pt.
+[60
+
+]
+latex2htmlSize :tex2html_wrap_inline5094: 9.52922pt::2.78181pt.
+[61
+
+]
+latex2htmlSize :tex2html_wrap_inline5096: 9.52922pt::0.0pt.
+[62
+
+]
+latex2htmlSize :tex2html_wrap_inline5098: 10.60138pt::2.73749pt.
+[63
+
+]
+latex2htmlSize :tex2html_wrap_inline5100: 9.52922pt::1.06459pt.
+[64
+
+]
+latex2htmlSize :tex2html_wrap_inline5102: 9.52922pt::0.0pt.
+[65
+
+]
+latex2htmlSize :tex2html_wrap_inline5104: 9.52922pt::0.0pt.
+[66
+
+]
+latex2htmlSize :tex2html_wrap_inline5106: 10.60138pt::2.73749pt.
+[67
+
+] [68
+
+]
+latex2htmlSize :tex2html_wrap_inline5108: 9.52922pt::2.70702pt.
+[69
+
+] [70
+
+]
+latex2htmlSize :tex2html_wrap_inline5110: 10.60138pt::2.73749pt.
+[71
+
+]
+latex2htmlSize :tex2html_wrap_inline5112: 9.52922pt::0.0pt.
+[72
+
+]
+latex2htmlSize :tex2html_wrap_inline5114: 10.60138pt::2.73749pt.
+[73
+
+]
+latex2htmlSize :tex2html_wrap_inline5116: 9.52922pt::1.06459pt.
+[74
+
+]
+latex2htmlSize :tex2html_wrap_inline5118: 9.52922pt::2.73749pt.
+[75
+
+]
+latex2htmlSize :tex2html_wrap_inline5120: 10.60138pt::2.73749pt.
+[76
+
+] [77
+
+]
+latex2htmlSize :tex2html_wrap_inline5122: 8.2125pt::2.73749pt.
+[78
+
+]
+latex2htmlSize :tex2html_wrap_inline5134: 4.71457pt::2.12917pt.
+[79
+
+]
+latex2htmlSize :tex2html_wrap_inline5136: 9.52922pt::4.26257pt.
+[80
+
+]
+latex2htmlSize :tex2html_wrap_inline5138: 10.60138pt::4.26257pt.
+[81
+
+]
+latex2htmlSize :tex2html_wrap_inline5142: 10.60138pt::4.79305pt.
+[82
+
+]
+latex2htmlSize :tex2html_wrap_inline5144: 10.60138pt::4.79305pt.
+[83
+
+]
+latex2htmlSize :tex2html_wrap_inline5146: 10.60138pt::4.79305pt.
+[84
+
+]
+latex2htmlSize :tex2html_wrap_inline5148: 4.86667pt::2.12917pt.
+[85
+
+]
+latex2htmlSize :tex2html_wrap_inline5150: 10.60138pt::4.79305pt.
+[86
+
+] [87
+
+]
+latex2htmlSize :tex2html_wrap_inline5152: 9.26236pt::2.70702pt.
+[88
+
+]
+latex2htmlSize :tex2html_wrap_inline5154: 9.26236pt::3.11696pt.
+[89
+
+]
+latex2htmlSize :tex2html_wrap_inline5156: 9.26236pt::2.73749pt.
+[90
+
+]
+latex2htmlSize :tex2html_wrap_inline5160: 10.60138pt::2.73749pt.
+[91
+
+]
+latex2htmlSize :tex2html_wrap_inline5162: 10.60138pt::2.73749pt.
+[92
+
+]
+latex2htmlSize :tex2html_wrap_inline5166: 10.60138pt::2.73749pt.
+[93
+
+]
+latex2htmlSize :tex2html_wrap_inline5168: 10.60138pt::2.73749pt.
+[94
+
+]
+psfig: searching FIG/ref_basis.ps for bounding box
+psfig: including FIG/ref_basis.ps 
+[95] [96
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5172: 8.2125pt::2.73749pt.
+[97
+
+] [98
+
+]
+\plotpoint=\box27
+[99] [100
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5176: 11.6044pt::3.11696pt.
+[101
+
+]
+latex2htmlSize :tex2html_wrap_inline5178: 12.48392pt::3.23749pt.
+[102
+
+] [103
+
+]
+latex2htmlSize :tex2html_wrap_inline5190: 10.60138pt::3.23749pt.
+[104
+
+]
+latex2htmlSize :tex2html_wrap_inline5192: 10.60138pt::3.23749pt.
+[105
+
+]
+psfig: searching INTER/explain.ps for bounding box
+psfig: including INTER/explain.ps 
+[106]
+latex2htmlSize :tex2html_wrap_inline5206: 9.44032pt::0.0pt.
+[107
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5208: 9.44032pt::1.06459pt.
+[108
+
+]
+latex2htmlSize :tex2html_wrap_inline5210: 9.44032pt::0.9125pt.
+[109
+
+]
+latex2htmlSize :tex2html_wrap_inline5212: 10.07169pt::4.85048pt.
+[110
+
+]
+latex2htmlSize :tex2html_wrap_inline5214: 10.07169pt::4.85048pt.
+[111
+
+]
+latex2htmlSize :tex2html_wrap_inline5216: 10.07169pt::4.85048pt.
+[112
+
+]
+latex2htmlSize :tex2html_wrap_inline5218: 10.07169pt::4.85048pt.
+[113
+
+]
+latex2htmlSize :tex2html_wrap_inline5220: 10.07169pt::4.85048pt.
+[114
+
+]
+latex2htmlSize :tex2html_wrap_inline5222: 10.07169pt::4.85048pt.
+[115
+
+]
+latex2htmlSize :tex2html_wrap_inline5224: 10.07169pt::4.85048pt.
+[116
+
+]
+latex2htmlSize :tex2html_wrap_inline5226: 10.07169pt::4.85048pt.
+[117
+
+]
+latex2htmlSize :tex2html_wrap_inline5228: 10.07169pt::4.85048pt.
+[118
+
+]
+latex2htmlSize :tex2html_wrap_inline5230: 10.07169pt::4.85048pt.
+[119
+
+]
+latex2htmlSize :tex2html_wrap_inline5232: 10.08096pt::1.06459pt.
+[120
+
+]
+latex2htmlSize :tex2html_wrap_inline5234: 12.48392pt::4.85048pt.
+[121
+
+]
+latex2htmlSize :tex2html_wrap_inline5236: 10.08096pt::1.06459pt.
+[122
+
+]
+latex2htmlSize :tex2html_wrap_inline5238: 10.16058pt::4.85048pt.
+[123
+
+]
+latex2htmlSize :tex2html_wrap_inline5240: 10.16058pt::4.85048pt.
+[124
+
+]
+latex2htmlSize :tex2html_wrap_inline5242: 10.16058pt::4.85048pt.
+[125
+
+]
+latex2htmlSize :tex2html_wrap_inline5244: 9.52922pt::1.06459pt.
+[126
+
+]
+latex2htmlSize :tex2html_wrap_inline5246: 7.48248pt::0.9125pt.
+[127
+
+]
+latex2htmlSize :tex2html_wrap_inline5248: 9.44032pt::1.06459pt.
+[128
+
+]
+latex2htmlSize :tex2html_wrap_inline5254: 10.07169pt::4.85048pt.
+[129
+
+]
+latex2htmlSize :tex2html_wrap_inline5256: 10.07169pt::4.85048pt.
+[130
+
+]
+latex2htmlSize :tex2html_wrap_inline5258: 10.07169pt::4.85048pt.
+[131
+
+]
+psfig: searching table.ps for bounding box
+psfig: including table.ps 
+[132]
+latex2htmlSize :tex2html_wrap_inline5260: 10.07169pt::4.85048pt.
+[133
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5262: 8.2125pt::2.73749pt.
+[134
+
+]
+latex2htmlSize :tex2html_wrap_inline5264: 8.2125pt::2.73749pt.
+[135
+
+]
+latex2htmlSize :tex2html_wrap_inline5266: 8.2125pt::2.73749pt.
+[136
+
+]
+latex2htmlSize :tex2html_wrap_inline5268: 8.2125pt::2.73749pt.
+[137
+
+]
+latex2htmlSize :tex2html_wrap_inline5270: 8.2125pt::2.73749pt.
+[138
+
+]
+latex2htmlSize :tex2html_wrap_inline5272: 8.2125pt::2.73749pt.
+[139
+
+]
+latex2htmlSize :tex2html_wrap_inline5274: 8.2125pt::2.73749pt.
+[140
+
+]
+latex2htmlSize :tex2html_wrap_inline5276: 8.2125pt::2.73749pt.
+[141
+
+]
+latex2htmlSize :tex2html_wrap_inline5278: 8.2125pt::2.73749pt.
+[142
+
+]
+latex2htmlSize :tex2html_wrap_inline5280: 8.2125pt::2.73749pt.
+[143
+
+]
+latex2htmlSize :tex2html_wrap_inline5282: 8.2125pt::2.73749pt.
+[144
+
+]
+latex2htmlSize :tex2html_wrap_inline5284: 10.07169pt::4.85048pt.
+[145
+
+]
+latex2htmlSize :tex2html_wrap_inline5286: 10.07169pt::4.85048pt.
+[146
+
+]
+latex2htmlSize :tex2html_wrap_inline5306: 7.48248pt::3.19804pt.
+[147
+
+]
+latex2htmlSize :tex2html_wrap_inline5310: 8.2125pt::3.19804pt.
+[148
+
+]
+latex2htmlSize :tex2html_wrap_inline5312: 7.48248pt::3.19804pt.
+[149
+
+] [150
+
+]
+latex2htmlSize :tex2html_wrap_inline5314: 7.48248pt::1.7839pt.
+[151
+
+]
+latex2htmlSize :tex2html_wrap_inline5316: 7.48248pt::1.64249pt.
+[152
+
+]
+latex2htmlSize :tex2html_wrap_inline5318: 7.48248pt::1.7839pt.
+[153
+
+]
+latex2htmlSize :tex2html_wrap_inline5320: 7.48248pt::1.7839pt.
+[154
+
+]
+latex2htmlSize :tex2html_wrap_inline5322: 8.2125pt::2.73749pt.
+[155
+
+]
+latex2htmlSize :tex2html_wrap_inline5324: 8.2125pt::2.73749pt.
+[156
+
+]
+latex2htmlSize :tex2html_wrap_inline5326: 8.2125pt::2.73749pt.
+[157
+
+]
+latex2htmlSize :tex2html_wrap_inline5328: 10.16058pt::4.67252pt.
+[158
+
+]
+latex2htmlSize :tex2html_wrap_inline5330: 9.52922pt::2.73749pt.
+[159
+
+]
+latex2htmlSize :tex2html_wrap_inline5332: 8.2125pt::2.73749pt.
+[160
+
+] [161
+
+]
+latex2htmlSize :tex2html_wrap_inline5334: 8.2125pt::2.73749pt.
+[162
+
+]
+latex2htmlSize :tex2html_wrap_inline5336: 7.60416pt::0.9125pt.
+[163
+
+]
+latex2htmlSize :tex2html_wrap_inline5338: 8.2125pt::2.73749pt.
+[164
+
+]
+latex2htmlSize :tex2html_wrap_inline5340: 9.52922pt::0.0pt.
+[165
+
+]
+latex2htmlSize :tex2html_wrap_inline5342: 10.60138pt::2.73749pt.
+[166
+
+]
+latex2htmlSize :tex2html_wrap_inline5344: 9.52922pt::1.06459pt.
+[167
+
+] [168
+
+] [169
+
+]
+latex2htmlSize :tex2html_wrap_inline5346: 11.73756pt::6.2626pt.
+[170
+
+]
+latex2htmlSize :tex2html_wrap_inline5348: 9.52922pt::2.73749pt.
+[171
+
+]
+latex2htmlSize :tex2html_wrap_inline5352: 10.16058pt::4.67252pt.
+[172
+
+]
+latex2htmlSize :tex2html_wrap_inline5354: 7.48248pt::1.64249pt.
+[173
+
+]
+latex2htmlSize :tex2html_wrap_inline5362: 7.48248pt::1.7839pt.
+[174
+
+]
+latex2htmlSize :tex2html_wrap_inline5366: 10.60138pt::4.67252pt.
+[175
+
+]
+latex2htmlSize :tex2html_wrap_inline5370: 10.60138pt::4.67252pt.
+[176
+
+] [177
+
+]
+latex2htmlSize :tex2html_wrap_inline5372: 7.48248pt::0.9125pt.
+[178
+
+]
+latex2htmlSize :tex2html_wrap_inline5374: 9.52922pt::0.0pt.
+[179
+
+]
+latex2htmlSize :tex2html_wrap_inline5376: 7.60416pt::0.9125pt.
+[180
+
+]
+latex2htmlSize :tex2html_wrap_inline5378: 7.48248pt::0.9125pt.
+[181
+
+]
+latex2htmlSize :tex2html_wrap_inline5380: 7.48248pt::0.0pt.
+[182
+
+]
+latex2htmlSize :tex2html_wrap_inline5382: 7.48248pt::0.9125pt.
+[183
+
+]
+latex2htmlSize :tex2html_wrap_inline5384: 7.48248pt::0.0pt.
+[184
+
+] [185]
+latex2htmlSize :tex2html_wrap_inline5398: 7.48248pt::0.0pt.
+[186
+
+
+]
+Overfull \hbox (5.13821pt too wide) in paragraph at lines 2446--2460
+ [] 
+ []
+
+[187]
+latex2htmlSize :tex2html_wrap_inline5416: 7.48248pt::1.64249pt.
+[188
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5418: 7.48248pt::1.64249pt.
+[189
+
+] [190
+
+]
+latex2htmlSize :tex2html_wrap_inline5420: 8.2125pt::2.73749pt.
+[191
+
+]
+latex2htmlSize :tex2html_wrap_inline5422: 8.2125pt::2.73749pt.
+[192
+
+] [193
+
+] [194
+
+] [195
+
+]
+latex2htmlSize :tex2html_wrap_inline5426: 7.48248pt::1.695pt.
+[196
+
+] [197
+
+] [198
+
+]
+latex2htmlSize :tex2html_wrap_inline5454: 9.12923pt::2.73749pt.
+[199
+
+]
+latex2htmlSize :tex2html_wrap_inline5456: 9.12923pt::4.26257pt.
+[200
+
+]
+latex2htmlSize :tex2html_wrap_inline5458: 8.2125pt::3.19804pt.
+[201
+
+]
+latex2htmlSize :tex2html_wrap_inline5460: 7.73755pt::2.26257pt.
+[202
+
+]
+latex2htmlSize :tex2html_wrap_inline5462: 7.73755pt::3.19804pt.
+[203
+
+]
+latex2htmlSize :tex2html_wrap_inline5464: 9.12923pt::2.26257pt.
+[204
+
+]
+latex2htmlSize :tex2html_wrap_inline5466: 9.12923pt::3.19804pt.
+[205
+
+]
+latex2htmlSize :tex2html_wrap_inline5468: 7.73755pt::3.19804pt.
+[206
+
+] [207
+
+]
+latex2htmlSize :tex2html_wrap_inline5470: 7.48248pt::1.695pt.
+[208
+
+]
+latex2htmlSize :tex2html_wrap_inline5474: 7.48248pt::1.695pt.
+[209
+
+]
+latex2htmlSize :tex2html_wrap_inline5478: 7.48248pt::1.695pt.
+[210
+
+] [211
+
+]
+latex2htmlSize :tex2html_wrap_inline5484: 7.48248pt::1.695pt.
+[212
+
+]
+latex2htmlSize :tex2html_wrap_inline5488: 7.48248pt::1.695pt.
+[213
+
+] [214
+
+] [215
+
+]
+psfig: searching IMAGES/area.ps for bounding box
+psfig: including IMAGES/area.ps 
+[216] [217
+
+
+] [218
+
+] [219
+
+] [220
+
+] [221
+
+]
+latex2htmlSize :tex2html_wrap_inline5504: 7.05666pt::0.9125pt.
+[222
+
+]
+Can't find ./8.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2659 ...sfig{figure=./8.ps,width=0.9\textwidth}}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+
+Underfull \hbox (badness 10000) in paragraph at lines 2659--2659
+[]\OT1/cmr/m/n/10.95 -bb-error =  =            []    [] []
+ []
+
+[223]
+Overfull \hbox (5.74518pt too wide) in paragraph at lines 2670--2695
+ [] 
+ []
+
+[224]
+latex2htmlSize :tex2html_wrap_inline5556: 8.2125pt::2.73749pt.
+[225
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5558: 8.2125pt::2.73749pt.
+[226
+
+]
+latex2htmlSize :tex2html_wrap_inline5560: 8.2125pt::2.73749pt.
+[227
+
+]
+latex2htmlSize :tex2html_wrap_inline5562: 8.2125pt::3.19804pt.
+[228
+
+]
+latex2htmlSize :tex2html_wrap_inline5564: 8.2125pt::2.73749pt.
+[229
+
+]
+latex2htmlSize :tex2html_wrap_inline5566: 8.2125pt::2.73749pt.
+[230
+
+]
+latex2htmlSize :tex2html_wrap_inline5568: 8.2125pt::2.73749pt.
+[231
+
+]
+latex2htmlSize :tex2html_wrap_inline5570: 8.2125pt::2.73749pt.
+[232
+
+]
+latex2htmlSize :tex2html_wrap_inline5572: 10.07169pt::4.85048pt.
+[233
+
+]
+latex2htmlSize :tex2html_wrap_inline5574: 10.07169pt::4.85048pt.
+[234
+
+]
+latex2htmlSize :tex2html_wrap_inline5576: 10.07169pt::4.85048pt.
+[235
+
+]
+latex2htmlSize :tex2html_wrap_inline5578: 10.07169pt::4.85048pt.
+[236
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 2792
+.
+(/usr/lib/texmf/texmf/tex/latex/base/OMScmr.fd
+File: OMScmr.fd 1995/04/22 v2.3f Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2792.
+
+[237]
+latex2htmlSize :tex2html_wrap_inline5592: 7.05666pt::0.9125pt.
+[238
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5594: 7.05666pt::0.9125pt.
+[239
+
+]
+latex2htmlSize :tex2html_wrap_inline5592: 7.05666pt::0.9125pt.
+[240
+
+]
+latex2htmlSize :tex2html_wrap_inline5594: 7.05666pt::0.9125pt.
+[241
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_6.ps 
+Can't find ./IMAGES/ROAD_SHOW/wt_6.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2828 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+psfig: searching IMAGES/ROAD_SHOW/ini_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_6.ps 
+psfig: searching FIG/R_inter_seg_6.ps for bounding box
+psfig: including FIG/R_inter_seg_6.ps 
+psfig: searching FIG/R_inter_inter_6.ps for bounding box
+psfig: including FIG/R_inter_inter_6.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_6.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_6.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_6.ps 
+psfig: searching IMAGES/sky_6.ps for bounding box
+psfig: including IMAGES/sky_6.ps 
+psfig: searching IMAGES/tree_6.ps for bounding box
+psfig: including IMAGES/tree_6.ps 
+psfig: searching IMAGES/sidewalk_6.ps for bounding box
+psfig: including IMAGES/sidewalk_6.ps 
+psfig: searching IMAGES/road_6.ps for bounding box
+psfig: including IMAGES/road_6.ps 
+[242]
+latex2htmlSize :tex2html_wrap_inline5596: 7.05666pt::0.9125pt.
+[243
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5598: 7.05666pt::0.9125pt.
+[244
+
+]
+latex2htmlSize :tex2html_wrap_inline5596: 7.05666pt::0.9125pt.
+[245
+
+]
+latex2htmlSize :tex2html_wrap_inline5598: 7.05666pt::0.9125pt.
+[246
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_5.ps 
+Can't find ./IMAGES/ROAD_SHOW/wt_5.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2883 ...MAGES/ROAD_SHOW/wt_5.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+psfig: searching IMAGES/ROAD_SHOW/ini_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_5.ps 
+psfig: searching FIG/R_inter_seg_5.ps for bounding box
+psfig: including FIG/R_inter_seg_5.ps 
+psfig: searching FIG/R_inter_inter_5.ps for bounding box
+psfig: including FIG/R_inter_inter_5.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_5.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_5.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_5.ps 
+psfig: searching IMAGES/sky_5.ps for bounding box
+psfig: including IMAGES/sky_5.ps 
+psfig: searching IMAGES/tree_5.ps for bounding box
+psfig: including IMAGES/tree_5.ps 
+psfig: searching IMAGES/sidewalk_5.ps for bounding box
+psfig: including IMAGES/sidewalk_5.ps 
+psfig: searching IMAGES/road_5.ps for bounding box
+psfig: including IMAGES/road_5.ps 
+[247]
+latex2htmlSize :tex2html_wrap_inline5600: 7.05666pt::0.9125pt.
+[248
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5602: 7.05666pt::0.9125pt.
+[249
+
+]
+latex2htmlSize :tex2html_wrap_inline5600: 7.05666pt::0.9125pt.
+[250
+
+]
+latex2htmlSize :tex2html_wrap_inline5602: 7.05666pt::0.9125pt.
+[251
+
+]
+psfig: searching IMAGES/ROAD_SHOW/orig_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/orig_1.ps 
+Can't find ./IMAGES/ROAD_SHOW/wt_6.ps in ./:
+psfig: searching null for bounding box
+Warning! File does not start with `%!'. It may not be a PostScript file.
+FATAL ERROR: no bb supplied or found
+! Undefined control sequence.
+\compute@bb ...RROR: no bb supplied or found} \no 
+                                                  -bb-error \fi \count 203=\...
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \advance 
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \edef 
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 100 by \count 241 
+                                                  \count 101=\count 100 \mul...
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 101 by \count 241 
+                                                  \count 102=\count 101 \mul...
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+! Arithmetic overflow.
+\in@hundreds ... \divide \count 102 by \count 241 
+                                                  \count 200=#1\count 205=0 ...
+l.2936 ...MAGES/ROAD_SHOW/wt_6.ps,width=1.5in}}  }
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+psfig: including null 
+psfig: searching IMAGES/ROAD_SHOW/ini_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/ini_1.ps 
+psfig: searching FIG/R_inter_seg_1.ps for bounding box
+psfig: including FIG/R_inter_seg_1.ps 
+psfig: searching FIG/R_inter_inter_1.ps for bounding box
+psfig: including FIG/R_inter_inter_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/seg_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/seg_1.ps 
+psfig: searching IMAGES/ROAD_SHOW/fin_1.ps for bounding box
+psfig: including IMAGES/ROAD_SHOW/fin_1.ps 
+psfig: searching IMAGES/sky_1.ps for bounding box
+psfig: including IMAGES/sky_1.ps 
+psfig: searching IMAGES/tree_1.ps for bounding box
+psfig: including IMAGES/tree_1.ps 
+psfig: searching IMAGES/sidewalk_1.ps for bounding box
+psfig: including IMAGES/sidewalk_1.ps 
+psfig: searching IMAGES/road_1.ps for bounding box
+psfig: including IMAGES/road_1.ps 
+[252] [253]
+latex2htmlSize :tex2html_wrap_inline5684: 7.05666pt::0.9125pt.
+[254
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5686: 7.05666pt::0.9125pt.
+[255
+
+]
+latex2htmlSize :tex2html_wrap_inline5684: 7.05666pt::0.9125pt.
+[256
+
+]
+latex2htmlSize :tex2html_wrap_inline5686: 7.05666pt::0.9125pt.
+[257
+
+]
+psfig: searching IMAGES/HIRA/rd2_p.256.ps for bounding box
+psfig: including IMAGES/HIRA/rd2_p.256.ps 
+psfig: searching IMAGES/HIRA/rd2_p_256.ps for bounding box
+psfig: including IMAGES/HIRA/rd2_p_256.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_ini.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_ini.ps 
+psfig: searching FIG/B_inter_seg_2.ps for bounding box
+psfig: including FIG/B_inter_seg_2.ps 
+psfig: searching FIG/B_inter_inter_2.ps for bounding box
+psfig: including FIG/B_inter_inter_2.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_seg.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_seg.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_fin.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_fin.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_road.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_road.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_sky.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_sky.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_tree.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_tree.ps 
+psfig: searching IMAGES/HIRA/RESULTS/tr2_build.ps for bounding box
+psfig: including IMAGES/HIRA/RESULTS/tr2_build.ps 
+[258] [259]
+latex2htmlSize :tex2html_wrap_inline5724: 7.05666pt::0.9125pt.
+[260
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5726: 7.05666pt::0.9125pt.
+[261
+
+]
+latex2htmlSize :tex2html_wrap_inline5724: 7.05666pt::0.9125pt.
+[262
+
+]
+latex2htmlSize :tex2html_wrap_inline5726: 7.05666pt::0.9125pt.
+[263
+
+]
+psfig: searching IMAGES/COMPI/compi_0.256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.256.ps 
+psfig: searching IMAGES/COMPI/compi_0_256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_256.ps 
+psfig: searching IMAGES/COMPI/compi_0.initial.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0.initial.ps 
+psfig: searching FIG/C_inter_seg_0.ps for bounding box
+psfig: including FIG/C_inter_seg_0.ps 
+psfig: searching FIG/C_inter_inter_0.ps for bounding box
+psfig: including FIG/C_inter_inter_0.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.fin_seg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.fin_seg.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.fin_inter.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.fin_inter.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.bg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.bg.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.scr.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.scr.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.cover.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.cover.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.kb.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.kb.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.sb.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.sb.ps 
+psfig: searching IMAGES/COMPI/compi_0_table.tt.ps for bounding box
+psfig: including IMAGES/COMPI/compi_0_table.tt.ps 
+[264]
+latex2htmlSize :tex2html_wrap_inline5728: 7.05666pt::0.9125pt.
+[265
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5730: 7.05666pt::0.9125pt.
+[266
+
+]
+latex2htmlSize :tex2html_wrap_inline5728: 7.05666pt::0.9125pt.
+[267
+
+]
+latex2htmlSize :tex2html_wrap_inline5730: 7.05666pt::0.9125pt.
+[268
+
+]
+psfig: searching IMAGES/COMPI/compi_1.256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.256.ps 
+psfig: searching IMAGES/COMPI/compi_1_256.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_256.ps 
+psfig: searching IMAGES/COMPI/compi_1.initial.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1.initial.ps 
+psfig: searching FIG/C_inter_seg_1.ps for bounding box
+psfig: including FIG/C_inter_seg_1.ps 
+psfig: searching FIG/C_inter_inter_1.ps for bounding box
+psfig: including FIG/C_inter_inter_1.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.fin_seg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.fin_seg.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.fin_inter.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.fin_inter.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.bg.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.bg.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.scr.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.scr.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.cover.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.cover.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.kb.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.kb.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.sb.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.sb.ps 
+psfig: searching IMAGES/COMPI/compi_1_table.tt.ps for bounding box
+psfig: including IMAGES/COMPI/compi_1_table.tt.ps 
+[269]
+latex2htmlSize :tex2html_wrap_inline5732: 7.05666pt::0.9125pt.
+[270
+
+
+]
+latex2htmlSize :tex2html_wrap_inline5734: 7.05666pt::0.9125pt.
+[271
+
+]
+latex2htmlSize :tex2html_wrap_inline5788: 8.2125pt::2.73749pt.
+[272
+
+]
+latex2htmlSize :tex2html_wrap_inline5790: 7.48248pt::0.9125pt.
+[273
+
+]
+psfig: searching INTERPRETATION/IMAGES/test.ps for bounding box
+psfig: including INTERPRETATION/IMAGES/test.ps 
+[274]
+Overfull \hbox (27.69417pt too wide) in paragraph at lines 3310--3332
+ [] 
+ []
+
+[275]
+Overfull \hbox (42.49579pt too wide) in paragraph at lines 3341--3352
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3341--3352
+
+ []
+
+[276
+
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6053: 9.52922pt::0.0pt.
+[277
+
+]
+latex2htmlSize :tex2html_wrap_inline6067: 7.48248pt::0.0pt.
+[278
+
+]
+latex2htmlSize :tex2html_wrap_inline6069: 7.48248pt::0.0pt.
+[279
+
+]
+latex2htmlSize :tex2html_wrap_inline6071: 7.48248pt::1.06459pt.
+[280
+
+]
+latex2htmlSize :tex2html_wrap_inline6073: 7.48248pt::0.0pt.
+[281
+
+]
+latex2htmlSize :tex2html_wrap_inline6075: 7.48248pt::1.06459pt.
+[282
+
+]
+latex2htmlSize :tex2html_wrap_inline6077: 7.48248pt::0.0pt.
+[283
+
+]
+latex2htmlSize :tex2html_wrap_inline6079: 7.48248pt::0.0pt.
+[284
+
+]
+latex2htmlSize :tex2html_wrap_inline6081: 7.48248pt::1.06459pt.
+[285
+
+]
+latex2htmlSize :tex2html_wrap_inline6083: 7.48248pt::1.06459pt.
+[286
+
+]
+latex2htmlSize :tex2html_wrap_inline6085: 7.48248pt::1.06459pt.
+[287
+
+]
+latex2htmlSize :tex2html_wrap_inline6087: 8.2125pt::2.73749pt.
+[288
+
+]
+latex2htmlSize :tex2html_wrap_inline6089: 8.2125pt::2.73749pt.
+[289
+
+]
+latex2htmlSize :tex2html_wrap_inline6091: 7.48248pt::0.0pt.
+[290
+
+]
+latex2htmlSize :tex2html_wrap_inline6093: 7.48248pt::0.0pt.
+[291
+
+]
+latex2htmlSize :tex2html_wrap_inline6095: 7.48248pt::0.0pt.
+[292
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3438 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.3439 \}$}
+           \lthtmltypeout{latex2htmlSize :tex2html_wrap_inline6097: \the\ht\...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+latex2htmlSize :tex2html_wrap_inline6097: 0.0pt::0.0pt.
+! Extra }, or forgotten $.
+l.3440 }
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3441 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.3442 {\newpage
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.3442 {\newpage
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+latex2htmlSize :tex2html_wrap_inline6099: 8.2125pt::2.73749pt.
+[293
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6101: 7.48248pt::0.0pt.
+[294
+
+]
+latex2htmlSize :tex2html_wrap_inline6103: 8.2125pt::2.73749pt.
+[295
+
+]
+latex2htmlSize :tex2html_wrap_inline6105: 7.48248pt::0.0pt.
+[296
+
+]
+latex2htmlSize :tex2html_wrap_inline6107: 7.48248pt::0.0pt.
+[297
+
+]
+latex2htmlSize :tex2html_wrap_inline6109: 8.2125pt::2.73749pt.
+[298
+
+]
+latex2htmlSize :tex2html_wrap_inline6111: 7.48248pt::0.0pt.
+[299
+
+]
+latex2htmlSize :tex2html_wrap_inline6113: 8.2125pt::2.73749pt.
+[300
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3491 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3492 = a_
+           *$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline6115: \the\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+latex2htmlSize :tex2html_wrap_inline6115: 7.48248pt::1.64249pt.
+[301
+
+] [302
+
+]
+psfig: searching SYNOPSIS/int_mult.ps for bounding box
+psfig: including SYNOPSIS/int_mult.ps 
+[303]
+latex2htmlSize :tex2html_wrap_inline6121: 7.48248pt::0.0pt.
+[304
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6125: 7.48248pt::1.64249pt.
+[305
+
+]
+latex2htmlSize :tex2html_wrap_inline6127: 7.48248pt::1.64249pt.
+[306
+
+]
+latex2htmlSize :tex2html_wrap_inline6129: 7.48248pt::1.64249pt.
+[307
+
+]
+latex2htmlSize :tex2html_wrap_inline6131: 4.86667pt::0.0pt.
+[308
+
+]
+latex2htmlSize :tex2html_wrap_inline6133: 7.48248pt::1.64249pt.
+[309
+
+]
+latex2htmlSize :tex2html_wrap_inline6135: 7.48248pt::1.64249pt.
+[310
+
+]
+latex2htmlSize :tex2html_wrap_inline6137: 7.48248pt::3.19804pt.
+[311
+
+]
+latex2htmlSize :tex2html_wrap_inline6139: 7.48248pt::0.0pt.
+[312
+
+]
+latex2htmlSize :tex2html_wrap_inline6141: 7.48248pt::1.64249pt.
+[313
+
+]
+latex2htmlSize :tex2html_wrap_inline6143: 7.48248pt::1.64249pt.
+[314
+
+]
+latex2htmlSize :tex2html_wrap_inline6145: 7.48248pt::1.64249pt.
+[315
+
+]
+latex2htmlSize :tex2html_wrap_inline6147: 7.48248pt::1.64249pt.
+[316
+
+]
+latex2htmlSize :tex2html_wrap_inline6149: 7.22179pt::2.12917pt.
+[317
+
+]
+latex2htmlSize :tex2html_wrap_inline6151: 7.48248pt::0.0pt.
+[318
+
+]
+latex2htmlSize :tex2html_wrap_inline6153: 7.48248pt::0.0pt.
+[319
+
+]
+latex2htmlSize :tex2html_wrap_inline6155: 8.2125pt::2.73749pt.
+[320
+
+]
+latex2htmlSize :tex2html_wrap_inline6157: 7.48248pt::0.0pt.
+[321
+
+]
+latex2htmlSize :tex2html_wrap_inline6159: 8.2125pt::2.73749pt.
+[322
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3613 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3614 = a_
+           *$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline6161: \the\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+latex2htmlSize :tex2html_wrap_inline6161: 7.48248pt::1.64249pt.
+[323
+
+]
+latex2htmlSize :tex2html_wrap_inline6163: 7.22179pt::2.12917pt.
+[324
+
+]
+latex2htmlSize :tex2html_wrap_inline6165: 4.71457pt::0.0pt.
+[325
+
+] [326
+
+]
+latex2htmlSize :tex2html_wrap_inline6167: 4.71457pt::2.14249pt.
+[327
+
+]
+latex2htmlSize :tex2html_wrap_inline6169: 7.22179pt::2.12917pt.
+[328
+
+]
+latex2htmlSize :tex2html_wrap_inline6171: 7.48248pt::0.0pt.
+[329
+
+]
+latex2htmlSize :tex2html_wrap_inline6173: 7.31305pt::1.7839pt.
+[330
+
+]
+latex2htmlSize :tex2html_wrap_inline6175: 7.48248pt::1.7839pt.
+[331
+
+]
+latex2htmlSize :tex2html_wrap_inline6177: 7.48248pt::0.0pt.
+[332
+
+]
+latex2htmlSize :tex2html_wrap_inline6179: 7.48248pt::0.0pt.
+[333
+
+]
+latex2htmlSize :tex2html_wrap_inline6183: 9.44032pt::0.0pt.
+[334
+
+]
+latex2htmlSize :tex2html_wrap_inline6185: 7.48248pt::0.0pt.
+[335
+
+]
+latex2htmlSize :tex2html_wrap_inline6187: 9.44032pt::0.0pt.
+[336
+
+]
+latex2htmlSize :tex2html_wrap_inline6189: 7.48248pt::0.0pt.
+[337
+
+]
+latex2htmlSize :tex2html_wrap_inline6191: 9.44032pt::0.0pt.
+[338
+
+]
+latex2htmlSize :tex2html_wrap_inline6193: 9.44032pt::0.0pt.
+[339
+
+]
+latex2htmlSize :tex2html_wrap_inline6195: 4.86667pt::0.0pt.
+[340
+
+]
+latex2htmlSize :tex2html_wrap_inline6197: 9.44032pt::0.0pt.
+[341
+
+]
+latex2htmlSize :tex2html_wrap_inline6199: 7.48248pt::1.48888pt.
+[342
+
+]
+latex2htmlSize :tex2html_wrap_inline6201: 9.44032pt::0.0pt.
+[343
+
+]
+latex2htmlSize :tex2html_wrap_inline6203: 10.51248pt::2.73749pt.
+[344
+
+]
+latex2htmlSize :tex2html_wrap_inline6205: 9.44032pt::0.0pt.
+[345
+
+]
+latex2htmlSize :tex2html_wrap_inline6207: 10.51248pt::2.73749pt.
+[346
+
+]
+latex2htmlSize :tex2html_wrap_inline6209: 9.44032pt::2.70702pt.
+[347
+
+]
+latex2htmlSize :tex2html_wrap_inline6211: 7.48248pt::2.12917pt.
+[348
+
+] [349
+
+] [350
+
+]
+latex2htmlSize :tex2html_wrap_inline6213: 7.48248pt::0.9125pt.
+[351
+
+]
+latex2htmlSize :tex2html_wrap_inline6215: 9.44032pt::0.0pt.
+[352
+
+]
+latex2htmlSize :tex2html_wrap_inline6219: 7.48248pt::0.0pt.
+[353
+
+]
+latex2htmlSize :tex2html_wrap_inline6221: 7.48248pt::0.0pt.
+[354
+
+]
+latex2htmlSize :tex2html_wrap_inline6223: 9.44032pt::0.0pt.
+[355
+
+]
+latex2htmlSize :tex2html_wrap_inline6225: 10.51248pt::2.73749pt.
+[356
+
+]
+latex2htmlSize :tex2html_wrap_inline6227: 9.44032pt::0.0pt.
+[357
+
+]
+latex2htmlSize :tex2html_wrap_inline6229: 10.51248pt::2.73749pt.
+[358
+
+]
+latex2htmlSize :tex2html_wrap_inline6231: 9.44032pt::2.70702pt.
+[359
+
+]
+latex2htmlSize :tex2html_wrap_inline6233: 7.48248pt::2.12917pt.
+[360
+
+]
+latex2htmlSize :tex2html_wrap_inline6235: 7.22179pt::2.12917pt.
+[361
+
+] [362
+
+]
+latex2htmlSize :tex2html_wrap_inline6237: 10.07169pt::3.11696pt.
+[363
+
+]
+latex2htmlSize :tex2html_wrap_inline6239: 7.22179pt::2.12917pt.
+[364
+
+]
+latex2htmlSize :tex2html_wrap_inline6241: 10.07169pt::3.38382pt.
+[365
+
+]
+latex2htmlSize :tex2html_wrap_inline6243: 9.44032pt::0.0pt.
+[366
+
+]
+latex2htmlSize :tex2html_wrap_inline6245: 10.07169pt::3.38382pt.
+[367
+
+]
+latex2htmlSize :tex2html_wrap_inline6247: 7.48248pt::0.9125pt.
+[368
+
+] [369
+
+]
+latex2htmlSize :tex2html_wrap_inline6249: 9.44032pt::0.0pt.
+[370
+
+]
+latex2htmlSize :tex2html_wrap_inline6251: 10.07169pt::3.38382pt.
+[371
+
+]
+latex2htmlSize :tex2html_wrap_inline6253: 8.2125pt::2.73749pt.
+[372
+
+]
+latex2htmlSize :tex2html_wrap_inline6255: 7.48248pt::0.0pt.
+[373
+
+]
+latex2htmlSize :tex2html_wrap_inline6257: 7.48248pt::0.0pt.
+[374
+
+]
+latex2htmlSize :tex2html_wrap_inline6259: 8.2125pt::2.73749pt.
+[375
+
+]
+Overfull \hbox (17.80878pt too wide) in paragraph at lines 3931--3952
+ [] 
+ []
+
+[376]
+latex2htmlSize :tex2html_wrap_inline6281: 7.48248pt::1.06459pt.
+[377
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6283: 9.52922pt::1.06459pt.
+[378
+
+]
+latex2htmlSize :tex2html_wrap_inline6287: 9.52922pt::1.06459pt.
+[379
+
+]
+latex2htmlSize :tex2html_wrap_inline6289: 11.77165pt::2.70702pt.
+[380
+
+] [381
+
+]
+latex2htmlSize :tex2html_wrap_inline6291: 9.52922pt::0.0pt.
+[382
+
+]
+latex2htmlSize :tex2html_wrap_inline6293: 9.97366pt::0.0pt.
+[383
+
+]
+latex2htmlSize :tex2html_wrap_inline6295: 11.77165pt::2.70702pt.
+[384
+
+] [385
+
+] [386
+
+] [387
+
+]
+latex2htmlSize :tex2html_wrap_inline6297: 9.52922pt::4.4705pt.
+[388
+
+]
+latex2htmlSize :tex2html_wrap_inline6299: 9.52922pt::4.4705pt.
+[389
+
+]
+latex2htmlSize :tex2html_wrap_inline6303: 9.52922pt::4.4705pt.
+[390
+
+]
+latex2htmlSize :tex2html_wrap_inline6305: 9.52922pt::4.4705pt.
+[391
+
+] [392
+
+] [393
+
+] [394
+
+]
+latex2htmlSize :tex2html_wrap_inline6307: 9.52922pt::0.0pt.
+[395
+
+]
+latex2htmlSize :tex2html_wrap_inline6309: 9.52922pt::2.12917pt.
+[396
+
+]
+latex2htmlSize :tex2html_wrap_inline6311: 9.52922pt::2.12917pt.
+[397
+
+]
+latex2htmlSize :tex2html_wrap_inline6313: 9.52922pt::0.0pt.
+[398
+
+]
+latex2htmlSize :tex2html_wrap_inline6315: 9.52922pt::2.12917pt.
+[399
+
+]
+latex2htmlSize :tex2html_wrap_inline6317: 9.52922pt::2.12917pt.
+[400
+
+]
+latex2htmlSize :tex2html_wrap_inline6319: 9.52922pt::0.0pt.
+[401
+
+]
+latex2htmlSize :tex2html_wrap_inline6321: 7.48248pt::0.0pt.
+[402
+
+]
+latex2htmlSize :tex2html_wrap_inline6323: 7.48248pt::0.0pt.
+[403
+
+]
+latex2htmlSize :tex2html_wrap_inline6329: 7.48248pt::0.0pt.
+[404
+
+]
+latex2htmlSize :tex2html_wrap_inline6331: 9.52922pt::0.0pt.
+[405
+
+]
+latex2htmlSize :tex2html_wrap_inline6335: 9.52922pt::0.0pt.
+[406
+
+]
+latex2htmlSize :tex2html_wrap_inline6337: 7.48248pt::0.0pt.
+[407
+
+]
+latex2htmlSize :tex2html_wrap_inline6339: 7.48248pt::0.0pt.
+[408
+
+]
+latex2htmlSize :tex2html_wrap_inline6347: 9.52922pt::0.0pt.
+[409
+
+]
+latex2htmlSize :tex2html_wrap_inline6349: 9.52922pt::0.0pt.
+[410
+
+]
+latex2htmlSize :tex2html_wrap_inline6351: 7.48248pt::1.695pt.
+[411
+
+]
+latex2htmlSize :tex2html_wrap_inline6353: 7.48248pt::2.67279pt.
+[412
+
+]
+latex2htmlSize :tex2html_wrap_inline6355: 7.48248pt::0.0pt.
+[413
+
+]
+latex2htmlSize :tex2html_wrap_inline6357: 9.52922pt::0.0pt.
+[414
+
+]
+latex2htmlSize :tex2html_wrap_inline6359: 7.48248pt::1.695pt.
+[415
+
+]
+latex2htmlSize :tex2html_wrap_inline6361: 7.48248pt::2.67279pt.
+[416
+
+]
+latex2htmlSize :tex2html_wrap_inline6363: 7.48248pt::2.67279pt.
+[417
+
+] [418
+
+]
+latex2htmlSize :tex2html_wrap_inline6365: 9.52922pt::2.73749pt.
+[419
+
+]
+latex2htmlSize :tex2html_wrap_inline6367: 9.52922pt::2.73749pt.
+[420
+
+]
+latex2htmlSize :tex2html_wrap_inline6369: 10.37207pt::2.73749pt.
+[421
+
+]
+latex2htmlSize :tex2html_wrap_inline6371: 10.37207pt::0.0pt.
+[422
+
+]
+latex2htmlSize :tex2html_wrap_inline6373: 10.37207pt::0.0pt.
+[423
+
+]
+latex2htmlSize :tex2html_wrap_inline6377: 10.37207pt::0.0pt.
+[424
+
+]
+latex2htmlSize :tex2html_wrap_inline6379: 7.48248pt::1.06459pt.
+[425
+
+]
+psfig: searching COLOR/FIG/unsup_scheme.ps for bounding box
+psfig: including COLOR/FIG/unsup_scheme.ps 
+[426]
+latex2htmlSize :tex2html_wrap_inline6385: 9.44032pt::2.73749pt.
+[427
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6387: 9.44032pt::2.73749pt.
+[428
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4283 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4284 \times
+              2^\Om$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline6389...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+latex2htmlSize :tex2html_wrap_inline6389: 9.44032pt::0.9125pt.
+[429
+
+]
+latex2htmlSize :tex2html_wrap_inline6395: 8.2125pt::2.73749pt.
+[430
+
+]
+latex2htmlSize :tex2html_wrap_inline6397: 8.2125pt::3.19804pt.
+[431
+
+]
+latex2htmlSize :tex2html_wrap_inline6399: 9.44032pt::2.73749pt.
+[432
+
+]
+latex2htmlSize :tex2html_wrap_inline6401: 9.44032pt::2.73749pt.
+[433
+
+]
+latex2htmlSize :tex2html_wrap_inline6403: 8.2125pt::2.73749pt.
+[434
+
+]
+latex2htmlSize :tex2html_wrap_inline6405: 8.2125pt::3.19804pt.
+[435
+
+]
+latex2htmlSize :tex2html_wrap_inline6407: 7.60416pt::3.19804pt.
+[436
+
+]
+latex2htmlSize :tex2html_wrap_inline6409: 8.2125pt::2.73749pt.
+[437
+
+]
+latex2htmlSize :tex2html_wrap_inline6411: 8.2125pt::3.19804pt.
+[438
+
+]
+latex2htmlSize :tex2html_wrap_inline6415: 7.60416pt::3.19804pt.
+[439
+
+] [440]
+latex2htmlSize :tex2html_wrap_inline6459: 7.60416pt::0.9125pt.
+[441
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6461: 7.60416pt::0.9125pt.
+[442
+
+] [443
+
+]
+latex2htmlSize :tex2html_wrap_inline6463: 9.46692pt::3.776pt.
+[444
+
+]
+psfig: searching STEREO/FIG/new_integ.ps for bounding box
+psfig: including STEREO/FIG/new_integ.ps 
+[445]
+latex2htmlSize :tex2html_wrap_inline6477: 9.44032pt::1.06459pt.
+[446
+
+
+]
+latex2htmlSize :tex2html_wrap_inline6479: 7.48248pt::0.0pt.
+[447
+
+]
+latex2htmlSize :tex2html_wrap_inline6481: 9.44032pt::0.9125pt.
+[448
+
+]
+latex2htmlSize :tex2html_wrap_inline6483: 7.48248pt::0.0pt.
+[449
+
+]
+latex2htmlSize :tex2html_wrap_inline6485: 9.44032pt::1.06459pt.
+[450
+
+]
+latex2htmlSize :tex2html_wrap_inline6487: 9.44032pt::1.06459pt.
+[451
+
+]
+latex2htmlSize :tex2html_wrap_inline6489: 9.44032pt::1.06459pt.
+[452
+
+]
+latex2htmlSize :tex2html_wrap_inline6491: 9.44032pt::1.06459pt.
+[453
+
+]
+latex2htmlSize :tex2html_wrap_inline6493: 7.48248pt::0.0pt.
+[454
+
+]
+psfig: searching IMAGES/int_block.ps for bounding box
+psfig: including IMAGES/int_block.ps 
+[455]
+latex2htmlSize :tex2html_wrap_inline6495: 7.48248pt::1.64249pt.
+[456
+
+
+] [457
+
+]
+latex2htmlSize :tex2html_wrap_inline6497: 9.52922pt::0.0pt.
+[458
+
+]
+latex2htmlSize :tex2html_wrap_inline6499: 10.60138pt::2.73749pt.
+[459
+
+]
+latex2htmlSize :tex2html_wrap_inline6503: 7.48248pt::0.0pt.
+[460
+
+]
+latex2htmlSize :tex2html_wrap_inline6507: 9.52922pt::4.4705pt.
+[461
+
+]
+latex2htmlSize :tex2html_wrap_inline6509: 7.48248pt::1.64249pt.
+[462
+
+]
+latex2htmlSize :tex2html_wrap_inline6517: 7.48248pt::1.7839pt.
+[463
+
+]
+latex2htmlSize :tex2html_wrap_inline6521: 10.60138pt::4.4705pt.
+[464
+
+]
+latex2htmlSize :tex2html_wrap_inline6525: 10.60138pt::4.4705pt.
+[465
+
+] [466
+
+] (images.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1525 strings out of 10925
+ 14535 string characters out of 72373
+ 83018 words of memory out of 262141
+ 3831 multiletter control sequences out of 9500
+ 22500 words of font info for 84 fonts, out of 150000 for 255
+ 14 hyphenation exceptions out of 607
+ 25i,12n,25p,407b,348s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on images.dvi (466 pages, 134572 bytes).

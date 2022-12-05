@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Application: Estimating Image Attribute</TITLE>
+<META NAME="description" CONTENT="Application: Estimating Image Attribute">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html416"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html412"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html406"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html414"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html417"
+  HREF="node17.html">Posterior Distribution</A>
+<B>Up:</B> <A NAME="tex2html413"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node15.html">Maximum Entropy Interpretation</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00523000000000000000">
+Application: Estimating Image Attribute</A>
+</H2>
+
+<P>
+In this section we demonstrate how the MRF 
+theory developed in Section <A HREF="node13.html#sec:mrf_theory">2</A> 
+can be utilized in
+practise. 
+We specifically look at the the problem of estimating the original image
+attribute from a noisy image.
+We first consider an 
+image observation model (in a lexicographical ordering)
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+Y = \phi[X] \odot {\cal N}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:observation_model"></A><IMG
+ WIDTH="352" HEIGHT="101" BORDER="0"
+ SRC="img62.gif"
+ ALT="\begin{displaymath}
+Y = \phi[X] \odot {\cal N}
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$"> is the observed image of size <IMG
+ WIDTH="416" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$MN\times 1$">, <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is of 
+size <IMG
+ WIDTH="416" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$MN\times 1$"> and is the  
+image to be estimated along with its attributes; <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$\phi$">, in 
+general,  is a nonlinear operator, <IMG
+ WIDTH="69" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.gif"
+ ALT="${\cal N}$"> is the corrupting 
+<EM>noise</EM> to be further qualified a bit later,  and <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\odot$"> is 
+an invertible nonlinear operation (for example addition or 
+multiplication). 
+
+<P>
+We assume that <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> is a MRF and is statistically independent
+of <IMG
+ WIDTH="69" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.gif"
+ ALT="${\cal N}$">. Usually one considers <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$\phi$"> to be a linear operator 
+and <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\odot$"> to be an additive operator, resulting in the 
+observation model 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+Y = HX + {\cal N}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="18" HEIGHT="16" BORDER="0"
+ SRC="img68.gif"
+ ALT="\begin{displaymath}Y = HX + {\cal N} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and at pixel level
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+y_{i,j} = \sum_{(k,l) \in w} h_{i-k,j-l}x_{k,l} + n_{i,j}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="12" HEIGHT="31" BORDER="0"
+ SRC="img69.gif"
+ ALT="\begin{displaymath}y_{i,j} = \sum_{(k,l) \in w} h_{i-k,j-l}x_{k,l} + n_{i,j} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> is a circulant matrix corresponding to the 
+point spread function (PSF) and often referred to as the PSF 
+matrix, having dimension <IMG
+ WIDTH="472" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$MN \times MN$">. Often <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> is 
+also referred to as the blurring matrix. Lower case letters 
+represent appropriate element 
+of the respective matrix or column vector, and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$w$"> is the 
+window size over which the PSF operates; typically a <IMG
+ WIDTH="95" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.gif"
+ ALT="$3
+\times 3 $"> or  <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.gif"
+ ALT="$5 \times 5$"> window. For the specific 
+structure of <IMG
+ WIDTH="414" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.gif"
+ ALT="$H$"> see [<A
+ HREF="node80.html#bhatt">88</A>].
+
+<P>
+Let <IMG
+ WIDTH="43" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="${\cal A}$"> be any early vision attribute of the image 
+<IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> (for example depth, edge, segment, texture, restored 
+image, etc.), then the problem one is interested in is
+
+<P>
+<DIV ALIGN="CENTER">
+<EM>Estimate <IMG
+ WIDTH="43" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="${\cal A}$"> (or a combination of <IMG
+ WIDTH="43" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="${\cal A}$">) 
+given <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$"></EM>.
+
+</DIV>
+
+<P>
+We shall employ the maximum <EM>a posteriori</EM> (MAP) 
+estimation approach, namely
+
+<P>
+<DIV ALIGN="CENTER">
+<EM>Estimate <IMG
+ WIDTH="43" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.gif"
+ ALT="${\cal A}$">   such that</EM>  
+<!-- MATH
+ $P[{\cal A}\,|\,Y=y]$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$P[{\cal A}\,\vert\,Y=y] $">  
+<EM>is maximized</EM> 
+
+</DIV>
+
+<P>
+<P>
+<DIV><B>Note  2.4</B> &nbsp; 
+If we are interested in restoring <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$X$"> from <IMG
+ WIDTH="439" HEIGHT="67" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="$Y$"> 
+then we would compute that <IMG
+ WIDTH="78" HEIGHT="31" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.gif"
+ ALT="$x$"> which maximizes <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.gif"
+ ALT="$P[X=x\vert Y=y]$">.</DIV><P></P>
+
+<P>
+<HR>
+<A NAME="tex2html416"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html412"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html406"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html414"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html417"
+  HREF="node17.html">Posterior Distribution</A>
+<B>Up:</B> <A NAME="tex2html413"
+  HREF="node13.html">Markov Random Field Models</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node15.html">Maximum Entropy Interpretation</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with jLaTeX2HTML 2002 (1.62) JA patch-1.4
+patched version by:  Kenshi Muto, Debian Project.
+LaTeX2HTML 2002 (1.62),
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Different Schemes for Updating Probabilities</TITLE>
+<META NAME="description" CONTENT="Different Schemes for Updating Probabilities">
+<META NAME="keywords" CONTENT="kmono">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="jLaTeX2HTML v2002 JA patch-1.4">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="kmono.css">
+
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node43.html">
+<LINK REL="up" HREF="node42.html">
+<LINK REL="next" HREF="node45.html">
+</HEAD>
+
+<BODY >
+
+<A NAME="tex2html780"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html776"
+  HREF="node42.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html770"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html778"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html781"
+  HREF="node45.html">Evidential Reasoning using Stochastic</A>
+<B>Up:</B> <A NAME="tex2html777"
+  HREF="node42.html">Probability Updating in Bayesian</A>
+<B> Previous:</B> <A NAME="tex2html771"
+  HREF="node43.html">The Dependence Semantics of</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00742000000000000000">
+Different Schemes for Updating Probabilities</A>
+</H2>  
+
+<P>
+Since we intend to apply a Bayesian network for  reasoning, we need to 
+compute the probabilities of certain propositions in a Bayesian network,
+given some evidence. The evidence is specified in the form of instantiations
+of certain other propositions.
+
+<P>
+A Bayesian network is completely specified by specifying the DAG and the 
+conditional probabilities, namely, the <EM>a priori</EM> probabilities of the
+roots and the conditional probabilities of other variables given their causes.
+With these the probabilities of every propositional  variable can be
+computed. With the   arrival of new evidence in the form of instantiations
+of certain nodes, the probabilities  of other nodes can be updated, thus
+increasing our capacity to reason  about   them. This process is called 
+evidential reasoning.
+
+<P>
+Probability updating in Bayesian networks has been approached differently
+by different researchers. Pearl has developed a propagation scheme for 
+finding the <EM>a posteriori</EM>  probabilities in a singly-connected 
+Bayesian network Bayesian network, singly-connected 
+(Pearl [<A
+ HREF="node80.html#7jp">107</A>], Neapolitan [<A
+ HREF="node80.html#8np">108</A>]). For non-singly
+connected networks Lauritzen and Spiegelhalter [<A
+ HREF="node80.html#9ls">109</A>] have developed
+a method of probability propagation in trees of cliques. However, for
+computational reasons it is imperative that randomized algorithms for 
+probability updating be developed.
+One such technique proposed by Pearl [<A
+ HREF="node80.html#10jp">110</A>] is that of stochastic
+simulation. 
+
+<P>
+<HR>
+<A NAME="tex2html780"
+  HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.gif"></A> 
+<A NAME="tex2html776"
+  HREF="node42.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.gif"></A> 
+<A NAME="tex2html770"
+  HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.gif"></A> 
+<A NAME="tex2html778"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/share/latex2html/icons/contents.gif"></A>  <BR>
+<B> Next:</B> <A NAME="tex2html781"
+  HREF="node45.html">Evidential Reasoning using Stochastic</A>
+<B>Up:</B> <A NAME="tex2html777"
+  HREF="node42.html">Probability Updating in Bayesian</A>
+<B> Previous:</B> <A NAME="tex2html771"
+  HREF="node43.html">The Dependence Semantics of</A>
+
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I> <BR>
+2004-02-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

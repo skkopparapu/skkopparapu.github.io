@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<HEAD>
+<TITLE>  New Algorithms for 3D Surface Description from Binocular Stereo using Integration </TITLE>
+</HEAD>
+<BODY>
+<!--meta name="description" value="  New Algorithms for 3D Surface Description from Binocular Stereo using Integration ">
+<meta name="keywords" value="run">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+ <BR> <HR><A NAME=tex2html12 HREF="node1.html"><IMG ALIGN=BOTTOM ALT="next" SRC="http://cbl.leeds.ac.uk/nikos/figs//next_motif.gif"></A> <IMG ALIGN=BOTTOM ALT="up" SRC="http://cbl.leeds.ac.uk/nikos/figs//up_motif_gr.gif"> <IMG ALIGN=BOTTOM ALT="previous" 
+SRC="http://cbl.leeds.ac.uk/nikos/figs//previous_motif_gr.gif">   <BR>
+<B> Next:</B> <A NAME=tex2html13 HREF="node1.html">  Introduction</A>
+<BR> <HR> <P>
+ 
+<P-->
+<body>
+<LINK REL="STYLESHEET" HREF="../../../style.css">
+</body>
+
+<H1>  New Algorithms for 3D Surface Description from Binocular Stereo
+using Integration <!--img src="./IMAGES/eyescan.gif"--></H1>
+<P><STRONG> K. Sunil Kumar and U. B. Desai <BR>
+Signal Processing and Artificial Neural Networks Laboratory<BR> 
+Department of Electrical Engineering <BR> 
+Indian Institute of Technology<BR> 
+Bombay 400 076
+India.<BR> email      : ubdesai@ee.iitb.ernet.in </STRONG><P>
+<P><STRONG></STRONG><P>
+<P>
+<H3>Abstract:</H3>
+<EM>
+<P>
+In this paper, we formulate and develop an  approach which integrates different
+modules 
+(feature extractor, 
+matching and interpolation)
+involved in stereo.
+We study the integration process at the finest resolution when, (i) 
+precomputed edge map is the only line field driving the model, (ii) the line fields
+are computed interactively by the feature extracting module of the model and (iii)
+when
+both the interactive line field computation module and the precomputed line field modules are present.
+This integration process being computationally intensive, we develop a 
+multiresolution stereo integration approach.
+Energy function for each of the module at different resolutions  is constructed and
+minimized in an integrated manner yielding  a dense disparity map.
+A new energy function for the matching module is proposed.
+Experimental results are presented to illustrate our approach.
+</EM><P>
+<BR> <HR>
+<UL> 
+<LI> <A NAME=tex2html14 HREF="node1.html#SECTION00010000000000000000">  Introduction</A>
+<LI> <A NAME=tex2html15 HREF="node2.html#SECTION00020000000000000000"> The Integration Model </A>
+<LI> <A NAME=tex2html16 HREF="node3.html#SECTION00030000000000000000"> Problem Formulation</A>
+<UL> 
+<LI> <A NAME=tex2html17 HREF="node4.html#SECTION00031000000000000000">  Notation used </A>
+</UL> 
+<LI> <A NAME=tex2html18 HREF="node5.html#SECTION00040000000000000000"> The energy functions </A>
+<UL> 
+<LI> <A NAME=tex2html19 HREF="node6.html#SECTION00041000000000000000">  The interactive left image edge detector</A>
+<LI> <A NAME=tex2html20 HREF="node7.html#SECTION00042000000000000000">  The interactive right image edge detector</A>
+<LI> <A NAME=tex2html21 HREF="node8.html#SECTION00043000000000000000"> The matching block</A>
+<LI> <A NAME=tex2html22 HREF="node9.html#SECTION00044000000000000000"> The interpolation block</A>
+</UL> 
+<LI> <A NAME=tex2html23 HREF="node10.html#SECTION00050000000000000000"> Obtaining images at different resolutions</A>
+<LI> <A NAME=tex2html24 HREF="node11.html#SECTION00060000000000000000"> The Integrated Stereo Algorithm</A>
+<LI> <A NAME=tex2html25 HREF="node12.html#SECTION00070000000000000000"> Experiments</A>
+<UL> 
+<LI> <A NAME=tex2html26 HREF="node13.html#SECTION00071000000000000000"> Monoresolution (Using only the finest resolution)  </A>
+<UL> 
+<LI> <A NAME=tex2html27 HREF="node14.html#SECTION00071100000000000000">  No integration</A>
+<LI> <A NAME=tex2html28 HREF="node15.html#SECTION00071200000000000000"> Only precomputed edges</A>
+<LI> <A NAME=tex2html29 HREF="node16.html#SECTION00071300000000000000"> Interactive edge computation</A>
+<LI> <A NAME=tex2html30 HREF="node17.html#SECTION00071400000000000000"> Precomputed edges and Interactive edge computation</A>
+</UL> 
+<LI> <A NAME=tex2html31 HREF="node18.html#SECTION00072000000000000000"> Multiresolution (From coarse to fine)</A>
+<UL> 
+<LI> <A NAME=tex2html32 HREF="node19.html#SECTION00072100000000000000"> Only precomputed edges</A>
+<LI> <A NAME=tex2html33 HREF="node20.html#SECTION00072200000000000000"> Interactive edge computation</A>
+</UL> 
+<LI> <A NAME=tex2html34 HREF="node21.html#SECTION00073000000000000000">  Results</A>
+<UL> 
+<LI> <A NAME=tex2html35 HREF="node22.html#SECTION00073100000000000000"> Observations</A>
+</UL> 
+</UL> 
+<LI> <A NAME=tex2html36 HREF="node23.html#SECTION00080000000000000000"> Conclusions</A>
+<LI> <A NAME=tex2html37 HREF="node24.html#SECTION00090000000000000000">References</A>
+<LI> <A NAME=tex2html38 HREF="node25.html#SECTION000100000000000000000">   About this document ... </A>
+</UL>
+<BR> <HR>
+<P><ADDRESS>
+<I>K Sunil Kumar <BR>
+Tue Aug 20 00:19:39 IST 1996</I>
+</ADDRESS>
+</BODY>

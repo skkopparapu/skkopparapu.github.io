@@ -1,0 +1,232 @@
+\begin{thebibliography}{10}
+
+\bibitem{bk_Kats_91}
+A.~K. Katsaggelos,
+\newblock {\em ``Digital Image Restoration''},
+\newblock Springer-Verlag, Berlin, 1991.
+
+\bibitem{pr_Nand_95}
+P.~K. Nanda, K.~Sunil Kumar, S.~Ghokale, and U.~B. Desai,
+\newblock ``{A} multiresolution approach to color image restoration and
+  parameter estimation using homotopy continuation method'',
+\newblock in {\em Proceedings International Conference on Image Processing},
+  1995.
+
+\bibitem{pr_Nand_94}
+P.~K. Nanda, U.~B. Desai, and P.~G. Poonacha,
+\newblock ``{A} homotopy continuation method for parameter estimation in {MRF}
+  models and image restoration'',
+\newblock in {\em International Symposium on Circuits and Systems}, 1994.
+
+\bibitem{bk_Mura_94}
+A.~Murat Tekalp and H.~Kaufman,
+\newblock {\em ``{E}stimation techniques in image restoration''},
+\newblock Academic Press, San Diego, 1994.
+
+\bibitem{bk_Hunt_78}
+B.~R. Hunt,
+\newblock {\em ``{D}igital image processing''},
+\newblock Prentice Hall, New Jersey, 1978.
+
+\bibitem{bk_Trah_94}
+P.~E. Trahanias, I.~Pitas, and A.~N. Venetsanopolous,
+\newblock ``{C}olor image processing,
+\newblock in {\em ``{C}ontrol and Dynamic Systems''}, C.~T. Leondes, Ed.,
+  chapter~2, pp. 45--89. Academic Press, San Deigo, 1994.
+
+\bibitem{jr_Gers_85}
+R.~Gershon,
+\newblock ``{A}spects of perception and computation in color vision'',
+\newblock {\em CVGIP: Image Understanding}, pp. 244--277, 1985.
+
+\bibitem{pr_Gers_85}
+R.~Gershon,
+\newblock ``{E}mpirical results with a model of color vision'',
+\newblock in {\em International Conference on Computer Vision and Pattern
+  Recognition}, 1985, pp. 302--305.
+
+\bibitem{jr_Lee_94}
+H.C. Lee, E.J. Breneman, and C.P. Schulte,
+\newblock "{M}odeling light reflection for computer color vision",
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  402--409, 1990.
+
+\bibitem{jr_Bumb_87}
+F.~Bumbaca and K.~C. Smith,
+\newblock ``{D}esign and implementation of a colour vision model for computer
+  vision applications'',
+\newblock {\em CVGIP: Image Understanding}, pp. 226--245, 1987.
+
+\bibitem{pr_Shaw_83}
+G.B. Shaw,
+\newblock "{S}ome remarks on the use of color in machine vision",
+\newblock in {\em COINS}, 1983.
+
+\bibitem{pr_Gers_87}
+R.~Gershon,
+\newblock ``{T}he use of color in computational vision'',
+\newblock in {\em RBCV-TR}, 1987.
+
+\bibitem{pr_Rubi_81}
+J.M. Rubin and W.A. Richards,
+\newblock "{C}olor vision and image intensities: When are changes material?",
+\newblock in {\em MIT AI Memo}, 1981.
+
+\bibitem{jr_Klin_90}
+G.J. Klinker, S.A. Shafer, and T.~Kanade,
+\newblock "{A} physical approach to color image understanding",
+\newblock {\em International J. of Computer Vision}, pp. 7--38, 1990.
+
+\bibitem{bk_Ohta_85}
+Y.~Ohta,
+\newblock {\em ``{K}nowledge based interpretation of outdoor natural color
+  scenes''},
+\newblock Pitman, Boston, 1985.
+
+\bibitem{jr_Ali_81}
+M.~Ali, W.~N. Martin, and J.~K. Aggarwal,
+\newblock ``{C}olor-based computer analysis of aerial photographs'',
+\newblock {\em Computer Graphics and Image Processing}, pp. 282--293, 1981.
+
+\bibitem{jr_Gala_89}
+N.~P. Galastsanos and R.~T. Chin,
+\newblock ``{D}igital restoration of multichannel images'',
+\newblock {\em IEEE Tran. Acoustics, Speech and Signal Processing}, pp.
+  415--421, 1989.
+
+\bibitem{jr_Meta_92}
+D.~Metaxas and E.~Milios,
+\newblock ``{R}econstruction of a color image from nonuniformly distributed
+  sparse and noisy data '',
+\newblock {\em CVGIP : Graphical Models and Image Processing}, pp. 103--112,
+  1992.
+
+\bibitem{pr_Rega_96}
+C.S. Regazzoni, E.Stringa, and A.N. Venetsanopoulos,
+\newblock ``{A} {MRF} based approach to color image restoration'',
+\newblock in {\em VIII European Signal Processing Conference}, 1996.
+
+\bibitem{pr_West_86}
+P.~H. Westerink, J.~Biemond, and P.~H.~L. de~Bruin,
+\newblock ``{D}igital color image resotartion'',
+\newblock in {\em Third European Signal Processing Conference}, 1986, pp.
+  761--764.
+
+\bibitem{pr_Angw_87}
+D.~L. Angwin and H.~Kaufman,
+\newblock ``{E}ffects of modeling domains on recursive color image
+  restoration'',
+\newblock in {\em Proc. International Conference on Acoustics, Speech and
+  Signal Processing}, 1987, pp. 1229--1231.
+
+\bibitem{jr_Hunt_84}
+B.~R. Hunt and O.~Kubler,
+\newblock ``{K}arhunen-{L}oeve multispectral image restoration, part 1:
+  Theory'',
+\newblock {\em IEEE Tran. Acoustics, Speech and Signal Processing}, pp.
+  592--599, 1984.
+
+\bibitem{pr_Ange_89}
+G.~Angelopoulos and I.~Pitas,
+\newblock ``{L}east - squares multichannel filters in color image
+  restoration'',
+\newblock in {\em Procedings of European Conference on Circuit Theory and
+  Design}, 1989.
+
+\bibitem{pr_Gsch_89}
+R.~Gschwind,
+\newblock ``{R}estoration of faded color photographs by digital image
+  processing'',
+\newblock {\em Proc. SPIE, Image Processing III}, pp. 1--27, 1989.
+
+\bibitem{jr_Schw_94}
+Lillian~F. {Schwartz},
+\newblock ``{E}lectronic restoration of great works of art: color analysis and
+  reconstruction of piero della francesca's frescoes'',
+\newblock {\em Proc SPIE - Color Hard Copy and Graphic Arts III}, pp. 23--30,
+  1994.
+
+\bibitem{jr_Zhu_92}
+W.~Zhu, N.~P. Galatsanos, and A.~K. Katsaggelos,
+\newblock ``{R}egularized multichannel restoration of color images using
+  cross-validation'',
+\newblock {\em Proc. SPIE Visual Communications and Image Processing}, pp.
+  345--356, 1992.
+
+\bibitem{jr_Gsch_95}
+R.~Gschwind, F.~S. Frey, and L.~Rosenthaler,
+\newblock ``{E}lectronic imaging: a tool for the reconstruction of faded color
+  photographs and color movies'',
+\newblock {\em Proc. SPIE - Image and Video Processing III}, pp. 57--63, 1995.
+
+\bibitem{jr_Prad_94}
+A.~Prades, J.~Nunez, F.~Perez, V.~Pala, and R.~Arbiol,
+\newblock ``{A}erial photography restoration using the maximum likelihood
+  estimator ({MLE}) algorithm'',
+\newblock {\em Proc. SPIE Spatial Information from Digital Photogrammetry and
+  Computer Vision,}, pp. 683--688, 1994.
+
+\bibitem{bk_Jain_95}
+A.~K. Jain,
+\newblock {\em ``{F}undamentals of digital image processing''},
+\newblock Prentice-Hall of India, New Delhi, 1994.
+
+\bibitem{pr_Dail_88}
+M.~J. Daily,
+\newblock ``{C}olor image segmentation using {M}arkov random fields'',
+\newblock in {\em International Conference on Computer Vision and Pattern
+  Recognition}, 1988, pp. 304--312.
+
+\bibitem{mt_Sami_95}
+S.~Gokhle,
+\newblock ``{C}olor image restoration and edge detection using {M}{R}{F}
+  model'',
+\newblock Master's thesis, Indian Institute of Technology - Bombay, 1995.
+
+\bibitem{jr_Ohta_80}
+T.~Kanade Y.~Ohta and T.~Sakai,
+\newblock ``{C}olor information for region segmentation'',
+\newblock {\em CVGIP: Image Understanding}, pp. 222--241, 1980.
+
+\bibitem{bk_Laks_93}
+S.~Lakshmanan and H.~Derin,
+\newblock ``{G}aussian {MRF} at multiple resolutions'',
+\newblock in {\em ``{M}arkov Random Fields - theory and applications''},
+  R.~Chellappa and A.~Jain, Eds., chapter~6, pp. 131--158. Academic Press, San
+  Diego, 1993.
+
+\bibitem{jr_Wend_76}
+R.~E. Wendell and A.~P. Horter,
+\newblock ``{M}inimization of a non-separable objective function subject to
+  disjoint constraints'',
+\newblock {\em Operation Research}, pp. 643--657, 1976.
+
+\bibitem{jr_Besa_74}
+J.~Besag,
+\newblock ``{S}patial interaction and the statistical analysis of lattice
+  systems '',
+\newblock {\em J. Royal Statistical Society}, pp. 192--236, 1974.
+
+\bibitem{jr_Gema_84}
+S.~Geman and D.~Geman,
+\newblock ``{S}tochastic relaxation, {G}ibbs distribution, and {B}ayesian
+  restoration of images'',
+\newblock {\em IEEE Tran. on Pattern Analysis and Machine Intelligence}, pp.
+  721--741, 1984.
+
+\bibitem{phd_Nand_96}
+P.~K. Nanda,
+\newblock {\em ``{M}odel learning in a {MRF} framework''},
+\newblock PhD thesis, Indian Institute of Technology - Bombay, 1996.
+
+\bibitem{jr_Besa_86}
+J.~Besag,
+\newblock ``{O}n statistical analysis of dirty pictures '',
+\newblock {\em J. Royal Statistical Society}, pp. 259--302, 1986.
+
+\bibitem{jr_Burt_83}
+P.~J. Burt and E.~H. Adelson,
+\newblock ``{T}he {L}aplacian pyramid as a compact image code'',
+\newblock {\em IEEE Tran on Comm.}, pp. 532--540, 1983.
+
+\end{thebibliography}

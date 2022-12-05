@@ -1,0 +1,33 @@
+Title: A System to Identify the Intent of a Short Message (SMS) Query for 
+Information Retrieval
+
+Authors: Arijit De, Sunil Kopparapu
+
+Abstract: Short Message System (SMS) is extensively used feature on cell 
+phones for information retrieval especially in developing countries. 
+Typically an information service provider hosts a short code to which the 
+person seeking information has to send in their query; the query is 
+answered by the system by analyzing the query and retrieves an appropriate 
+answer from its database. If the same service provider has access to 
+several databases (say yellow pages, movies database); then he has to have 
+separate short codes for each of the databases (expensive) or ask the user 
+to append a keyword (degraded user experience) to the SMS query to specify 
+the query intent. In this paper, we propose a natural language processing 
+(NLP) based system which assists in identifying the intent of the query 
+without the user having to mention it explicitly. Conventional NLP methods 
+based on parsing and tagging fail because most of the short messages are 
+transactional in nature and hence are neither complete statements nor 
+follow the grammar of the language strictly. The proposed system uses a 
+minimal parsing system [1] to extract keywords and keyconcepts from the 
+query and uses a rule based approach to identify the intent of the query. 
+We first propose a method to evaluate rule-bases and then construct two 
+different rule-bases using different strategies to suit query intent 
+identification. We evaluate the two rule-bases using the proposed method 
+and verify them experimentally.
+
+Reference:
+[1] Sunil Kopparapu, Akhilesh Srivastava, PVS Rao, "Minimal Parsing Key 
+Concept Based Question Answering System", Human-Computer Interaction, HCI 
+Intelligent Multimodal Interaction Environments, p 104-113, LCNS Vol 4552, 
+2007,
+

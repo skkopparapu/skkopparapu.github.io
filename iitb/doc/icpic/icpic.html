@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3O//DTD W3 HTML 2.0//EN">
+<!Converted with LaTeX2HTML 95.1 (Fri Jan 20 1995) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds >
+<HEAD>
+<TITLE>Unsupervised Parameter Estimation Using Homotopy
+Continuation Method for Color Image Restoration in a Multiresolution Framework</TITLE>
+</HEAD>
+<BODY>
+<meta name="description" value="Unsupervised Parameter Estimation Using Homotopy
+Continuation Method for Color Image Restoration in a Multiresolution Framework">
+<meta name="keywords" value="icpic">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<P>
+  <H1>Unsupervised Parameter Estimation Using Homotopy
+Continuation Method for Color Image Restoration in a Multiresolution Framework</H1>
+<P><STRONG>K. Sunil Kumar, P. K. Nanda<A NAME=tex2html2 HREF="#88"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A>, Sameer Ghokale,  U. B. Desai <A NAME=tex2html3 HREF="#89"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A><BR>
+Department of Electrical Engineering <BR> 
+Indian Institute of Technology - Bombay,<BR> 
+Powai, Bombay 400 076. (India)</STRONG><P>
+<P><STRONG></STRONG><P>
+<P>
+<H3>Abstract:</H3>
+<EM>In this paper, we address the problem of color image restoration. 
+We model the image as a Markov Random Field (MRF) and propose a
+restoration algorithm in a multiresolution framework. The incorporation
+of multiresolution technique significantly reduces the computational
+complexity of the restoration algorithm.  The energy function at each
+resolution being non-convex, is minimized using the simulated annealing
+algorithm.  The parameters, which describe the MRF model at each
+resolution, are computed 
+in the supervised and unsupervised mode
+using the homotopy continuation method.
+Simulation results are presented to validate the proposed scheme.
+<P>
+</EM><P>
+<H1><A NAME=SECTION00010000000000000000> INTRODUCTION</A></H1>
+<P>
+Image estimation from images degraded by noise
+and image capturing nonlinearities is one of the important early vision
+problems addressed richly in literature for monochrome images. Color
+images carry information in addition to the intensity (which is the only
+cue embedded in a monochrome image) in the form of hue and saturation.
+The extra cues help in distinguishing objects in an image which may not
+be possible in a monochrome image.  Recent studies focus on devising
+various strategies and methodologies in the context of color image
+processing (for example see [<A HREF="icpic.html#Galatson">1</A>]-[<A HREF="icpic.html#Metaxas">6</A>]).
+<P>
+	In this paper, we  model the image by a Markov Random Field
+(MRF) and assume the degradation is due to  additive white Gaussian
+noise. Here we address the problem of color
+image restoration in a multiresolution framework.  The parameters
+(clique parameters <IMG  ALIGN=MIDDLE ALT="" SRC="img1.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img2.gif"> , noise variance <IMG  ALIGN=BOTTOM ALT="" SRC="img3.gif">)
+describing the model are assumed to be unknown and hence need to be
+estimated. These parameters are estimated using a
+conditional pseudolikelihood function and the homotopy continuation
+method along the lines of [<A HREF="icpic.html#Desai">10</A>] for a monochrome image.  The
+color image restoration problem is posed as a maximum apostoriori (MAP)
+estimation problem in a multiresolution framework. Simulated Annealing
+algorithm [<A HREF="icpic.html#aarts">9</A>] is used to obtain the MAP estimate at each
+resolution.
+<P>
+There are several color coordinate systems (for example RGB, HSV, YIQ,
+Ohta's <IMG  ALIGN=MIDDLE ALT="" SRC="img4.gif">) used to represent a color image.  Based on
+various experiments performed with color differencing schemes
+[<A HREF="icpic.html#Daily">5</A>], [<A HREF="icpic.html#samir_mtech">8</A>], for color image restoration we
+conclude that the RGB and <IMG  ALIGN=MIDDLE ALT="" SRC="img5.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img6.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img7.gif"> (Ohta et al[<A HREF="icpic.html#Ohta">4</A>]) color
+coordinate systems are best suited for color image restoration. In this
+paper we only experiment with the RGB color coordinate system.
+<P>
+The organization of the paper is as follows: Section 2 describes the
+problem formulation in the context of color image restoration and
+parameter estimation.  Section 3 describes the scheme adopted and the
+algorithm used in this paper, which is followed by a section on
+experimental results in Section 4. We conclude in Section 5.
+<P>
+<H1><A NAME=SECTION00020000000000000000> PROBLEM FORMULATION</A></H1>
+<P>
+<H2><A NAME=SECTION00021000000000000000> Color Image Restoration</A></H2>
+<P>
+<A NAME=sub_seccolor_image_restoration>&#160;</A>
+Let <IMG  ALIGN=MIDDLE ALT="" SRC="img8.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img9.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img10.gif"> be the image to be restored, the observed image and
+the noise field respectively at resolution <IMG  ALIGN=BOTTOM ALT="" SRC="img11.gif"> and defined on a square lattice of size
+<IMG  ALIGN=BOTTOM ALT="" SRC="img12.gif">. Let <IMG  ALIGN=MIDDLE ALT="" SRC="img13.gif">=<IMG  ALIGN=MIDDLE ALT="" SRC="img14.gif">+<IMG  ALIGN=MIDDLE ALT="" SRC="img15.gif"> for <IMG  ALIGN=MIDDLE ALT="" SRC="img16.gif"> be
+the degradation model. We can write the degradation model in the vector form by
+stacking the rows of the image in the lexicographical order as  <IMG  ALIGN=BOTTOM ALT="" SRC="img17.gif">=<IMG  ALIGN=BOTTOM ALT="" SRC="img18.gif">+<IMG  ALIGN=BOTTOM ALT="" SRC="img19.gif">.
+Here, the color image <IMG  ALIGN=BOTTOM ALT="" SRC="img20.gif"> consists of three components, <IMG  ALIGN=BOTTOM ALT="" SRC="img21.gif">= [ <IMG  ALIGN=BOTTOM ALT="" SRC="img22.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img23.gif">, <IMG  ALIGN=BOTTOM ALT="" SRC="img24.gif"><IMG  ALIGN=MIDDLE ALT="" SRC="img25.gif">,
+corresponding to the components of some color coordinate system, for example 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img26.gif"> could correspond to red, <IMG  ALIGN=BOTTOM ALT="" SRC="img27.gif"> to green and <IMG  ALIGN=BOTTOM ALT="" SRC="img28.gif"> to blue in the
+RGB color coordinate system. Each pixel <IMG  ALIGN=MIDDLE ALT="" SRC="img29.gif"> (<b>q=1,2,3</b>) takes a value
+from a finite set <IMG  ALIGN=BOTTOM ALT="" SRC="img30.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img31.gif">. We make the following assumptions 
+<DL COMPACT><DT>(a)
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img32.gif"> for <IMG  ALIGN=MIDDLE ALT="" SRC="img33.gif">  is a white Gaussian sequence with zero mean and
+variance <IMG  ALIGN=MIDDLE ALT="" SRC="img34.gif"> ( <IMG  ALIGN=BOTTOM ALT="" SRC="img35.gif"> unknown)
+<P>
+<DT>(b)
+<DD> <IMG  ALIGN=MIDDLE ALT="" SRC="img36.gif"> is statistically independent of <IMG  ALIGN=MIDDLE ALT="" SRC="img37.gif"> , 
+for all <IMG  ALIGN=MIDDLE ALT="" SRC="img38.gif">
+and <IMG  ALIGN=MIDDLE ALT="" SRC="img39.gif"> belonging to <IMG  ALIGN=MIDDLE ALT="" SRC="img40.gif">, where <IMG  ALIGN=MIDDLE ALT="" SRC="img41.gif">.
+<P>
+ </DL>
+<P>
+ The noise free image
+<IMG  ALIGN=BOTTOM ALT="" SRC="img42.gif"> is modeled as a MRF, with <IMG  ALIGN=MIDDLE ALT="" SRC="img43.gif">,
+<IMG  ALIGN=MIDDLE ALT="" SRC="img44.gif">, <b>C</b> represents the set of  cliques,
+ <IMG  ALIGN=MIDDLE ALT="" SRC="img45.gif"> the set of clique parameters, and <IMG  ALIGN=BOTTOM ALT="" SRC="img46.gif"> is a realization
+of <IMG  ALIGN=BOTTOM ALT="" SRC="img47.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img48.gif"> is the clique potential.
+In general, the parameter vector <IMG  ALIGN=BOTTOM ALT="" SRC="img49.gif"> would consist of the clique 
+parameters <IMG  ALIGN=MIDDLE ALT="" SRC="img50.gif">,  
+and the additive noise variance <IMG  ALIGN=MIDDLE ALT="" SRC="img51.gif">; <IMG  ALIGN=MIDDLE ALT="" SRC="img52.gif">.
+<b>Z</b> is the partition function and is defined as <IMG  ALIGN=MIDDLE ALT="" SRC="img53.gif">.
+In particular we consider the following energy function:
+<P>
+
+<P>
+<P><A NAME=eqmodel>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img54.gif"><P>
+<P>
+  where <IMG  ALIGN=MIDDLE ALT="" SRC="img55.gif">, and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img56.gif"> if <IMG  ALIGN=MIDDLE ALT="" SRC="img57.gif">, and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img58.gif"> if <IMG  ALIGN=MIDDLE ALT="" SRC="img59.gif">.
+In our simulation work we use
+<P><A NAME=eqline>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img60.gif"><P>
+<P>
+  This amounts to deciding the presence or absence of the line field on the
+color coordinate <IMG  ALIGN=MIDDLE ALT="" SRC="img61.gif">.
+<P>
+It can be shown that the posterior energy function corresponding to the posteriori probability
+<IMG  ALIGN=MIDDLE ALT="" SRC="img62.gif">, is
+<P><A NAME=energy>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img63.gif"><P>
+<P>
+  where, <IMG  ALIGN=MIDDLE ALT="" SRC="img64.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img65.gif"> and
+<IMG  ALIGN=MIDDLE ALT="" SRC="img66.gif"> are the unknown parameters
+that have to be estimated.
+If the parameters are known, restoration is achieved by minimizing <IMG  ALIGN=MIDDLE ALT="" SRC="img67.gif"> with respect to
+<IMG  ALIGN=MIDDLE ALT="" SRC="img68.gif">.
+<P>
+<H2><A NAME=SECTION00022000000000000000> Unsupervised Parameter Estimation </A></H2>
+<A NAME=sub_secun_sup_par_est>&#160;</A>
+<P>
+We assume the additive noise model along with the assumptions given in
+Section <A HREF="icpic.html#sub_seccolor_image_restoration">2.1</A>. We consider the case where both the
+model parameters <IMG  ALIGN=BOTTOM ALT="" SRC="img69.gif"> and the original image <IMG  ALIGN=BOTTOM ALT="" SRC="img70.gif"> are unknown.
+The general problem of joint parameter estimation and image restoration is based on the
+following optimality criterion  -
+<P>
+<P><A NAME=equn_sup_optimum>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img71.gif"><P>
+<P>
+  Observe that both
+ <IMG  ALIGN=BOTTOM ALT="" SRC="img72.gif"> and <IMG  ALIGN=BOTTOM ALT="" SRC="img73.gif"> 
+need to be estimated
+to satisfy the optimality criterion of (<A HREF="icpic.html#equn_sup_optimum">4</A>); 
+this is an unsolved problem. Nevertheless, the
+problem is tackled by splitting it into two problems, namely,
+<P>
+<P><A NAME=equn_sup_restoration>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img74.gif"><P>
+<P>
+  and
+<P>
+<P><A NAME=equn_sup_parameter>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img75.gif"><P>
+<P>
+The superscript <b>k</b> represents the 
+iteration number.
+Equation (<A HREF="icpic.html#equn_sup_restoration">5</A>) is the color image restoration problem
+given the parameters <IMG  ALIGN=BOTTOM ALT="" SRC="img76.gif"> and the noisy image <IMG  ALIGN=BOTTOM ALT="" SRC="img77.gif">, while (<A HREF="icpic.html#equn_sup_parameter">6</A>)
+is the parameter estimation problem.
+<P>
+The probability term in (<A HREF="icpic.html#equn_sup_parameter">6</A>) can be expressed as (note: <IMG  ALIGN=MIDDLE ALT="" SRC="img78.gif">])
+<P><A NAME=mrf5>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img79.gif"><P>
+<P>
+ In (<A HREF="icpic.html#mrf5">7</A>) the summation is over all possible
+realizations of <IMG  ALIGN=BOTTOM ALT="" SRC="img80.gif">. From a computational  standpoint, handling
+(<A HREF="icpic.html#mrf5">7</A>) would be practically impossible<A NAME=tex2html4 HREF="#411"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A>. One can view
+(<A HREF="icpic.html#mrf5">7</A>) as a likelihood function to be maximized for estimating
+<IMG  ALIGN=BOTTOM ALT="" SRC="img82.gif">. To overcome the computational complexity and to make
+the parameter estimation problem tractable<A NAME=tex2html5 HREF="#412"><IMG ALIGN=BOTTOM ALT="gif" SRC="http://cbl.leeds.ac.uk/nikos/figs//foot_motif.gif"></A> ,we
+approximate (<A HREF="icpic.html#mrf5">7</A>) using the conditional pseudolikelihood
+function, (analogous to Besag [<A HREF="icpic.html#Besag">7</A>]) by
+<P>
+<P><A NAME=mrf6>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img85.gif"><P>
+<P>
+  where <IMG  ALIGN=MIDDLE ALT="" SRC="img86.gif"> and <IMG  ALIGN=MIDDLE ALT="" SRC="img87.gif"> represents the neighborhood of the site <IMG  ALIGN=MIDDLE ALT="" SRC="img88.gif">.
+Equation (<A HREF="icpic.html#mrf6">8</A>) can be written using the expression for conditional probability 
+under the product, as
+<P>
+<P><IMG  ALIGN=BOTTOM ALT="" SRC="img89.gif"><P>
+<P>
+  The maximization problem 
+(<A HREF="icpic.html#equn_sup_parameter">6</A>)
+is now replaced by
+<P>
+<P><A NAME=eqpseudo_likelihood>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img90.gif"><P>
+<P>
+  The notation <IMG  ALIGN=MIDDLE ALT="" SRC="img91.gif"> means  <IMG  ALIGN=MIDDLE ALT="" SRC="img92.gif">
+<IMG  ALIGN=MIDDLE ALT="" SRC="img93.gif">, where <IMG  ALIGN=BOTTOM ALT="" SRC="img94.gif"> is the set of intensity levels for the color 
+coordinate <b>q</b>.
+<P>
+  The numerical update equation for a homotopy map  can be derived as
+(please refer to [<A HREF="icpic.html#Desai">10</A>] for a detailed derivation)
+<P>
+<P><A NAME=eqhom3>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img95.gif"><P>
+<P>
+ <IMG  ALIGN=BOTTOM ALT="" SRC="img96.gif"> <IMG  ALIGN=MIDDLE ALT="" SRC="img97.gif">, where
+<IMG  ALIGN=MIDDLE ALT="" SRC="img98.gif"> is the Jacobian
+of the selected homotopy map and  
+<IMG  ALIGN=MIDDLE ALT="" SRC="img99.gif"> is the homotopy parameter.
+<P>
+<H1><A NAME=SECTION00030000000000000000> UNSUPERVISED PARAMETER ESTIMATION AND RESTORATION</A></H1>
+<P>
+The essential feature of unsupervised parameter estimation and restoration scheme is the 
+determination of parameters in the absence of any knowledge of the
+noiseless image (<IMG  ALIGN=BOTTOM ALT="" SRC="img100.gif">), and the parameters associated with the additive noise.
+<P>
+<H2><A NAME=SECTION00031000000000000000> The Scheme</A></H2>
+<A NAME=secalgo>&#160;</A>
+We construct images (<IMG  ALIGN=BOTTOM ALT="" SRC="img101.gif">, <IMG  ALIGN=MIDDLE ALT="" SRC="img102.gif">) at various resolutions using the
+algorithm proposed by Burt and Adelson [<A HREF="icpic.html#burt">11</A>].
+ We assume the image at the coarsest resolution, namely, <IMG  ALIGN=BOTTOM ALT="" SRC="img103.gif"> (<IMG  ALIGN=BOTTOM ALT="" SRC="img104.gif">)
+to be a good estimate of <IMG  ALIGN=BOTTOM ALT="" SRC="img105.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img106.gif">.
+Using the 
+scheme proposed in Section <A HREF="icpic.html#sub_secun_sup_par_est">2.2</A> we estimate <IMG  ALIGN=BOTTOM ALT="" SRC="img107.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img108.gif">.
+Having estimated <IMG  ALIGN=BOTTOM ALT="" SRC="img109.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img110.gif">, we restore the image
+<IMG  ALIGN=BOTTOM ALT="" SRC="img111.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img112.gif"> in the following way
+<P>
+<OL><LI> we assume the quadtree interpolation of <IMG  ALIGN=MIDDLE ALT="" SRC="img113.gif"> at 
+<IMG  ALIGN=BOTTOM ALT="" SRC="img114.gif"> to be the initial estimate of <IMG  ALIGN=BOTTOM ALT="" SRC="img115.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img116.gif">
+<LI> using the estimated <IMG  ALIGN=BOTTOM ALT="" SRC="img117.gif"> and the observed image <IMG  ALIGN=BOTTOM ALT="" SRC="img118.gif"> at
+<IMG  ALIGN=BOTTOM ALT="" SRC="img119.gif"> we estimate the restored image <IMG  ALIGN=BOTTOM ALT="" SRC="img120.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img121.gif"> for
+some predefined number of iterations
+<LI> using the restored image <IMG  ALIGN=BOTTOM ALT="" SRC="img122.gif"> and the known <IMG  ALIGN=BOTTOM ALT="" SRC="img123.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img124.gif">
+we estimate <IMG  ALIGN=BOTTOM ALT="" SRC="img125.gif"> at <IMG  ALIGN=BOTTOM ALT="" SRC="img126.gif"> as described in 
+Section <A HREF="icpic.html#sub_secun_sup_par_est">2.2</A>.
+<LI> the above two steps are repeated until the finest resolution image is reached (namely <IMG  ALIGN=BOTTOM ALT="" SRC="img127.gif">)
+</OL>
+<P>
+Observe that
+the process of parameter estimation and image restoration are interleaved all
+along; also observe that we have not assumed any knowledge about <IMG  ALIGN=BOTTOM ALT="" SRC="img128.gif">,
+except that it can be modeled as a MRF.
+<P>
+<H2><A NAME=SECTION00032000000000000000> The Algorithm</A></H2>
+ <A NAME=secun_sup_algo>&#160;</A>
+<PRE><TT> <b> for</b>&#175;(coarsest to finest image)
+<P>
+<b> Unsupervised Parameter estimation</b>
+<P>
+		 <b> if</b>&#175;(coarsest image)
+<P>
+		 		 assume the noisy image <IMG  ALIGN=BOTTOM ALT="" SRC="img129.gif"> to be the original image <IMG  ALIGN=BOTTOM ALT="" SRC="img130.gif">
+<P>
+		 		 and estimate <IMG  ALIGN=BOTTOM ALT="" SRC="img131.gif"> (solving (<A HREF="icpic.html#eqpseudo_likelihood">9</A>), using (<A HREF="icpic.html#eqhom3">10</A>))
+<P>
+		 <b> else</b> {
+<P>
+		 		 use the estimate <IMG  ALIGN=MIDDLE ALT="" SRC="img132.gif"> (known) and estimate
+<P>
+		 		 the parameter <IMG  ALIGN=BOTTOM ALT="" SRC="img133.gif"> using equations in Section <A HREF="icpic.html#sub_secun_sup_par_est">2.2</A>
+<P>
+		 		 by taking only a block equal to the size of the coarsest image
+<P>
+		 		 with sufficiently rich information }
+<P>
+<b> Color Image Restoration</b>
+<P>
+		 		quad tree interpolate <IMG  ALIGN=MIDDLE ALT="" SRC="img134.gif">
+<P>
+		 		minimize (<A HREF="icpic.html#energy">3</A>) using simulated annealing algorithm and <IMG  ALIGN=BOTTOM ALT="" SRC="img135.gif"> as estimated earlier
+<P>
+		 <b> if </b>(finest resolution  image) Output restored image <IMG  ALIGN=MIDDLE ALT="" SRC="img136.gif">
+<P>
+<b> Until</b>(final image)
+<P>
+</TT></PRE><H1><A NAME=SECTION00040000000000000000> EXPERIMENTAL RESULTS</A></H1>
+<P>
+Simulation were carried out on a few real color images to validate the 
+proposed unsupervised  multiresolution scheme for parameter estimation and image
+restoration. In this paper, we give the simulation results for one image of
+size <IMG  ALIGN=MIDDLE ALT="" SRC="img137.gif"> (<IMG  ALIGN=BOTTOM ALT="" SRC="img138.gif">).
+<P>
+Figure 1 shows the original face image and Figure 2 shows the additive
+noise degraded face image whose SNR is <IMG  ALIGN=BOTTOM ALT="" SRC="img139.gif"> dB. We present the results
+for the following cases - (i) assume the apriori knowledge of the
+noiseless image to estimate parameters and use them to restore at the
+finest resolution (<IMG  ALIGN=BOTTOM ALT="" SRC="img140.gif">). Figure 3 gives the resulting restored
+image (supervised parameter estimation and restoration in
+monoresolution), (ii) assume the apriori knowledge of the noiseless
+image to estimate parameters and use them to restore from coarsest  to
+finest resolution (<IMG  ALIGN=MIDDLE ALT="" SRC="img141.gif">). Figure 4 gives the resulting
+restored image (supervised parameter estimation and restoration in
+multiresolution), and (iii) 
+unsupervised, multiresolution, parameter estimation and restoration based on
+the scheme proposed in Section
+<A HREF="icpic.html#secalgo">3.1</A>. Figure 5 shows the resulting restored image.
+ The SNR's 
+for all the three cases have been tabulated in Table <A HREF="icpic.html#tabsnr">1</A>, and the parameters 
+used in each case are shown in Table <A HREF="icpic.html#tabparameter">2</A>.
+<P>
+<P><A NAME=491>&#160;</A><A NAME=tabsnr>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img142.gif">
+<BR><STRONG>Table 1:</STRONG> SNR of the restored images<BR>
+<P>
+<P>
+<P><A NAME=498>&#160;</A><A NAME=tabparameter>&#160;</A><IMG  ALIGN=BOTTOM ALT="" SRC="img143.gif">
+<BR><STRONG>Table 2:</STRONG> Parameters estimated and used for restoring images<BR>
+<P>
+<P>
+For the purpose of simulations, we constructed the images at various
+resolutions using Adelson and Burt's [<A HREF="icpic.html#burt">11</A>] algorithm and the simulated annealing algorithm 
+was used for the purpose of  minimizing the energy function.
+<P>
+<H1><A NAME=SECTION00050000000000000000> CONCLUSION</A></H1>
+<P>
+The main contributions of the paper can 
+be summarized as: 
+
+<P>
+(1) Use of single line field for the apriori energy function in the MRF model
+for the color image. We find that it is not necessary to
+use three line fields corresponding to the three color coordinates as is
+often done in literature.
+
+(2) Development of an estimator for the parameters of the color image
+MRF model with line fields, and the noise variance.
+
+(3) A multiresolution framework for Step 2 as well as color image restoration. 
+Besides achieving faster (<IMG  ALIGN=MIDDLE ALT="" SRC="img144.gif">) computation this also provides improved restored
+color image as compared to the monoresolution scheme.
+
+Simulations were carried out only for the RGB color coordinate system. 
+We are presently working on the degradation model to take care of
+blur  and multiplicative noise. The results will be reported elsewhere.
+<P>
+ <P><A NAME=SECTIONREF><H2>References</H2></A><P>
+<DL COMPACT>
+<DT><A NAME=Galatson><STRONG>1</STRONG></A><DD> N. P. Galatsanos and R. T. Chin , ``Digital restoration of
+multichannel images.'', <em> IEEE Trans. on Acoustic Speech and Signal
+Processing,</em> Vol. 37, No. 3, pp. 415-421, 1989.
+<P>
+<DT><A NAME=Nevetia><STRONG>2</STRONG></A><DD> R. Nevatia, `` A color edge detector and its use in scene
+segmentation.'', <em> IEEE Trans. on Systems, Man  and Cybernetic,</em> Vol. 7, No. 11, 
+ pp. 820-826, 1977.
+<P>
+<DT><A NAME=Ohlander><STRONG>3</STRONG></A><DD> R. Ohlander, K. Price and D. R. Reddy, ``Picture
+ segmentation using a recursive region splitting method'',
+<em> Computer Graphics and Image Processing,</em>  Vol. 8, pp. 313-333, 1978.
+<P>
+<DT><A NAME=Ohta><STRONG>4</STRONG></A><DD> Y. Ohta, T. Kanade and T. Sakai, ``Color information
+for region segmentation'',  <em> Computer Graphics and Image Processing,</em>
+Vol. 13, pp. 222-241, 1980.
+<P>
+<DT><A NAME=Daily><STRONG>5</STRONG></A><DD> M. J. Daily, ``Color image segmentation using Markov Random Fields'',
+ <em> Proc. IEEE conference on Computer Vision and Pattern Recognition,</em> pp. 304-312,
+ 1988.
+<P>
+<DT><A NAME=Metaxas><STRONG>6</STRONG></A><DD> D. Metaxas and E. Milios, ``Reconstruction of a color image from 
+non uniformly distributed sparse and noisy data,'' 
+<em> CVGIP : Graphical Models and Image Processing,</em>  Vol. 54, No. 2, pp. 103-111, 1992.
+<P>
+
+<P>
+<DT><A NAME=Besag><STRONG>7</STRONG></A><DD> J. Besag, ``On the statistical analysis of dirty pictures'',
+  <em> J. Roy. Stat. Soc. Series-B</em>, Vol. 48, pp 259-302, 1986b.
+<P>
+
+<P>
+<DT><A NAME=samir_mtech><STRONG>8</STRONG></A><DD> Sameer Gokhale, ``Color image restoration and edge
+detection using MRF Model'', <em> Master Thesis</em>, Dept. of Elec. Engg., IIT Bombay, 1995.
+<P>
+<DT><A NAME=aarts><STRONG>9</STRONG></A><DD> E. Aarts and J. Korst, <em> Simulated Annealing and Boltzman Machine</em>,
+Wiely, Chichester, 1989.
+<P>
+
+<P>
+<DT><A NAME=Desai><STRONG>10</STRONG></A><DD>P. K. Nanda, U. B. Desai and P. G. Poonacha, ``A homotopy
+continuation method for parameter estimation in MRF models and image
+restoration'', <em> Proc. IEEE International Symposium on Circuits and Systems</em>,
+London, U. K., May 1994.
+<P>
+
+<P>
+<DT><A NAME=burt><STRONG>11</STRONG></A><DD> P. J. Burt and E. H. Adelson, `` The Laplacian pyramid as a
+compact image code'', <em> IEEE Tran on Comm.</em>, Vol. 31, No. 4, pp 532 - 540,
+April 1983.
+<P>
+
+</DL>
+<P>
+
+<IMG  ALIGN=BOTTOM ALT="" SRC="img145.gif">
+<IMG  ALIGN=BOTTOM ALT="" SRC="img146.gif">
+
+
+Figure 1. Original Image  Figure 2. Noisy Image
+
+<P>
+
+<IMG  ALIGN=BOTTOM ALT="" SRC="img147.gif">
+<IMG  ALIGN=BOTTOM ALT="" SRC="img148.gif">
+
+
+Figure 3. Supervised Restoration   Figure 4. Supervised Restoration  
+
+
+(Monoresolution)  (Multiresolution) 
+
+<P>
+
+<IMG  ALIGN=BOTTOM ALT="" SRC="img149.gif">
+
+Figure 5. Unsupervised Restoration (Multiresolution) 
+
+<P>
+<H1><A NAME=SECTION00070000000000000000>   About this document ... </A></H1>
+<P>
+ <STRONG>Unsupervised Parameter Estimation Using Homotopy
+Continuation Method for Color Image Restoration in a Multiresolution Framework</STRONG><P>
+This document was generated using the <A HREF="http://cbl.leeds.ac.uk/nikos/tex2html/doc/latex2html/latex2html.html"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 95.1 (Fri Jan 20 1995) Copyright &#169; 1993, 1994,  <A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, Computer Based Learning Unit, University of Leeds. <P> The command line arguments were: <BR>
+<STRONG>latex2html</STRONG> <tt>-split 0 /home/yaman/sameer/TEXT/ICPIC/icpic.tex</tt>. <P>The translation was initiated by Users Pradipta n Sunil on Mon Feb 12 20:36:27 GMT-0800 1996<DL> <A NAME=87><DT>...Framework <DD>This work is supported by an MHRD (India) project on ``Computer Vision''. </A>
+<PRE><P>
+</PRE><A NAME=88><DT>...Nanda <DD>On leave from Department of Electrical Engineering, Regional Engineering College - Rorkela</A>
+<PRE><P>
+</PRE><A NAME=89><DT>...Desai <DD>Address for correspondence :ubdesai@ee.iitb.ernet.in</A>
+<PRE><P>
+</PRE><A NAME=411><DT>...impossible <DD>requires
+81#81 computations, where <b>G</b> represents the number of possible
+grey values and <b>N</b> represents the size of the square image and the
+number <b>3</b> is due to the <b>3</b> colour components</A>
+<PRE><P>
+</PRE><A NAME=412><DT>...tractable <DD>requires 83#83
+computations, as seen in (<A HREF="icpic.html#eqpseudo_likelihood">9</A>) we can rewrite the exponential as a product
+of 3 exponentials corresponding to the <b>3</b> color components; each requiring 84#84 computations</A>
+<PRE><P>
+</PRE> </DL>
+<BR> <HR>
+<P><ADDRESS>
+<I>Users Pradipta n Sunil <BR>
+Mon Feb 12 20:36:27 GMT-0800 1996</I>
+</ADDRESS>
+</BODY>
